@@ -1,12 +1,16 @@
 {
-  "name": "app",
+  "name": "plankton",
   "version": "0.0.1",
   "dependencies": {
-    "serveup": "~0.0.5",
-    "hem": "git://github.com/spine/hem.git#master",
     "es5-shimify": "~0.0.1",
-    "json2ify": "~0.0.1",
+    "haw": "~0.0.1",
+    "hem": "git://github.com/spine/hem.git#master",
     "jqueryify": "~0.0.1",
-    "spine": "~1.0.7"
+    "json2ify": "~0.0.1",
+    "spine": "~1.0.8",
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps"
+  },
+  "scripts": {
+    "start": "haw serve"
   }
 }
