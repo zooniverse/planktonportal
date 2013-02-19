@@ -1,17 +1,19 @@
-require 'json2ify'
-require 'es5-shimify'
+require './lib/setup'
 
-# Order is importnat here:
-$ = require 'jqueryify'
-{Controller} = require 'spine'
-Route = require 'spine/lib/route'
 {Stack} = require 'spine/lib/manager'
+Home = require './controllers/home'
+Classify = require './controllers/classify'
+Profile = require './controllers/profile'
+Route = require 'spine/lib/route'
+
+Api = require 'zooniverse/lib/api'
+TopBar = require 'zooniverse/controllers/top-bar'
 
 stack = new Stack
   controllers:
-    home: class extends Controller then constructor: -> super; @html 'Home'
-    classify: class extends Controller then constructor: -> super; @html 'Classify'
-    profile: class extends Controller then constructor: -> super; @html 'Profile'
+    home: Home
+    classify: Classify
+    profile: Profile
 
   routes:
     '/': 'home'
@@ -21,6 +23,12 @@ stack = new Stack
   default: 'home'
 
 stack.el.appendTo document.body
+
 Route.setup()
 
-module.exports = {stack}
+api = new Api project: 'planet_four'
+
+topBar = new TopBar
+topBar.el.appendTo document.body
+
+module.exports = {stack, api, topBar}
