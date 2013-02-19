@@ -1,9 +1,23 @@
 {Controller} = require 'spine'
-translate = require 't7e'
+template = require '../views/home'
 
 class Home extends Controller
+  className: 'home'
+
+  elements:
+    '.critter': 'critter'
+
   constructor: ->
     super
-    @html translate h1: 'navigation.home'
+    @html template
+    @critter.prependTo document.body
+
+  activate: ->
+    super
+    setTimeout => @critter.addClass 'active'
+
+  deactivate: ->
+    super
+    setTimeout => @critter.removeClass 'active'
 
 module.exports = Home

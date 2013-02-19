@@ -1,0 +1,31 @@
+<% translate = require 't7e' %>
+
+<div class="critter"></div>
+
+<div class="project">
+  <div class="status">
+    TODO: Status icons
+  </div>
+
+  <div class="description">
+    <%- translate div: 'home.projectDescription' %>
+  </div>
+
+  <div class="start">
+    <a href="#/classify"><%- translate span: 'home.startSearching' %></a>
+  </div>
+</div>
+
+<div class="navigation">
+  <div class="item">
+    <a href="#/about/learn"><%- translate span: 'home.learn' %></a>
+  </div>
+
+  <div class="item">
+    <a href="#/about/explore"><%- translate span: 'home.explore' %></a>
+  </div>
+
+  <div class="item">
+    <a href="#/about/search"><%- translate span: 'home.search' %></a>
+  </div>
+</div>
