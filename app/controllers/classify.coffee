@@ -1,5 +1,5 @@
 {Controller} = require 'spine'
-translate = require 'translate'
+translate = require 't7e'
 
 class Classify extends Controller
   constructor: ->

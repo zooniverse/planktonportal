@@ -7,6 +7,6 @@ require 'spine'
 require 'spine/lib/route'
 require 'spine/lib/manager'
 
-translate = require 'translate'
+translate = require 't7e'
 enUs = require './en-us'
 translate.load enUs
