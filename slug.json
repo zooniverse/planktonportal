@@ -1,3 +1,6 @@
 {
-  "port": 2020
+  "port": 2020,
+  "libs": [
+    "node_modules/zooniverse/vendor/base64.js"
+  ]
 }
