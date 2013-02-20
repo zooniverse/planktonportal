@@ -1,0 +1,113 @@
+body > .stack > .classify
+  background: gray
+  height: 672px
+  left: 0
+  position: fixed
+  top: 0
+  width: 1024px
+
+  .subject
+    height: 562px
+    width: 1024px
+
+  .marking-tool-controls
+    background: rgba($dark-gray, 0.8)
+    border-radius: 3px
+    box-shadow: 0 3px 3px rgba(#000, 0.25)
+    color: #000
+    display: none
+
+    &:after
+      border: 10px solid transparent
+      border-right-color: lighten($dark-gray, 10%)
+      content: ""
+      height: 0
+      margin-left: -10px
+      position: absolute
+      right: 100%
+      top: 10px
+      width: 0
+
+    &.selected
+      display: block
+
+    button[name="delete-mark"]
+      background: $dark-gray
+      font-family: Arial
+      height: 1em
+      left: 100%
+      line-height: 1em
+      position: absolute
+      top: 1px
+      width: 1em
+
+    .categories
+      background: lighten($dark-gray, 10%)
+      box-shadow:
+        0 1px 0 rgba(#fff, 0.33) inset,
+        0 1px 3px rgba(#000, 0.25)
+
+      button
+        height: 50px
+        width: 50px
+        position: relative
+
+        &.active
+          color: $lime
+
+          &:before,
+          &:after
+            border: 7px solid transparent
+            border-top-color: lighten($dark-gray, 10%)
+            content: ""
+            height: 0
+            left: 50%
+            margin-left: -7px
+            position: absolute
+            top: 100%
+            width: 0
+
+          &:before
+            border-top-color: rgba(#000, 0.25)
+            margin-top: 1px
+
+    .category
+      display: none
+
+      &.active
+        display: block
+
+      button
+        height: 50px
+        width: 50px
+
+        &.active
+          color: $lime
+
+  .status
+    background: $dark-gray
+    bottom: 0
+    display: table
+    height: 110px
+    left: 0
+    position: absolute
+    width: 100%
+
+    > div
+      border: 1px solid transparent
+      border-color: rgba(#fff, 0.15) rgba(#000, 0.25) rgba(#000, 0.25) rgba(#fff, 0.15)
+      display: table-cell
+      text-align: center
+      vertical-align: middle
+
+    .creatures
+      .display
+        background: #000
+        box-shadow: 0 1px 0 rgba(#fff, 0.25)
+        overflow: hidden
+
+        .label
+          float: left
+
+        .number
+          float: right

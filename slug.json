@@ -1,6 +1,7 @@
 {
   "port": 2020,
   "libs": [
+    "public/js/vendor/raphael.js",
     "node_modules/zooniverse/vendor/base64.js"
   ]
 }

@@ -29,9 +29,10 @@ stack.el.appendTo document.body
 
 Route.setup()
 
-api = new Api project: 'planet_four'
+api = new Api project: 'planet_four', host: 'BAD_HOST'
 
 topBar = new TopBar
 topBar.el.appendTo document.body
 
-module.exports = {stack, api, topBar}
+window.app = {stack, api, topBar}
+module.exports = window.app
