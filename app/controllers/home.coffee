@@ -1,12 +1,12 @@
-{Controller} = require 'spine'
+Page = require './page'
 template = require '../views/home'
 Counter = require './counter'
 
-class Home extends Controller
+class Home extends Page
   className: 'home'
 
   elements:
-    '.critter': 'critter'
+    '.home-page-critter': 'critter'
 
   constructor: ->
     super
@@ -23,10 +23,5 @@ class Home extends Controller
     @diveCounter.set Math.floor Math.random() * 1000
     @speedCounter.set Math.floor Math.random() * 1000
     @classificationsCounter.set Math.floor Math.random() * 1000
-    setTimeout => @critter.addClass 'active'
-
-  deactivate: ->
-    super
-    setTimeout => @critter.removeClass 'active'
 
 module.exports = Home

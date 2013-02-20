@@ -1,65 +1,64 @@
-body
-  > .critter
-    background: url("./images/octopus.jpg") no-repeat
-    background-position: 100% 200%
-    bottom: 0
-    opacity: 0
-    left: 0
-    position: fixed
-    right: 0
-    top: 0
-    transition:
-      background-position 1s ease-out,
-      opacity 1s ease-in
+.home-page-critter
+  background: url("./images/octopus.jpg") no-repeat
+  background-position: 100% 200%
+  bottom: 0
+  opacity: 0
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  transition:
+    background-position 1s ease-out,
+    opacity 1s ease-in
 
-    &.active
-      opacity: 1
-      background-position: 90% 75%
+  .on-home-page &
+    opacity: 1
+    background-position: 90% 75%
 
-  > .stack > .home
+body > .stack > .home
+  position: relative
+
+  .project
     position: relative
+    width: 33%
+    z-index: 1
 
-    .project
-      position: relative
-      width: 33%
-      z-index: 1
+    .status
+      margin-top: 100px
 
-      .status
-        margin-top: 100px
+      .icon
+        display: inline-block
+        margin-right: 25px
+        text-align: center
 
-        .icon
-          display: inline-block
-          margin-right: 25px
-          text-align: center
+    .description
+      h1
+        font: 25px $serif
 
-      .description
-        h1
-          font: 25px $serif
+    .start
+      margin 30px 0
 
-      .start
-        margin 30px 0
+      a
+        @extends #flat-button
 
-        a
-          @extends #flat-button
+  .navigation
+    margin: 70px 0
+    overflow: hidden
+    position: relative
+    z-index: 1
 
-    .navigation
-      margin: 70px 0
-      overflow: hidden
-      position: relative
-      z-index: 1
+    .item
+      box-sizing: border-box
+      float: left
+      padding-right: 20px
+      width: 33.3%
 
-      .item
-        box-sizing: border-box
-        float: left
-        padding-right: 20px
-        width: 33.3%
-
-        a
-          background: linear-gradient(top, rgba(#000, 0.5), rgba(#000, 0))
-          border-top: 5px solid red
-          color: #fff
-          display: block
-          font-size: 30px
-          padding: 30px
-          text-align: center
-          text-decoration: none
+      a
+        background: linear-gradient(top, rgba(#000, 0.5), rgba(#000, 0))
+        border-top: 5px solid red
+        color: #fff
+        display: block
+        font-size: 30px
+        padding: 30px
+        text-align: center
+        text-decoration: none

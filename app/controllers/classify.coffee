@@ -1,7 +1,8 @@
-{Controller} = require 'spine'
+Page = require './page'
 translate = require 't7e'
+class Classify extends Page
+  className: 'classify'
 
-class Classify extends Controller
   constructor: ->
     super
     @html translate h1: 'navigation.classify'

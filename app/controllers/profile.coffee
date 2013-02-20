@@ -1,7 +1,9 @@
-{Controller} = require 'spine'
+Page = require './page'
 translate = require 't7e'
 
-class Profile extends Controller
+class Profile extends Page
+  className: 'profile'
+
   constructor: ->
     super
     @html translate h1: 'navigation.profile'
