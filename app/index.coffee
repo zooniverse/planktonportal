@@ -2,6 +2,7 @@ require './lib/setup'
 
 {Stack} = require 'spine/lib/manager'
 Home = require './controllers/home'
+About = require './controllers/about'
 Classify = require './controllers/classify'
 Profile = require './controllers/profile'
 Route = require 'spine/lib/route'
@@ -12,11 +13,13 @@ TopBar = require 'zooniverse/controllers/top-bar'
 stack = new Stack
   controllers:
     home: Home
+    about: About
     classify: Classify
     profile: Profile
 
   routes:
     '/': 'home'
+    '/about': 'about'
     '/classify': 'classify'
     '/profile': 'profile'
 
