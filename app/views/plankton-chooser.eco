@@ -1,0 +1,34 @@
+<div class="categories">
+  <button name="category" value="round">@</button>
+  <button name="category" value="tail">@~</button>
+  <button name="category" value="tentacled">@==</button>
+  <button name="category" value="worm">==</button>
+</div>
+
+<div class="round category">
+  <button name="round" value="0">@</button>
+  <button name="round" value="1">#</button>
+  <button name="round" value="2">*</button>
+  <button name="round" value="3">()</button>
+</div>
+
+<div class="tail category">
+  <button name="tail" value="round">@~</button>
+  <button name="tail" value="tail">#~</button>
+  <button name="tail" value="tentacles">*~</button>
+  <button name="tail" value="worm">()~</button>
+</div>
+
+<div class="tentacled category">
+  <button name="tentacled" value="0">@==</button>
+  <button name="tentacled" value="1">#==</button>
+  <button name="tentacled" value="2">*==</button>
+  <button name="tentacled" value="3">()==</button>
+</div>
+
+<div class="worm category">
+  <button name="worm" value="0">==</button>
+  <button name="worm" value="1">ooo</button>
+  <button name="worm" value="2">}][{</button>
+  <button name="worm" value="3">:==</button>
+</div>

@@ -1,0 +1,32 @@
+<% translate = require 't7e' %>
+
+<div class="subject"></div>
+
+<div class="status">
+  <div class="depth">
+    <img src="//placehold.it/50.png" />
+    <div class="depth"><span class="counter">&mdash;</span><%- translate span: 'classify.metersUnit' %></div>
+  </div>
+
+  <div class="creatures">
+    <div class="display">
+      <div class="label"><%- translate span: 'classify.numberCounted' %></div>
+      <div class="number"><span class="counter">&mdash;</span></div>
+    </div>
+  </div>
+
+  <div class="continue">
+    <div class="finished">
+      <button name="finish"><%- translate span: 'classify.finish' %></button>
+    </div>
+    <div class="next">
+      <a href="#/TALK" class="talk"><%- translate span: 'classify.discuss' %></a>
+      <button name="favorite"><%- translate span: 'classify.favorite' %></button>
+      <button name="next"><%- translate span: 'classify.next' %></button>
+    </div>
+  </div>
+
+  <div class="return">
+    <a href="#/"><%- translate span: 'classify.return' %></a>
+  </div>
+</div>

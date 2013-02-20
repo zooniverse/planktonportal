@@ -14,3 +14,12 @@ module.exports =
     explore: 'Explore'
     search: 'Search'
     startSearching: 'Start searching'
+
+  classify:
+    metersUnit: 'm'
+    numberCounted: 'Number counted'
+    finish: 'Finish'
+    discuss: 'Discuss'
+    favorite: 'Favorite'
+    next: 'Next'
+    return: 'Return home'
