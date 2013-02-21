@@ -11,7 +11,7 @@
   <div class="creatures">
     <div class="display">
       <div class="label"><%- translate span: 'classify.numberCounted' %></div>
-      <div class="number"><span class="counter">&mdash;</span></div>
+      <div class="number"><span class="counter">0</span></div>
     </div>
   </div>
 

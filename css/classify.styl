@@ -2,9 +2,18 @@ body > .stack > .classify
   background: gray
   height: 672px
   left: 0
-  position: fixed
+  opacity: 0
+  position: absolute
   top: 0
+  transform: scale(0.05)
+  transition:
+    opacity 0.25s ease-in-out,
+    transform 0.25s ease-in-out
   width: 1024px
+
+  &.activated
+    opacity: 1
+    transform: scale(1)
 
   .subject
     height: 562px
@@ -103,11 +112,34 @@ body > .stack > .classify
     .creatures
       .display
         background: #000
+        border-radius: 3px
         box-shadow: 0 1px 0 rgba(#fff, 0.25)
+        margin: 0 30px
         overflow: hidden
+        padding: 5px 7px
 
         .label
+          color: $dark-gray
           float: left
+          font-size: 10px
+          line-height: 12px
+          text-transform: uppercase
+          width: 0 // This is just to get the lines to wrap.
 
         .number
           float: right
+          font-size: 18px
+
+    a.talk,
+    button
+      background: rgba(#fff, 0.15)
+      border-radius: 3px
+      box-shadow:
+        0 1px 0 rgba(#fff, 0.25) inset,
+        0 5px 10px rgba(#000, 0.25)
+      color: #000
+      font-size: 12px
+      font-weight: bold
+      padding: 5px 20px
+      text-decoration: none
+      text-shadow: 0 1px 0 rgba(#fff,0.15)
