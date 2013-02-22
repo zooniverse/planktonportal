@@ -9,6 +9,7 @@ Route = require 'spine/lib/route'
 
 Api = require 'zooniverse/lib/api'
 TopBar = require 'zooniverse/controllers/top-bar'
+User = require 'zooniverse/models/user'
 
 stack = new Stack
   controllers:
@@ -33,6 +34,8 @@ api = new Api project: 'planet_four', host: 'BAD_HOST'
 
 topBar = new TopBar
 topBar.el.appendTo document.body
+
+User.fetch()
 
 window.app = {stack, api, topBar}
 module.exports = window.app
