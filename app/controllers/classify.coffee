@@ -51,7 +51,7 @@ class Classify extends Page
     @surface.enable()
 
     @surface.image.attr src: subject.location.standard
-    @surface.tools[0].destroy until @surface.tools.length is 0
+    @surface.tools[0].destroy() until @surface.tools.length is 0
 
     @classification = new Classification {subject}
 
