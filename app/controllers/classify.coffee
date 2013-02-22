@@ -48,9 +48,12 @@ class Classify extends Page
   onCreateMark: =>
 
   onClickFinish: ->
+    # @classification.send()
+    @el.addClass 'finished'
 
   onClickFavorite: ->
 
   onClickNext: ->
+    @el.removeClass 'finished'
 
 module.exports = Classify

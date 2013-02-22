@@ -16,7 +16,7 @@
   </div>
 
   <div class="continue">
-    <div class="finished">
+    <div class="finish">
       <button name="finish"><%- translate span: 'classify.finish' %></button>
     </div>
     <div class="next">
