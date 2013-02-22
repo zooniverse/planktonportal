@@ -17,6 +17,16 @@ button
   margin: 0
   padding: 0
 
+  &::-moz-focus-inner
+    border: 0
+
+  &:disabled
+    opacity: 0.33
+    pointer-events: none
+
+*:focus
+  outline: 1px dashed gray
+
 #flat-button
   background: $green
   border-radius: 5px

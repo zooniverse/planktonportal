@@ -5,6 +5,7 @@ MarkingSurface = require 'marking-surface'
 PlanktonTool = require './plankton-tool'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
+Classification = require 'zooniverse/models/classification'
 
 class Classify extends Page
   className: 'classify'
@@ -15,6 +16,11 @@ class Classify extends Page
     'click button[name="finish"]': 'onClickFinish'
     'click button[name="favorite"]': 'onClickFavorite'
     'click button[name="next"]': 'onClickNext'
+
+  elements:
+    '.creatures .number .counter': 'creatureCounter'
+    'button[name="finish"]': 'finishButton'
+    'button[name="next"]': 'nextButton'
 
   constructor: ->
     super
@@ -35,25 +41,47 @@ class Classify extends Page
     Subject.on 'no-more', @onNoMoreSubjects
 
   onUserChange: =>
+    Subject.next()
 
   onGettingNextSubject: =>
     @el.addClass 'loading'
 
-  onSubjectSelect: =>
+  onSubjectSelect: (e, subject) =>
+    @finishButton.attr disabled: false
+    @surface.enable()
+
+    @surface.tools[0].destroy until @surface.tools.length is 0
+
+    @classification = new Classification {subject}
+
     @el.removeClass 'loading'
 
   onNoMoreSubjects: =>
+    alert 'It appears we\'ve run out of data!'
     @el.removeClass 'loading'
 
   onCreateMark: =>
+    @creatureCounter.html @surface.marks.length
 
   onClickFinish: ->
-    # @classification.send()
+    @finishButton.attr disabled: true
+    @nextButton.attr disabled: false
+    @surface.disable()
+
+    @surface.selection?.deselect()
+
+    # TODO: Add marks to classification
+    # TODO: Send classification
+
     @el.addClass 'finished'
 
   onClickFavorite: ->
 
   onClickNext: ->
+    @nextButton.attr disabled: true
+
+    Subject.next()
+
     @el.removeClass 'finished'
 
 module.exports = Classify

@@ -1,5 +1,7 @@
 <% translate = require 't7e' %>
 
+<div class="loader"></div>
+
 <div class="subject"></div>
 
 <div class="status">
