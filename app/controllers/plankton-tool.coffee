@@ -44,4 +44,12 @@ class PlanktonControls extends ToolControls
 class PlanktonTool extends AxesTool
   @Controls: PlanktonControls
 
+  render: ->
+    super
+
+    @cross.attr stroke: if @mark.species? then 'green' else 'red'
+
+    for dot in @dots
+      dot.attr fill: if @mark.species? then 'green' else 'red'
+
 module.exports = PlanktonTool
