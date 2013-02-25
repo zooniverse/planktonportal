@@ -18,6 +18,7 @@ class Classify extends Page
     'click button[name="next"]': 'onClickNext'
 
   elements:
+    '.swap': 'swapContainer'
     '.swap .drawer': 'swapDrawer'
     '.swap .old': 'oldSwapImage'
     '.swap .new': 'newSwapImage'
@@ -57,13 +58,14 @@ class Classify extends Page
     @newSwapImage.attr src: subject.location.standard
 
     # Show the swap container.
-    @swapDrawer.css display: '', top: 0
+    @swapDrawer.css top: 0
+    @swapContainer.css display: ''
 
     # Once the swap container is showing, change the image of the marking surface behind it.
     @surface.image.attr src: subject.location.standard
 
     @swapDrawer.animate top: -562, 'slow', =>
-      @swapDrawer.css display: 'none'
+      @swapContainer.css display: 'none'
 
       # This will slide out next time.
       @oldSwapImage.attr src: subject.location.standard
