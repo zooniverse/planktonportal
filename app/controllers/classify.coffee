@@ -18,6 +18,9 @@ class Classify extends Page
     'click button[name="next"]': 'onClickNext'
 
   elements:
+    '.swap .drawer': 'swapDrawer'
+    '.swap .old': 'oldSwapImage'
+    '.swap .new': 'newSwapImage'
     '.creatures .number .counter': 'creatureCounter'
     'button[name="finish"]': 'finishButton'
     'button[name="next"]': 'nextButton'
@@ -47,15 +50,28 @@ class Classify extends Page
     @el.addClass 'loading'
 
   onSubjectSelect: (e, subject) =>
-    @finishButton.attr disabled: false
-    @surface.enable()
-
-    @surface.image.attr src: subject.location.standard
+    @el.removeClass 'loading'
     @surface.marks[0].destroy() until @surface.marks.length is 0
 
-    @classification = new Classification {subject}
+    # This image will slide in.
+    @newSwapImage.attr src: subject.location.standard
 
-    @el.removeClass 'loading'
+    # Show the swap container.
+    @swapDrawer.css display: '', top: 0
+
+    # Once the swap container is showing, change the image of the marking surface behind it.
+    @surface.image.attr src: subject.location.standard
+
+    @swapDrawer.animate top: -562, 'slow', =>
+      @swapDrawer.css display: 'none'
+
+      # This will slide out next time.
+      @oldSwapImage.attr src: subject.location.standard
+
+      @finishButton.attr disabled: false
+      @surface.enable()
+
+      @classification = new Classification {subject}
 
   onNoMoreSubjects: =>
     alert 'It appears we\'ve run out of data!'

@@ -1,7 +1,13 @@
 [{
-  "location": {
-    "standard": "//placehold.it/1024x562.png"
-  },
+  "location": {"standard": "//placehold.it/1024x562/f00.png"},
+  "coords": [0, 0],
+  "metadata": {}
+}, {
+  "location": {"standard": "//placehold.it/1024x562/0f0.png"},
+  "coords": [0, 0],
+  "metadata": {}
+}, {
+  "location": {"standard": "//placehold.it/1024x562/00f.png"},
   "coords": [0, 0],
   "metadata": {}
 }]

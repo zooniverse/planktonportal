@@ -22,109 +22,114 @@ body > .stack > .classify
     opacity: 1
     transform: scale(1)
 
-  .loader
-    animation: 3s classifier-loading linear infinite
-    background: linear-gradient(top, rgba(#000, 0.5) 0, rgba(#000, 0) 50%, rgba(#000, 0.5) 100%)
-    background-size: 150px 150px
-    bottom: 0
-    display: none
-    left: 0
-    position: absolute
-    right: 0
-    top: 0
-    z-index: 2
-
-  &.loading .loader
-    display: block
-
   .subject
     height: 562px
     position: relative
     width: 1024px
     z-index: 1
 
-  .marking-tool-controls
-    background: rgba($dark-gray, 0.8)
-    border-radius: 3px
-    box-shadow: 0 3px 3px rgba(#000, 0.25)
-    color: #000
-    display: none
-    margin: -20px 0 0 20px
-
-    &:after
-      border: 10px solid transparent
-      border-right-color: lighten($dark-gray, 10%)
-      content: ""
-      height: 0
-      position: absolute
-      right: 100%
-      top: 10px
-      width: 0
-
-    &.to-the-left
-      margin: -20px 20px 0 0
+    .marking-tool-controls
+      background: rgba($dark-gray, 0.8)
+      border-radius: 3px
+      box-shadow: 0 3px 3px rgba(#000, 0.25)
+      color: #000
+      display: none
+      margin: -20px 0 0 20px
 
       &:after
-        border-left-color: lighten($dark-gray, 10%)
-        border-right-color: transparent
-        left: 100%
-        right: auto
+        border: 10px solid transparent
+        border-right-color: lighten($dark-gray, 10%)
+        content: ""
+        height: 0
+        position: absolute
+        right: 100%
+        top: 10px
+        width: 0
 
-    &.selected
-      display: block
+      &.to-the-left
+        margin: -20px 20px 0 0
 
-    button[name="delete-mark"]
-      background: $dark-gray
-      font-family: Arial
-      height: 1em
-      left: 100%
-      line-height: 1em
-      position: absolute
-      top: 1px
-      width: 1em
+        &:after
+          border-left-color: lighten($dark-gray, 10%)
+          border-right-color: transparent
+          left: 100%
+          right: auto
 
-    .categories
-      background: lighten($dark-gray, 10%)
-      box-shadow:
-        0 1px 0 rgba(#fff, 0.33) inset,
-        0 1px 3px rgba(#000, 0.25)
-
-      button
-        height: 50px
-        width: 50px
-        position: relative
-
-        &.active
-          color: $lime
-
-          &:before,
-          &:after
-            border: 7px solid transparent
-            border-top-color: lighten($dark-gray, 10%)
-            content: ""
-            height: 0
-            left: 50%
-            margin-left: -7px
-            position: absolute
-            top: 100%
-            width: 0
-
-          &:before
-            border-top-color: rgba(#000, 0.25)
-            margin-top: 1px
-
-    .category
-      display: none
-
-      &.active
+      &.selected
         display: block
 
-      button
-        height: 50px
-        width: 50px
+      button[name="delete-mark"]
+        background: $dark-gray
+        font-family: Arial
+        height: 1em
+        left: 100%
+        line-height: 1em
+        position: absolute
+        top: 1px
+        width: 1em
+
+      .categories
+        background: lighten($dark-gray, 10%)
+        box-shadow:
+          0 1px 0 rgba(#fff, 0.33) inset,
+          0 1px 3px rgba(#000, 0.25)
+
+        button
+          height: 50px
+          width: 50px
+          position: relative
+
+          &.active
+            color: $lime
+
+            &:before,
+            &:after
+              border: 7px solid transparent
+              border-top-color: lighten($dark-gray, 10%)
+              content: ""
+              height: 0
+              left: 50%
+              margin-left: -7px
+              position: absolute
+              top: 100%
+              width: 0
+
+            &:before
+              border-top-color: rgba(#000, 0.25)
+              margin-top: 1px
+
+      .category
+        display: none
 
         &.active
-          color: $lime
+          display: block
+
+        button
+          height: 50px
+          width: 50px
+
+          &.active
+            color: $lime
+
+  .swap
+    height: 562px
+    left: 0
+    overflow: hidden
+    position: absolute
+    top: 0
+    width: 1024px
+    z-index: 1
+
+    .drawer
+      left: 0
+      position: absolute
+      top: 0
+
+      img
+        background: gray
+        display: block
+        height: 562px
+        width: 1024px
 
   .status
     background: $dark-gray
@@ -202,6 +207,21 @@ body > .stack > .classify
 
       .next
         display: none
+
+  .loader
+    animation: 3s classifier-loading linear infinite
+    background: linear-gradient(top, rgba(#000, 0.5) 0, rgba(#000, 0) 50%, rgba(#000, 0.5) 100%)
+    background-size: 150px 150px
+    bottom: 0
+    display: none
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+    z-index: 2
+
+  &.loading .loader
+    display: block
 
   &.finished .status .continue
     .finish

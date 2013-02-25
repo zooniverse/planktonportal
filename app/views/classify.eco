@@ -1,8 +1,13 @@
 <% translate = require 't7e' %>
 
-<div class="loader"></div>
-
 <div class="subject"></div>
+
+<div class="swap">
+  <div class="drawer">
+    <img class="old" />
+    <img class="new" />
+  </div>
+</div>
 
 <div class="status">
   <div class="depth">
@@ -32,3 +37,5 @@
     <a href="#/"><%- translate span: 'classify.return' %></a>
   </div>
 </div>
+
+<div class="loader"></div>
