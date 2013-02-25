@@ -33,7 +33,7 @@ class Classify extends Page
       width: 1024
       height: 562
 
-    @surface.on 'create-mark', @onCreateMark
+    @surface.on 'create-mark destroy-mark', @onChangeMarkCount
 
     User.on 'change', @onUserChange
     Subject.on 'get-next', @onGettingNextSubject
@@ -61,7 +61,7 @@ class Classify extends Page
     alert 'It appears we\'ve run out of data!'
     @el.removeClass 'loading'
 
-  onCreateMark: =>
+  onChangeMarkCount: =>
     @creatureCounter.html @surface.marks.length
 
   onClickFinish: ->
