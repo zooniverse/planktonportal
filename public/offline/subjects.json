@@ -1,13 +1,13 @@
 [{
-  "location": {"standard": "//placehold.it/1024x562/f00.png"},
+  "location": {"standard": "./offline/subjects/cordagalma-201206251_000001.jpg"},
   "coords": [0, 0],
   "metadata": {}
 }, {
-  "location": {"standard": "//placehold.it/1024x562/0f0.png"},
+  "location": {"standard": "./offline/subjects/doliolid-212657541_000001.jpg"},
   "coords": [0, 0],
   "metadata": {}
 }, {
-  "location": {"standard": "//placehold.it/1024x562/00f.png"},
+  "location": {"standard": "./offline/subjects/doliolid-and-h5a-212628626_000001.jpg"},
   "coords": [0, 0],
   "metadata": {}
 }]
