@@ -2,6 +2,7 @@ Page = require './page'
 template = require '../views/classify'
 translate = require 't7e'
 MarkingSurface = require 'marking-surface'
+Counter = require './counter'
 PlanktonTool = require './plankton-tool'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
@@ -9,6 +10,8 @@ Classification = require 'zooniverse/models/classification'
 
 class Classify extends Page
   className: 'classify'
+
+  subjectTransition: 2000
 
   surface: null
 
@@ -22,6 +25,7 @@ class Classify extends Page
     '.swap .drawer': 'swapDrawer'
     '.swap .old': 'oldSwapImage'
     '.swap .new': 'newSwapImage'
+    '.depth .counter': 'depthCounterEl'
     '.creatures .number .counter': 'creatureCounter'
     'button[name="finish"]': 'finishButton'
     'button[name="next"]': 'nextButton'
@@ -38,6 +42,8 @@ class Classify extends Page
       height: 562
 
     @surface.on 'create-mark destroy-mark', @onChangeMarkCount
+
+    @depthCounter = new Counter el: @depthCounterEl
 
     User.on 'change', @onUserChange
     Subject.on 'get-next', @onGettingNextSubject
@@ -63,8 +69,9 @@ class Classify extends Page
 
     # Once the swap container is showing, change the image of the marking surface behind it.
     @surface.image.attr src: subject.location.standard
+    @depthCounter.set subject.metadata.depth
 
-    @swapDrawer.animate top: -562, 'slow', =>
+    @swapDrawer.animate top: -562, @subjectTransition, =>
       @swapContainer.css display: 'none'
 
       # This will slide out next time.
