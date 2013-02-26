@@ -12,6 +12,34 @@ body
     width: 1024px
     z-index: 1
 
+.site-navigation
+  background: rgba(#000, 0.25)
+  left: 0
+  line-height: 40px
+  position: absolute
+  top: 0
+  transition:
+    background 0.25s ease-in-out,
+    top 0.5s ease-in-out 0.25s
+  width: 100%
+  z-index: 2
+
+  &:hover
+    background: rgba(#000, 0.5)
+
+  .links
+    margin: 0 auto
+    width: 1024px
+
+  a
+    color: inherit
+    display: inline-block
+    padding: 0 10px
+    text-decoration: none
+
+    &:first-child
+      padding-left: 0
+
 .spine.stack
   > *
     display: none

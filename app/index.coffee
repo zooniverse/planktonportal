@@ -1,5 +1,7 @@
 require './lib/setup'
 
+Navigation = require './controllers/navigation'
+
 {Stack} = require 'spine/lib/manager'
 Home = require './controllers/home'
 About = require './controllers/about'
@@ -10,6 +12,9 @@ Route = require 'spine/lib/route'
 Api = require 'zooniverse/lib/api'
 TopBar = require 'zooniverse/controllers/top-bar'
 User = require 'zooniverse/models/user'
+
+navigation = new Navigation
+navigation.el.appendTo document.body
 
 stack = new Stack
   controllers:

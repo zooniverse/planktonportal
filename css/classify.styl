@@ -5,6 +5,22 @@
   100%
     background-position: 0 -150px
 
+.zooniverse-top-bar
+  transition: opacity 0.5s ease-in-out
+
+.on-classify-page
+  .zooniverse-top-bar
+    opacity: 0.5
+
+    &:hover
+      opacity: 1
+
+  .site-navigation
+    top: -30px
+
+    &:hover
+      top: 0
+
 body > .stack > .classify
   background: gray
   height: 672px
