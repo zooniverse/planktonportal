@@ -1,11 +1,11 @@
 Page = require './page'
-translate = require 't7e'
+template = require '../views/about'
 
 class About extends Page
   className: 'about'
 
   constructor: ->
     super
-    @html translate h1: 'navigation.about'
+    @html template
 
 module.exports = About

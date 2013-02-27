@@ -1,0 +1,13 @@
+<% translate = require 't7e' %>
+
+<h1><%- translate div: 'navigation.about' %></h1>
+
+<% devs = ['carstensen', 'miller', 'parrish', 'smith'] %>
+
+<% for dev in devs: %>
+  <div class="person">
+    <img src="<%- translate "about.devs.#{dev}.image" %>" />
+    <%- translate div: "about.devs.#{dev}.name" %>
+    <%- translate div: "about.devs.#{dev}.role" %>
+  </div>
+<% end %>

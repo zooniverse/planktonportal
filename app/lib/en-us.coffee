@@ -23,3 +23,25 @@ module.exports =
     favorite: 'Favorite'
     next: 'Next'
     return: 'Return home'
+
+  about:
+    devs:
+      carstensen:
+        image: '//placehold.it/80x100.png'
+        name: 'Brian Carstensen'
+        role: 'Front-end developer'
+
+      miller:
+        image: '//placehold.it/80x100.png'
+        name: 'David Miller'
+        role: 'Visual designer'
+
+      parrish:
+        image: '//placehold.it/80x100.png'
+        name: 'Michael Parrish'
+        role: 'Senior developer'
+
+      smith:
+        image: '//placehold.it/80x100.png'
+        name: 'Arfon Smith'
+        role: 'Technical lead'
