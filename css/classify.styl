@@ -25,18 +25,9 @@ body > .stack > .classify
   background: gray
   height: 672px
   left: 0
-  opacity: 0
   position: absolute
   top: 0
-  transform: scale(0.05)
-  transition:
-    opacity 0.25s ease-in-out,
-    transform 0.25s ease-in-out
   width: 1024px
-
-  &.activated
-    opacity: 1
-    transform: scale(1)
 
   .subject
     height: 562px
@@ -162,6 +153,15 @@ body > .stack > .classify
       display: table-cell
       text-align: center
       vertical-align: middle
+
+    .depth,
+    .return {
+      width: 110px
+    }
+
+    .creatures {
+      width: 220px
+    }
 
     .creatures
       .display

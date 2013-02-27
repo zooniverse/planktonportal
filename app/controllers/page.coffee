@@ -13,14 +13,13 @@ class Page extends Controller
 
   activate: ->
     super
-    setTimeout =>
-      HTML.addClass @htmlClassName
-      @el.addClass 'activated'
+    console.log "Activating #{@className}"
+    HTML.addClass @htmlClassName
 
   deactivate: ->
     super
-    setTimeout =>
-      @el.removeClass 'activated'
-      HTML.removeClass @htmlClassName
+    console.log "Deactivating #{@className}"
+    HTML.removeClass @htmlClassName
+
 
 module.exports = Page

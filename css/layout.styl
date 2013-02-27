@@ -12,6 +12,10 @@ body
     width: 1024px
     z-index: 1
 
+    h1
+      color: $blue
+      font: 24px $serif
+
 .site-navigation
   background: rgba(#000, 0.25)
   left: 0
@@ -40,9 +44,8 @@ body
     &:first-child
       padding-left: 0
 
-.spine.stack
-  > *
-    display: none
+.spine.stack > *
+  display: none
 
-    &.active
-      display: block
+  &.active
+    display: block
