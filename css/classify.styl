@@ -40,7 +40,6 @@ body > .stack > .classify
       border-radius: 3px
       box-shadow: 0 3px 3px rgba(#000, 0.25)
       color: #000
-      display: none
       margin: -20px 0 0 20px
 
       &:after
@@ -62,11 +61,21 @@ body > .stack > .classify
           left: 100%
           right: auto
 
-      &.selected
-        display: block
-
       button[name="toggle"]
+        background: #000
+        border: 2px solid #fff
+        border-radius: 50%
+        color: #fff
         display: none
+        height: 30px
+        left: -20px
+        margin: -15px 0 0 -15px
+        position: absolute
+        top: 20px
+        width: 30px
+
+      &.to-the-left button[name="toggle"]
+        left: 20px
 
       button[name="delete-mark"]
         background: $dark-gray
@@ -122,12 +131,14 @@ body > .stack > .classify
             color: $lime
 
       &.closed
-        button[name="toggle"]
-          display: inline-block
-
+        &:after,
+        button[name="delete-mark"],
         .categories,
         .category
           display: none
+
+        button[name="toggle"]
+          display: inline-block
 
   .swap
     height: 562px

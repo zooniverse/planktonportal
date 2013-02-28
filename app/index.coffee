@@ -35,7 +35,7 @@ stack.el.appendTo document.body
 
 Route.setup()
 
-api = new Api project: 'planet_four', host: 'BAD_HOST'
+api = new Api project: 'planet_four', host: 'BAD_HOST', loadTimeout: 0
 
 topBar = new TopBar
 topBar.el.appendTo document.body

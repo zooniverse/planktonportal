@@ -1,6 +1,4 @@
-<div class="chosen">
-  <button name="toggle"></button>
-</div>
+<button name="toggle"></button>
 
 <div class="categories">
   <button name="category" value="round">@</button>

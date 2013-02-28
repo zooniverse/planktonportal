@@ -41,18 +41,19 @@ class PlanktonControls extends ToolControls
 
   onClickSpecies: ({target}) =>
     target = $(target)
-    return if target.hasClass 'active'
 
-    species = target.val()
+    @toggleButton.html target.html()
+    @toggleButton.attr title: target.attr 'title'
+
+    @el.addClass 'closed'
+
+    return if target.hasClass 'active'
 
     @speciesButtons.removeClass 'active'
     target.addClass 'active'
 
-    @tool.mark.set {species}
+    @tool.mark.set species: target.val()
 
-    @toggleButton.html target.html()
-    @toggleButton.attr title: target.attr 'title'
-    @el.addClass 'closed'
 
 
 class PlanktonTool extends AxesTool
