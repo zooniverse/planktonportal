@@ -25,9 +25,14 @@ module.exports =
     return: 'Return home'
 
   about:
-    devs:
+    scientists:
+      heading: 'The science team'
+
+    developers:
+      heading: 'The development team'
+
       carstensen:
-        image: '//placehold.it/80x100.png'
+        image: '//placehold.it/80x100.png '
         name: 'Brian Carstensen'
         role: 'Front-end developer'
 

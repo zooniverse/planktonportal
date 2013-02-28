@@ -1,13 +1,29 @@
 <% translate = require 't7e' %>
 
-<h1><%- translate div: 'navigation.about' %></h1>
+<%- translate h1: "about.scientists.heading" %>
 
-<% devs = ['carstensen', 'miller', 'parrish', 'smith'] %>
+<% scientists = [] %>
 
-<% for dev in devs: %>
-  <div class="person">
-    <img src="<%- translate "about.devs.#{dev}.image" %>" />
-    <%- translate div: "about.devs.#{dev}.name" %>
-    <%- translate div: "about.devs.#{dev}.role" %>
-  </div>
-<% end %>
+<div class="science team">
+  <% for scientist in scientists: %>
+    <div class="member">
+      <img src="<%- translate "about.scientists.#{scientist}.image" %>" />
+      <%- translate div: "about.scientists.#{scientist}.name", class: 'name' %>
+      <%- translate div: "about.scientists.#{scientist}.role", class: 'role' %>
+    </div>
+  <% end %>
+</div>
+
+<%- translate h1: "about.developers.heading" %>
+
+<% developers = ['carstensen', 'miller', 'parrish', 'smith', 'carstensen', 'miller', 'parrish', 'smith'] %>
+
+<div class="development team">
+  <% for developer in developers: %>
+    <div class="member">
+      <img src="<%- translate "about.developers.#{developer}.image" %>" />
+      <%- translate div: "about.developers.#{developer}.name", class: 'name' %>
+      <%- translate div: "about.developers.#{developer}.role", class: 'role' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+body > .stack > .about
+  margin-top: 100px
+
+  .team
+    overflow: hidden
+
+    .member
+      float: left
+      margin: 20px 0 40px
+      padding-bottom: 15px
+      position: relative
+      width: 25%
+
+      &:after
+        background: $red
+        height: 5px
+        content: ""
+        left: 0
+        position: absolute
+        top: 100%
+        width: 80px
+
+      img
+        margin-bottom: 5px
+
+      .name
+        font-size: 20px
+
+      .role
+        font-size: 10px
+        font-weight: 600
+        text-transform: uppercase
