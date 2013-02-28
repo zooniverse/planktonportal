@@ -12,6 +12,9 @@ body
     width: 1024px
     z-index: 1
 
+    > *
+      padding: 75px 25px 50px
+
     h1
       color: $blue
       font: 24px $serif
@@ -32,7 +35,9 @@ body
     background: rgba(#000, 0.5)
 
   .links
+    box-sizing: border-box
     margin: 0 auto
+    padding: 0 15px
     width: 1024px
 
   a
@@ -40,9 +45,6 @@ body
     display: inline-block
     padding: 0 10px
     text-decoration: none
-
-    &:first-child
-      padding-left: 0
 
 .spine.stack > *
   display: none
