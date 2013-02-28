@@ -47,9 +47,8 @@ class PlanktonTool extends AxesTool
   render: ->
     super
 
-    @cross.attr stroke: if @mark.species? then 'green' else 'red'
-
-    for dot in @dots
-      dot.attr fill: if @mark.species? then 'green' else 'red'
+    stroke = if @mark.species? then 'green' else 'red'
+    @cross.attr {stroke}
+    @dots.attr {stroke}
 
 module.exports = PlanktonTool
