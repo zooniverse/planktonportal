@@ -55,14 +55,13 @@ class PlanktonControls extends ToolControls
     @tool.mark.set species: target.val()
 
 
-
 class PlanktonTool extends AxesTool
   @Controls: PlanktonControls
 
   render: ->
     super
 
-    stroke = if @mark.species? then 'green' else 'red'
+    stroke = if @mark.species? then '#c1ea00' else 'red'
     @cross.attr {stroke}
     @dots.attr {stroke}
 
