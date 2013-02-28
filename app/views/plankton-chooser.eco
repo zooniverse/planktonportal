@@ -1,3 +1,7 @@
+<div class="chosen">
+  <button name="toggle"></button>
+</div>
+
 <div class="categories">
   <button name="category" value="round">@</button>
   <button name="category" value="tail">@~</button>

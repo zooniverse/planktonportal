@@ -65,15 +65,18 @@ body > .stack > .classify
       &.selected
         display: block
 
+      button[name="toggle"]
+        display: none
+
       button[name="delete-mark"]
         background: $dark-gray
+        bottom: 100%
         font-family: Arial
         height: 1em
-        left: 100%
         line-height: 1em
         position: absolute
-        top: 1px
-        width: 1em
+        right: 3px
+        width: 2em
 
       .categories
         background: lighten($dark-gray, 10%)
@@ -117,6 +120,14 @@ body > .stack > .classify
 
           &.active
             color: $lime
+
+      &.closed
+        button[name="toggle"]
+          display: inline-block
+
+        .categories,
+        .category
+          display: none
 
   .swap
     height: 562px
