@@ -5,22 +5,22 @@
 <div class="project">
   <div class="status">
     <div class="icon">
-      <img src="//placehold.it/50x50.png" />
+      <i class="icon-depth"></i>
       <div class="dive counter">&mdash;</div>
     </div>
 
     <div class="icon">
-      <img src="//placehold.it/50x50.png" />
+      <i class="icon-speed"></i>
       <div class="speed counter">&mdash;</div>
     </div>
 
     <div class="icon">
-      <img src="//placehold.it/50x50.png" />
+      <i class="icon-image"></i>
       <div class="classifications counter">&mdash;</div>
     </div>
 
     <div class="icon">
-      <img src="//placehold.it/50x50.png" />
+      <i class="icon-active"></i>
       <div>Active</div>
     </div>
   </div>
