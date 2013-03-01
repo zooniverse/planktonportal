@@ -1,19 +1,13 @@
 .home-page-critter
   background: url("./images/octopus.jpg") no-repeat
-  background-position: 100% 200%
-  bottom: 0
-  opacity: 0
-  left: 0
-  position: fixed
+  height: 720px
+  position: absolute
   right: 0
-  top: 0
-  transition:
-    background-position 1s ease-out,
-    opacity 1s ease-in
+  top: -100px
+  width: 920px
 
-  .on-home-page &
-    opacity: 1
-    background-position: 90% 75%
+  .on-classify-page &
+    display: none
 
 body > .stack > .home
   .project

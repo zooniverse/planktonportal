@@ -17,7 +17,10 @@ class Home extends Page
   constructor: ->
     super
     @html template
+
     @critter.prependTo document.body
+
+    $(window).on 'scroll', (e) => @onScroll arguments...
 
     @diveCounter = new Counter el: @el.find '.dive.counter'
     @speedCounter = new Counter el: @el.find '.speed.counter'
@@ -25,6 +28,12 @@ class Home extends Page
 
     @footer = new Footer
     @el.append @footer.el
+
+  onScroll: ->
+    scrolled = scrollY / scrollMaxY
+    @critter.css
+      'margin-top': -100 * scrolled
+      opacity: (1 - scrolled) + 0.33
 
   activate: ->
     super
