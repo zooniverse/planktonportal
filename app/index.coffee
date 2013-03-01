@@ -25,7 +25,7 @@ stack = new Stack
 
   routes:
     '/': 'home'
-    '/about': 'about'
+    '/about/*': 'about'
     '/classify': 'classify'
     '/profile': 'profile'
 

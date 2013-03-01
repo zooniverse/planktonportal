@@ -10,6 +10,7 @@ Classification = require 'zooniverse/models/classification'
 
 class Classify extends Page
   className: 'classify'
+  content: template
 
   subjectTransition: 2000
 
@@ -32,7 +33,7 @@ class Classify extends Page
 
   constructor: ->
     super
-    @html template
+
     @el.addClass 'loading'
 
     @surface ?= new MarkingSurface

@@ -5,6 +5,7 @@ Footer = require 'zooniverse/controllers/footer'
 
 class Home extends Page
   className: 'home'
+  content: template
 
   diveCounter: null
   speedCounter: null
@@ -16,7 +17,6 @@ class Home extends Page
 
   constructor: ->
     super
-    @html template
 
     @critter.prependTo document.body
 
