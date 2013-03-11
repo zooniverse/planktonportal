@@ -1,7 +1,5 @@
 <% translate = require 't7e' %>
 
-<div class="home-page-critter"></div>
-
 <div class="project">
   <div class="status">
     <div class="icon">

@@ -1,0 +1,30 @@
+@keyframes enter-the-critter
+  0%
+    opacity: 0
+    margin-top: 200px
+
+  100%
+    opacity: 1
+    margin-top: 0
+
+@keyframes float-around
+  0%
+    transform: translateY(0) rotate(0)
+
+  50%
+    transform: translateY(50px) rotate(5deg)
+
+  100%
+    transform: translateY(0) rotate(10deg)
+
+.critter
+  display: none
+  position: absolute
+  right: 10%
+  top: -150px
+
+  .on-home-page &.home
+    animation:
+      5s enter-the-critter ease-out,
+      15s float-around ease-in-out infinite alternate
+    display: block
