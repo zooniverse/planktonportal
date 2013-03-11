@@ -20,12 +20,11 @@ class Page extends Controller
     console.log "Activating #{@className}"
     HTML.addClass @htmlClassName
 
-    # TODO: Activate the parent stack, if there is one.
+    @stack.stack?.manager?.change @stack
 
   deactivate: ->
     super
     console.log "Deactivating #{@className}"
     HTML.removeClass @htmlClassName
-
 
 module.exports = Page

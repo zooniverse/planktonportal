@@ -5,6 +5,12 @@ module.exports =
     classify: 'Classify'
     profile: 'Profile'
 
+    aboutPages:
+      learn: 'Learn'
+      explore: 'Explore'
+      search: 'Search'
+      teams: 'Teams'
+
   home:
     projectDescription: '''
       <h1>Trillions of plankton live in the oceans of the world.</h1>

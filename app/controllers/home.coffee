@@ -20,7 +20,7 @@ class Home extends Page
 
     @critter.prependTo document.body
 
-    $(window).on 'scroll', (e) => @onScroll arguments...
+    $(window).on 'scroll', => @onScroll arguments...
 
     @diveCounter = new Counter el: @el.find '.dive.counter'
     @speedCounter = new Counter el: @el.find '.speed.counter'
