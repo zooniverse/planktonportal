@@ -1,0 +1,12 @@
+<% translate = require 't7e' %>
+
+<nav>
+  <button name="page" value="recents"><%= translate 'profile.recents' %></button>
+  <button name="page" value="favorites"><%= translate 'profile.favorites' %></button>
+</nav>
+
+<form class="sign-in-form"></form>
+
+<div class="recents"></div>
+
+<div class="favorites"></div>

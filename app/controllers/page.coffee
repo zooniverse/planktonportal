@@ -17,14 +17,14 @@ class Page extends Controller
 
   activate: ->
     super
-    console.log "Activating #{@className}"
+    # console.log "Activating #{@className}"
     HTML.addClass @htmlClassName
 
     @stack.stack?.manager?.change @stack
 
   deactivate: ->
     super
-    console.log "Deactivating #{@className}"
+    # console.log "Deactivating #{@className}"
     HTML.removeClass @htmlClassName
 
 module.exports = Page

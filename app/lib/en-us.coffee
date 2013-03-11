@@ -21,15 +21,6 @@ module.exports =
     search: 'Search'
     startSearching: 'Start searching'
 
-  classify:
-    metersUnit: 'm'
-    numberCounted: 'Number counted'
-    finish: 'Finish'
-    discuss: 'Discuss'
-    favorite: 'Favorite'
-    next: 'Next'
-    return: 'Return home'
-
   about:
     scientists:
       heading: 'The science team'
@@ -56,3 +47,16 @@ module.exports =
         image: '//placehold.it/80x100.png'
         name: 'Arfon Smith'
         role: 'Technical lead'
+
+  classify:
+    metersUnit: 'm'
+    numberCounted: 'Number counted'
+    finish: 'Finish'
+    discuss: 'Discuss'
+    favorite: 'Favorite'
+    next: 'Next'
+    return: 'Return home'
+
+  profile:
+    recents: 'Recents'
+    favorites: 'Favorites'
