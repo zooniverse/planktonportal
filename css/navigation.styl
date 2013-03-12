@@ -1,26 +1,46 @@
 body > nav
-  background: rgba(#000, 0.25)
-  left: 0
+  background: #000 url("./images/critters/octopus.jpg") 100% 50% no-repeat
+  border-bottom: 1px solid rgba(#fff, 0.33)
+  font-size: 12px
+  font-weight: bold
+  height: 400px
   line-height: 40px
-  position: absolute
+  left: 0
+  max-height: 400px
+  min-height: 60px
+  position: relative
+  overflow: hidden
   top: 0
-  transition:
-    background 0.25s ease-in-out,
-    top 0.5s ease-in-out 0.25s
   width: 100%
   z-index: 2
 
-  &:hover
-    background: rgba(#000, 0.5)
+  &:after
+    border: 15px solid transparent
+    border-top-color: #000
+    content: ""
+    left: 50%
+    margin-left: -512px + 30px
+    position: absolute
+    top: 100%
 
   .links
     box-sizing: border-box
-    margin: 0 auto
+    margin: 60px auto 0
     padding: 0 15px
+    text-align: right
     width: 1024px
+
+  h1
+    display: inline
+    font-size: 24px
+    float: left
+    letter-spacing: 1px
+    margin: 0
+    text-transform: uppercase
 
   a
     color: inherit
     display: inline-block
-    padding: 0 10px
+    padding: 0 15px
     text-decoration: none
+    text-shadow: 0 1px 1px #000

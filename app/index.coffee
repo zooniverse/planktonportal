@@ -18,15 +18,15 @@ User = require 'zooniverse/models/user'
 navigation = new Navigation
 navigation.el.appendTo document.body
 
-critters =
-  home: 'octopus'
+# critters =
+#   home: 'octopus'
 
-for pageClass, imageBase of critters
-  critter = new Critter
-    className: pageClass
-    image: "./images/critters/#{imageBase}.jpg"
+# for pageClass, imageBase of critters
+#   critter = new Critter
+#     className: pageClass
+#     image: "./images/critters/#{imageBase}.jpg"
 
-  critter.el.appendTo document.body
+#   critter.el.appendTo document.body
 
 stack = new Stack
   controllers:

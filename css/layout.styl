@@ -1,5 +1,5 @@
 html
-  background: #000
+  background: $dark-gray
   color: #f3f3f3
   font: 14px $sans-serif
 
@@ -13,11 +13,16 @@ body
     z-index: 1
 
     > *
-      padding: 75px 25px 50px
+      padding: 50px 25px
 
     h1
-      color: $blue
+      color: $light-gray
       font: 24px $serif
+      text-shadow: 0 1px 1px #000
+
+a
+  color: $lime
+  text-decoration: none
 
 .spine.stack > *
   display: none
@@ -25,3 +30,39 @@ body
   nav,
   &.active
     display: block
+
+.zooniverse-top-bar
+  position: fixed
+
+.content-block
+  clearfix()
+
+  .detail
+    float: left
+    margin-right: 5%
+    text-align: center
+    width: 15%
+
+    i
+      color: $lime
+      font-size: 96px
+
+  .general
+    float: left
+    margin-right: 5%
+    width: 50%
+
+  .status
+    float: left
+    text-align: center
+    width: 25%
+
+    .icon
+      color: $light-gray
+      float: left
+      text-align: center
+      width: 25%
+
+      i
+        color: $lime
+        font-size: 50px

@@ -1,8 +1,11 @@
+<% translate = require 't7e' %>
+
 <div class="links">
-  <a href="#/">Home</a>
-  <a href="#/about">About</a>
-  <a href="#/classify">Classify</a>
-  <a href="#/profile">Profile</a>
-  <a href="#">Discuss</a>
-  <a href="#">Blog</a>
+  <h1><a href="#/">Plankton Project</a></h1>
+  <a href="#/science"><%= translate 'navigation.science' %></a>
+  <a href="#/classify"><%= translate 'navigation.classify' %></a>
+  <a href="#/profile"><%= translate 'navigation.profile' %></a>
+  <a href="#/team"><%= translate 'navigation.team' %></a>
+  <a href="#"><%= translate 'navigation.talk' %></a>
+  <a href="#"><%= translate 'navigation.blog' %></a>
 </div>

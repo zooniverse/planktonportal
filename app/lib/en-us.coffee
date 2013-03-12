@@ -1,9 +1,12 @@
 module.exports =
   navigation:
     home: 'Home'
-    about: 'About'
+    science: 'Science'
     classify: 'Classify'
     profile: 'Profile'
+    team: 'Team'
+    talk: 'Discuss'
+    blog: 'Blog'
 
     aboutPages:
       learn: 'Learn'
