@@ -4,10 +4,10 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("./fontcustom-9e902013329b9e44398b6435e97ac647.eot?#iefix") format("embedded-opentype"),
-       url("./fontcustom-9e902013329b9e44398b6435e97ac647.woff") format("woff"),
-       url("./fontcustom-9e902013329b9e44398b6435e97ac647.ttf") format("truetype"),
-       url("./fontcustom-9e902013329b9e44398b6435e97ac647.svg#fontcustom") format("svg");
+  src: url("./fontcustom-3d70a4a47d243fcfaba39b4de3c8dc51.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom-3d70a4a47d243fcfaba39b4de3c8dc51.woff") format("woff"),
+       url("./fontcustom-3d70a4a47d243fcfaba39b4de3c8dc51.ttf") format("truetype"),
+       url("./fontcustom-3d70a4a47d243fcfaba39b4de3c8dc51.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -69,13 +69,25 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
   Icon Classes
 */
 
-.icon-active:before { content: "\f100"; }
-.icon-cydipida:before { content: "\f101"; }
-.icon-depth:before { content: "\f102"; }
-.icon-hydromedusa:before { content: "\f103"; }
-.icon-image:before { content: "\f104"; }
-.icon-lobata:before { content: "\f105"; }
-.icon-narcomedusa:before { content: "\f106"; }
-.icon-platyctenida:before { content: "\f107"; }
-.icon-speed:before { content: "\f108"; }
-.icon-thalassocalyze:before { content: "\f109"; }
+.icon-appendicularian:before { content: "\f100"; }
+.icon-beroida:before { content: "\f101"; }
+.icon-cestida:before { content: "\f102"; }
+.icon-chaetognath:before { content: "\f103"; }
+.icon-cydipida:before { content: "\f104"; }
+.icon-depth:before { content: "\f105"; }
+.icon-diphyidae:before { content: "\f106"; }
+.icon-doliolid:before { content: "\f107"; }
+.icon-hydromedusa:before { content: "\f108"; }
+.icon-images:before { content: "\f109"; }
+.icon-lobata:before { content: "\f10a"; }
+.icon-lyliopsis:before { content: "\f10b"; }
+.icon-narcomedusa:before { content: "\f10c"; }
+.icon-physonect:before { content: "\f10d"; }
+.icon-platytecnida:before { content: "\f10e"; }
+.icon-prayidae:before { content: "\f10f"; }
+.icon-radiolarian:before { content: "\f110"; }
+.icon-shrimp:before { content: "\f111"; }
+.icon-speed:before { content: "\f112"; }
+.icon-sphaeronectidae:before { content: "\f113"; }
+.icon-status:before { content: "\f114"; }
+.icon-thalassocalyze:before { content: "\f115"; }
