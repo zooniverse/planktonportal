@@ -4,8 +4,7 @@
   "dependencies": {
     "coffee-script": "~1.4.0",
     "es5-shimify": "~0.0.1",
-    "haw": "~0.0.1",
-    "hem": "git://github.com/spine/hem.git#master",
+    "haw": "~0.0.3",
     "jqueryify": "~0.0.1",
     "json2ify": "~0.0.1",
     "marking-surface": "~0.0.14",

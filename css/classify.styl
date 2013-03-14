@@ -9,17 +9,23 @@
   transition: opacity 0.5s ease-in-out
 
 .on-classify-page
-  .zooniverse-top-bar
-    opacity: 0.5
+  background: #000
+
+  body > nav
+    opacity: 0.25
+    position: absolute
+    top: -110px
 
     &:hover
       opacity: 1
+      top: 0
 
-  .site-navigation
-    top: -30px
+  .zooniverse-top-bar
+    opacity: 0.5
+    transition: opacity 0.25s ease-in-out
 
     &:hover
-      top: 0
+      opacity: 1
 
 body > .stack > .classify
   background: gray

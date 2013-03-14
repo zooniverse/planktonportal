@@ -19,7 +19,9 @@ class Counter
 
     for i in [0...flips] then do (i) =>
       wait delay * i, =>
-        @el.innerHTML = Math.floor original + ((value - original) * (i / flips))
+        step = Math.floor original + ((value - original) * (i / flips))
+        step = '\u2014' if isNaN step
+        @el.innerHTML = step
 
     wait @duration + delay, =>
       @el.innerHTML = value

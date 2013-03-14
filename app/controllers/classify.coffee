@@ -70,7 +70,7 @@ class Classify extends Page
 
     # Once the swap container is showing, change the image of the marking surface behind it.
     @surface.image.attr src: subject.location.standard
-    @depthCounter.set subject.metadata.depth
+    @depthCounter.set subject.metadata.depth || '?'
 
     @swapDrawer.animate top: -562, @subjectTransition, =>
       @swapContainer.css display: 'none'
