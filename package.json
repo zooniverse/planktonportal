@@ -8,6 +8,7 @@
     "jqueryify": "~0.0.1",
     "json2ify": "~0.0.1",
     "marking-surface": "~0.0.14",
+    "publisssh": "~0.0.4",
     "spine": "~1.0.8",
     "t7e": "~0.0.1",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps"
