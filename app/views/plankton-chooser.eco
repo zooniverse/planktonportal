@@ -1,3 +1,5 @@
+<% translate = require 't7e' %>
+
 <button name="toggle"></button>
 
 <div class="categories">
