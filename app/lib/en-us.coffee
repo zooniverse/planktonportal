@@ -1,4 +1,24 @@
 module.exports =
+  species:
+    appendicularian: 'Appendicularian'
+    beroida: 'Beroida'
+    cestida: 'Cestida'
+    chaetognath: 'Chaetognath'
+    cydipida: 'Cydipida'
+    diphyidae: 'Diphyidae'
+    doliolid: 'Doliolid'
+    hydromedusa: 'Hydromedusa'
+    lobata: 'Lobata'
+    lyliopsis: 'Lyliopsis'
+    narcomedusa: 'Narcomedusa'
+    physonect: 'Physonect'
+    platytecnida: 'Platytecnida'
+    prayidae: 'Prayidae'
+    radiolarian: 'Radiolarian'
+    shrimp: 'Shrimp'
+    sphaeronectidae: 'Sphaeronectidae'
+    thalassocalyze: 'Thalassocalyze'
+
   navigation:
     home: 'Home'
     science: 'Science'

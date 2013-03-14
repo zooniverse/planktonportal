@@ -1,36 +1,106 @@
 <button name="toggle"></button>
 
 <div class="categories">
-  <button name="category" value="round">@</button>
-  <button name="category" value="tail">@~</button>
-  <button name="category" value="tentacled">@==</button>
-  <button name="category" value="worm">==</button>
+  <button name="category" value="round">
+    <i class="icon-thalassocalyze"></i>
+  </button>
+  <button name="category" value="tail">
+    <i class="icon-prayidae"></i>
+  </button>
+  <button name="category" value="tentacled">
+    <i class="icon-hydromedusa"></i>
+  </button>
+  <button name="category" value="worm">
+    <i class="icon-radiolarian"></i>
+  </button>
+  <button name="category" value="shrimp">
+    <i class="icon-shrimp"></i>
+  </button>
 </div>
 
 <div class="round category">
-  <button name="species" value="round-0">@</button>
-  <button name="species" value="round-1">#</button>
-  <button name="species" value="round-2">*</button>
-  <button name="species" value="round-3">()</button>
+  <button name="species" value="lobata">
+    <i class="icon-lobata"></i>
+    <span class="label"><%= translate 'species.lobata' %></span>
+  </button>
+  <button name="species" value="thalassocalyze">
+    <i class="icon-thalassocalyze"></i>
+    <span class="label"><%= translate 'species.thalassocalyze' %></span>
+  </button>
+  <button name="species" value="appendicularian">
+    <i class="icon-appendicularian"></i>
+    <span class="label"><%= translate 'species.appendicularian' %></span>
+  </button>
+  <button name="species" value="doliolid">
+    <i class="icon-doliolid"></i>
+    <span class="label"><%= translate 'species.doliolid' %></span>
+  </button>
 </div>
 
 <div class="tail category">
-  <button name="species" value="tail-0">@~</button>
-  <button name="species" value="tail-1">#~</button>
-  <button name="species" value="tail-2">*~</button>
-  <button name="species" value="tail-3">()~</button>
+  <button name="species" value="prayidae">
+    <i class="icon-prayidae"></i>
+    <span class="label"><%= translate 'species.prayidae' %></span>
+  </button>
+  <button name="species" value="lyliopsis">
+    <i class="icon-lyliopsis"></i>
+    <span class="label"><%= translate 'species.lyliopsis' %></span>
+  </button>
+  <button name="species" value="diphyidae">
+    <i class="icon-diphyidae"></i>
+    <span class="label"><%= translate 'species.diphyidae' %></span>
+  </button>
+  <button name="species" value="sphaeronectidae">
+    <i class="icon-sphaeronectidae"></i>
+    <span class="label"><%= translate 'species.sphaeronectidae' %></span>
+  </button>
+  <button name="species" value="physonect">
+    <i class="icon-physonect"></i>
+    <span class="label"><%= translate 'species.physonect' %></span>
+  </button>
 </div>
 
 <div class="tentacled category">
-  <button name="species" value="tentacled-0">@==</button>
-  <button name="species" value="tentacled-1">#==</button>
-  <button name="species" value="tentacled-2">*==</button>
-  <button name="species" value="tentacled-3">()==</button>
+  <button name="species" value="platytecnida">
+    <i class="icon-platytecnida"></i>
+    <span class="label"><%= translate 'species.platytecnida' %></span>
+  </button>
+  <button name="species" value="cydipida">
+    <i class="icon-cydipida"></i>
+    <span class="label"><%= translate 'species.cydipida' %></span>
+  </button>
+  <button name="species" value="hydromedusa">
+    <i class="icon-hydromedusa"></i>
+    <span class="label"><%= translate 'species.hydromedusa' %></span>
+  </button>
+  <button name="species" value="narcomedusa">
+    <i class="icon-narcomedusa"></i>
+    <span class="label"><%= translate 'species.narcomedusa' %></span>
+  </button>
 </div>
 
 <div class="worm category">
-  <button name="species" value="worm-0">==</button>
-  <button name="species" value="worm-1">ooo</button>
-  <button name="species" value="worm-2">}][{</button>
-  <button name="species" value="worm-3">:==</button>
+  <button name="species" value="beroida">
+    <i class="icon-beroida"></i>
+    <span class="label"><%= translate 'species.beroida' %></span>
+  </button>
+  <button name="species" value="cestida">
+    <i class="icon-cestida"></i>
+    <span class="label"><%= translate 'species.cestida' %></span>
+  </button>
+  <button name="species" value="chaetognath">
+    <i class="icon-chaetognath"></i>
+    <span class="label"><%= translate 'species.chaetognath' %></span>
+  </button>
+  <button name="species" value="radiolarian">
+    <i class="icon-radiolarian"></i>
+    <span class="label"><%= translate 'species.radiolarian' %></span>
+  </button>
+</div>
+
+<div class="shrimp category">
+  <button name="species" value="shrimp">
+    <i class="icon-shrimp"></i>
+    <span class="label"><%= translate 'species.shrimp' %></span>
+  </button>
 </div>

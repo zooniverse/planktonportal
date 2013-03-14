@@ -45,7 +45,7 @@ class PlanktonControls extends ToolControls
     @toggleButton.html target.html()
     @toggleButton.attr title: target.attr 'title'
 
-    @el.addClass 'closed'
+    setTimeout (=> @el.addClass 'closed'), 250
 
     return if target.hasClass 'active'
 

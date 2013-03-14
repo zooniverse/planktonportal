@@ -70,22 +70,25 @@ body > .stack > .classify
 
       button[name="toggle"]
         background: rgba(#000, 0.67)
-        border: 2px solid rgba($lime, 0.5)
+        border: 3px solid $lime
         border-radius: 50%
-        box-shadow: 0 1px 1px #000
         color: $lime
         display: none
+        font-size: 20px
         height: 30px
         left: -20px
+        line-height: 1
         margin: -15px 0 0 -15px
         position: absolute
         text-shadow: 0 1px 1px #000
         top: 20px
-        transition: border-color 0.25s ease-in-out
         width: 30px
 
+        .label
+          display: none
+
         &:hover
-          border-color: rgba($lime, 1)
+          background: #000
 
       &.to-the-left button[name="toggle"]
         left: 20px
@@ -100,48 +103,76 @@ body > .stack > .classify
         right: 3px
         width: 2em
 
+      .categories,
+      .category
+        button
+          height: 75px
+          line-height: 1
+          position: relative
+          width: 75px
+
+          i
+            font-size: 60px
+            text-shadow: 0 1px 0 rgba(#fff, 0.25)
+
+          .label
+            background: rgba($lime, 0.9)
+            border-radius: 3px
+            box-shadow: 0 1px 3px rgba(#000, 0.5)
+            color: #000
+            display: none
+            font-size: 10px
+            font-weight bold
+            padding: 3px 10px
+            position: absolute
+            left: 50%
+            top: 95%
+            transform: translateX(-50%)
+
+            &:before
+              border: 5px solid transparent
+              border-bottom-color: rgba($lime, 0.9)
+              bottom: 100%
+              content: ""
+              left: 50%
+              margin-left: -5px
+              position: absolute
+
+          &:hover .label
+            display: block
+
+          &.active i
+            color: $lime
+            text-shadow: 0 1px 0 #000
+
       .categories
         background: lighten($dark-gray, 10%)
         box-shadow:
           0 1px 0 rgba(#fff, 0.33) inset,
           0 1px 3px rgba(#000, 0.25)
 
-        button
-          height: 50px
-          width: 50px
-          position: relative
+        button.active
+          &:before,
+          &:after
+            border: 7px solid transparent
+            border-top-color: lighten($dark-gray, 10%)
+            content: ""
+            height: 0
+            left: 50%
+            margin-left: -7px
+            position: absolute
+            top: 100%
+            width: 0
 
-          &.active
-            color: $lime
-
-            &:before,
-            &:after
-              border: 7px solid transparent
-              border-top-color: lighten($dark-gray, 10%)
-              content: ""
-              height: 0
-              left: 50%
-              margin-left: -7px
-              position: absolute
-              top: 100%
-              width: 0
-
-            &:before
-              border-top-color: rgba(#000, 0.25)
-              margin-top: 1px
+          &:before
+            border-top-color: rgba(#000, 0.25)
+            margin-top: 1px
 
       .category
         display: none
 
         &.active
           display: block
-
-        button
-          height: 50px
-          width: 50px
-
-          &.active
-            color: $lime
 
       &.closed
         &:after,
