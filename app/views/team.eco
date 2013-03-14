@@ -1,6 +1,6 @@
 <% translate = require 't7e' %>
 
-<%- translate h1: "about.scientists.heading" %>
+<%- translate h1: "about.organizations.heading" %>
 
 <% organizations = [] %>
 
@@ -13,6 +13,8 @@
     </div>
   <% end %>
 </div>
+
+<%- translate h1: "about.scientists.heading" %>
 
 <% scientists = [] %>
 
