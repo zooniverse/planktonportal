@@ -6,9 +6,10 @@ Critter = require './controllers/critter'
 
 {Stack} = require 'spine/lib/manager'
 Home = require './controllers/home'
-About = require './controllers/about'
+Science = require './controllers/science'
 Classify = require './controllers/classify'
 Profile = require './controllers/profile'
+Team = require './controllers/team'
 Route = require 'spine/lib/route'
 
 Api = require 'zooniverse/lib/api'
@@ -31,15 +32,17 @@ navigation.el.appendTo document.body
 stack = new Stack
   controllers:
     home: Home
-    about: About
+    science: Science
     classify: Classify
     profile: Profile
+    team: Team
 
   routes:
     '/': 'home'
-    '/about/*': 'about'
+    '/science/*': 'science'
     '/classify': 'classify'
     '/profile': 'profile'
+    '/team': 'team'
 
   default: 'home'
 

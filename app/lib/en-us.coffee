@@ -25,6 +25,9 @@ module.exports =
     startSearching: 'Start searching'
 
   about:
+    organizations:
+      heading: 'Organizations'
+
     scientists:
       heading: 'The science team'
 
