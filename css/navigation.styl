@@ -1,10 +1,12 @@
 body > nav
-  background: #000 url("./images/critters/octopus.jpg") 100% 50% no-repeat
+  background:
+    linear-gradient(rgba(#000, 0.75), rgba(#000, 0)),
+    #000 url("./images/critters/octopus.jpg") 100% 50% no-repeat
   border-bottom: 1px solid rgba(#fff, 0.33)
   font-size: 12px
   font-weight: bold
   height: 120px
-  line-height: 40px
+  line-height: 1.5em
   left: 0
   max-height: 400px
   min-height: 60px
@@ -12,8 +14,9 @@ body > nav
   overflow: hidden
   top: 0
   transition:
+    height 0.25s ease-in-out,
     opacity 0.5s ease-in-out,
-    top 0.25s ease-in-out 0.1s
+    top 0.25s ease-in-out
   width: 100%
   z-index: 2
 
@@ -27,6 +30,7 @@ body > nav
     top: 100%
 
   .links
+    border-radius: 5px
     box-sizing: border-box
     margin: 60px auto 0
     padding: 0 15px
@@ -42,8 +46,13 @@ body > nav
     text-transform: uppercase
 
   a
+    border-radius: 5px
     color: inherit
     display: inline-block
-    padding: 0 15px
+    margin: 5px 0
+    padding: 5px 15px
     text-decoration: none
     text-shadow: 0 1px 2px #000
+
+    &:hover
+      background: rgba(#000, 0.33)
