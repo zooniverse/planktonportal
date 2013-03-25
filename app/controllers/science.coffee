@@ -6,21 +6,21 @@ class Science extends Stack
   className: "science #{Stack::className}"
 
   controllers:
-    learn: class extends Page then content: 'LEARN'
+    about: class extends Page then content: translate {div: 'science.about'}
     explore: class extends Page then content: 'EXPLORE'
     search: class extends Page then content: 'SEARCH'
 
   navLinks:
-    learn: translate {span: 'navigation.aboutPages.learn'}
+    about: translate {span: 'navigation.aboutPages.about'}
     explore: translate {span: 'navigation.aboutPages.explore'}
     search: translate {span: 'navigation.aboutPages.search'}
 
   routes:
-    '/about/learn': 'learn'
-    '/about/explore': 'explore'
-    '/about/search': 'search'
+    '/science/about': 'about'
+    '/science/explore': 'explore'
+    '/science/search': 'search'
 
-  default: 'learn'
+  default: 'about'
 
   constructor: ->
     super
