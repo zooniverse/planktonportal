@@ -43,7 +43,7 @@ body > .stack > .classify
     z-index: 1
 
     .marking-tool-controls
-      background: rgba($dark-gray, 0.8)
+      background: rgba($dark-gray, 0.9)
       border-radius: 3px
       box-shadow: 0 3px 3px rgba(#000, 0.25)
       margin: -20px 0 0 20px
@@ -111,7 +111,7 @@ body > .stack > .classify
           width: 75px
 
           i
-            font-size: 60px
+            font-size: 55px
             text-shadow: 0 1px 0 rgba(#fff, 0.25)
 
           .label
@@ -150,22 +150,34 @@ body > .stack > .classify
           0 1px 0 rgba(#fff, 0.33) inset,
           0 1px 3px rgba(#000, 0.25)
 
-        button.active
+        button
           &:before,
           &:after
             border: 7px solid transparent
-            border-top-color: lighten($dark-gray, 10%)
+            border-top-color: lighten($dark-gray, 20%)
+            bottom: -5px
             content: ""
             height: 0
             left: 50%
             margin-left: -7px
             position: absolute
-            top: 100%
             width: 0
+            transition:
+              border-color 0.25s ease-out,
+              bottom 0.5s ease-out
 
           &:before
-            border-top-color: rgba(#000, 0.25)
             margin-top: 1px
+
+          &.active
+            &:before,
+            &:after
+              border-top-color: lighten($dark-gray, 10%)
+              bottom: -14px
+
+            &:before
+              border-top-color: rgba(#000, 0.125)
+              bottom: -15px
 
       .category
         display: none
