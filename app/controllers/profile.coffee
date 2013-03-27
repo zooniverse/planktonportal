@@ -1,5 +1,6 @@
 Page = require './page'
 template = require '../views/profile'
+itemTemplate = require '../views/profile-item'
 LoginForm = require 'zooniverse/controllers/login-form'
 Paginator = require 'zooniverse/controllers/paginator'
 Recent = require 'zooniverse/models/recent'
@@ -10,7 +11,10 @@ class Profile extends Page
   className: 'profile'
 
   events:
-    'click button[name="page"]': 'onClickPage'
+    'click button[name="turn-page"]': 'onClickPage'
+
+  elements:
+    'button[name="turn-page"]': 'pageTurners'
 
   constructor: ->
     super
@@ -22,12 +26,12 @@ class Profile extends Page
 
     @recentsList = new Paginator
       type: Recent
-      # itemTemplate: itemTemplate
+      itemTemplate: itemTemplate
       el: @el.find '.recents'
 
     @favoritesList = new Paginator
       type: Favorite
-      # itemTemplate: itemTemplate
+      itemTemplate: itemTemplate
       el: @el.find '.favorites'
 
     @el.find('nav button').first().click()
@@ -39,7 +43,11 @@ class Profile extends Page
     @el.toggleClass 'signed-in', user?
 
   onClickPage: (e) ->
-    targetType = $(e.target).val()
+    @pageTurners.removeClass 'active'
+    target = $(e.target)
+    target.addClass 'active'
+    targetType = target.val()
+    console.log to: targetType
     @recentsList.el.add(@favoritesList.el).removeClass 'active'
     @["#{targetType}List"].el.addClass 'active'
 
