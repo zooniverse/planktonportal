@@ -23,8 +23,8 @@ class PlanktonControls extends ToolControls
   onClickToggle: =>
     @el.removeClass 'closed'
 
-  onClickCategory: ({target}) =>
-    target = $(target)
+  onClickCategory: ({currentTarget}) =>
+    target = $(currentTarget)
     return if target.hasClass 'active'
 
     category = target.val()
@@ -39,8 +39,8 @@ class PlanktonControls extends ToolControls
 
     @tool.mark.set species: null
 
-  onClickSpecies: ({target}) =>
-    target = $(target)
+  onClickSpecies: ({currentTarget}) =>
+    target = $(currentTarget)
 
     @toggleButton.html target.html()
     @toggleButton.attr title: target.attr 'title'

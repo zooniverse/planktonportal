@@ -47,7 +47,6 @@ class Profile extends Page
     target = $(e.target)
     target.addClass 'active'
     targetType = target.val()
-    console.log to: targetType
     @recentsList.el.add(@favoritesList.el).removeClass 'active'
     @["#{targetType}List"].el.addClass 'active'
 
