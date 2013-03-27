@@ -25,14 +25,15 @@ class PlanktonControls extends ToolControls
 
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
-    return if target.hasClass 'active'
 
-    category = target.val()
+    category = if target.hasClass 'active'
+      'NO_CATEGORY'
+    else
+      target.val()
 
-    @categoryButtons.removeClass 'active'
-    target.addClass 'active'
+    @categories.add(@categoryButtons).removeClass 'active'
 
-    @categories.removeClass 'active'
+    @categoryButtons.filter("[value='#{category}']").addClass 'active'
     @categories.filter(".#{category}").addClass 'active'
 
     @speciesButtons.removeClass 'active'
