@@ -1,24 +1,10 @@
 require './lib/setup'
 
 Navigation = require './controllers/navigation'
-
-Critter = require './controllers/critter'
-
-{Stack} = require 'spine/lib/manager'
-Home = require './controllers/home'
-Science = require './controllers/science'
-Classify = require './controllers/classify'
-Profile = require './controllers/profile'
-Team = require './controllers/team'
-Route = require 'spine/lib/route'
-
-Api = require 'zooniverse/lib/api'
-TopBar = require 'zooniverse/controllers/top-bar'
-User = require 'zooniverse/models/user'
-
 navigation = new Navigation
 navigation.el.appendTo document.body
 
+# Critter = require './controllers/critter'
 # critters =
 #   home: 'octopus'
 
@@ -28,6 +14,13 @@ navigation.el.appendTo document.body
 #     image: "./images/critters/#{imageBase}.jpg"
 
 #   critter.el.appendTo document.body
+
+{Stack} = require 'spine/lib/manager'
+Home = require './controllers/home'
+Science = require './controllers/science'
+Classify = require './controllers/classify'
+Profile = require './controllers/profile'
+Team = require './controllers/team'
 
 stack = new Stack
   controllers:
@@ -48,13 +41,20 @@ stack = new Stack
 
 stack.el.appendTo document.body
 
+Route = require 'spine/lib/route'
 Route.setup()
 
-api = new Api project: 'planet_four', host: 'BAD_HOST', loadTimeout: 0
+activeHashLinks = require 'zooniverse/util/active-hash-links'
+activeHashLinks.init()
 
+Api = require 'zooniverse/lib/api'
+api = new Api project: 'planet_four' #, host: 'BAD_HOST', loadTimeout: 0
+
+TopBar = require 'zooniverse/controllers/top-bar'
 topBar = new TopBar
 topBar.el.appendTo document.body
 
+User = require 'zooniverse/models/user'
 User.fetch()
 
 window.app = {stack, api, topBar}
