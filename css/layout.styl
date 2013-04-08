@@ -28,9 +28,29 @@ a
 .spine.stack > *
   display: none
 
-  nav,
   &.active
     display: block
+
+  > nav
+    display: block
+
+    a,
+    button
+      border-radius: 2em
+      color: inherit
+      display: inline-block
+      font-size: 12px
+      font-weight: bold
+      padding: 3px 20px
+      margin-left: -20px
+      margin-right: 20px
+
+      &.active
+        background: rgba(#000, 0.25)
+        box-shadow:
+          0 1px 1px rgba(#000, 0.5) inset,
+          0 1px 0 rgba(#fff, 0.1)
+        text-shadow: 0 1px 0 #000
 
 .zooniverse-top-bar
   position: fixed

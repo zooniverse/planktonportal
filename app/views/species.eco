@@ -1,0 +1,53 @@
+<% translate = require 't7e' %>
+
+<%- translate p: 'science.species.content' %>
+
+<% groups = ['jellies', 'pelagicTunicates', 'other'] %>
+<% species = {} %>
+<% species.jellies = ['scyphozoa', 'hydromedusae', 'solmaris', 'siphonophores', 'ctenophores'] %>
+<% species.pelagicTunicates = ['salpsAndDoliolids', 'larvaceans'] %>
+<% species.other = ['copepods', 'shrimp', 'chaetognaths', 'pteropods', 'polychaetes', 'radiolarian'] %>
+
+<% for group in groups: %>
+  <%- translate h2: "science.species.#{group}.title" %>
+  <%- translate  p: "science.species.#{group}.content" %>
+
+  <% for member in species[group]: %>
+    <div class="content-block">
+      <div class="detail">
+        <i class="icon-<%- 'depth' %>"></i>
+      </div>
+
+      <div class="general">
+        <%- translate h3: "science.species.#{group}.#{member}.title" %>
+        <%- translate  p: "science.species.#{group}.#{member}.content" %>
+      </div>
+
+      <div class="status">
+        <div class="icon">
+          <i class="icon-depth"></i>
+          <div class="dive counter">489</div>
+        </div>
+
+        <div class="icon">
+          <i class="icon-speed"></i>
+          <div class="speed counter">611</div>
+        </div>
+
+        <div class="icon">
+          <i class="icon-images"></i>
+          <div class="classifications counter">965</div>
+        </div>
+
+        <div class="icon">
+          <i class="icon-status"></i>
+          <div>Active</div>
+        </div>
+
+        <div class="start">
+          <a href="#/classify"><span data-t7e-key="home.startSearching">Start searching</span></a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
