@@ -19,7 +19,8 @@ navigation.el.appendTo document.body
 Home = require './controllers/home'
 Science = require './controllers/science'
 Classify = require './controllers/classify'
-Profile = require './controllers/profile'
+{Controller} = require 'spine'
+Profile = require 'zooniverse/controllers/profile'
 Team = require './controllers/team'
 
 stack = new Stack
@@ -27,7 +28,7 @@ stack = new Stack
     home: Home
     science: Science
     classify: Classify
-    profile: Profile
+    profile: class extends Controller then constructor: -> super; @html new Profile
     team: Team
 
   routes:
