@@ -11,7 +11,7 @@
 
 <div class="status">
   <div class="depth">
-    <img src="//placehold.it/50.png" />
+    <i class="icon-depth"></i>
     <div class="depth"><span class="counter">&mdash;</span><%- translate span: 'classify.metersUnit' %></div>
   </div>
 
