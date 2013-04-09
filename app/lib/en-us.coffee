@@ -227,7 +227,7 @@ module.exports =
     discuss: 'Discuss'
     favorite: 'Favorite'
     next: 'Next'
-    return: 'Return home'
+    return: 'Home'
 
   profile:
     recents: 'Recents'

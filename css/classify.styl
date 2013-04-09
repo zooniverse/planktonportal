@@ -9,7 +9,7 @@
   transition: opacity 0.5s ease-in-out
 
 .on-classify-page
-  background: #000
+  background: darken($dark-gray, 50%)
 
   body > nav
     opacity: 0.25
@@ -28,12 +28,32 @@
       opacity: 1
 
 body > .stack > .classify
-  background: gray
-  height: 672px
+  height: 100%
   left: 0
   padding: 0
-  position: absolute
+  position: fixed
   top: 0
+  width: 100%
+
+  > .classify-container
+    display: table
+    height: 100%
+    width: 100%
+
+    > .classify-centerer
+      display: table-cell
+      height: 100%
+      text-align: center
+      width: 100%
+      vertical-align: middle
+
+.classification-interface
+  background: gray
+  box-shadow: 0 5px 10px rgba(#000, 0.5)
+  display: inline-block
+  height: 672px
+  padding: 0
+  position: relative
   width: 1024px
 
   .subject
@@ -222,6 +242,8 @@ body > .stack > .classify
     background: $dark-gray
     bottom: 0
     display: table
+    font-weight: bold
+    font-size: 12px
     height: 110px
     left: 0
     position: absolute
@@ -231,26 +253,33 @@ body > .stack > .classify
       border: 1px solid transparent
       border-color: rgba(#fff, 0.15) rgba(#000, 0.25) rgba(#000, 0.25) rgba(#fff, 0.15)
       display: table-cell
+      padding: 0 40px
       text-align: center
       vertical-align: middle
 
-    .depth,
-    .return
-      width: 110px
+      &.depth,
+      &.return
+        padding: 0 20px
+        width: 70px
+
+      &.creatures
+        width: 120px
+
+      &.continue
+        text-align: right
 
     .icon-depth
       font-size: 60px
       line-height: 1
 
-    .creatures
-      width: 220px
+    .home-arrow
+      font-size: 20px
 
     .creatures
       .display
         background: #000
         border-radius: 3px
         box-shadow: 0 1px 0 rgba(#fff, 0.25)
-        margin: 0 30px
         overflow: hidden
         padding: 5px 7px
 
@@ -305,6 +334,9 @@ body > .stack > .classify
 
       .next
         display: none
+
+      button
+        margin-left: 10px
 
   .loader
     animation: 3s classifier-loading linear infinite

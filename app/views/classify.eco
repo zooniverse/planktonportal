@@ -1,41 +1,49 @@
 <% translate = require 't7e' %>
 
-<div class="subject"></div>
+<div class="classify-container">
+  <div class="classify-centerer">
+    <div class="classification-interface">
+      <div class="subject"></div>
 
-<div class="swap">
-  <div class="drawer">
-    <img class="old" />
-    <img class="new" />
+      <div class="swap">
+        <div class="drawer">
+          <img class="old" />
+          <img class="new" />
+        </div>
+      </div>
+
+      <div class="status">
+        <div class="depth">
+          <i class="icon-depth"></i>
+          <div class="depth"><span class="counter">&mdash;</span><%- translate span: 'classify.metersUnit' %></div>
+        </div>
+
+        <div class="creatures">
+          <div class="display">
+            <div class="label"><%- translate span: 'classify.numberCounted' %></div>
+            <div class="number"><span class="counter">0</span></div>
+          </div>
+        </div>
+
+        <div class="continue">
+          <div class="finish">
+            <button name="finish"><%- translate span: 'classify.finish' %></button>
+          </div>
+          <div class="next">
+            <a href="#/TALK" class="talk"><%- translate span: 'classify.discuss' %></a>
+            <button name="favorite"><%- translate span: 'classify.favorite' %></button>
+            <button name="next"><%- translate span: 'classify.next' %></button>
+          </div>
+        </div>
+
+        <div class="return">
+          <a href="#/">
+            <span class="home-arrow">&crarr;</span>
+            <%- translate div: 'classify.return' %></a>
+        </div>
+      </div>
+
+      <div class="loader"></div>
+    </div>
   </div>
 </div>
-
-<div class="status">
-  <div class="depth">
-    <i class="icon-depth"></i>
-    <div class="depth"><span class="counter">&mdash;</span><%- translate span: 'classify.metersUnit' %></div>
-  </div>
-
-  <div class="creatures">
-    <div class="display">
-      <div class="label"><%- translate span: 'classify.numberCounted' %></div>
-      <div class="number"><span class="counter">0</span></div>
-    </div>
-  </div>
-
-  <div class="continue">
-    <div class="finish">
-      <button name="finish"><%- translate span: 'classify.finish' %></button>
-    </div>
-    <div class="next">
-      <a href="#/TALK" class="talk"><%- translate span: 'classify.discuss' %></a>
-      <button name="favorite"><%- translate span: 'classify.favorite' %></button>
-      <button name="next"><%- translate span: 'classify.next' %></button>
-    </div>
-  </div>
-
-  <div class="return">
-    <a href="#/"><%- translate span: 'classify.return' %></a>
-  </div>
-</div>
-
-<div class="loader"></div>
