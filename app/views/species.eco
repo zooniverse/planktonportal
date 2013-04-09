@@ -15,7 +15,7 @@
   <% for member in species[group]: %>
     <div class="content-block">
       <div class="detail">
-        <i class="icon-<%- 'depth' %>"></i>
+        <i class="icon-<%- member %>"></i>
       </div>
 
       <div class="general">

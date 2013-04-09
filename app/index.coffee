@@ -4,17 +4,6 @@ Navigation = require './controllers/navigation'
 navigation = new Navigation
 navigation.el.appendTo document.body
 
-# Critter = require './controllers/critter'
-# critters =
-#   home: 'octopus'
-
-# for pageClass, imageBase of critters
-#   critter = new Critter
-#     className: pageClass
-#     image: "./images/critters/#{imageBase}.jpg"
-
-#   critter.el.appendTo document.body
-
 {Stack} = require 'spine/lib/manager'
 Home = require './controllers/home'
 Science = require './controllers/science'

@@ -21,6 +21,11 @@ body
       font: 24px $serif
       text-shadow: 0 1px 1px #000
 
+hr
+  border: 0
+  border-bottom: 1px solid rgba(#fff, 0.1)
+  border-top: 1px solid rgba(#000, 0.5)
+
 a
   color: $lime
   text-decoration: none
@@ -28,12 +33,12 @@ a
 .spine.stack > *
   display: none
 
-  &.active
+  &.active,
+  > nav,
+  > hr
     display: block
 
   > nav
-    display: block
-
     a,
     button
       border-radius: 2em
@@ -41,9 +46,7 @@ a
       display: inline-block
       font-size: 12px
       font-weight: bold
-      padding: 3px 20px
-      margin-left: -20px
-      margin-right: 20px
+      padding: 3px 15px
 
       &.active
         background: rgba(#000, 0.25)
