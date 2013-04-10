@@ -22,10 +22,10 @@ class Classify extends Page
     'click button[name="next"]': 'onClickNext'
 
   elements:
-    '.swap': 'swapContainer'
-    '.swap .drawer': 'swapDrawer'
-    '.swap .old': 'oldSwapImage'
-    '.swap .new': 'newSwapImage'
+    '.swap-container': 'swapContainer'
+    '.swap-container .drawer': 'swapDrawer'
+    '.swap-container .old': 'oldSwapImage'
+    '.swap-container .new': 'newSwapImage'
     '.depth .counter': 'depthCounterEl'
     '.creatures .number .counter': 'creatureCounter'
     'button[name="finish"]': 'finishButton'
@@ -38,7 +38,7 @@ class Classify extends Page
 
     @surface ?= new MarkingSurface
       tool: PlanktonTool
-      container: @el.find '.subject'
+      container: @el.find '.subject-container'
       width: 1024
       height: 562
 
@@ -84,7 +84,7 @@ class Classify extends Page
       @classification = new Classification {subject}
 
   onNoMoreSubjects: =>
-    alert 'It appears we\'ve run out of data!'
+    console?.log 'It appears we\'ve run out of data!'
     @el.removeClass 'loading'
 
   onChangeMarkCount: =>

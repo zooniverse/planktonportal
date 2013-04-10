@@ -3,9 +3,9 @@
 <div class="classify-container">
   <div class="classify-centerer">
     <div class="classification-interface">
-      <div class="subject"></div>
+      <div class="subject-container"></div>
 
-      <div class="swap">
+      <div class="swap-container">
         <div class="drawer">
           <img class="old" />
           <img class="new" />
@@ -30,9 +30,11 @@
             <button name="finish"><%- translate span: 'classify.finish' %></button>
           </div>
           <div class="next">
-            <a href="#/TALK" class="talk"><%- translate span: 'classify.discuss' %></a>
             <button name="favorite"><%- translate span: 'classify.favorite' %></button>
+            <a href="#/TALK" class="talk"><%- translate span: 'classify.discuss' %></a>
             <button name="next"><%- translate span: 'classify.next' %></button>
+            <a href="#/FACEBOOK" class="facebook"><%- translate span: 'classify.share' %></a>
+            <a href="#/TWITTER" class="twitter"><%- translate span: 'classify.tweet' %></a>
           </div>
         </div>
 

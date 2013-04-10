@@ -18,11 +18,10 @@
 
     &:hover
       opacity: 1
-      top: 0
+      top: 5px // There's a border.
 
   .zooniverse-top-bar
     opacity: 0.5
-    transition: opacity 0.25s ease-in-out
 
     &:hover
       opacity: 1
@@ -35,32 +34,35 @@ body > .stack > .classify
   top: 0
   width: 100%
 
-  > .classify-container
+  .classify-container
     display: table
     height: 100%
     width: 100%
 
-    > .classify-centerer
-      display: table-cell
-      height: 100%
-      text-align: center
-      width: 100%
-      vertical-align: middle
+  .classify-centerer
+    display: table-cell
+    height: 100%
+    text-align: center
+    width: 100%
+    vertical-align: middle
 
-.classification-interface
-  background: gray
-  box-shadow: 0 5px 10px rgba(#000, 0.5)
-  display: inline-block
-  height: 672px
-  padding: 0
-  position: relative
-  width: 1024px
+  .classification-interface
+    background: gray
+    box-shadow: 0 5px 10px rgba(#000, 0.5)
+    display: inline-block
+    height: 672px
+    padding: 0
+    position: relative
+    width: 1024px
 
-  .subject
+  .subject-container
     height: 562px
     position: relative
     width: 1024px
     z-index: 1
+
+    &:focus
+      outline: none
 
     svg
       display: block
@@ -218,7 +220,7 @@ body > .stack > .classify
         button[name="toggle"]
           display: inline-block
 
-  .swap
+  .swap-container
     height: 562px
     left: 0
     overflow: hidden
@@ -241,6 +243,7 @@ body > .stack > .classify
   .status
     background: $dark-gray
     bottom: 0
+    box-shadow: 0 -10px 15px -10px #000
     display: table
     font-weight: bold
     font-size: 12px
@@ -248,6 +251,11 @@ body > .stack > .classify
     left: 0
     position: absolute
     width: 100%
+    z-index: 1
+
+    a
+      color: inherit
+      text-decoration: none
 
     > div
       border: 1px solid transparent
@@ -265,68 +273,28 @@ body > .stack > .classify
       &.creatures
         width: 120px
 
-      &.continue
-        text-align: right
-
-    .icon-depth
+    .depth .icon-depth
       font-size: 60px
       line-height: 1
 
-    .home-arrow
-      font-size: 20px
-
-    .creatures
-      .display
-        background: #000
-        border-radius: 3px
-        box-shadow: 0 1px 0 rgba(#fff, 0.25)
-        overflow: hidden
-        padding: 5px 7px
-
-        .label
-          color: $dark-gray
-          float: left
-          font-size: 10px
-          line-height: 12px
-          text-transform: uppercase
-          width: 0 // This is just to get the lines to wrap.
-
-        .number
-          float: right
-          font-size: 18px
-
-    a
-      color: inherit
-      text-decoration: none
-
-    a.talk,
-    button
-      background: rgba(#fff, 0.15)
+    .creatures .display
+      background: #000
       border-radius: 3px
-      box-shadow:
-        0 1px 0 rgba(#fff, 0.25) inset,
-        0 0 0 rgba(#fff, 0) inset,
-        0 5px 10px rgba(#000, 0.25)
-      color: #000
-      display: inline-block
-      font-size: 12px
-      font-weight: bold
-      padding: 5px 20px
-      text-decoration: none
-      text-shadow: 0 1px 0 rgba(#fff,0.15)
-      transition: box-shadow 0.1s ease-in-out
+      box-shadow: 0 1px 0 rgba(#fff, 0.25)
+      overflow: hidden
+      padding: 5px 7px
 
-      &:hover
-        box-shadow:
-          0 1px 0 rgba(#fff, 0.25) inset,
-          0 100px 0 rgba(#fff, 0.1) inset,
-          0 5px 10px rgba(#000, 0.25)
+      .label
+        color: $dark-gray
+        float: left
+        font-size: 10px
+        line-height: 12px
+        text-transform: uppercase
+        width: 0 // This is just to get the lines to wrap.
 
-      &:active
-        box-shadow:
-          0 1px 0 rgba(#fff, 0.15) inset,
-          0 0 0 rgba(#fff, 0) inset,
-          0 1px 3px rgba(#000, 0.33)
+      .number
+        float: right
+        font-size: 18px
 
     .continue
       .finish
@@ -335,8 +303,42 @@ body > .stack > .classify
       .next
         display: none
 
+      a,
       button
+        background: rgba(#fff, 0.25)
+        border-radius: 3px
+        box-shadow:
+          0 1px 0 rgba(#fff, 0.25) inset,
+          0 0 0 rgba(#fff, 0) inset,
+          0 5px 10px rgba(#000, 0.25)
+        color: #000
+        display: inline-block
+        font-size: 12px
+        font-weight: bold
         margin-left: 10px
+        padding: 5px 20px
+        text-decoration: none
+        text-shadow: 0 1px 0 rgba(#fff,0.15)
+
+        &[name="next"]
+          font-size: 16px
+          position: relative
+          top: 3px
+
+        &:hover
+          box-shadow:
+            0 1px 0 rgba(#fff, 0.25) inset,
+            0 100px 0 rgba(#fff, 0.1) inset,
+            0 5px 10px rgba(#000, 0.25)
+
+        &:active
+          box-shadow:
+            0 1px 0 rgba(#fff, 0.15) inset,
+            0 0 0 rgba(#fff, 0) inset,
+            0 1px 3px rgba(#000, 0.33)
+
+    .return .home-arrow
+      font-size: 20px
 
   .loader
     animation: 3s classifier-loading linear infinite
@@ -350,12 +352,12 @@ body > .stack > .classify
     top: 0
     z-index: 2
 
-  &.loading .loader
-    display: block
-
   &.finished .status .continue
     .finish
       display: none
 
     .next
       display: block
+
+  &.loading .loader
+    display: block
