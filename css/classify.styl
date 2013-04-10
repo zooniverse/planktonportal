@@ -71,20 +71,20 @@ body > .stack > .classify
       background: rgba($dark-gray, 0.9)
       border-radius: 3px
       box-shadow: 0 3px 3px rgba(#000, 0.25)
-      margin: -20px 0 0 20px
+      margin: -40px 0 0 20px
 
       &:after
-        border: 10px solid transparent
+        border: 8px solid transparent
         border-right-color: lighten($dark-gray, 10%)
         content: ""
         height: 0
         position: absolute
         right: 100%
-        top: 10px
+        top: 30px
         width: 0
 
       &.to-the-left
-        margin: -20px 20px 0 0
+        margin: -40px 20px 0 0
 
         &:after
           border-left-color: lighten($dark-gray, 10%)
@@ -105,7 +105,7 @@ body > .stack > .classify
         margin: -15px 0 0 -15px
         position: absolute
         text-shadow: 0 1px 1px #000
-        top: 20px
+        top: 40px
         width: 30px
 
         .label
@@ -117,15 +117,28 @@ body > .stack > .classify
       &.to-the-left button[name="toggle"]
         left: 20px
 
+      $delete-mark-size = 22px
+
       button[name="delete-mark"]
         background: $dark-gray
+        border-radius: 0 $delete-mark-size $delete-mark-size 0
         bottom: 100%
         font-family: Arial
-        height: 1em
-        line-height: 1em
+        font-size: $delete-mark-size * 0.8
+        height: $delete-mark-size
+        line-height: $delete-mark-size
         position: absolute
-        right: 3px
-        width: 2em
+        left: 100%
+        top: 30px
+        width: $delete-mark-size
+
+        &:hover
+          color: red
+
+      &.to-the-left button[name="delete-mark"]
+        border-radius: $delete-mark-size 0 0 $delete-mark-size
+        left: auto
+        right: 100%
 
       .categories,
       .category
@@ -178,31 +191,29 @@ body > .stack > .classify
         button
           &:before,
           &:after
-            border: 7px solid transparent
-            border-top-color: lighten($dark-gray, 20%)
-            bottom: -5px
+            border: 5px solid transparent
+            border-top-color: lighten($dark-gray, 10%)
+            bottom: 0px
             content: ""
             height: 0
             left: 50%
-            margin-left: -7px
+            margin-left: -5px
             position: absolute
             width: 0
-            transition:
-              border-color 0.25s ease-out,
-              bottom 0.5s ease-out
 
           &:before
-            margin-top: 1px
+            border-top-color: rgba(#000, 0.25)
+            bottom: -2px
 
           &.active
             &:before,
             &:after
-              border-top-color: lighten($dark-gray, 10%)
-              bottom: -14px
+              border-width: 8px
+              bottom: -16px
+              margin-left: -8px
 
             &:before
-              border-top-color: rgba(#000, 0.125)
-              bottom: -15px
+              bottom: -17px
 
       .category
         display: none
