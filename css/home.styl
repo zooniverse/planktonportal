@@ -1,25 +1,14 @@
-body
-  .on-home-page & > nav
-    height: 400px
+body > .stack > .home
+  .about-pages
+    overflow: hidden
 
-  & > .stack > .home
-    .status .start
-      clear: left
-      padding-top: 20px // Padding because I guess floats collapse margins.
+    .item
+      float: left
+      width: 33%
 
       a
-        @extend #flat-button
-
-    .about-pages
-      overflow: hidden
-
-      .item
-        float: left
-        width: 33%
-
-        a
-          background: #000
-          display: block
-          margin: 10px
-          padding: 20px 0
-          text-align: center
+        background: #000
+        display: block
+        margin: 10px
+        padding: 40px 0
+        text-align: center
