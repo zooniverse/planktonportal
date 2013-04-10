@@ -9,44 +9,30 @@
 <% species.other = ['copepods', 'shrimp', 'chaetognaths', 'pteropods', 'polychaetes', 'radiolarian'] %>
 
 <% for group in groups: %>
+  <hr />
+
   <%- translate h2: "science.species.#{group}.title" %>
-  <%- translate  p: "science.species.#{group}.content" %>
+  <%- translate p: "science.species.#{group}.content" %>
 
   <% for member in species[group]: %>
-    <div class="content-block">
-      <div class="detail">
-        <i class="icon-<%- member %>"></i>
+    <hr />
+
+    <div class="species-description">
+      <div class="illustration">
+        <i class="icon-<%- 'speed' %>"></i>
+        <div class="identified">
+          <div class="count">&mdash;</div>
+          <div class="label">Identified</div>
+        </div>
       </div>
 
-      <div class="general">
-        <%- translate h3: "science.species.#{group}.#{member}.title" %>
-        <%- translate  p: "science.species.#{group}.#{member}.content" %>
+      <div class="description">
+        <%- translate h1: "science.species.#{group}.#{member}.title" %>
+        <%- translate p: "science.species.#{group}.#{member}.content" %>
       </div>
 
-      <div class="status">
-        <div class="icon">
-          <i class="icon-depth"></i>
-          <div class="dive counter">489</div>
-        </div>
-
-        <div class="icon">
-          <i class="icon-speed"></i>
-          <div class="speed counter">611</div>
-        </div>
-
-        <div class="icon">
-          <i class="icon-images"></i>
-          <div class="classifications counter">965</div>
-        </div>
-
-        <div class="icon">
-          <i class="icon-status"></i>
-          <div>Active</div>
-        </div>
-
-        <div class="start">
-          <a href="#/classify"><span data-t7e-key="home.startSearching">Start searching</span></a>
-        </div>
+      <div class="photos">
+        <img src="//placehold.it/300x200.png" />
       </div>
     </div>
   <% end %>
