@@ -1,42 +1,5 @@
 <% translate = require 't7e' %>
 
-<div class="content-block">
-  <div class="detail">
-    <i class="icon-hydromedusa"></i>
-    <div class="counter">&mdash;</div>
-  </div>
-
-  <div class="general">
-    <%- translate div: 'home.projectDescription' %>
-  </div>
-
-  <div class="status">
-    <div class="icon">
-      <i class="icon-depth"></i>
-      <div class="dive counter">&mdash;</div>
-    </div>
-
-    <div class="icon">
-      <i class="icon-speed"></i>
-      <div class="speed counter">&mdash;</div>
-    </div>
-
-    <div class="icon">
-      <i class="icon-images"></i>
-      <div class="classifications counter">&mdash;</div>
-    </div>
-
-    <div class="icon">
-      <i class="icon-status"></i>
-      <div>Active</div>
-    </div>
-
-    <div class="start">
-      <a href="#/classify"><%- translate span: 'home.startSearching' %></a>
-    </div>
-  </div>
-</div>
-
 <div class="about-pages">
   <div class="item">
     <a href="#/about/learn"><%- translate span: 'home.learn' %></a>
@@ -49,4 +12,7 @@
   <div class="item">
     <a href="#/about/search"><%- translate span: 'home.search' %></a>
   </div>
+
 </div>
+
+<hr />
