@@ -1,5 +1,40 @@
 <% translate = require 't7e' %>
 
+<div class="about-the-project">
+  <div class="description">
+    <%- translate div: 'home.projectDescription' %>
+  </div>
+
+  <div class="action">
+    <p class="so-sue-me">&nbsp;</p>
+    <%- translate div: 'home.ready' %>
+    <a href="#/classify" class="classify-link"><%- translate span: 'home.start' %>
+      <span class="icons">
+        <i class="icon-appendicularian"></i>
+        <i class="icon-beroida"></i>
+        <i class="icon-cestida"></i>
+        <i class="icon-chaetognath"></i>
+        <i class="icon-cydipida"></i>
+        <i class="icon-diphyidae"></i>
+        <i class="icon-doliolid"></i>
+        <i class="icon-hydromedusa"></i>
+        <!--<i class="icon-lobata"></i>
+        <i class="icon-lyliopsis"></i>
+        <i class="icon-narcomedusa"></i>
+        <i class="icon-physonect"></i>
+        <i class="icon-platytecnida"></i>
+        <i class="icon-prayidae"></i>
+        <i class="icon-radiolarian"></i>
+        <i class="icon-shrimp"></i>
+        <i class="icon-sphaeronectidae"></i>
+        <i class="icon-thalassocalyze"></i>-->
+      </span>
+    </a>
+  </div>
+</div>
+
+<hr />
+
 <div class="about-pages">
   <div class="item">
     <a href="#/about/learn"><%- translate span: 'home.learn' %></a>
@@ -12,7 +47,6 @@
   <div class="item">
     <a href="#/about/search"><%- translate span: 'home.search' %></a>
   </div>
-
 </div>
 
 <hr />

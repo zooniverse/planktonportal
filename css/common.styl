@@ -27,13 +27,23 @@ button
     opacity: 0.33
     pointer-events: none
 
-#flat-button
-  background: $green
+#standard-button
+  background: $lime
+  border-bottom: 3px solid darken($lime, 25%)
   border-radius: 5px
-  box-shadow: 0 0 0 3px rgba($green, 0.5)
-  color: #fff
+  box-shadow: 0 3px 5px rgba(#000, 0.5)
+  color: #000
   display: inline-block
   font-weight: bold
-  padding: 5px 20px
+  padding: 0.125em 1.25em
+  position: relative
   text-decoration: none
-  text-shadow: 0 1px 1px rgba(#000, 0.5)
+  text-shadow: 0 1px 0 rgba(#fff, 0.75)
+
+  &:hover
+    background lighten($lime, 15%)
+
+  &:active
+    border-bottom-width: 2px
+    box-shadow: 0 0 3px rgba(#000, 0.75)
+    top: 1px

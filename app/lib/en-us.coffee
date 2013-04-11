@@ -30,13 +30,16 @@ module.exports =
 
   home:
     projectDescription: '''
-      <h1>Trillions of plankton live in the oceans of the world.</h1>
-      <p>Some plankton have never been seen, so you could be the first to one to to find them.</p>
+      <p>Planktonic organisms are critically important food source to the all ocean.</p>
+      <h1>No plankton: no life in the ocean.</h1>
+      <p>Plankton also play an important role in the global carbon cycle capturing the sun’s energy and the atmosphere’s CO2 at the surface of the ocean and releasing it to other organisms and other areas of the ocean.</p>
+      <p>Understanding where and when plankton occur at different depths in the ocean allows scientists to get a global understanding of the function and health of the ocean from small to global scales.</p>
     '''
+    ready: '<h1>Ready to help?</h1>'
+    start: 'Start searching'
     learn: 'Learn'
     explore: 'Explore'
     search: 'Search'
-    startSearching: 'Start searching'
 
   science:
     plankton:

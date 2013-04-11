@@ -1,14 +1,91 @@
+@keyframes home-icons-rotation
+  from
+    transform: rotate(0)
+
+  to
+    transform: rotate(360deg)
+
+@keyframes home-icon-level
+  from
+    transform: rotate(0)
+
+  to
+    transform: rotate(-360deg)
+
 body > .stack > .home
+  .about-the-project
+    clearfix()
+
+  .description
+    float: left
+    width: 66.67%
+
+  .action
+    float: left
+    text-align: center
+    width: 33.33%
+
+    a
+      @extends #standard-button
+      font-size: 24px
+
+      .icons
+        $icon-size = 60px
+
+        color: #fff
+        height: $icon-size
+        left: 50%
+        margin: ($icon-size / -2) 0 0 ($icon-size / -2)
+        opacity: 0
+        position: absolute
+        text-shadow: 0 1px 1px #000
+        top: 50%
+        transition: opacity 0.25s ease-out
+        width: $icon-size
+
+        i
+          font-size: $icon-size
+          height: $icon-size
+          left: 0
+          position: absolute
+          top: 0
+          transition:
+            left 0.25s ease-out,
+            top 0.25s ease-out
+          width: $icon-size
+
+      // &:hover .icons
+      //   animation: home-icons-rotation 10s linear infinite
+      //   opacity: 1
+
+      //   i
+      //     animation: home-icon-level 10s linear infinite
+
+      //     $icon-distance = 100px
+      //     $icon-indices = (1 2 3 4 5 6 7 8)
+
+      //     for i in $icon-indices
+      //       &:nth-child({i})
+      //         $done = (2 * i) / length($icon-indices)
+      //         left: sin($done * 3.14159) * $icon-distance
+      //         top: -1 * cos($done * 3.14159) * $icon-distance
+
   .about-pages
-    overflow: hidden
+    $about-page-link-spacing = 10px
+
+    clearfix()
+    margin: 30px ($about-page-link-spacing  * -1)
 
     .item
       float: left
-      width: 33%
+      width: 33.33%
 
       a
-        background: #000
+        background: rgba(#000, 0.5)
+        border-radius: 3px
+        border-top: 1px solid #000
+        box-shadow: 0 1px 0 rgba(#fff, 0.125)
         display: block
-        margin: 10px
-        padding: 40px 0
+        padding: 50px 0
+        margin: 0 $about-page-link-spacing
         text-align: center
