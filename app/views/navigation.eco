@@ -3,7 +3,7 @@
 <div class="links">
   <h1><a href="#/">Plankton Project</a></h1>
   <a href="#/"><%= translate 'navigation.home' %></a>
-  <a href="#/science/plankton"><%= translate 'navigation.science' %></a>
+  <a href="#/science/about"><%= translate 'navigation.science' %></a>
   <a href="#/classify"><%= translate 'navigation.classify' %></a>
   <a href="#/profile"><%= translate 'navigation.profile' %></a>
   <a href="#/team"><%= translate 'navigation.team' %></a>

@@ -37,12 +37,12 @@ module.exports =
     '''
     ready: '<h1>Ready to help?</h1>'
     start: 'Start searching'
-    learn: 'Learn'
-    explore: 'Explore'
-    search: 'Search'
+    about: 'About'
+    images: 'Images'
+    species: 'Species'
 
   science:
-    plankton:
+    about:
       title: 'About plankton'
       content: [
         '<h1>A few words about plankton</h1>'

@@ -7,24 +7,24 @@ class Science extends Stack
   className: "science #{Stack::className}"
 
   controllers:
-    plankton: class extends Page then content: translate {div: 'science.plankton.content'}
+    about: class extends Page then content: translate {div: 'science.about.content'}
     whyStudy: class extends Page then content: translate {div: 'science.whyStudy.content'}
     images: class extends Page then content: translate {div: 'science.images.content'}
     species: class extends Page then content: speciesTemplate
 
   navLinks:
-    plankton: translate {span: 'science.plankton.title'}
+    about: translate {span: 'science.about.title'}
     whyStudy: translate {span: 'science.whyStudy.title'}
     images: translate {span: 'science.images.title'}
     species: translate {span: 'science.species.title'}
 
   routes:
-    '/science/plankton': 'plankton'
+    '/science/about': 'about'
     '/science/whyStudy': 'whyStudy'
     '/science/images': 'images'
     '/science/species': 'species'
 
-  default: 'plankton'
+  default: 'about'
 
   constructor: ->
     super

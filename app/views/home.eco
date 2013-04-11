@@ -37,15 +37,15 @@
 
 <div class="about-pages">
   <div class="item">
-    <a href="#/about/learn"><%- translate span: 'home.learn' %></a>
+    <a href="#/science/about"><%- translate span: 'home.about' %></a>
   </div>
 
   <div class="item">
-    <a href="#/about/explore"><%- translate span: 'home.explore' %></a>
+    <a href="#/science/images"><%- translate span: 'home.images' %></a>
   </div>
 
   <div class="item">
-    <a href="#/about/search"><%- translate span: 'home.search' %></a>
+    <a href="#/science/species"><%- translate span: 'home.species' %></a>
   </div>
 </div>
 
