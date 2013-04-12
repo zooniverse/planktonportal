@@ -2,8 +2,8 @@ body > .stack > .team
   overflow: hidden
 
   .team
+    clearfix()
     clear: left
-    overflow: hidden
 
   .member
     box-sizing: border-box
@@ -33,5 +33,29 @@ body > .stack > .team
       font-weight: 600
       text-transform: uppercase
 
-    .description
+    .description-popup
+      background: $lime
+      border-radius: 5px
+      color: #00
+      display: none
       font-size: 10px
+      font-weight: bold
+      left: -10%
+      position: absolute
+      top: 100%
+      width: 120%
+      z-index: 1
+
+      &:before
+        border: 10px solid transparent
+        border-bottom-color: $lime
+        content: ""
+        left: 25px
+        position: absolute
+        bottom: 100%
+
+      > .description
+        margin: 10px
+
+    &:hover .description-popup
+      display: block

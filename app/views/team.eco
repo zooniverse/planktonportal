@@ -23,8 +23,11 @@
     <div class="science member">
       <img src="<%- translate "about.scientists.#{scientist}.image" %>" />
       <%- translate div: "about.scientists.#{scientist}.name", class: 'name' %>
-      <!--<%- translate div: "about.scientists.#{scientist}.role", class: 'role' %>-->
-      <%- translate p: "about.scientists.#{scientist}.description", class: 'description' %>
+      <%- translate div: "about.scientists.#{scientist}.role", class: 'role' %>
+
+      <div class="description-popup">
+        <%- translate p: "about.scientists.#{scientist}.description", class: 'description' %>
+      </div>
     </div>
   <% end %>
 </div>
@@ -39,7 +42,10 @@
       <img src="<%- translate "about.developers.#{developer}.image" %>" />
       <%- translate div: "about.developers.#{developer}.name", class: 'name' %>
       <%- translate div: "about.developers.#{developer}.role", class: 'role' %>
-      <!--<%- translate p: "about.scientists.#{developer}.description", class: 'description' %>-->
+
+      <div class="description-popup">
+        <%- translate p: "about.scientists.#{developer}.description", class: 'description' %>
+      </div>
     </div>
   <% end %>
 </div>
