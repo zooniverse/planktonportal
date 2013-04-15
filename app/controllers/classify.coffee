@@ -51,6 +51,15 @@ class Classify extends Page
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
 
+  activate: ->
+    super
+
+    # Force rerender of the status bar
+    status = @el.find('.status')
+    status.css display: 'none'
+    setTimeout ->
+      status.css display: ''
+
   onUserChange: =>
     Subject.next()
 
@@ -72,7 +81,7 @@ class Classify extends Page
     @surface.image.attr src: subject.location.standard
     @depthCounter.set subject.metadata.depth || '?'
 
-    @swapDrawer.animate top: -562, @subjectTransition, =>
+    @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
       @swapContainer.css display: 'none'
 
       # This will slide out next time.
