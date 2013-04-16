@@ -4,7 +4,7 @@
   "dependencies": {
     "coffee-script": "~1.4.0",
     "es5-shimify": "~0.0.1",
-    "haw": "~0.0.5",
+    "haw": "~0.0.6",
     "jqueryify": "~1.9.1",
     "json2ify": "~0.0.3",
     "marking-surface": "~0.0.15",
@@ -14,6 +14,7 @@
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps"
   },
   "scripts": {
-    "start": "haw serve"
+    "start": "haw serve",
+    "deploy": "haw build && publisssh && rm -rf ./build"
   }
 }
