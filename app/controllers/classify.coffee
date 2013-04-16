@@ -40,7 +40,7 @@ class Classify extends Page
       tool: PlanktonTool
       container: @el.find '.subject-container'
       width: 1024
-      height: 562
+      height: 560
 
     @surface.on 'create-mark destroy-mark', @onChangeMarkCount
 

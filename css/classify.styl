@@ -55,7 +55,7 @@ body > .stack > .classify
     width: 1024px
 
   .subject-container
-    height: 562px
+    height: 560px
     position: relative
     width: 1024px
     z-index: 1
@@ -186,6 +186,7 @@ body > .stack > .classify
         box-shadow:
           0 1px 0 rgba(#fff, 0.33) inset,
           0 1px 3px rgba(#000, 0.25)
+        display: none
 
         button
           &:before,
@@ -214,6 +215,9 @@ body > .stack > .classify
             &:before
               bottom: -17px
 
+      &.complete .categories
+        display: block
+
       .category
         display: none
 
@@ -231,7 +235,7 @@ body > .stack > .classify
           display: inline-block
 
   .swap-container
-    height: 562px
+    height: 560px
     left: 0
     overflow: hidden
     position: absolute
@@ -247,7 +251,7 @@ body > .stack > .classify
       img
         background: gray
         display: block
-        height: 562px
+        height: 560px
         width: 1024px
 
   .status
@@ -257,7 +261,7 @@ body > .stack > .classify
     display: table
     font-weight: bold
     font-size: 12px
-    height: 110px
+    height: 112px
     left: 0
     position: absolute
     width: 100%
