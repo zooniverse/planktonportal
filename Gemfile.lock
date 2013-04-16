@@ -1,0 +1,16 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    fontcustom (0.1.4)
+      json
+      listen
+      thor
+    json (1.7.7)
+    listen (0.7.3)
+    thor (0.18.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  fontcustom
