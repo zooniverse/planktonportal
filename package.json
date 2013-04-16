@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "haw serve",
+    "build-font": "fontcustom compile --debug --font_path ./ --output ./public/fonts/fontcustom ./icons",
     "deploy": "haw build && publisssh && rm -rf ./build"
   }
 }
