@@ -38,7 +38,7 @@ activeHashLinks = require 'zooniverse/util/active-hash-links'
 activeHashLinks.init()
 
 Api = require 'zooniverse/lib/api'
-api = new Api project: 'planet_four' #, host: 'BAD_HOST', loadTimeout: 0
+api = new Api project: 'plankton'
 
 TopBar = require 'zooniverse/controllers/top-bar'
 topBar = new TopBar
