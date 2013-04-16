@@ -7,6 +7,7 @@ PlanktonTool = require './plankton-tool'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 Classification = require 'zooniverse/models/classification'
+Favorite = require 'zooniverse/models/favorite'
 
 class Classify extends Page
   className: 'classify'
@@ -30,6 +31,9 @@ class Classify extends Page
     '.creatures .number .counter': 'creatureCounter'
     'button[name="finish"]': 'finishButton'
     'button[name="next"]': 'nextButton'
+    'a.talk': 'talkLink'
+    'a.facebook': 'facebookLink'
+    'a.twitter': 'twitterLink'
 
   constructor: ->
     super
@@ -79,7 +83,7 @@ class Classify extends Page
 
     # Once the swap container is showing, change the image of the marking surface behind it.
     @surface.image.attr src: subject.location.standard
-    @depthCounter.set subject.metadata.depth || '?'
+    @depthCounter.set subject.metadata.depth.toFixed(2) || '?'
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
       @swapContainer.css display: 'none'
@@ -91,6 +95,10 @@ class Classify extends Page
       @surface.enable()
 
       @classification = new Classification {subject}
+
+    @talkLink.attr href: subject.talkHref()
+    @facebookLink.attr href: subject.facebookHref()
+    @twitterLink.attr href: subject.twitterHref()
 
   onNoMoreSubjects: =>
     console?.log 'It appears we\'ve run out of data!'
@@ -106,8 +114,11 @@ class Classify extends Page
 
     @surface.selection?.deselect()
 
-    # TODO: Add marks to classification
+    @classification.annotate mark for mark in @surface.marks
+
     # TODO: Send classification
+    # @classification.send()
+    console.log 'Classifying', JSON.stringify @classification
 
     @el.addClass 'finished'
 
