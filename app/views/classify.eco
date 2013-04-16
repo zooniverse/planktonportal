@@ -13,9 +13,14 @@
       </div>
 
       <div class="status">
-        <div class="depth">
+        <div class="depth display">
           <i class="icon-depth"></i>
           <div class="depth"><span class="counter">&mdash;</span><%- translate span: 'classify.metersUnit' %></div>
+        </div>
+
+        <div class="temp display">
+          <i class="icon-status"></i>
+          <div class="temp"><span class="counter">&mdash;</span><%- translate span: 'classify.degreesUnit' %></div>
         </div>
 
         <div class="creatures">

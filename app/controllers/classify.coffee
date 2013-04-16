@@ -28,6 +28,7 @@ class Classify extends Page
     '.swap-container .old': 'oldSwapImage'
     '.swap-container .new': 'newSwapImage'
     '.depth .counter': 'depthCounterEl'
+    '.temp .counter': 'tempCounterEl'
     '.creatures .number .counter': 'creatureCounter'
     'button[name="finish"]': 'finishButton'
     'button[name="next"]': 'nextButton'
@@ -49,11 +50,15 @@ class Classify extends Page
     @surface.on 'create-mark destroy-mark', @onChangeMarkCount
 
     @depthCounter = new Counter el: @depthCounterEl
+    @tempCounter = new Counter el: @tempCounterEl
 
     User.on 'change', @onUserChange
+
     Subject.on 'get-next', @onGettingNextSubject
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
+
+    Favorite.on 'from-classify'
 
   activate: ->
     super
@@ -84,6 +89,7 @@ class Classify extends Page
     # Once the swap container is showing, change the image of the marking surface behind it.
     @surface.image.attr src: subject.location.standard
     @depthCounter.set subject.metadata.depth.toFixed(2) || '?'
+    @tempCounter.set subject.metadata.temp.toFixed(2) || '?'
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
       @swapContainer.css display: 'none'
@@ -123,6 +129,17 @@ class Classify extends Page
     @el.addClass 'finished'
 
   onClickFavorite: ->
+    @favorite = new Favorite subjects: [@classification.subject]
+    @favorite.on 'delete', @onFavoriteDelete
+
+    favorite.send()
+    @el.addClass 'is-favorite'
+
+  onClickUnfavorite: ->
+    @favorite?.delete()
+
+  onFavoriteDelete: =>
+    @el.removeClass 'is-favorite'
 
   onClickNext: ->
     @nextButton.attr disabled: true

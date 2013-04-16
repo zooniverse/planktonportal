@@ -225,6 +225,7 @@ module.exports =
 
   classify:
     metersUnit: 'm'
+    degreesUnit: '°F'
     numberCounted: 'Number counted'
     finish: 'Finish'
     discuss: 'Discuss'
