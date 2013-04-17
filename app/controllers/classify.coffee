@@ -3,6 +3,7 @@ template = require '../views/classify'
 translate = require 't7e'
 MarkingSurface = require 'marking-surface'
 Counter = require './counter'
+moment = require 'moment'
 PlanktonTool = require './plankton-tool'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
@@ -29,6 +30,7 @@ class Classify extends Page
     '.swap-container .new': 'newSwapImage'
     '.depth .counter': 'depthCounterEl'
     '.temp .counter': 'tempCounterEl'
+    '.time .counter': 'timeEl'
     '.creatures .number .counter': 'creatureCounter'
     'button[name="finish"]': 'finishButton'
     'button[name="next"]': 'nextButton'
@@ -90,6 +92,7 @@ class Classify extends Page
     @surface.image.attr src: subject.location.standard
     @depthCounter.set subject.metadata.depth.toFixed(2) || '?'
     @tempCounter.set subject.metadata.temp.toFixed(2) || '?'
+    @timeEl.html moment(subject.metadata.timestamp).format 'YYYY/M/D'
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
       @swapContainer.css display: 'none'

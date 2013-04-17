@@ -13,6 +13,11 @@
       </div>
 
       <div class="status">
+        <div class="time display">
+          <i class="icon-status"></i>
+          <div class="time"><span class="counter">&mdash;</span></div>
+        </div>
+
         <div class="depth display">
           <i class="icon-depth"></i>
           <div class="depth"><span class="counter">&mdash;</span><%- translate span: 'classify.metersUnit' %></div>

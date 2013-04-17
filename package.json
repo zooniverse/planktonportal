@@ -8,6 +8,7 @@
     "jqueryify": "~1.9.1",
     "json2ify": "~0.0.3",
     "marking-surface": "~0.0.15",
+    "moment": "~2.0.0",
     "publisssh": "~0.0.5",
     "spine": "~1.0.9",
     "t7e": "~0.0.5",
