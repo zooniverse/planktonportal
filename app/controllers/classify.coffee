@@ -110,7 +110,7 @@ class Classify extends Page
     @twitterLink.attr href: subject.twitterHref()
 
   onNoMoreSubjects: =>
-    console?.log 'It appears we\'ve run out of data!'
+    alert 'It appears we\'ve run out of data!'
     @el.removeClass 'loading'
 
   onChangeMarkCount: =>
@@ -127,7 +127,7 @@ class Classify extends Page
 
     # TODO: Send classification
     # @classification.send()
-    console.log 'Classifying', JSON.stringify @classification
+    console?.log 'Classifying', JSON.stringify @classification
 
     @el.addClass 'finished'
 
