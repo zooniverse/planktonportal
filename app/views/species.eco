@@ -1,6 +1,6 @@
 <% translate = require 't7e' %>
 
-<%- translate p: 'science.species.content' %>
+<%- translate div: 'science.species.content' %>
 
 <% groups = ['jellies', 'pelagicTunicates', 'other'] %>
 <% species = {} %>

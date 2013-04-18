@@ -66,5 +66,4 @@ class PlanktonTool extends AxesTool
     @cross.attr {stroke}
     @dots.attr {stroke}
 
-
 module.exports = PlanktonTool

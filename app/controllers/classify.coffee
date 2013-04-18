@@ -90,8 +90,8 @@ class Classify extends Page
 
     # Once the swap container is showing, change the image of the marking surface behind it.
     @surface.image.attr src: subject.location.standard
-    @depthCounter.set subject.metadata.depth.toFixed(2) || '?'
-    @tempCounter.set subject.metadata.temp.toFixed(2) || '?'
+    @depthCounter.set subject.metadata.depth?.toFixed(2) || '?'
+    @tempCounter.set subject.metadata.temp?.toFixed(2) || '?'
     @timeEl.html moment(subject.metadata.timestamp).format 'YYYY/M/D'
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
