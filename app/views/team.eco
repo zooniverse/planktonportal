@@ -1,50 +1,50 @@
 <% translate = require 't7e' %>
 
 <div class="organizations team">
-  <%- translate h1: "about.organizations.heading" %>
+  <%- translate 'h1', "about.organizations.heading" %>
 
   <% organizations = [] %>
 
   <% for organization in organizations: %>
     <div class="member organization">
       <img src="<%- translate "about.organizations.#{organization}.image" %>" />
-      <%- translate div: "about.organizations.#{organization}.name", class: 'name' %>
-      <%- translate div: "about.organizations.#{organization}.role", class: 'role' %>
+      <%- translate 'div', "about.organizations.#{organization}.name", class: 'name' %>
+      <%- translate 'div', "about.organizations.#{organization}.role", class: 'role' %>
     </div>
   <% end %>
 </div>
 
 <div class="science team">
-  <%- translate h1: "about.scientists.heading" %>
+  <%- translate 'h1', "about.scientists.heading" %>
 
   <% scientists = ['cowen', 'guigand', 'greer', 'luo'] %>
 
   <% for scientist in scientists: %>
     <div class="science member">
       <img src="<%- translate "about.scientists.#{scientist}.image" %>" />
-      <%- translate div: "about.scientists.#{scientist}.name", class: 'name' %>
-      <%- translate div: "about.scientists.#{scientist}.role", class: 'role' %>
+      <%- translate 'div', "about.scientists.#{scientist}.name", class: 'name' %>
+      <%- translate 'div', "about.scientists.#{scientist}.role", class: 'role' %>
 
       <div class="description-popup">
-        <%- translate p: "about.scientists.#{scientist}.description", class: 'description' %>
+        <%- translate 'p', "about.scientists.#{scientist}.description", class: 'description' %>
       </div>
     </div>
   <% end %>
 </div>
 
 <div class="development team">
-  <%- translate h1: "about.developers.heading" %>
+  <%- translate 'h1', "about.developers.heading" %>
 
   <% developers = ['carstensen', 'miller', 'parrish', 'smith'] %>
 
   <% for developer in developers: %>
     <div class="development member">
       <img src="<%- translate "about.developers.#{developer}.image" %>" />
-      <%- translate div: "about.developers.#{developer}.name", class: 'name' %>
-      <%- translate div: "about.developers.#{developer}.role", class: 'role' %>
+      <%- translate 'div', "about.developers.#{developer}.name", class: 'name' %>
+      <%- translate 'div', "about.developers.#{developer}.role", class: 'role' %>
 
       <div class="description-popup">
-        <%- translate p: "about.scientists.#{developer}.description", class: 'description' %>
+        <%- translate 'p', "about.scientists.#{developer}.description", class: 'description' %>
       </div>
     </div>
   <% end %>

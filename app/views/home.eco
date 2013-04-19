@@ -2,13 +2,13 @@
 
 <div class="about-the-project">
   <div class="description">
-    <%- translate div: 'home.projectDescription' %>
+    <%- translate 'div', 'home.projectDescription' %>
   </div>
 
   <div class="action">
     <p class="so-sue-me">&nbsp;</p>
-    <%- translate div: 'home.ready' %>
-    <a href="#/classify" class="classify-link"><%- translate span: 'home.start' %>
+    <%- translate 'div', 'home.ready' %>
+    <a href="#/classify" class="classify-link"><%- translate 'span', 'home.start' %>
       <span class="icons">
         <i class="icon-appendicularian"></i>
         <i class="icon-beroida"></i>
@@ -37,15 +37,15 @@
 
 <div class="about-pages">
   <div class="item">
-    <a href="#/science/about"><%- translate span: 'home.about' %></a>
+    <a href="#/science/about"><%- translate 'span', 'home.about' %></a>
   </div>
 
   <div class="item">
-    <a href="#/science/images"><%- translate span: 'home.images' %></a>
+    <a href="#/science/images"><%- translate 'span', 'home.images' %></a>
   </div>
 
   <div class="item">
-    <a href="#/science/species"><%- translate span: 'home.species' %></a>
+    <a href="#/science/species"><%- translate 'span', 'home.species' %></a>
   </div>
 </div>
 

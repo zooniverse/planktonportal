@@ -1,6 +1,6 @@
 <% translate = require 't7e' %>
 
-<%- translate div: 'science.species.content' %>
+<%- translate 'div', 'science.species.content' %>
 
 <% groups = ['jellies', 'pelagicTunicates', 'other'] %>
 <% species = {} %>
@@ -11,8 +11,8 @@
 <% for group in groups: %>
   <hr />
 
-  <%- translate h2: "science.species.#{group}.title" %>
-  <%- translate p: "science.species.#{group}.content" %>
+  <%- translate 'h2', "science.species.#{group}.title" %>
+  <%- translate 'p', "science.species.#{group}.content" %>
 
   <% for member in species[group]: %>
     <hr />
@@ -27,8 +27,8 @@
       </div>
 
       <div class="description">
-        <%- translate h1: "science.species.#{group}.#{member}.title" %>
-        <%- translate p: "science.species.#{group}.#{member}.content" %>
+        <%- translate 'h1', "science.species.#{group}.#{member}.title" %>
+        <%- translate 'p', "science.species.#{group}.#{member}.content" %>
       </div>
 
       <div class="photos">
