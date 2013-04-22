@@ -238,3 +238,95 @@ module.exports =
   profile:
     recents: 'Recents'
     favorites: 'Favorites'
+
+  tutorial:
+    welcome:
+      header: 'Welcome to the plankton project!'
+      details: '''
+        This short tutorial will explain how to use the tools properly.
+        Before you start, it's a good idea to check out the "science" page to learn learn about the different species we're classifying.
+      '''
+
+    beforeMark:
+      header: 'Mark a creature'
+      details: '''
+        Let's start with the tentacled creature in the top left of the image.
+        To mark a creature, we'll draw lines across its major and minor axes.
+        We're mainly interested in the size and direction of the plankton.
+      '''
+
+    majorAxis:
+      header: 'Major axes'
+      details: '''
+        Always mark the length of the plankton first, from the "head" toward the "tail".
+        This will tell us how long the creature is and what direction it's moving.
+        Do not include any tentacles!
+      '''
+      instruction: 'Drag vertically from the top of the bell across to where the tentacles start.'
+
+    minorAxis:
+      header: 'Mark a creature'
+      details: '''
+        Now we'll mark the width of the creature.
+      '''
+      instruction: 'Drag from left to right across the bell.'
+
+    chooseCategory:
+      header: 'Narrow down possible species'
+      details: '''
+        A row of icons has appeared. Choose the one that looks closest to the creature you see.
+      '''
+      instruction: 'Click the icon that best matches the creature.'
+
+    chooseSpecies:
+      header: 'Choose the species'
+      details: '''
+        From the new row of icons, again click the closest match.
+      '''
+      instruction: 'Click the icon that best matches the creature.'
+
+    badCoordinates:
+      header: 'Close, but no cigar'
+      details: '''
+        It looks like our axes are a bit off.
+        We've added some arrows to show you where the lines should go.
+      '''
+      instruction: 'Drag the handles at the end of each line until they fit inside the green arrows.'
+
+    wrongCreature:
+      header: 'A case of mistaken identity'
+      details: '''
+        This creatures is actually a $species.
+        Click the icon to re-open the menu, then choose the $species under the multi-tentacled category.
+      '''
+      instruction: 'Choose the $species.'
+
+    markTheOtherOne:
+      header: 'Mark the next creature'
+      details: '''
+        You can always adjust the lines you've drawn by dragging the end points.
+        Try marking the creature in the top-right of the image on your own.
+        Remmber: Drag out the major axis, then the minor axis, then choose the species.
+      '''
+      instruction: 'Mark the next creature on your own.'
+
+    finish:
+      header: 'Move on to the next image'
+      details: '''
+        When you're finished, click "Finish" to submit your classification.
+      '''
+
+    beSocial:
+      header: 'Be social'
+      details: '''
+        Before you move on to the next image, you can discuss it with other scientists if you have a question or observation.
+        You can also share it with your friends!
+      '''
+      instruction: 'Click "Next" to load the next image.'
+
+    haveFun:
+      header: 'Have fun'
+      details: '''
+        It looks like you've got a handle on this.
+        Enjoy exploring the ocean through a microscope, and thanks for helping with our research!
+      '''
