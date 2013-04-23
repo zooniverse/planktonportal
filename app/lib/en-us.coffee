@@ -243,7 +243,7 @@ module.exports =
     welcome:
       header: 'Welcome to the plankton project!'
       details: '''
-        This short tutorial will explain how to use the tools properly.
+        This short tutorial will show you how to use the tools to mark and identify plankton.
         Before you start, it's a good idea to check out the "science" page to learn learn about the different species we're classifying.
       '''
 
@@ -251,7 +251,7 @@ module.exports =
       header: 'What we\'re marking'
       details: '''
         Let's start with the tentacled creature in the top left of the image.
-        To mark a creature, we'll draw lines across its major and minor axes.
+        To mark a creature, you need to draw lines across its major and minor axes.
         We're mainly interested in the size and direction of the plankton.
       '''
 
@@ -288,8 +288,8 @@ module.exports =
     badCoordinates:
       header: 'Close, but no cigar'
       details: '''
-        It looks like our axes are a bit off.
-        We've added some arrows to show you where the lines should go.
+        It looks like the axes are a bit off.
+        Here are some arrows to show you where the lines should go.
       '''
       instruction: 'Drag the handles at the end of each line until they fit inside the green arrows.'
 
@@ -305,7 +305,7 @@ module.exports =
       details: '''
         You can always adjust the lines you've drawn by dragging the end points.
         Try marking the creature in the top-right of the image on your own.
-        Remmber: Drag out the major axis, then the minor axis, then choose the species.
+        Remember: Drag out the major axis (length), then the minor axis (width), then choose the species.
       '''
       instruction: 'Mark the next creature on your own.'
 
