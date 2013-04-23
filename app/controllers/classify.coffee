@@ -1,3 +1,4 @@
+$ = require 'jqueryify'
 Page = require './page'
 template = require '../views/classify'
 translate = require 't7e'
@@ -12,6 +13,8 @@ createTutorialSubject = require '../lib/create-tutorial-subject'
 tutorialSteps = require '../lib/tutorial-steps'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
+
+$html = $('html')
 
 class Classify extends Page
   className: 'classify'
@@ -70,7 +73,6 @@ class Classify extends Page
     @tutorial = new Tutorial
       parent: @el
       steps: tutorialSteps
-      length: 10
       firstStep: 'welcome'
 
     @tutorial.classifier = @
@@ -85,6 +87,25 @@ class Classify extends Page
       status.css display: ''
 
   onUserChange: (e, user) =>
+    # SPLIT | HEADING | PROGRESS | TALK
+    # ------+---------+----------+---------
+    # A     | NO      | NO       | TUTORIAL
+    # B     | NO      | NO       | 1ST
+    # C     | NO      | NO       | 5TH
+    # D     | NO      | YES      | TUTORIAL
+    # E     | NO      | YES      | 1ST
+    # F     | NO      | YES      | 5TH
+    # I     | YES     | NO       | TUTORIAL
+    # J     | YES     | NO       | 1ST
+    # K     | YES     | NO       | 5TH
+    # G     | YES     | YES      | TUTORIAL
+    # F     | YES     | YES      | 1ST
+    # H     | YES     | YES      | 5TH
+
+    split = user?.project.splits.tutorial
+    $html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
+    $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'i', 'j', 'k']
+
     if user?.project.tutorial_done
       if Subject.current.metadata.tutorial
         @tutorial.end()

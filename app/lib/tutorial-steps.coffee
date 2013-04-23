@@ -1,10 +1,12 @@
 $ = require 'jqueryify'
 translate = require 't7e'
 {Step} = require 'zootorial'
+User = require 'zooniverse/models/user'
 
 tutorial = null # Defined in the first step
 
-module.exports = {}
+module.exports =
+  length: 9
 
 addStep = (name, params) ->
   defaults = {
@@ -38,8 +40,6 @@ afterFirst = ->
 
   right = mark.species is 'hydromedusa'
 
-  # console.log {close, right}
-
   if close and right
     'markTheOtherOne'
   else if not close
@@ -48,6 +48,22 @@ afterFirst = ->
     'firstWrongSpecies'
 
 afterSecond = ->
+  mark = tutorial.classifier.surface.marks[-1...][0]
+
+  close = true
+  close &&= closeTo mark.p0, [150, 100]
+  close &&= closeTo mark.p1, [150, 200]
+  close &&= closeTo mark.p2, [100, 150]
+  close &&= closeTo mark.p3, [200, 150]
+
+  right = mark.species is 'hydromedusa'
+
+  if close and right
+    'finish'
+  else if not close
+    'secondBadCoordinates'
+  else if not right
+    'secondWrongSpecies'
 
 addStep 'welcome',
   number: 1
@@ -100,16 +116,47 @@ addStep 'firstWrongSpecies',
 
 addStep 'markTheOtherOne',
   number: 7
-  next: afterSecond
+  next: 'click button[name="species"]': afterSecond
 
-addStep 'secondBadCoordinates', {}
+addStep 'secondBadCoordinates',
+  header: translate 'div', 'tutorial.badCoordinates.header'
+  details: translate 'div', 'tutorial.badCoordinates.details'
+  instruction: translate 'div', 'tutorial.badCoordinates.instruction'
 
-addStep 'secondWrongSpecies', {}
+  onEnter: ->
+    @guidelines = tutorial.classifier.surface.paper.path 'M 150 100 L 150 200 M 100 150 L 200 150'
+
+  onExit: ->
+    @guidelines.remove()
+    delete @guidelines
+
+  next: 'mouseup .marking-surface': afterSecond
+
+addStep 'secondWrongSpecies',
+  header: translate 'div', 'tutorial.wrongSpecies.header'
+  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
+  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
+
+  actionable: 'button[value="tentacled"], button[value="hydromedusa"]'
+
+  next: 'click button[name="species"]': afterSecond
 
 addStep 'finish',
   number: 8
+  next:
+    'mousedown button[name="finish"]': ->
+      if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
+        'beSocial'
+      else
+        'haveFun'
 
 addStep 'beSocial',
-  next: null
+  next: ->
+    if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
+      'haveFun'
+    else
+      null
 
-addStep 'haveFun', {}
+addStep 'haveFun',
+  number: 9
+  next: null
