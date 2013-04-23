@@ -7,6 +7,9 @@ moment = require 'moment'
 PlanktonTool = require './plankton-tool'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
+createTutorialSubject = require '../lib/create-tutorial-subject'
+{Tutorial} = require 'zootorial'
+tutorialSteps = require '../lib/tutorial-steps'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
 
@@ -17,6 +20,8 @@ class Classify extends Page
   subjectTransition: 2000
 
   surface: null
+
+  tutorial: null
 
   events:
     'click button[name="finish"]': 'onClickFinish'
@@ -62,6 +67,14 @@ class Classify extends Page
 
     Favorite.on 'from-classify'
 
+    @tutorial = new Tutorial
+      parent: @el
+      steps: tutorialSteps
+      length: 10
+      firstStep: 'welcome'
+
+    @tutorial.classifier = @
+
   activate: ->
     super
 
@@ -71,8 +84,18 @@ class Classify extends Page
     setTimeout ->
       status.css display: ''
 
-  onUserChange: =>
-    Subject.next()
+  onUserChange: (e, user) =>
+    if user?.project.tutorial_done
+      if Subject.current.metadata.tutorial
+        @tutorial.end()
+        Subject.next()
+
+    else
+      tutorialSubject = createTutorialSubject()
+      Subject.instances.unshift Subject.instances.pop()
+
+      if @surface.marks.length is 0
+        tutorialSubject.select()
 
   onGettingNextSubject: =>
     @el.addClass 'loading'
@@ -108,6 +131,9 @@ class Classify extends Page
     @talkLink.attr href: subject.talkHref()
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
+
+    if subject.metadata.tutorial
+      @tutorial.start()
 
   onNoMoreSubjects: =>
     alert 'It appears we\'ve run out of data!'

@@ -12,7 +12,8 @@
     "publisssh": "~0.0.5",
     "spine": "~1.0.9",
     "t7e": "git+ssh://git@github.com:brian-c/t7e.git#editor",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps"
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps",
+    "zootorial": "~0.3.4"
   },
   "scripts": {
     "start": "haw serve",
