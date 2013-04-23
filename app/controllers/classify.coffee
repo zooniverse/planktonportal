@@ -178,6 +178,18 @@ class Classify extends Page
 
     @el.addClass 'finished'
 
+    classificationCount = User.current?.project.classificaiton_count || 0
+    classificationCount += Classification.sentThisSession
+
+    introduceTalk = if User.current?.project.splits.tutorial in ['b', 'e', 'j', 'f']
+      1
+    else if User.current?.project.splits.tutorial in ['c', 'f', 'k', 'h']
+      5
+
+    if classificationCount is introduceTalk
+      setTimeout =>
+        @tutorial.load 'beSocial'
+
   onClickFavorite: ->
     @favorite = new Favorite subjects: [@classification.subject]
     @favorite.on 'delete', @onFavoriteDelete
