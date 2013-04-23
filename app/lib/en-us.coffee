@@ -248,7 +248,7 @@ module.exports =
       '''
 
     beforeMark:
-      header: 'Mark a creature'
+      header: 'What we\'re marking'
       details: '''
         Let's start with the tentacled creature in the top left of the image.
         To mark a creature, we'll draw lines across its major and minor axes.
@@ -256,7 +256,7 @@ module.exports =
       '''
 
     majorAxis:
-      header: 'Major axes'
+      header: 'Major axis'
       details: '''
         Always mark the length of the plankton first, from the "head" toward the "tail".
         This will tell us how long the creature is and what direction it's moving.
@@ -265,7 +265,7 @@ module.exports =
       instruction: 'Drag vertically from the top of the bell across to where the tentacles start.'
 
     minorAxis:
-      header: 'Mark a creature'
+      header: 'Minor axis'
       details: '''
         Now we'll mark the width of the creature.
       '''
@@ -274,14 +274,14 @@ module.exports =
     chooseCategory:
       header: 'Narrow down possible species'
       details: '''
-        A row of icons has appeared. Choose the one that looks closest to the creature you see.
+        A row of category icons has appeared. Choose the one that looks closest to the creature you see.
       '''
       instruction: 'Click the icon that best matches the creature.'
 
     chooseSpecies:
       header: 'Choose the species'
       details: '''
-        From the new row of icons, again click the closest match.
+        From the new row of species icons, again click the closest match.
       '''
       instruction: 'Click the icon that best matches the creature.'
 
@@ -293,13 +293,12 @@ module.exports =
       '''
       instruction: 'Drag the handles at the end of each line until they fit inside the green arrows.'
 
-    wrongCreature:
+    wrongSpecies:
       header: 'A case of mistaken identity'
       details: '''
-        This creatures is actually a $species.
-        Click the icon to re-open the menu, then choose the $species under the multi-tentacled category.
+        This creature is actually a $species.
       '''
-      instruction: 'Choose the $species.'
+      instruction: 'Click the icon to re-open the menu, then choose the $species under the $category category.'
 
     markTheOtherOne:
       header: 'Mark the next creature'
