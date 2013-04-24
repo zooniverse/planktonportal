@@ -143,7 +143,9 @@ addStep 'secondWrongSpecies',
 
 addStep 'finish',
   number: 8
+  attachment: 'center bottom button[name="finish"] center top'
   next:
+    # TODO: A click event never triggers for some reason, so use mousedown for now.
     'mousedown button[name="finish"]': ->
       if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
         'beSocial'
