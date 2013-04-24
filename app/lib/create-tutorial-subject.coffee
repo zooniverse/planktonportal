@@ -2,10 +2,10 @@ Subject = require 'zooniverse/models/subject'
 
 createTutorialSubject = ->
   new Subject
-    id: 'TODO'
+    id: '516d6f243ae740bc96000567'
     zooniverse_id: 'TUTORIAL_SUBJECT'
 
-    location: standard: '//placehold.it/640x480.png'
+    location: standard: './images/tutorial-subject.jpg'
 
     coords: [0, 0]
 
