@@ -80,6 +80,9 @@ class Classify extends Page
   activate: ->
     super
 
+    setTimeout =>
+      @tutorial.attach() # TODO: This isn't perfect.
+
     # Force rerender of the status bar
     status = @el.find('.status')
     status.css display: 'none'
