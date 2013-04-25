@@ -5,18 +5,23 @@
 <div class="categories">
   <button name="category" value="round">
     <i class="icon-thalassocalyze"></i>
+    <span class="label"><%= translate 'speciesCategories.round' %></span>
   </button>
   <button name="category" value="tail">
     <i class="icon-prayidae"></i>
+    <span class="label"><%= translate 'speciesCategories.tail' %></span>
   </button>
   <button name="category" value="tentacled">
     <i class="icon-hydromedusa"></i>
+    <span class="label"><%= translate 'speciesCategories.tentacled' %></span>
   </button>
   <button name="category" value="worm">
     <i class="icon-radiolarian"></i>
+    <span class="label"><%= translate 'speciesCategories.worm' %></span>
   </button>
   <button name="category" value="shrimp">
     <i class="icon-shrimp"></i>
+    <span class="label"><%= translate 'speciesCategories.shrimp' %></span>
   </button>
 </div>
 

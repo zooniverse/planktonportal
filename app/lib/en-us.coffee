@@ -1,4 +1,11 @@
 module.exports =
+  speciesCategories:
+    round: 'Round, no tentacles'
+    tail: 'Head with tail'
+    tentacled: 'Jellyfish-like'
+    worm: 'Ribbon/elongated'
+    shrimp: 'Shrimp-like'
+
   species:
     appendicularian: 'Appendicularian'
     beroida: 'Beroida'
