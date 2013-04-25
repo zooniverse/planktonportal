@@ -383,5 +383,28 @@ body > .stack > .classify
 .no-tutorial-progress .tutorial .progress
   display: none
 
-.tutorial .progress .track
-  display: none // Use the dots instead
+.tutorial
+  $arrow-size = 15px
+
+  .progress .track
+    display: none // Use the dots instead
+
+  .dialog-arrow
+    border: $arrow-size solid transparent
+    height: 0
+    margin: ($arrow-size * -1) 0 0 ($arrow-size * -1)
+    position: absolute
+    width: 0
+
+  &.point-up .dialog-arrow
+    border-bottom-color: #fff
+    border-top-width: 0
+    bottom: 100%
+    left: 50%
+
+  &.point-right .dialog-arrow
+    border-left-color: #fff
+    border-right-width: 0
+    left: 100%
+    margin-left: 0
+    top: 50%

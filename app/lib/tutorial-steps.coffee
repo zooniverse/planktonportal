@@ -3,7 +3,10 @@ translate = require 't7e'
 {Step} = require 'zootorial'
 User = require 'zooniverse/models/user'
 
-tutorial = null # Defined in the first step
+surface = null # Defined in the first step
+
+firstCreature  = p0: [817, 226], p1: [853, 333], p2: [765, 308], p3: [907, 254]
+secondCreature = p0: [700, 112], p1: [721, 106], p2: [708, 102], p3: [714, 117]
 
 module.exports =
   length: 9
@@ -30,15 +33,17 @@ closeTo = ([x, y], [idealX, idealY], allowed = 50) ->
   offBy < allowed
 
 afterFirst = ->
-  mark = tutorial.classifier.surface.marks[-1...][0]
+  mark = surface.marks[-1...][0]
 
   close = true
-  close &&= closeTo mark.p0, [50, 0]
-  close &&= closeTo mark.p1, [50, 100]
-  close &&= closeTo mark.p2, [0, 50]
-  close &&= closeTo mark.p3, [100, 50]
+  close &&= closeTo mark.p0, firstCreature.p0
+  close &&= closeTo mark.p1, firstCreature.p1
+  close &&= closeTo mark.p2, firstCreature.p2
+  close &&= closeTo mark.p3, firstCreature.p3
 
   right = mark.species is 'hydromedusa'
+
+  console.log 'first', {close, right}
 
   if close and right
     'markTheOtherOne'
@@ -48,13 +53,13 @@ afterFirst = ->
     'firstWrongSpecies'
 
 afterSecond = ->
-  mark = tutorial.classifier.surface.marks[-1...][0]
+  mark = surface.marks[-1...][0]
 
   close = true
-  close &&= closeTo mark.p0, [150, 100]
-  close &&= closeTo mark.p1, [150, 200]
-  close &&= closeTo mark.p2, [100, 150]
-  close &&= closeTo mark.p3, [200, 150]
+  close &&= closeTo mark.p0, secondCreature.p0
+  close &&= closeTo mark.p1, secondCreature.p1
+  close &&= closeTo mark.p2, secondCreature.p2
+  close &&= closeTo mark.p3, secondCreature.p3
 
   right = mark.species is 'hydromedusa'
 
@@ -68,7 +73,7 @@ afterSecond = ->
 addStep 'welcome',
   number: 1
   next: ->
-    tutorial = @
+    surface = @classifier.surface
     'beforeMark'
 
 addStep 'beforeMark',
@@ -77,27 +82,45 @@ addStep 'beforeMark',
 
 addStep 'majorAxis',
   number: 3
+  attachment: 'right middle .marking-surface 0.7 0.5'
+  className: 'point-right'
   next: 'mouseup .marking-surface': 'minorAxis'
 
 addStep 'minorAxis',
   number: 4
+  attachment: 'right middle .marking-surface 0.7 0.5'
+  className: 'point-right'
   next: 'mouseup .marking-surface': 'chooseCategory'
 
 addStep 'chooseCategory',
   number: 5
+  attachment: 'center bottom .marking-tool-controls center top'
   next: 'click button[name="category"]': 'chooseSpecies'
 
 addStep 'chooseSpecies',
   number: 6
+  attachment: 'center bottom .marking-tool-controls center top'
   next: 'click button[name="species"]': afterFirst
 
 addStep 'firstBadCoordinates',
   header: translate 'div', 'tutorial.badCoordinates.header'
   details: translate 'div', 'tutorial.badCoordinates.details'
   instruction: translate 'div', 'tutorial.badCoordinates.instruction'
+  attachment: 'right middle .marking-surface 0.7 0.5'
+  className: 'point-right'
 
   onEnter: ->
-    @guidelines = tutorial.classifier.surface.paper.path 'M 50 0 L 50 100 M 0 50 L 100 50'
+    @guidelines = surface.paper.path """
+      M #{firstCreature.p0[0]} #{firstCreature.p0[1]}
+      L #{firstCreature.p1[0]} #{firstCreature.p1[1]}
+      M #{firstCreature.p2[0]} #{firstCreature.p2[1]}
+      L #{firstCreature.p3[0]} #{firstCreature.p3[1]}
+    """
+
+    @guidelines.attr
+      'stroke': '#ff0'
+      'stroke-dasharray': '-'
+      'stroke-width': 2
 
   onExit: ->
     @guidelines.remove()
@@ -109,6 +132,7 @@ addStep 'firstWrongSpecies',
   header: translate 'div', 'tutorial.wrongSpecies.header'
   details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
   instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
+  attachment: 'center bottom .marking-tool-controls center top'
 
   actionable: 'button[value="tentacled"], button[value="hydromedusa"]'
 
@@ -116,15 +140,29 @@ addStep 'firstWrongSpecies',
 
 addStep 'markTheOtherOne',
   number: 7
+  attachment: 'center top .marking-surface 0.7 0.4'
+  className: 'point-up'
   next: 'click button[name="species"]': afterSecond
 
 addStep 'secondBadCoordinates',
   header: translate 'div', 'tutorial.badCoordinates.header'
   details: translate 'div', 'tutorial.badCoordinates.details'
   instruction: translate 'div', 'tutorial.badCoordinates.instruction'
+  attachment: 'center top .marking-surface 0.7 0.4'
+  className: 'point-up'
 
   onEnter: ->
-    @guidelines = tutorial.classifier.surface.paper.path 'M 150 100 L 150 200 M 100 150 L 200 150'
+    @guidelines = surface.paper.path """
+      M #{secondCreature.p0[0]} #{secondCreature.p0[1]}
+      L #{secondCreature.p1[0]} #{secondCreature.p1[1]}
+      M #{secondCreature.p2[0]} #{secondCreature.p2[1]}
+      L #{secondCreature.p3[0]} #{secondCreature.p3[1]}
+    """
+
+    @guidelines.attr
+      'stroke': '#ff0'
+      'stroke-dasharray': '-'
+      'stroke-width': 2
 
   onExit: ->
     @guidelines.remove()
@@ -136,6 +174,8 @@ addStep 'secondWrongSpecies',
   header: translate 'div', 'tutorial.wrongSpecies.header'
   details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
   instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
+  attachment: 'center top .marking-surface 0.7 0.4'
+  className: 'point-up'
 
   actionable: 'button[value="tentacled"], button[value="hydromedusa"]'
 
