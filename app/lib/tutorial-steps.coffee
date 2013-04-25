@@ -61,7 +61,7 @@ afterSecond = ->
   close &&= closeTo mark.p2, secondCreature.p2
   close &&= closeTo mark.p3, secondCreature.p3
 
-  right = mark.species is 'hydromedusa'
+  right = mark.species is 'copepod'
 
   if close and right
     'finish'
@@ -172,12 +172,12 @@ addStep 'secondBadCoordinates',
 
 addStep 'secondWrongSpecies',
   header: translate 'div', 'tutorial.wrongSpecies.header'
-  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
-  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
+  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Copepod', $category: 'Multi-tentacled'})
+  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Copepod', $category: 'Multi-tentacled'})
   attachment: 'center top .marking-surface 0.7 0.4'
   className: 'point-up'
 
-  actionable: 'button[value="tentacled"], button[value="hydromedusa"]'
+  actionable: 'button[name="species"][value="shrimp"], button[value="copepod"]'
 
   next: 'click button[name="species"]': afterSecond
 
