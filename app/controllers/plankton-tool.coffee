@@ -59,11 +59,19 @@ class PlanktonControls extends ToolControls
 class PlanktonTool extends AxesTool
   @Controls: PlanktonControls
 
+  constructor: ->
+    super
+    @directionIndicator = @addShape 'path', 'M -20 0, L 0 -30, L 20 0, M 0 30', 'stroke-width': 3
+
   render: ->
     super
 
     stroke = if @mark.species? then '#c1ea00' else 'red'
     @cross.attr {stroke}
     @dots.attr {stroke}
+    @directionIndicator.attr {stroke}
+
+    majorAngle = 90 + Raphael.angle @mark.p0..., @mark.p1...
+    @directionIndicator.transform "T #{@mark.p0[0]} #{@mark.p0[1]} R #{majorAngle}"
 
 module.exports = PlanktonTool

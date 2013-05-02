@@ -80,14 +80,16 @@ class Classify extends Page
   activate: ->
     super
 
-    setTimeout =>
-      @tutorial.attach() # TODO: This isn't perfect.
-
     # Force rerender of the status bar
-    status = @el.find('.status')
+    status = @el.find '.status'
     status.css display: 'none'
     setTimeout ->
       status.css display: ''
+
+    # Reposition the tutorial dialog.
+    # TODO: This isn't perfect.
+    setTimeout =>
+      @tutorial.attach()
 
   onUserChange: (e, user) =>
     # SPLIT | HEADING | PROGRESS | TALK
