@@ -58,10 +58,9 @@ module.exports =
       title: 'About plankton'
       content: '''
         <h1>A few words about plankton</h1>
-        <p>Plankton comes from the Greek word planktos which means “wanderer” or “drifter”.  As a group, plankton are an eclectic collection of diverse organisms adrift in the oceanic waters. The classification of an organism as ‘plankton’ is due to its inability to swim actively against oceanic currents rather than its biological grouping.</p>
-        <p>Plankton can vary widely in size from thousandths of an inch (0.05 mm) or less to several feet in length (> 1m) or more, though a vast majority are less than an inch (~ 2.5 cm). Some organisms will spend all their life in the plankton and drift along with the ocean currents, while others are only temporary passive passengers until they reach a certain size and age, allowing for movement in the open ocean or settlement into a coastal habitat.</p>
-        <p>There are two main types of plankton: phytoplankton (plants) and zooplankton (animals).</p>
-        <p>We are most interested in the zooplankton because our underwater camera system is optimized to capture the image of larger planktonic organisms, ranging from a few mm to a few centimeters which includes a wide variety of different organisms.</p>
+        <p>Plankton comes from the Greek word planktos meaning “wanderer” or “drifter”. As a group, plankton are an eclectic collection of organisms adrift in the oceanic waters. The classification of an organism as ‘plankton’ has nothing to do with its biological grouping, but rather with its inability to swim actively against oceanic currents.</p>
+        <p>Plankton vary widely in size from thousandths of an inch (0.05 mm) or less to several feet in length (> 1m) or more. Most are less than an inch (~ 2.5 cm). Some organisms spend all their life as plankton and drift along with the ocean currents, while others are only temporary passive passengers until they reach a certain size and age, allowing for movement in the open ocean or settlement into a coastal habitat.</p>
+        <p>There are two main types of plankton: phytoplankton (plants) and zooplankton (animals). We are most interested in the zooplankton because our underwater camera system is optimized to capture the image of larger planktonic organisms, ranging from a few mm to a few centimeters which includes a wide variety of different organisms.</p>
       '''
 
     whyStudy:
