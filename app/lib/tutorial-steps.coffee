@@ -18,7 +18,7 @@ addStep = (name, params) ->
     instruction: translate 'div', "tutorial.#{name}.instruction", {fallback: '__NO_INSTRUCTION__'}
   }
 
-  delete defaults.instruction if !!~defaults.instruction.indexOf '>__NO_INSTRUCTION__<'
+  delete defaults.instruction if !!~defaults.instruction.indexOf '>__NO_INSTRUCTION__<' # Kinda messy
 
   params = $.extend defaults, params
 
