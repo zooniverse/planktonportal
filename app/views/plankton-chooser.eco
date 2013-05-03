@@ -2,128 +2,34 @@
 
 <button name="toggle"></button>
 
+<% categories = ['round', 'tail', 'tentacled', 'worm', 'shrimp'] %>
+<% icons = round: 'thalassocalyze', tail: 'prayidae', tentacled: 'hydromedusa', worm: 'radiolarian', shrimp: 'shrimp' %>
+<% species = {} %>
+<% species.round = ['lobata', 'appendicularian', 'thalassocalyze', 'salp'] %>
+<% species.tail = ['sphaeronectidae', 'diphyidae', 'physonect', 'prayidae', 'doliolid'] %>
+<% species.tentacled = ['solmaris', 'cydipida', 'platytecnida', 'hydromedusa', 'narcomedusa'] %>
+<% species.worm = ['beroida', 'cestida', 'radiolarian', 'larvacean', 'chaetognath'] %>
+<% species.shrimp = ['shrimp', 'copepod', 'polychaete'] %>
+
 <div class="categories">
-  <button name="category" value="round">
-    <i class="icon-thalassocalyze"></i>
-    <span class="label"><%= translate 'speciesCategories.round' %></span>
-  </button>
-  <button name="category" value="tail">
-    <i class="icon-prayidae"></i>
-    <span class="label"><%= translate 'speciesCategories.tail' %></span>
-  </button>
-  <button name="category" value="tentacled">
-    <i class="icon-hydromedusa"></i>
-    <span class="label"><%= translate 'speciesCategories.tentacled' %></span>
-  </button>
-  <button name="category" value="worm">
-    <i class="icon-radiolarian"></i>
-    <span class="label"><%= translate 'speciesCategories.worm' %></span>
-  </button>
-  <button name="category" value="shrimp">
-    <i class="icon-shrimp"></i>
-    <span class="label"><%= translate 'speciesCategories.shrimp' %></span>
-  </button>
+  <% for category in categories: %>
+    <button name="category" value="<%= category %>">
+      <i class="icon-<%= icons[category] %>"></i>
+      <span class="label"><%- translate 'span', "speciesCategories.#{category}" %></span>
+    </button>
+  <% end %>
 </div>
 
-<div class="round category">
-  <button name="species" value="lobata">
-    <i class="icon-lobata"></i>
-    <span class="label"><%= translate 'species.lobata' %></span>
-  </button>
-  <button name="species" value="appendicularian">
-    <i class="icon-appendicularian"></i>
-    <span class="label"><%= translate 'species.appendicularian' %></span>
-  </button>
-  <button name="species" value="thalassocalyze">
-    <i class="icon-thalassocalyze"></i>
-    <span class="label"><%= translate 'species.thalassocalyze' %></span>
-  </button>
-  <button name="species" value="salp">
-    <i class="icon-status"></i>
-    <span class="label"><%= translate 'species.salp' %></span>
-  </button>
-</div>
-
-<div class="tail category">
-  <button name="species" value="sphaeronectidae">
-    <i class="icon-sphaeronectidae"></i>
-    <span class="label"><%= translate 'species.sphaeronectidae' %></span>
-  </button>
-  <button name="species" value="diphyidae">
-    <i class="icon-diphyidae"></i>
-    <span class="label"><%= translate 'species.diphyidae' %></span>
-  </button>
-  <button name="species" value="physonect">
-    <i class="icon-physonect"></i>
-    <span class="label"><%= translate 'species.physonect' %></span>
-  </button>
-  <button name="species" value="prayidae">
-    <i class="icon-prayidae"></i>
-    <span class="label"><%= translate 'species.prayidae' %></span>
-  </button>
-  <button name="species" value="doliolid">
-    <i class="icon-doliolid"></i>
-    <span class="label"><%= translate 'species.doliolid' %></span>
-  </button>
-</div>
-
-<div class="tentacled category">
-  <button name="species" value="solmaris">
-    <i class="icon-status"></i>
-    <span class="label"><%= translate 'species.solmaris' %></span>
-  </button>
-  <button name="species" value="cydipida">
-    <i class="icon-cydipida"></i>
-    <span class="label"><%= translate 'species.cydipida' %></span>
-  </button>
-  <button name="species" value="platytecnida">
-    <i class="icon-platytecnida"></i>
-    <span class="label"><%= translate 'species.platytecnida' %></span>
-  </button>
-  <button name="species" value="hydromedusa">
-    <i class="icon-hydromedusa"></i>
-    <span class="label"><%= translate 'species.hydromedusa' %></span>
-  </button>
-  <button name="species" value="narcomedusa">
-    <i class="icon-narcomedusa"></i>
-    <span class="label"><%= translate 'species.narcomedusa' %></span>
-  </button>
-</div>
-
-<div class="worm category">
-  <button name="species" value="beroida">
-    <i class="icon-beroida"></i>
-    <span class="label"><%= translate 'species.beroida' %></span>
-  </button>
-  <button name="species" value="cestida">
-    <i class="icon-cestida"></i>
-    <span class="label"><%= translate 'species.cestida' %></span>
-  </button>
-  <button name="species" value="radiolarian">
-    <i class="icon-radiolarian"></i>
-    <span class="label"><%= translate 'species.radiolarian' %></span>
-  </button>
-  <button name="species" value="larvacean">
-    <i class="icon-status"></i>
-    <span class="label"><%= translate 'species.larvacean' %></span>
-  </button>
-  <button name="species" value="chaetognath">
-    <i class="icon-chaetognath"></i>
-    <span class="label"><%= translate 'species.chaetognath' %></span>
-  </button>
-</div>
-
-<div class="shrimp category">
-  <button name="species" value="shrimp">
-    <i class="icon-shrimp"></i>
-    <span class="label"><%= translate 'species.shrimp' %></span>
-  </button>
-  <button name="species" value="copepod">
-    <i class="icon-status"></i>
-    <span class="label"><%= translate 'species.copepod' %></span>
-  </button>
-  <button name="species" value="polychaete">
-    <i class="icon-status"></i>
-    <span class="label"><%= translate 'species.polychaete' %></span>
-  </button>
-</div>
+<% for category in categories: %>
+  <div class="<%= category %> category">
+    <% for specie in species[category]: %>
+      <button name="species" value="<%= specie %>">
+        <i class="icon-<%= specie %>"></i>
+        <span class="label">
+          <%- translate 'span', "species.#{specie}" %><br />
+          (<%- translate 'span', "nicknames.#{specie}" %>)
+        </span>
+      </button>
+    <% end %>
+  </div>
+<% end %>
