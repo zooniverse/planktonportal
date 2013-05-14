@@ -3,7 +3,7 @@
 <div class="links">
   <h1><a href="#/">Plankton Project</a></h1>
   <a href="#/"><%- translate 'span', 'navigation.home' %></a>
-  <a href="#/science/about"><%- translate 'span', 'navigation.science' %></a>
+  <a href="#/science/field-guide"><%- translate 'span', 'navigation.science' %></a>
   <a href="#/classify"><%- translate 'span', 'navigation.classify' %></a>
   <a href="#/profile"><%- translate 'span', 'navigation.profile' %></a>
   <a href="#/team"><%- translate 'span', 'navigation.team' %></a>

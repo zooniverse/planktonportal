@@ -79,6 +79,9 @@ module.exports =
     species: 'Species'
 
   science:
+    fieldGuide:
+      title: 'Field Guide'
+
     about:
       title: 'About plankton'
       content: '''
