@@ -7,54 +7,33 @@ module.exports =
     shrimp: 'Shrimp-like'
 
   species:
-    appendicularian: 'Appendicularian'
+    lobate: 'Lobate'
+    larvaceanHouse: 'Larvacean house'
+    salp: 'Salp'
+    thalasso: 'Thalasso'
+    doliolidWithoutTail: 'Doliolid (without tail)'
+
+    rocketThimble: 'Rocket-ship thimble'
+    rocketTriangle: 'Rocket-ship triangle'
+    siphoCornCob: 'Sipho (corn cob)'
+    siphoTwoCups: 'Sipho (two cups)'
+    doliolidWithTail: 'Doliolid (with tail)'
+
+    cydippid: 'Cydippid'
+    solmaris: 'Solmaris'
+    medusaFourTentacles: 'Medusa (four tentacles)'
+    medusaMoreThanFourTentacles: 'Medusa (more than four tentacles)'
+    medusaGoblet: 'Medusa (goblet)'
+
     beroida: 'Beroida'
     cestida: 'Cestida'
-    chaetognath: 'Arrow worm'
-    copepod: 'Copepod'
-    cydipida: 'Cydipida'
-    diphyidae: 'Diphyidae'
-    doliolid: 'Doliolid'
-    hydromedusa: 'Hydromedusa'
+    radiolarianColonies: 'Radiolarian colonies'
     larvacean: 'Larvacean'
-    lobata: 'Lobata'
-    lyliopsis: 'Lyliopsis'
-    narcomedusa: 'Narcomedusa'
-    physonect: 'Physonect'
-    platytecnida: 'Platytecnida'
-    polychaete: 'Polychaete'
-    prayidae: 'Prayidae'
-    radiolarian: 'Radiolarian'
-    salp: 'Salp'
-    shrimp: 'Shrimp'
-    solmaris: 'Solmaris'
-    sphaeronectidae: 'Sphaeronectidae'
-    thalassocalyze: 'Thalassocalyze'
+    arrowWorm: 'Arrow worm'
 
-  nicknames:
-    appendicularian: 'The appendicularian'
-    beroida: 'The beroida'
-    cestida: 'The cestida'
-    chaetognath: 'The chaetognath'
-    copepod: 'The copepod'
-    cydipida: 'The cydipida'
-    diphyidae: 'The diphyidae'
-    doliolid: 'The doliolid'
-    hydromedusa: 'The hydromedusa'
-    larvacean: 'The larvacean'
-    lobata: 'The lobata'
-    lyliopsis: 'The lyliopsis'
-    narcomedusa: 'The narcomedusa'
-    physonect: 'The physonect'
-    platytecnida: 'The platytecnida'
-    polychaete: 'The polychaete'
-    prayidae: 'The prayidae'
-    radiolarian: 'The radiolarian'
-    salp: 'The salp'
-    shrimp: 'The shrimp'
-    solmaris: 'The solmaris'
-    sphaeronectidae: 'The sphaeronectidae'
-    thalassocalyze: 'The thalassocalyze'
+    shrimp: 'Shrimp'
+    polychaeteWorm: 'Polychaete worm'
+    copepod: 'Copepod'
 
   navigation:
     home: 'Home'
@@ -81,6 +60,99 @@ module.exports =
   science:
     fieldGuide:
       title: 'Field Guide'
+
+      lobate: '''
+        TODO
+      '''
+
+      larvacean: '''
+        TODO
+      '''
+
+      salp: '''
+        TODO
+      '''
+
+      thalasso: '''
+        TODO
+      '''
+
+      doliolidWithoutTail: '''
+        TODO
+      '''
+
+      rocketThumble: '''
+        TODO
+      '''
+
+      rocketTriangle: '''
+        TODO
+      '''
+
+      siphoCornCob: '''
+        TODO
+      '''
+
+      siphoTwoCups: '''
+        TODO
+      '''
+
+      doliolidWithTail: '''
+        TODO
+      '''
+
+      cydippid: '''
+        TODO
+      '''
+
+      solmaris: '''
+        TODO
+      '''
+
+      medusaFourTentacles: '''
+        TODO
+      '''
+
+      medusaMoreThanFourTentacles: '''
+        TODO
+      '''
+
+      medusaGoblet: '''
+        TODO
+      '''
+
+      beroida: '''
+        TODO
+      '''
+
+      cestida: '''
+        TODO
+      '''
+
+      radiolarianColonies: '''
+        TODO
+      '''
+
+      larvacean: '''
+        TODO
+      '''
+
+      arrowWorm: '''
+        TODO
+      '''
+
+      shrimp: '''
+        TODO
+      '''
+
+      polychaeteWorm: '''
+        TODO
+      '''
+
+      copepod: '''
+        TODO
+      '''
+
 
     about:
       title: 'About plankton'

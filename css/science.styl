@@ -1,6 +1,4 @@
 body > .stack > .science
-  color: inherit
-
   img
     &.framed
       border: 5px solid white
@@ -15,6 +13,34 @@ body > .stack > .science
       clear: right
       float: right
       margin: 0 0 15px 20px
+
+.field-guide-entry
+  margin-bottom: 20px
+  text-align: center
+
+  & > figure
+    display: inline-block
+    margin: 0 20px
+    vertical-align: middle
+    width: 200px
+
+    & > i
+      display: block
+      margin: -20px 0
+      font-size: 140px
+
+    & > figcaption
+      font-size: 10px
+      font-weight: bold
+      letter-spacing: 1px
+      text-transform: uppercase
+
+  & > img
+    box-shadow: 0 3px 5px -3px #000
+    height: 200px
+    margin: 0 20px
+    vertical-align: middle
+    width: 200px
 
 .species-description
   clearfix()

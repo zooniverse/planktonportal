@@ -1,0 +1,19 @@
+<% translate = require 't7e' %>
+<% species = require '../lib/species' %>
+
+<% for category in species.order: %>
+  <hr />
+  <%- translate 'h1', "speciesCategories.#{category}" %>
+
+  <% for specie in species[category]: %>
+    <div class="field-guide-entry">
+      <figure>
+        <i class="icon-speed <%= specie %>"></i>
+        <%- translate 'figcaption', "species.#{specie}" %>
+      </figure>
+      <img src="./images/field-guide/<%= specie %>-0.jpg" />
+      <img src="./images/field-guide/<%= specie %>-1.jpg" />
+      <img src="./images/field-guide/<%= specie %>-2.jpg" />
+    </div>
+  <% end %>
+<% end %>

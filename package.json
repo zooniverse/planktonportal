@@ -5,6 +5,7 @@
     "coffee-script": "~1.4.0",
     "es5-shimify": "~0.0.1",
     "haw": "~0.0.6",
+    "image-stack": "~0.0.1",
     "jqueryify": "~1.9.1",
     "json2ify": "~0.0.3",
     "marking-surface": "~0.0.15",

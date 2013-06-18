@@ -1,18 +1,12 @@
 <% translate = require 't7e' %>
+<% species = require '../lib/species' %>
+
+<% icons = round: 'thalassocalyze', tail: 'prayidae', tentacled: 'hydromedusa', worm: 'radiolarian', shrimp: 'shrimp' %>
 
 <button name="toggle"></button>
 
-<% categories = ['round', 'tail', 'tentacled', 'worm', 'shrimp'] %>
-<% icons = round: 'thalassocalyze', tail: 'prayidae', tentacled: 'hydromedusa', worm: 'radiolarian', shrimp: 'shrimp' %>
-<% species = {} %>
-<% species.round = ['lobata', 'appendicularian', 'thalassocalyze', 'salp'] %>
-<% species.tail = ['sphaeronectidae', 'diphyidae', 'physonect', 'prayidae', 'doliolid'] %>
-<% species.tentacled = ['solmaris', 'cydipida', 'platytecnida', 'hydromedusa', 'narcomedusa'] %>
-<% species.worm = ['beroida', 'cestida', 'radiolarian', 'larvacean', 'chaetognath'] %>
-<% species.shrimp = ['shrimp', 'copepod', 'polychaete'] %>
-
 <div class="categories">
-  <% for category in categories: %>
+  <% for category in species.order: %>
     <button name="category" value="<%= category %>">
       <i class="icon-<%= icons[category] %>"></i>
       <span class="label"><%- translate 'span', "speciesCategories.#{category}" %></span>
@@ -20,7 +14,7 @@
   <% end %>
 </div>
 
-<% for category in categories: %>
+<% for category in species.order: %>
   <div class="<%= category %> category">
     <% for specie in species[category]: %>
       <button name="species" value="<%= specie %>">
