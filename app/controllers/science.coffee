@@ -12,21 +12,21 @@ class Science extends Stack
     about: class extends Page then content: translate 'div', 'science.about.content'
     whyStudy: class extends Page then content: translate 'div', 'science.whyStudy.content'
     images: class extends Page then content: translate 'div', 'science.images.content'
-    species: class extends Page then content: speciesTemplate
+    # species: class extends Page then content: speciesTemplate
 
   navLinks:
     fieldGuide: translate 'span', 'science.fieldGuide.title'
     about: translate 'span', 'science.about.title'
     whyStudy: translate 'span', 'science.whyStudy.title'
     images: translate 'span', 'science.images.title'
-    species: translate 'span', 'science.species.title'
+    # species: translate 'span', 'science.species.title'
 
   routes:
     '/science/field-guide': 'fieldGuide'
     '/science/about': 'about'
     '/science/why-study': 'whyStudy'
     '/science/images': 'images'
-    '/science/species': 'species'
+    # '/science/species': 'species'
 
   default: 'fieldGuide'
 
