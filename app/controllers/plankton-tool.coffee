@@ -3,7 +3,6 @@ AxesTool = require 'marking-surface/lib/tools/axes'
 {ToolControls} = MarkingSurface
 controlsTemplate = require '../views/plankton-chooser'
 
-
 class PlanktonControls extends ToolControls
   constructor: ->
     super
@@ -55,12 +54,14 @@ class PlanktonControls extends ToolControls
 
     @tool.mark.set species: target.val()
 
-
 class PlanktonTool extends AxesTool
   @Controls: PlanktonControls
 
   constructor: ->
     super
+
+    @dots[2].attr r: @dots[2].attr('r') * 0.75
+    @dots[3].attr r: @dots[3].attr('r') * 0.75
     @directionIndicator = @addShape 'path', 'M -20 0, L 0 -30, L 20 0, M 0 30', 'stroke-width': 3
 
   render: ->
