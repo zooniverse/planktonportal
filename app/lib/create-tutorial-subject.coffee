@@ -12,6 +12,8 @@ createTutorialSubject = ->
     metadata:
       tutorial: true
       file_name: 'TUTORIAL_SUBJECT'
+      depth: 0
+      temp: 0
 
     workflow_ids: ['TODO']
 
