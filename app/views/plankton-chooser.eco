@@ -1,6 +1,7 @@
 <% translate = require 't7e' %>
 <% species = require '../lib/species' %>
 
+<!-- TODO: Icons should be more general, per group %>
 <% icons = round: 'thalassocalyze', tail: 'prayidae', tentacled: 'hydromedusa', worm: 'radiolarian', shrimp: 'shrimp' %>
 
 <button name="toggle"></button>
@@ -20,8 +21,7 @@
       <button name="species" value="<%= specie %>">
         <i class="icon-<%= specie %>"></i>
         <span class="label">
-          <%- translate 'span', "species.#{specie}" %><br />
-          (<%- translate 'span', "nicknames.#{specie}" %>)
+          <%- translate 'span', "species.#{specie}" %>
         </span>
       </button>
     <% end %>
