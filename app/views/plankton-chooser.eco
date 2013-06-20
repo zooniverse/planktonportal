@@ -1,8 +1,8 @@
 <% translate = require 't7e' %>
 <% species = require '../lib/species' %>
 
-<!-- TODO: Icons should be more general, per group %>
-<% icons = round: 'thalassocalyze', tail: 'prayidae', tentacled: 'hydromedusa', worm: 'radiolarian', shrimp: 'shrimp' %>
+<!-- TODO: Icons should be more general, per group -->
+<% icons = round: 'thalasso', tail: 'doliolid-with-tail', tentacled: 'solmaris', worm: 'arrow-worm', shrimp: 'shrimp' %>
 
 <button name="toggle"></button>
 
@@ -19,7 +19,7 @@
   <div class="<%= category %> category">
     <% for specie in species[category]: %>
       <button name="species" value="<%= specie %>">
-        <i class="icon-<%= specie %>"></i>
+        <i class="icon-<%= specie.replace(/([A-Z])/g, '-$1').toLowerCase() %>"></i>
         <span class="label">
           <%- translate 'span', "species.#{specie}" %>
         </span>
