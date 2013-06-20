@@ -8,7 +8,8 @@
   <% for specie in species[category]: %>
     <div class="field-guide-entry">
       <figure>
-        <i class="icon-speed <%= specie %>"></i>
+        <% dashedSpecie = specie.replace(/([A-Z])/g, '-$1').toLowerCase() %>
+        <i class="icon-<%= dashedSpecie %>"></i>
         <%- translate 'figcaption', "species.#{specie}" %>
       </figure>
       <img src="./images/field-guide/<%= specie %>-0.jpg" />
