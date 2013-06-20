@@ -176,47 +176,71 @@ module.exports =
       heading: 'The science team'
 
       cowen:
-        image: '//placehold.it/80x100.png'
+        image: './images/science-team/cowen.jpg'
         name: 'Bob Cowen'
         role: ''
-        description: [
-          'Bob Cowen is currently Professor and Maytag Chair of Ichthyology at the University of Miami’s Rosenstiel School of Marine and Atmospheric Science.'
-          'His research interests are focused on larval fish and the plankton communities upon which they depend.'
-          'To better understand life on the time and space scales relevant to these organisms, he seeks novel ways to study the plankton realm.'
-          'The development of the ISIIS imaging system is not only providing unprecedented insight into life in the plankton, but allows Bob to spend untethered days away from his desk on the high seas, ‘eaves-viewing’ on the secret lives of plankters.'
-        ]
+        description: '''
+          Bob Cowen is currently Professor and Maytag Chair of Ichthyology at the University of Miami’s Rosenstiel School of Marine and Atmospheric Science.
+          His research interests are focused on larval fish and the plankton communities upon which they depend.
+          To better understand life on the time and space scales relevant to these organisms, he seeks novel ways to study the plankton realm.
+          The development of the ISIIS imaging system is not only providing unprecedented insight into life in the plankton, but allows Bob to spend untethered days away from his desk on the high seas, ‘eaves-viewing’ on the secret lives of plankters.
+        '''
 
       guigand:
-        image: '//placehold.it/80x100.png'
+        image: './images/science-team/guigand.jpg'
         name: 'Cedric Guigand'
         role: ''
-        description: [
-          'Cedric Guigand Is a Senior Research Associate working on the ISIIS instrument from the design and deployment to data analysis.'
-          'Even though his background is in fish biology, he has interests in new technologies and engineering.'
-          'His main contribution to the research done in this laboratory is problem solving and design of new field sampling and lab experimental systems ranging from hybrid multiple net systems to underwater video such as ISIIS.'
-        ]
-
-      greer:
-        image: '//placehold.it/80x100.png'
-        name: 'Jessica Luo'
-        role: ''
-        description: [
-          'Jessica Luo is a Ph.D student using ISIIS to study the ecology of jellyfish, larval fish, and other plankton in the ocean.'
-          'She is interested in processes that structure marine communities, and hopes that this research will provide better insight into the role of small jellyfish in the open ocean.'
-          'She moved to Miami in 2010 from Northern California, where she was working as the ocean education coordinator at Point Reyes National Seashore.'
-          'Jessica got her B.S. and M.S. degrees from Stanford University in 2007, studying the chemical oceanography of Red Sea copepods.'
-          'In her free time, she enjoys landscape photography and running 10K’s and half marathons.'
-        ]
+        description: '''
+          Cedric Guigand Is a Senior Research Associate working on the ISIIS instrument from the design and deployment to data analysis.
+          Even though his background is in fish biology, he has interests in new technologies and engineering.
+          His main contribution to the research done in this laboratory is problem solving and design of new field sampling and lab experimental systems ranging from hybrid multiple net systems to underwater video such as ISIIS.
+        '''
 
       luo:
-        image: '//placehold.it/80x100.png'
+        image: './images/science-team/luo.jpg'
+        name: 'Jessica Luo'
+        role: ''
+        description: '''
+          Jessica Luo is a Ph.D student using ISIIS to study the ecology of jellyfish, larval fish, and other plankton in the ocean.
+          She is interested in processes that structure marine communities, and hopes that this research will provide better insight into the role of small jellyfish in the open ocean.
+          She moved to Miami in 2010 from Northern California, where she was working as the ocean education coordinator at Point Reyes National Seashore.
+          Jessica got her B.S. and M.S. degrees from Stanford University in 2007, studying the chemical oceanography of Red Sea copepods.
+          In her free time, she enjoys landscape photography and running 10K’s and half marathons.
+        '''
+
+      greer:
+        image: './images/science-team/greer.jpg'
         name: 'Adam Greer'
         role: ''
-        description: [
-          'Adam Greer is a Ph.D student originally from Nashville, TN studying thin layers of zooplankton in coastal environments.'
-          'Plankton often aggregate in dense layers only a few meters in depth, and the use of imaging technology provides a unique opportunity to describe the spatial relationships of organisms in fine detail- leading to a better understanding of how zooplankton and fish larvae feed and survive.'
-          'He also enjoys sports, particularly baseball and basketball, and 90’s rock music.'
-        ]
+        description: '''
+          Adam Greer is a Ph.D student originally from Nashville, TN studying thin layers of zooplankton in coastal environments.
+          Plankton often aggregate in dense layers only a few meters in depth, and the use of imaging technology provides a unique opportunity to describe the spatial relationships of organisms in fine detail- leading to a better understanding of how zooplankton and fish larvae feed and survive.
+          He also enjoys sports, particularly baseball and basketball, and 90’s rock music.
+        '''
+
+      cousin:
+        image: './images/science-team/cousin.jpg'
+        name: 'Charles Cousin'
+        role: ''
+        description: '''
+          TODO
+        '''
+
+      grassian:
+        image: './images/science-team/grassian.jpg'
+        name: 'Ben Grassian'
+        role: ''
+        description: '''
+          TODO
+        '''
+
+      tang:
+        image: './images/science-team/tang.jpg'
+        name: 'Dorothy Tang'
+        role: ''
+        description: '''
+          TODO
+        '''
 
     developers:
       heading: 'The development team'
@@ -225,21 +249,25 @@ module.exports =
         image: '//placehold.it/80x100.png'
         name: 'Brian Carstensen'
         role: 'Front-end developer'
+        description: ''
 
       miller:
         image: '//placehold.it/80x100.png'
         name: 'David Miller'
         role: 'Visual designer'
+        description: ''
 
       parrish:
         image: '//placehold.it/80x100.png'
         name: 'Michael Parrish'
         role: 'Senior developer'
+        description: ''
 
       smith:
         image: '//placehold.it/80x100.png'
         name: 'Arfon Smith'
         role: 'Technical lead'
+        description: ''
 
   classify:
     metersUnit: 'm'

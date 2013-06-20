@@ -17,7 +17,7 @@
 <div class="science team">
   <%- translate 'h1', "about.scientists.heading" %>
 
-  <% scientists = ['cowen', 'guigand', 'greer', 'luo'] %>
+  <% scientists = ['cowen', 'guigand', 'luo', 'greer', 'cousin', 'grassian', 'tang'] %>
 
   <% for scientist in scientists: %>
     <div class="science member">
@@ -44,7 +44,7 @@
       <%- translate 'div', "about.developers.#{developer}.role", class: 'role' %>
 
       <div class="description-popup">
-        <%- translate 'p', "about.scientists.#{developer}.description", class: 'description' %>
+        <%- translate 'p', "about.developers.#{developer}.description", class: 'description' %>
       </div>
     </div>
   <% end %>
