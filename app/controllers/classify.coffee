@@ -87,9 +87,9 @@ class Classify extends Page
       status.css display: ''
 
     # Reposition the tutorial dialog.
-    # TODO: This isn't perfect.
-    setTimeout =>
-      @tutorial.attach()
+    # TODO: This is weird, I know.
+    setTimeout => @tutorial.attach()
+    setTimeout (=> @tutorial.attach()), 300
 
   onUserChange: (e, user) =>
     # SPLIT | HEADING | PROGRESS | TALK
