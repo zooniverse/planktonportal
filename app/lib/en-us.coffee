@@ -245,29 +245,41 @@ module.exports =
     developers:
       heading: 'The development team'
 
+      borden:
+        image: './images/dev-team/borden.jpg'
+        name: 'Kelly Borden'
+        role: 'Education coordinator'
+        description: 'TODO'
+
       carstensen:
-        image: '//placehold.it/80x100.png'
+        image: './images/dev-team/carstensen.jpg'
         name: 'Brian Carstensen'
         role: 'Front-end developer'
-        description: ''
+        description: 'TODO'
+
+      lintott:
+        image: './images/dev-team/lintott.jpg'
+        name: 'Chris Lintott'
+        role: 'Zooniverse science lead'
+        description: 'TODO'
 
       miller:
-        image: '//placehold.it/80x100.png'
+        image: './images/dev-team/miller.jpg'
         name: 'David Miller'
         role: 'Visual designer'
-        description: ''
+        description: 'TODO'
 
       parrish:
-        image: '//placehold.it/80x100.png'
+        image: './images/dev-team/parrish.jpg'
         name: 'Michael Parrish'
         role: 'Senior developer'
-        description: ''
+        description: 'TODO'
 
       smith:
-        image: '//placehold.it/80x100.png'
+        image: './images/dev-team/smith.jpg'
         name: 'Arfon Smith'
         role: 'Technical lead'
-        description: ''
+        description: 'TODO'
 
   classify:
     metersUnit: 'm'

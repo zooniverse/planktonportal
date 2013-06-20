@@ -35,7 +35,7 @@
 <div class="development team">
   <%- translate 'h1', "about.developers.heading" %>
 
-  <% developers = ['carstensen', 'miller', 'parrish', 'smith'] %>
+  <% developers = ['borden', 'carstensen', 'lintott', 'miller', 'parrish', 'smith'] %>
 
   <% for developer in developers: %>
     <div class="development member">
