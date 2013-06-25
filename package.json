@@ -10,7 +10,7 @@
     "json2ify": "~0.0.3",
     "marking-surface": "~0.0.15",
     "moment": "~2.0.0",
-    "publisssh": "~0.0.5",
+    "publisssh": "~0.1.0",
     "spine": "~1.0.9",
     "t7e": "git+ssh://git@github.com:brian-c/t7e.git#editor",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps",
