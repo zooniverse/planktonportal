@@ -4,10 +4,10 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("./fontcustom-538cfb0446861320db56b8efbcde24a2.eot?#iefix") format("embedded-opentype"),
-       url("./fontcustom-538cfb0446861320db56b8efbcde24a2.woff") format("woff"),
-       url("./fontcustom-538cfb0446861320db56b8efbcde24a2.ttf") format("truetype"),
-       url("./fontcustom-538cfb0446861320db56b8efbcde24a2.svg#fontcustom") format("svg");
+  src: url("./fontcustom-e70d63b2ae3d788f161fc63f746e85a2.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom-e70d63b2ae3d788f161fc63f746e85a2.woff") format("woff"),
+       url("./fontcustom-e70d63b2ae3d788f161fc63f746e85a2.ttf") format("truetype"),
+       url("./fontcustom-e70d63b2ae3d788f161fc63f746e85a2.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -82,18 +82,20 @@ li[class^="icon-"].icon-large:before, li[class*=" icon-"].icon-large:before {
 .icon-larvacean-house:before { content: "\f10a"; }
 .icon-larvacean:before { content: "\f10b"; }
 .icon-lobate:before { content: "\f10c"; }
-.icon-lyliopsis:before { content: "\f10d"; }
-.icon-medusa-more-than-four-tentacles:before { content: "\f10e"; }
-.icon-platytecnida:before { content: "\f10f"; }
-.icon-polychaete-worm:before { content: "\f110"; }
-.icon-prayidae:before { content: "\f111"; }
-.icon-radiolarian-colonies:before { content: "\f112"; }
-.icon-rocket-thimble:before { content: "\f113"; }
-.icon-rocket-triangle:before { content: "\f114"; }
-.icon-salp:before { content: "\f115"; }
-.icon-shrimp:before { content: "\f116"; }
-.icon-sipho-corn-cob:before { content: "\f117"; }
-.icon-solmaris:before { content: "\f118"; }
-.icon-speed:before { content: "\f119"; }
-.icon-status:before { content: "\f11a"; }
-.icon-thalasso:before { content: "\f11b"; }
+.icon-medusa-four-tentacles:before { content: "\f10d"; }
+.icon-medusa-goblet:before { content: "\f10e"; }
+.icon-medusa-more-than-four-tentacles:before { content: "\f10f"; }
+.icon-platytecnida:before { content: "\f110"; }
+.icon-polychaete-worm:before { content: "\f111"; }
+.icon-prayidae:before { content: "\f112"; }
+.icon-radiolarian-colonies:before { content: "\f113"; }
+.icon-rocket-thimble:before { content: "\f114"; }
+.icon-rocket-triangle:before { content: "\f115"; }
+.icon-salp:before { content: "\f116"; }
+.icon-shrimp:before { content: "\f117"; }
+.icon-sipho-corn-cob:before { content: "\f118"; }
+.icon-sipho-two-cups:before { content: "\f119"; }
+.icon-solmaris:before { content: "\f11a"; }
+.icon-speed:before { content: "\f11b"; }
+.icon-status:before { content: "\f11c"; }
+.icon-thalasso:before { content: "\f11d"; }
