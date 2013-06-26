@@ -1,3 +1,5 @@
+PROJECT_NAME = 'Team Sea Zoo'
+
 module.exports =
   speciesCategories:
     round: 'Round, no tentacles'
@@ -36,6 +38,7 @@ module.exports =
     copepod: 'Copepod'
 
   navigation:
+    projectName: PROJECT_NAME
     home: 'Home'
     science: 'Science'
     classify: 'Classify'
@@ -329,7 +332,7 @@ module.exports =
 
   tutorial:
     welcome:
-      header: 'Welcome to the plankton project!'
+      header: "Welcome to #{PROJECT_NAME}!"
       details: '''
         This short tutorial will show you how to use the tools to mark and identify plankton.
         Before you start, it's a good idea to check out the "science" page to learn learn about the different species we're classifying.
