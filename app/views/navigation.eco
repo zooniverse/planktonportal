@@ -6,6 +6,7 @@
   <a href="#/science/field-guide"><%- translate 'span', 'navigation.science' %></a>
   <a href="#/classify"><%- translate 'span', 'navigation.classify' %></a>
   <a href="#/profile"><%- translate 'span', 'navigation.profile' %></a>
+  <a href="#/education"><%- translate 'span', 'navigation.education' %></a>
   <a href="#/team"><%- translate 'span', 'navigation.team' %></a>
   <a href="#"><%- translate 'span', 'navigation.talk' %></a>
   <a href="#"><%- translate 'span', 'navigation.blog' %></a>

@@ -43,6 +43,7 @@ module.exports =
     science: 'Science'
     classify: 'Classify'
     profile: 'Profile'
+    education: 'Education'
     team: 'Team'
     talk: 'Discuss'
     blog: 'Blog'
@@ -170,6 +171,9 @@ module.exports =
         radiolarian:
           title: 'Radiolarian (solitary and colonies)'
           content: 'Radiolarians are single-celled organisms (protozoa) that are often solitary (up to a few mm in diameter), but some also form relatively large colonies (up to a few cm in size). These colonies are composed of a large group radiolarians held together by a gelatinous structure, often resembling the shape of a long sock. These organisms, like most jelly-like organisms, are very hard to study with traditional methods because they are fragile and get destroyed by plankton nets.'
+
+  education:
+    content: '<p>TODO: Education content</p>'
 
   about:
     organizations:

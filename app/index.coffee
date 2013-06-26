@@ -4,7 +4,9 @@ Navigation = require './controllers/navigation'
 navigation = new Navigation
 navigation.el.appendTo document.body
 
+translate = require 't7e'
 {Stack} = require 'spine/lib/manager'
+Page = require './controllers/page'
 Home = require './controllers/home'
 Science = require './controllers/science'
 Classify = require './controllers/classify'
@@ -18,6 +20,7 @@ stack = new Stack
     science: Science
     classify: Classify
     profile: class extends Controller then constructor: -> super; @html new Profile
+    education: class extends Page then content: translate 'div', 'education.content'
     team: Team
 
   routes:
@@ -25,6 +28,7 @@ stack = new Stack
     '/science/*': 'science'
     '/classify': 'classify'
     '/profile': 'profile'
+    '/education': 'education'
     '/team': 'team'
 
   default: 'home'
