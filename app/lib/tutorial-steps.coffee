@@ -41,9 +41,7 @@ afterFirst = ->
   close &&= closeTo mark.p2, firstCreature.p2
   close &&= closeTo mark.p3, firstCreature.p3
 
-  right = mark.species is 'hydromedusa'
-
-  console.log 'first', {close, right}
+  right = mark.species is 'medusaFourTentacles'
 
   if close and right
     'markTheOtherOne'
@@ -130,11 +128,11 @@ addStep 'firstBadCoordinates',
 
 addStep 'firstWrongSpecies',
   header: translate 'div', 'tutorial.wrongSpecies.header'
-  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
-  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Hydromedusa', $category: 'Multi-tentacled'})
-  attachment: 'center bottom .marking-tool-controls center top'
+  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Four-tentacled medusa', $category: 'Tentacled'})
+  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Four-tentacled medusa', $category: 'Tentacled'})
+  attachment: 'right bottom .marking-tool-controls left top'
 
-  actionable: 'button[value="tentacled"], button[value="hydromedusa"]'
+  actionable: 'button[value="tentacled"], button[value="medusaFourTentacles"]'
 
   next: 'click button[name="species"]': afterFirst
 

@@ -335,7 +335,7 @@ module.exports =
       header: "Welcome to #{PROJECT_NAME}!"
       details: '''
         This short tutorial will show you how to use the tools to mark and identify plankton.
-        Before you start, it's a good idea to check out the "science" page to learn learn about the different species we're classifying.
+        Before you start, it's a good idea to check out the "science" page to learn about the different species we're classifying.
         Your classifications will be combined with the classifications of other volunteers, so do your best, but don't worry if some seem hard.
       '''
 
@@ -382,9 +382,9 @@ module.exports =
       header: 'Close, but no cigar'
       details: '''
         It looks like the axes are a bit off.
-        Here are some arrows to show you where the lines should go.
+        We've drawn some guides to help you out.
       '''
-      instruction: 'Drag the handles at the end of each line until they fit inside the green arrows.'
+      instruction: 'Drag the handles at the end of each line until they match the guides.'
 
     wrongSpecies:
       header: 'A case of mistaken identity'
