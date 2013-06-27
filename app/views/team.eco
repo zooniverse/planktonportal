@@ -3,13 +3,14 @@
 <div class="organizations team">
   <%- translate 'h1', "about.organizations.heading" %>
 
-  <% organizations = [] %>
+  <% organizations = ['rsmas', 'uMiami', 'adler', 'zooniverse'] %>
 
   <% for organization in organizations: %>
     <div class="member organization">
-      <img src="<%- translate "about.organizations.#{organization}.image" %>" />
-      <%- translate 'div', "about.organizations.#{organization}.name", class: 'name' %>
-      <!--<%- translate 'div', "about.organizations.#{organization}.role", class: 'role' %>-->
+      <a href="<%- translate "about.organizations.#{organization}.url" %>">
+        <img src="<%- translate "about.organizations.#{organization}.image" %>" />
+        <%- translate 'div.name', "about.organizations.#{organization}.name" %>
+      </a>
     </div>
   <% end %>
 </div>
@@ -22,11 +23,10 @@
   <% for scientist in scientists: %>
     <div class="science member">
       <img src="<%- translate "about.scientists.#{scientist}.image" %>" />
-      <%- translate 'div', "about.scientists.#{scientist}.name", class: 'name' %>
-      <!--<%- translate 'div', "about.scientists.#{scientist}.role", class: 'role' %>-->
+      <%- translate 'div.name', "about.scientists.#{scientist}.name" %>
 
       <div class="description-popup">
-        <%- translate 'p', "about.scientists.#{scientist}.description", class: 'description' %>
+        <%- translate 'p.description', "about.scientists.#{scientist}.description" %>
       </div>
     </div>
   <% end %>
@@ -40,11 +40,10 @@
   <% for developer in developers: %>
     <div class="development member">
       <img src="<%- translate "about.developers.#{developer}.image" %>" />
-      <%- translate 'div', "about.developers.#{developer}.name", class: 'name' %>
-      <!--<%- translate 'div', "about.developers.#{developer}.role", class: 'role' %>-->
+      <%- translate 'div.name', "about.developers.#{developer}.name" %>
 
       <div class="description-popup">
-        <%- translate 'p', "about.developers.#{developer}.description", class: 'description' %>
+        <%- translate 'p.description', "about.developers.#{developer}.description" %>
       </div>
     </div>
   <% end %>

@@ -179,6 +179,26 @@ module.exports =
     organizations:
       heading: 'Organizations'
 
+      rsmas:
+        image: './images/organizations/rsmas.png'
+        name: 'RSMAS'
+        url: '#TODO'
+
+      uMiami:
+        image: './images/organizations/u-miami.png'
+        name: 'University of Miami'
+        url: '#TODO'
+
+      adler:
+        image: './images/organizations/adler.png'
+        name: 'Adler Planetarium'
+        url: '#TODO'
+
+      zooniverse:
+        image: './images/organizations/zooniverse.png'
+        name: 'Zooniverse'
+        url: '#TODO'
+
     scientists:
       heading: 'The science team'
 
