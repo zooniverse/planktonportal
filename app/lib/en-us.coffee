@@ -232,7 +232,7 @@ module.exports =
         description: '''
           Charles Cousin is involved with the design and manufacturing of the ISIIS towed vehicles.
           He participates in the design of all systems of the instrument, using CAD modeling, drafting, and mechanical analysis tools.
-          He also manages manufacturing and is responsible for final assembly of the ISIIS vehicles. 
+          He also manages manufacturing and is responsible for final assembly of the ISIIS vehicles.
           Charles started his career designing manned submersibles and now focuses his activities helping scientists developed custom oceanographic instruments.
         '''
 
