@@ -230,7 +230,10 @@ module.exports =
         name: 'Charles Cousin'
         role: ''
         description: '''
-          TODO
+          Charles Cousin is involved with the design and manufacturing of the ISIIS towed vehicles.
+          He participates in the design of all systems of the instrument, using CAD modeling, drafting, and mechanical analysis tools.
+          He also manages manufacturing and is responsible for final assembly of the ISIIS vehicles. 
+          Charles started his career designing manned submersibles and now focuses his activities helping scientists developed custom oceanographic instruments.
         '''
 
       grassian:
@@ -238,7 +241,11 @@ module.exports =
         name: 'Ben Grassian'
         role: ''
         description: '''
-          TODO
+          Ben Grassian is an undergraduate at the University of Miami who is completing his bachelors in Marine Science and Biology in Summer 2013.
+          His research background is mostly in cellular biology, having worked in a cancer research lab in Boston, MA while in high school.
+          His work focused on understanding the molecular basis for oncogenic evasion of cell-death pathways via the downregulation of certain proteins.
+          He began working with ISIIS image data in the Fall of 2011, focusing on the temporal and spatial distributions of Ctenophore populations in the upper water column.
+          He plans on applying to graduate school while finishing his work with ISIIS.
         '''
 
       tang:
@@ -246,7 +253,11 @@ module.exports =
         name: 'Dorothy Tang'
         role: ''
         description: '''
-          TODO
+          Dorothy Tang is a research assistant working on the ISIIS images.
+          She has been fascinated by the variety of marine ecosystems and life forms since she was a child.
+          In order to study more about the oceans and the organisms living in it, she moved from Hong Kong to the United States in 2006.
+          She earned her B.S. in Marine Science and Biology in 2012 from the University of Miami.
+          She also loves to collect shells.
         '''
 
     developers:

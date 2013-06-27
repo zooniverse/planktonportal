@@ -17,7 +17,7 @@
 <div class="science team">
   <%- translate 'h1', "about.scientists.heading" %>
 
-  <% scientists = ['cowen', 'guigand', 'luo', 'greer', 'cousin', 'grassian', 'tang'] %>
+  <% scientists = ['cowen', 'guigand', 'cousin', 'greer', 'luo', 'tang', 'grassian'] %>
 
   <% for scientist in scientists: %>
     <div class="science member">
