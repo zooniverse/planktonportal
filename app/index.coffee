@@ -19,7 +19,7 @@ stack = new Stack
     home: Home
     science: Science
     classify: Classify
-    profile: class extends Controller then constructor: -> super; @html new Profile
+    profile: class extends Page then content: (new Profile).el
     education: class extends Page then content: translate 'div', 'education.content'
     team: Team
 
