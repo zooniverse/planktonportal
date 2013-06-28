@@ -65,6 +65,99 @@ module.exports =
     fieldGuide:
       title: 'Field guide'
 
+      lobate: '''
+        Round to oval, with bristled (comb) rows along the major axis – though rows not apparent in some species. Certain species look balloon-shaped with two small, opposing lobes. Others may have large lobes visible on the “bottom” of the organism. Range in size from small to extra large.  Typically appears opaque in images.
+      '''
+
+      larvaceanHouse: '''
+        A striped blob-like ‘web’ usually surrounding a tadpole-like inhabitant, appearing like a child’s slinky.  Can be very transparent but appears darker, or more ‘splotchy,’ as debris is collected.
+      '''
+
+      salp: '''
+        Cocoon shaped with the interior appearing like a basket weave.  Not always symmetrical but usually has a distinct ovular shape.  Transparent with dark features lining the interior of the organism.
+      '''
+
+      thalasso: '''
+        Typically cap or dome-like, but when feeding, appears more spherical or inflated.  Transparent with distinct, ornamental lines apparent on surface (jagged lines running on the outside of the body).  The dome-like shape of the organism may be seen as a conjoined hood of two expanded lobes.
+      '''
+
+      doliolidWithoutTail: '''
+        Barrel shaped body with interior striations along the minor axis, appearing similar to a pineapple in certain orientations.  May or may not have a tail.
+      '''
+
+      rocketThimble: '''
+        Thimble-shaped with a single, long, branching “tail”.
+      '''
+
+      rocketTriangle: '''
+        Similar overall shape to rocketship thimble but with an arrow-head body. Typically observed with a simple “tail” but sometimes displaying an elaborate array of branching tentacles.
+      '''
+
+      siphoCornCob: '''
+        A very diverse group identifiable by an aggregation of gas filled chambers, appearing somewhat like a corn cob.  “Tail” ranges from simple, thin tentacles to an elaborate feature, with chambers similar to the body and often branching tentacles.
+      '''
+
+      siphoTwoCups: '''
+        Hooded organism with a multi-chambered stem with trailing tentacles attached.  Characteristic hood composed of two adjoined cups. “Tail” is broad and elaborate, with dark interior features.
+      '''
+
+      doliolidWithTail: '''
+        Barrel shaped body with interior striations along the minor axis, appearing similar to a pineapple in certain orientations.  May or may not have a tail.
+      '''
+
+      cydippid: '''
+        Acorn or (American) football shaped with bands along the major axis that are sometimes observed with fine, hair-like combs.  Possess two trailing tentacles with varying degrees of branching.
+      '''
+
+      solmaris: '''
+        Jellyfish with flat head. It has many distinct tentacles (16-40). Tentacles look like long eyelashes: compared to other jellyfish, they appear stiffer, shorter and more uniformly oriented. Solmaris often occurs with multiple individuals contained in a single frame.
+      '''
+
+      medusaFourTentacles: '''
+        Typical jellyfish body with a dangling, central finger-like structure coming out of the bell.  It has four long, thin tentacles.
+      '''
+
+      medusaMoreThanFourTentacles: '''
+        Typical jellyfish body with more than four tentacles. Tentacles vary from short to very long. In individuals with shorter tentacles, they are usually disordered-looking. This category is a catch-all for all jellyfish that do not fit in Medusa 1 or 3.
+      '''
+
+      medusaGoblet: '''
+        Distinct category of jellyfish.  Two short, simple, symmetrical tentacles.  Bell typically shaped like a goblet.
+      '''
+
+
+      beroida: '''
+        Opaque with one rounded end, with numerous hair-like appendages usually visible on the round end.  Shape resembles a zucchini / cucumber.
+      '''
+
+      cestida: '''
+        Transparent and ribbon like with a pair of lines running along the center of the major axis.  An apparent cross occurs in the middle.
+      '''
+
+      radiolarianColonies: '''
+        Extremely variable in size and shape.  Appears as a string or mass of circular bodies contained within a transparent border.
+      '''
+
+      larvacean: '''
+        Tadpole-like.  Head is dark and body is relatively transparent. Tail is almost always wavy.  If it is surrounded by a semi-transparent mucous blob, please refer to “Larvacean house” category (see ‘Round’).
+      '''
+
+      arrowWorm: '''
+        Long and contains paired, symmetrical fins and has a fan-like tail.
+      '''
+
+      shrimp: '''
+        Dark, oblong body, with paired antennae, and short leg-like appendages sometimes visible.  Orientation can be straight or with tail curled under body.
+      '''
+
+      polychaeteWorm: '''
+        Looks like a worm with paired paddle-like appendages.  Body segmentation sometimes visible.
+      '''
+
+      copepod: '''
+        Dark, ovate body with two symmetrical antennae, typically oriented in opposing directions. Often highly abundant, though very small.
+      '''
+
     about:
       title: 'About plankton'
       content: '''
