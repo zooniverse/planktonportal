@@ -13,15 +13,6 @@ body > .stack > .team
     position: relative
     width: 25%
 
-    &:after
-      background: $red
-      height: 5px
-      content: ""
-      left: 0
-      position: absolute
-      top: 100%
-      width: 80px
-
     img
       height: 100px
       margin-bottom: 5px
@@ -69,3 +60,15 @@ body > .stack > .team
 
     &:hover .description-popup
       display: block
+
+    &:after
+      background: $red
+      height: 5px
+      content: ""
+      left: 0
+      position: absolute
+      top: 100%
+      width: 80px
+
+    &.organization:after
+      width: 190px
