@@ -282,6 +282,11 @@ module.exports =
         name: 'University of Miami'
         url: 'http://www.miami.edu/'
 
+      osu:
+        image: '/images/organizations/osu.png'
+        name: 'Oregon State University Hatfield Marine Science Center'
+        url: 'http://hmsc.oregonstate.edu/'
+
       adler:
         image: './images/organizations/adler.png'
         name: 'Adler Planetarium'
