@@ -305,7 +305,7 @@ module.exports =
         name: 'Bob Cowen'
         role: ''
         description: '''
-          Bob Cowen is currently Professor and Maytag Chair of Ichthyology at the University of Miami’s Rosenstiel School of Marine and Atmospheric Science.
+          Bob Cowen is Professor and Director of the Hatfield Marine Science Center at Oregon State University.
           His research interests are focused on larval fish and the plankton communities upon which they depend.
           To better understand life on the time and space scales relevant to these organisms, he seeks novel ways to study the plankton realm.
           The development of the ISIIS imaging system is not only providing unprecedented insight into life in the plankton, but allows Bob to spend untethered days away from his desk on the high seas, ‘eaves-viewing’ on the secret lives of plankters.
