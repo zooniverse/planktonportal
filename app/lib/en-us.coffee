@@ -6,7 +6,7 @@ module.exports =
     tail: 'Head with tail'
     tentacled: 'Jellyfish-like'
     worm: 'Ribbon/elongated'
-    shrimp: 'Shrimp-like'
+    bug: 'Bug-like'
 
   species:
     lobate: 'Lobate'

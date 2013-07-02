@@ -2,7 +2,7 @@
 <% species = require '../lib/species' %>
 
 <!-- TODO: Icons should be more general, per group -->
-<% icons = round: 'thalasso', tail: 'doliolid-with-tail', tentacled: 'solmaris', worm: 'arrow-worm', shrimp: 'shrimp' %>
+<% icons = round: 'thalasso', tail: 'doliolid-with-tail', tentacled: 'solmaris', worm: 'arrow-worm', bug: 'shrimp' %>
 
 <button name="toggle"></button>
 
