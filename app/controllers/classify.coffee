@@ -178,8 +178,8 @@ class Classify extends Page
     @classification.annotate mark for mark in @surface.marks
 
     # TODO: Send classification
-    # @classification.send()
-    console?.log 'Classifying', JSON.stringify @classification
+    @classification.send()
+    # console?.log 'Classifying', JSON.stringify @classification
 
     @el.addClass 'finished'
 
