@@ -2,8 +2,8 @@ Subject = require 'zooniverse/models/subject'
 
 createTutorialSubject = ->
   new Subject
-    id: '516d6f243ae740bc96000567'
-    zooniverse_id: 'TUTORIAL_SUBJECT'
+    id: '51d481c43ae740cf60000001'
+    zooniverse_id: 'APK000005n'
 
     location: standard: './images/tutorial-subject.jpg'
 
@@ -15,6 +15,6 @@ createTutorialSubject = ->
       depth: 0
       temp: 0
 
-    workflow_ids: ['TODO']
+    workflow_ids: ['516d6f243ae740bc96000002']
 
 module.exports = createTutorialSubject
