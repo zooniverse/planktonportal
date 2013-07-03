@@ -34,6 +34,10 @@ body > .stack > .classify
   top: 0
   width: 100%
 
+  @media (max-height: 675px)
+    &
+      position: static // Scroll in short windows
+
   .classify-container
     display: table
     height: 100%
