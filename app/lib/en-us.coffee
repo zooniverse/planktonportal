@@ -458,6 +458,10 @@ module.exports =
     share: 'Share'
     tweet: 'Tweet'
     return: 'Home'
+    training: '''
+      This is a training image. We've marked where the axes of the creatures.<br />
+      Don't worry if you got one wrong! Each image is seen by multiple volunteers.
+    '''
 
   profile:
     recents: 'Recents'

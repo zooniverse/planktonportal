@@ -5,6 +5,8 @@
     <div class="classification-interface">
       <div class="subject-container"></div>
 
+      <%- translate 'div.training-message', 'classify.training' %>
+
       <div class="swap-container">
         <div class="drawer">
           <img class="old" />
