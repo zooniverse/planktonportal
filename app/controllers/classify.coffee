@@ -16,6 +16,8 @@ Favorite = require 'zooniverse/models/favorite'
 
 $html = $('html')
 
+sessionClassifications = 0
+
 class Classify extends Page
   className: 'classify'
   content: template
@@ -25,6 +27,8 @@ class Classify extends Page
   surface: null
 
   tutorial: null
+
+  guidelines: null
 
   events:
     'click button[name="finish"]': 'onClickFinish'
@@ -47,6 +51,7 @@ class Classify extends Page
     'a.twitter': 'twitterLink'
 
   constructor: ->
+    window.classifier = @
     super
 
     @el.addClass 'loading'
@@ -92,6 +97,8 @@ class Classify extends Page
     setTimeout (=> @tutorial.attach()), 300
 
   onUserChange: (e, user) =>
+    sessionClassifications = user?.project.classification_count || 0
+
     # SPLIT | HEADING | PROGRESS | TALK
     # ------+---------+----------+---------
     # A     | NO      | NO       | TUTORIAL
@@ -127,6 +134,10 @@ class Classify extends Page
     @el.addClass 'loading'
 
   onSubjectSelect: (e, subject) =>
+    @el.removeClass 'training'
+    @guidelines?.remove()
+    @guidelines = null
+
     @el.removeClass 'loading'
     @surface.marks[0].destroy() until @surface.marks.length is 0
 
@@ -169,6 +180,17 @@ class Classify extends Page
     @creatureCounter.html @surface.marks.length
 
   onClickFinish: ->
+    @checkTrainingSubject() if @classification.subject.metadata.training?
+
+    sessionClassifications += 1
+
+    training = [NaN, 3, 5, 7]
+    if sessionClassifications in training
+      console?.log sessionClassifications, 'Next subject will be training!'
+      index = (i for item, i in training when item is sessionClassifications)[0]
+      createTutorialSubject index
+      Subject.instances.unshift Subject.instances.pop()
+
     @finishButton.attr disabled: true
     @nextButton.attr disabled: false
     @surface.disable()
@@ -194,6 +216,19 @@ class Classify extends Page
     if classificationCount is introduceTalk
       setTimeout =>
         @tutorial.load 'beSocial'
+
+  checkTrainingSubject: ->
+    guides = [
+      ''
+      'M 0 0 L 100 100 M 100 0 L 0 100'
+      'M 0 25 L 100 100 M 100 0 L 0 100'
+      'M 0 50 L 100 100 M 100 0 L 0 100'
+    ]
+
+    @el.addClass 'training'
+    pathString = guides[@classification.subject.metadata.training]
+    @guidelines = @surface.paper.path pathString
+    @guidelines.attr stroke: '#3f3'
 
   onClickFavorite: ->
     @favorite = new Favorite subjects: [@classification.subject]
