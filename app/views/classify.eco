@@ -16,7 +16,7 @@
 
       <div class="status">
         <div class="time display">
-          <i class="icon-status"></i>
+          <i class="icon-calendar"></i>
           <div class="time"><span class="counter">&mdash;</span></div>
         </div>
 
@@ -26,7 +26,7 @@
         </div>
 
         <div class="temp display">
-          <i class="icon-status"></i>
+          <i class="icon-temperature"></i>
           <div class="temp"><span class="counter">&mdash;</span><%- translate 'span', 'classify.degreesUnit' %></div>
         </div>
 
