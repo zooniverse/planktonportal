@@ -1,4 +1,4 @@
-PROJECT_NAME = 'Team Sea Zoo'
+PROJECT_NAME = 'Plankton Portal'
 
 module.exports =
   speciesCategories:
