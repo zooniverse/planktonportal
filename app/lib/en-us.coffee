@@ -283,7 +283,7 @@ module.exports =
         url: 'http://www.miami.edu/'
 
       osu:
-        image: '/images/organizations/osu.png'
+        image: './images/organizations/osu.png'
         name: 'Oregon State University Hatfield Marine Science Center'
         url: 'http://hmsc.oregonstate.edu/'
 
