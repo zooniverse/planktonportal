@@ -1,5 +1,5 @@
 {
   "local": "build",
-  "bucket": "zooniverse-demo",
-  "prefix": "plankton"
+  "bucket": "www.planktonportal.org",
+  "prefix": "beta"
 }
