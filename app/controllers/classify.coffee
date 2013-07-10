@@ -11,6 +11,7 @@ Subject = require 'zooniverse/models/subject'
 createTutorialSubject = require '../lib/create-tutorial-subject'
 {Tutorial} = require 'zootorial'
 tutorialSteps = require '../lib/tutorial-steps'
+trainingGuidelines = require '../lib/training-guidelines'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
 
@@ -187,6 +188,7 @@ class Classify extends Page
     sessionClassifications += 1
 
     training = [NaN, 3, 5, 7]
+
     if sessionClassifications in training
       console?.log sessionClassifications, 'Next subject will be training!'
       index = (i for item, i in training when item is sessionClassifications)[0]
@@ -220,17 +222,10 @@ class Classify extends Page
         @tutorial.load 'beSocial'
 
   checkTrainingSubject: ->
-    guides = [
-      ''
-      'M 0 0 L 100 100 M 100 0 L 0 100'
-      'M 0 25 L 100 100 M 100 0 L 0 100'
-      'M 0 50 L 100 100 M 100 0 L 0 100'
-    ]
-
     @el.addClass 'training'
-    pathString = guides[@classification.subject.metadata.training]
+    pathString = trainingGuidelines[@classification.subject.metadata.training]
     @guidelines = @surface.paper.path pathString
-    @guidelines.attr stroke: '#3f3'
+    @guidelines.attr stroke: '#3f3', 'stroke-width': 5
 
   onClickFavorite: ->
     @favorite = new Favorite subjects: [@classification.subject]
