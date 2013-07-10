@@ -119,8 +119,10 @@ class Classify extends Page
     $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'i', 'j', 'k']
 
     if user?.project.tutorial_done
-      if Subject.current.metadata.tutorial
+      if Subject.current?.metadata.tutorial
         @tutorial.end()
+        Subject.next()
+      else if not Subject.current?
         Subject.next()
 
     else
