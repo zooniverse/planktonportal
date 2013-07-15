@@ -480,14 +480,14 @@ module.exports =
       header: 'What we\'re marking'
       details: '''
         Let's start with the large tentacled creature to the right.
-        To mark a creature, you need to draw lines across its major and minor axes.
-        We're mainly interested in the size and direction of the plankton.
+        To mark a creature, you need to draw lines across its height and width.
+        We're mainly interested in the sizes and directions of the plankton.
       '''
 
     majorAxis:
       header: 'Major axis'
       details: '''
-        Always mark the length of the plankton first, from the "front" toward the "bottom".
+        Always mark the length of the plankton first, from the top toward the bottom.
         This will tell us how long the creature is and what direction it's moving.
         Remember to check the science page if you're not sure how to mark something.
         Do not include any tentacles!
