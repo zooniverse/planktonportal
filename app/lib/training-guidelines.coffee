@@ -1,6 +1,4 @@
 module.exports = [
-  '' # Only indices 1-3 are used.
-
   '''
     M 219 28 L 162 108 M 156 42 L 228 92
     M 1013 29 L 800 92 M 898 43 L 915 85

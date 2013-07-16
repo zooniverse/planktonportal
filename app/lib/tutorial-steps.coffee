@@ -2,11 +2,17 @@ $ = require 'jqueryify'
 translate = require 't7e'
 {Step} = require 'zootorial'
 User = require 'zooniverse/models/user'
+trainingGuidelines = require './training-guidelines'
 
 surface = null # Defined in the first step
 
-firstCreature  = p0: [817, 226], p1: [853, 333], p2: [765, 308], p3: [907, 254]
-secondCreature = p0: [700, 112], p1: [721, 106], p2: [708, 102], p3: [714, 117]
+firstCreature = do ->
+  [x0, y0, x1, y1, x2, y2, x3, y3] = trainingGuidelines[0].split('\n')[2].match /(\d+)/g
+  p0: [x0, y0], p1: [x1, y1], p2: [x2, y2], p3: [x3, y3]
+
+secondCreature = do ->
+  [x0, y0, x1, y1, x2, y2, x3, y3] = trainingGuidelines[0].split('\n')[1].match /(\d+)/g
+  p0: [x0, y0], p1: [x1, y1], p2: [x2, y2], p3: [x3, y3]
 
 module.exports =
   length: 9
@@ -41,10 +47,10 @@ afterFirst = ->
   close &&= closeTo mark.p2, firstCreature.p2
   close &&= closeTo mark.p3, firstCreature.p3
 
-  right = mark.species is 'medusaFourTentacles'
+  right = mark.species is 'solmaris'
 
   if close and right
-    'markTheOtherOne'
+    'markTheOtherOnes'
   else if not close
     'firstBadCoordinates'
   else if not right
@@ -76,17 +82,19 @@ addStep 'welcome',
 
 addStep 'beforeMark',
   number: 2
+  attachment: 'center middle .marking-surface 0.33 middle'
+  className: 'point-right'
   next: 'majorAxis'
 
 addStep 'majorAxis',
   number: 3
-  attachment: 'right middle .marking-surface 0.7 0.5'
+  attachment: 'center middle .marking-surface 0.33 middle'
   className: 'point-right'
   next: 'mouseup .marking-surface': 'minorAxis'
 
 addStep 'minorAxis',
   number: 4
-  attachment: 'right middle .marking-surface 0.7 0.5'
+  attachment: 'center middle .marking-surface 0.33 middle'
   className: 'point-right'
   next: 'mouseup .marking-surface': 'chooseCategory'
 
@@ -108,12 +116,7 @@ addStep 'firstBadCoordinates',
   className: 'point-right'
 
   onEnter: ->
-    @guidelines = surface.paper.path """
-      M #{firstCreature.p0[0]} #{firstCreature.p0[1]}
-      L #{firstCreature.p1[0]} #{firstCreature.p1[1]}
-      M #{firstCreature.p2[0]} #{firstCreature.p2[1]}
-      L #{firstCreature.p3[0]} #{firstCreature.p3[1]}
-    """
+    @guidelines = surface.paper.path trainingGuidelines[0].split('\n')[2]
 
     @guidelines.attr
       'stroke': '#ff0'
@@ -128,33 +131,35 @@ addStep 'firstBadCoordinates',
 
 addStep 'firstWrongSpecies',
   header: translate 'div', 'tutorial.wrongSpecies.header'
-  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Four-tentacled medusa', $category: 'Tentacled'})
-  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Four-tentacled medusa', $category: 'Tentacled'})
-  attachment: 'right bottom .marking-tool-controls left top'
+  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Solmaris', $category: 'Tentacled'})
+  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Solmaris', $category: 'Tentacled'})
+  attachment: 'center bottom .marking-tool-controls center top'
 
-  actionable: 'button[value="tentacled"], button[value="medusaFourTentacles"]'
+  actionable: 'button[value="tentacled"], button[value="solmaris"]'
 
   next: 'click button[name="species"]': afterFirst
 
-addStep 'markTheOtherOne',
-  number: 7
-  attachment: 'center top .marking-surface 0.7 0.4'
-  className: 'point-up'
-  next: 'click button[name="species"]': afterSecond
+  onEnter: ->
+    surface.tools[0].controls.onClickToggle()
 
-addStep 'secondBadCoordinates',
-  header: translate 'div', 'tutorial.badCoordinates.header'
-  details: translate 'div', 'tutorial.badCoordinates.details'
-  instruction: translate 'div', 'tutorial.badCoordinates.instruction'
-  attachment: 'center top .marking-surface 0.7 0.4'
-  className: 'point-up'
+addStep 'markTheOtherOnes',
+  number: 7
+  attachment: 'center middle .marking-surface 0.33 0.45'
+  next:
+    # TODO: A click event never triggers for some reason, so use mousedown for now.
+    'mousedown button[name="finish"]': ->
+      if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
+        'beSocial'
+      else
+        'haveFun'
 
   onEnter: ->
+    individualGuides = trainingGuidelines[0].split '\n'
+
     @guidelines = surface.paper.path """
-      M #{secondCreature.p0[0]} #{secondCreature.p0[1]}
-      L #{secondCreature.p1[0]} #{secondCreature.p1[1]}
-      M #{secondCreature.p2[0]} #{secondCreature.p2[1]}
-      L #{secondCreature.p3[0]} #{secondCreature.p3[1]}
+      #{individualGuides[0]}
+      #{individualGuides[1]}
+      #{individualGuides[3]}
     """
 
     @guidelines.attr
@@ -165,6 +170,13 @@ addStep 'secondBadCoordinates',
   onExit: ->
     @guidelines.remove()
     delete @guidelines
+
+addStep 'secondBadCoordinates',
+  header: translate 'div', 'tutorial.badCoordinates.header'
+  details: translate 'div', 'tutorial.badCoordinates.details'
+  instruction: translate 'div', 'tutorial.badCoordinates.instruction'
+  attachment: 'center top .marking-surface 0.7 0.4'
+  className: 'point-up'
 
   next: 'mouseup .marking-surface': afterSecond
 
@@ -200,3 +212,4 @@ addStep 'beSocial',
 addStep 'haveFun',
   number: 9
   next: null
+  nextButton: translate 'tutorial.haveFun.nextButton'

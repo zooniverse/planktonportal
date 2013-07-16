@@ -492,14 +492,14 @@ module.exports =
         Remember to check the science page if you're not sure how to mark something.
         Do not include any tentacles!
       '''
-      instruction: 'Drag vertically from the top of the bell across to where the tentacles start.'
+      instruction: 'Drag from the right side of the bell to the left side of the bell (where the tentacles start).'
 
     minorAxis:
       header: 'Minor axis'
       details: '''
         Now we'll mark the width of the creature.
       '''
-      instruction: 'Drag from left to right across the bell.'
+      instruction: 'Drag from top to bottom across the width of the bell.'
 
     chooseCategory:
       header: 'Narrow down possible species'
@@ -530,15 +530,12 @@ module.exports =
       '''
       instruction: 'Click the icon to re-open the menu, then choose the $species under the $category category.'
 
-    markTheOtherOne:
-      header: 'Mark the next creature'
+    markTheOtherOnes:
+      header: 'Mark the other creatures'
       details: '''
-        Try marking the creature in the top-right of the image on your own.
-        It's tiny, but try your best to be accurate.
-        You can always adjust the lines you've drawn by dragging the end points.
-        Remember: Drag out the major axis (length), then the minor axis (width), then choose the species.
+        There are three more creatures in this image. Try marking them yourself!.
       '''
-      instruction: 'Mark the next creature on your own.'
+      instruction: 'Mark the next creatures on your own. Click "Finish" when you\'re finished.'
 
     finish:
       header: 'Move on to the next image'
@@ -560,3 +557,5 @@ module.exports =
         It looks like you've got a handle on this.
         Enjoy exploring the ocean through a microscope, and thanks for helping with our research!
       '''
+
+      nextButton: 'Close'
