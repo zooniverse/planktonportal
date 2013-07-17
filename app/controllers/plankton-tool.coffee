@@ -62,7 +62,8 @@ class PlanktonTool extends AxesTool
 
     @dots[2].attr r: @dots[2].attr('r') * 0.75
     @dots[3].attr r: @dots[3].attr('r') * 0.75
-    @directionIndicator = @addShape 'path', 'M -20 0, L 0 -30, L 20 0, M 0 30', 'stroke-width': 3
+    indicatorSize = 25
+    @directionIndicator = @addShape 'path', "M -#{indicatorSize * (2 / 3)} 0, L 0 -#{indicatorSize}, L #{indicatorSize * (2 / 3)} 0, M 0 #{indicatorSize}", 'stroke-width': 3
 
   render: ->
     super

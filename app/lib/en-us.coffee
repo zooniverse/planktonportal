@@ -493,7 +493,6 @@ module.exports =
       header: "Welcome to #{PROJECT_NAME}!"
       details: '''
         This short tutorial will show you how to use the tools to mark and identify plankton.
-        Before you start, it's a good idea to check out the "science" page to learn about the different species we're classifying.
         Your classifications will be combined with the classifications of other volunteers, so do your best, but don't worry if some seem hard.
       '''
 
@@ -575,7 +574,7 @@ module.exports =
     haveFun:
       header: 'Have fun'
       details: '''
-        It looks like you've got a handle on this.
+        It looks like you've got a handle on this. To learn more about the different types of plankton, check out the Science page.
         Enjoy exploring the ocean through a microscope, and thanks for helping with our research!
       '''
 
