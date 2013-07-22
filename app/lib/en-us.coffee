@@ -286,7 +286,7 @@ module.exports =
       <p>http://education.nationalgeographic.com/education/activity/save-the-plankton-breathe-freely/?ar_a=1</p>
 
       <h3>How can I keep up to date with education and #{PROJECT_NAME}?</h3>
-      <p>#{PROJECT_NAME} <a href="http://blog.planktonportal.org/">Blog</a> and <a href="#">@TODO</a> twitter feed are great places to keep up to date with the latest science results, but there is also a <a href="http://education.zooniverse.org/">Zooniverse Education Blog</a> as well as the <a href="https://twitter.com/ZooTeach">@zooteach</a> Twitter feed.</p>
+      <p>#{PROJECT_NAME} <a href="http://blog.planktonportal.org/">Blog</a> and <a href="https://twitter.com/PlanktonPortal">@PlanktonPortal</a> twitter feed are great places to keep up to date with the latest science results, but there is also a <a href="http://education.zooniverse.org/">Zooniverse Education Blog</a> as well as the <a href="https://twitter.com/ZooTeach">@zooteach</a> Twitter feed.</p>
     """
 
   about:
