@@ -11,7 +11,7 @@ Subject = require 'zooniverse/models/subject'
 createTutorialSubject = require '../lib/create-tutorial-subject'
 {Tutorial} = require 'zootorial'
 tutorialSteps = require '../lib/tutorial-steps'
-trainingGuidelines = require '../lib/training-guidelines'
+training = require '../lib/training'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
 
@@ -140,6 +140,8 @@ class Classify extends Page
     @el.removeClass 'training'
     @guidelines?.remove()
     @guidelines = null
+    @guideIcons?.remove()
+    @guideIcons = null
 
     @el.removeClass 'loading'
     @surface.marks[0].destroy() until @surface.marks.length is 0
@@ -187,11 +189,11 @@ class Classify extends Page
 
     sessionClassifications += 1
 
-    training = [NaN, 3, 5, 7]
+    trainingSubjects = [NaN, 3, 5, 7]
 
-    if sessionClassifications in training
+    if sessionClassifications in trainingSubjects
       console?.log sessionClassifications, 'Next subject will be training!'
-      index = (i for item, i in training when item is sessionClassifications)[0]
+      index = (i for item, i in trainingSubjects when item is sessionClassifications)[0]
       createTutorialSubject index
       Subject.instances.unshift Subject.instances.pop()
 
@@ -223,9 +225,19 @@ class Classify extends Page
 
   checkTrainingSubject: ->
     @el.addClass 'training'
-    pathString = trainingGuidelines[@classification.subject.metadata.training]
+    pathString = training.guidelines[@classification.subject.metadata.training]
     @guidelines = @surface.paper.path pathString
     @guidelines.attr stroke: '#3f3', 'stroke-width': 5
+
+    @guideIcons = $()
+    for {species, coords: [left, top]} in training.icons[@classification.subject.metadata.training]
+      speciesClassName = species.replace(/([A-Z])/g, '-$1').toLowerCase()
+      el = $("<i class='training-species-icon icon-#{speciesClassName}'></i>")
+      el.css {left, top}
+      @guideIcons.push.apply @guideIcons, el
+
+    console.log {@guideIcons}
+    @guideIcons.appendTo @el
 
   onClickFavorite: ->
     @favorite = new Favorite subjects: [@classification.subject]

@@ -2,16 +2,13 @@ $ = require 'jqueryify'
 translate = require 't7e'
 {Step} = require 'zootorial'
 User = require 'zooniverse/models/user'
-trainingGuidelines = require './training-guidelines'
+training = require './training'
 
 surface = null # Defined in the first step
 
 firstCreature = do ->
-  [x0, y0, x1, y1, x2, y2, x3, y3] = trainingGuidelines[0].split('\n')[2].match /(\d+)/g
-  p0: [x0, y0], p1: [x1, y1], p2: [x2, y2], p3: [x3, y3]
-
-secondCreature = do ->
-  [x0, y0, x1, y1, x2, y2, x3, y3] = trainingGuidelines[0].split('\n')[1].match /(\d+)/g
+  # It's actually the third (at index 2).
+  [x0, y0, x1, y1, x2, y2, x3, y3] = training.guidelines[0].split('\n')[2].match /(\d+)/g
   p0: [x0, y0], p1: [x1, y1], p2: [x2, y2], p3: [x3, y3]
 
 module.exports =
@@ -56,24 +53,6 @@ afterFirst = ->
   else if not right
     'firstWrongSpecies'
 
-afterSecond = ->
-  mark = surface.marks[-1...][0]
-
-  close = true
-  close &&= closeTo mark.p0, secondCreature.p0
-  close &&= closeTo mark.p1, secondCreature.p1
-  close &&= closeTo mark.p2, secondCreature.p2
-  close &&= closeTo mark.p3, secondCreature.p3
-
-  right = mark.species is 'copepod'
-
-  if close and right
-    'finish'
-  else if not close
-    'secondBadCoordinates'
-  else if not right
-    'secondWrongSpecies'
-
 addStep 'welcome',
   number: 1
   next: ->
@@ -116,7 +95,7 @@ addStep 'firstBadCoordinates',
   className: 'point-right'
 
   onEnter: ->
-    @guidelines = surface.paper.path trainingGuidelines[0].split('\n')[2]
+    @guidelines = surface.paper.path training.guidelines[0].split('\n')[2]
 
     @guidelines.attr
       'stroke': '#ff0'
@@ -144,7 +123,8 @@ addStep 'firstWrongSpecies',
 
 addStep 'markTheOtherOnes',
   number: 7
-  attachment: 'center middle .marking-surface 0.33 0.45'
+  attachment: 'center bottom .marking-surface 0.75 bottom'
+  actionable: 'button[name="finish"]'
   next:
     # TODO: A click event never triggers for some reason, so use mousedown for now.
     'mousedown button[name="finish"]': ->
@@ -154,7 +134,7 @@ addStep 'markTheOtherOnes',
         'haveFun'
 
   onEnter: ->
-    individualGuides = trainingGuidelines[0].split '\n'
+    individualGuides = training.guidelines[0].split '\n'
 
     @guidelines = surface.paper.path """
       #{individualGuides[0]}
@@ -167,42 +147,25 @@ addStep 'markTheOtherOnes',
       'stroke-dasharray': '-'
       'stroke-width': 2
 
-  onExit: ->
+  onExit: (tutorial) ->
     @guidelines.remove()
     delete @guidelines
 
-addStep 'secondBadCoordinates',
-  header: translate 'div', 'tutorial.badCoordinates.header'
-  details: translate 'div', 'tutorial.badCoordinates.details'
-  instruction: translate 'div', 'tutorial.badCoordinates.instruction'
-  attachment: 'center top .marking-surface 0.7 0.4'
-  className: 'point-up'
+    tutorial.guideIcons = $()
+    for {species, coords: [left, top]} in training.icons[0]
+      speciesClassName = species.replace(/([A-Z])/g, '-$1').toLowerCase()
+      el = $("<i class='training-species-icon icon-#{speciesClassName}'></i>")
+      el.css {left, top}
+      el.appendTo window.classifier.surface.container
+      tutorial.guideIcons.push.apply tutorial.guideIcons, el
 
-  next: 'mouseup .marking-surface': afterSecond
-
-addStep 'secondWrongSpecies',
-  header: translate 'div', 'tutorial.wrongSpecies.header'
-  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Copepod', $category: 'Multi-tentacled'})
-  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Copepod', $category: 'Multi-tentacled'})
-  attachment: 'center top .marking-surface 0.7 0.4'
-  className: 'point-up'
-
-  actionable: 'button[name="species"][value="shrimp"], button[value="copepod"]'
-
-  next: 'click button[name="species"]': afterSecond
-
-addStep 'finish',
-  number: 8
-  attachment: 'center bottom button[name="finish"] center top'
-  next:
-    # TODO: A click event never triggers for some reason, so use mousedown for now.
-    'mousedown button[name="finish"]': ->
-      if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
-        'beSocial'
-      else
-        'haveFun'
+    # Check to see if we've actually exited the tutorial.
+    setTimeout (=> tutorial.guideIcons.remove() unless tutorial.started?), 250
 
 addStep 'beSocial',
+  onExit: (tutorial) ->
+    tutorial.guideIcons.remove()
+
   next: ->
     if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
       'haveFun'
@@ -213,3 +176,6 @@ addStep 'haveFun',
   number: 9
   next: null
   nextButton: translate 'tutorial.haveFun.nextButton'
+
+  onExit: (tutorial) ->
+    tutorial.guideIcons.remove()
