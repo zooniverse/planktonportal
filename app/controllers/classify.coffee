@@ -33,6 +33,7 @@ class Classify extends Page
 
   events:
     'click button[name="finish"]': 'onClickFinish'
+    'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
     'click button[name="favorite"]': 'onClickFavorite'
     'click button[name="next"]': 'onClickNext'
 
@@ -175,6 +176,7 @@ class Classify extends Page
     @twitterLink.attr href: subject.twitterHref()
 
     if subject.metadata.tutorial
+      @tutorial.end() if @tutorial.started?
       @tutorial.start()
 
   onNoMoreSubjects: =>
@@ -222,6 +224,9 @@ class Classify extends Page
     if classificationCount is introduceTalk
       setTimeout =>
         @tutorial.load 'beSocial'
+
+  onClickRestartTutorial: ->
+    (createTutorialSubject 0).select()
 
   checkTrainingSubject: ->
     @el.addClass 'training'
