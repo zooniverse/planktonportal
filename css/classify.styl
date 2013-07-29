@@ -6,7 +6,9 @@
     background-position: 0 -150px
 
 .zooniverse-top-bar
-  transition: opacity 0.5s ease-in-out
+  transition:
+    opacity 0.5s ease-in-out,
+    top 0.5s ease-in-out
 
 .on-classify-page
   background: darken($dark-gray, 50%)
@@ -22,9 +24,11 @@
 
   .zooniverse-top-bar
     opacity: 0.5
+    top: -30px
 
     &:hover
       opacity: 1
+      top: 0
 
 body > .stack > .classify
   height: 100%
