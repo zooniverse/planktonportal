@@ -243,7 +243,7 @@ class Classify extends Page
     @favorite = new Favorite subjects: [@classification.subject]
     @favorite.on 'delete', @onFavoriteDelete
 
-    favorite.send()
+    @favorite.send()
     @el.addClass 'is-favorite'
 
   onClickUnfavorite: ->
