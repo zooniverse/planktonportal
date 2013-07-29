@@ -42,6 +42,7 @@
             <button name="finish"><%- translate 'span', 'classify.finish' %></button>
             <div class="aux">
               <button name="restart-tutorial"><%- translate 'span', 'classify.restartTutorial' %></button>
+              <button name="sign-in"><%- translate 'span', 'classify.signIn' %></button>
             </div>
           </div>
           <div class="next">

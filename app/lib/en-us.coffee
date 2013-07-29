@@ -474,6 +474,7 @@ module.exports =
     numberCounted: 'Number counted'
     finish: 'Finish'
     restartTutorial: 'Restart tutorial'
+    signIn: 'Sign in'
     discuss: 'Discuss'
     favorite: 'Favorite'
     next: 'Next'

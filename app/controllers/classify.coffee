@@ -12,6 +12,7 @@ createTutorialSubject = require '../lib/create-tutorial-subject'
 {Tutorial} = require 'zootorial'
 tutorialSteps = require '../lib/tutorial-steps'
 training = require '../lib/training'
+loginDialog = require 'zooniverse/controllers/login-dialog'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
 
@@ -34,6 +35,7 @@ class Classify extends Page
   events:
     'click button[name="finish"]': 'onClickFinish'
     'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
+    'click button[name="sign-in"]': 'onClickSignIn'
     'click button[name="favorite"]': 'onClickFavorite'
     'click button[name="next"]': 'onClickNext'
 
@@ -99,6 +101,8 @@ class Classify extends Page
     setTimeout (=> @tutorial.attach()), 300
 
   onUserChange: (e, user) =>
+    @el.toggleClass 'signed-in', user?
+
     sessionClassifications = user?.project.classification_count || 0
 
     # SPLIT | HEADING | PROGRESS | TALK
@@ -227,6 +231,9 @@ class Classify extends Page
 
   onClickRestartTutorial: ->
     (createTutorialSubject 0).select()
+
+  onClickSignIn: ->
+    loginDialog.show()
 
   checkTrainingSubject: ->
     @el.addClass 'training'
