@@ -40,6 +40,9 @@
         <div class="continue">
           <div class="finish">
             <button name="finish"><%- translate 'span', 'classify.finish' %></button>
+            <div class="aux">
+              <button name="restart-tutorial"><%- translate 'span', 'classify.restartTutorial' %></button>
+            </div>
           </div>
           <div class="next">
             <button name="favorite"><%- translate 'span', 'classify.favorite' %></button>

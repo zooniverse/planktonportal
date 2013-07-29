@@ -473,6 +473,7 @@ module.exports =
     degreesUnit: '°C'
     numberCounted: 'Number counted'
     finish: 'Finish'
+    restartTutorial: 'Restart tutorial'
     discuss: 'Discuss'
     favorite: 'Favorite'
     next: 'Next'
