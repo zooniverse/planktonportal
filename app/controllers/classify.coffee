@@ -181,7 +181,7 @@ class Classify extends Page
 
     if subject.metadata.tutorial
       @tutorial.end() if @tutorial.started?
-      @tutorial.start()
+      setTimeout (=> @tutorial.start()), 250
 
   onNoMoreSubjects: =>
     alert 'It appears we\'ve run out of data!'
