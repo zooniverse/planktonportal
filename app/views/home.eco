@@ -45,7 +45,7 @@
   </div>
 
   <div class="item">
-    <a href="#/science/species"><%- translate 'span', 'home.species' %></a>
+    <a href="#/science/field-guide"><%- translate 'span', 'home.species' %></a>
   </div>
 </div>
 
