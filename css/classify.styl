@@ -177,7 +177,7 @@ body > .stack > .classify
             top: 95%
             transform: translateX(-50%)
             white-space: nowrap
-            z-index: 1
+            z-index: 2
 
             &:before
               border: 5px solid transparent
@@ -188,8 +188,22 @@ body > .stack > .classify
               margin-left: -5px
               position: absolute
 
-          &:hover .label
-            display: block
+          .example-photo
+            border: 2px solid $lime
+            border-radius: 3px
+            box-shadow: 0 1px 1px #000
+            display: none
+            height: 100px
+            left: 50%
+            position: absolute
+            top: 105%
+            transform: translateX(-50%)
+            z-index: 1
+
+          &:hover
+            .label
+            .example-photo
+              display: block
 
           &.active i
             color: $lime
