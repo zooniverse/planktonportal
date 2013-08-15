@@ -2,6 +2,7 @@ MarkingSurface = require 'marking-surface'
 AxesTool = require 'marking-surface/lib/tools/axes'
 {ToolControls} = MarkingSurface
 controlsTemplate = require '../views/plankton-chooser'
+species = require '../lib/species'
 
 class PlanktonControls extends ToolControls
   intersectionX: NaN
@@ -9,6 +10,7 @@ class PlanktonControls extends ToolControls
   outsideX: NaN
   outsideY: NaN
   openLeft: false
+  guideTimeout: NaN
 
   constructor: ->
     super
@@ -22,6 +24,8 @@ class PlanktonControls extends ToolControls
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     @el.on 'click', 'button[name="category"]', @onClickCategory
     @el.on 'click', 'button[name="species"]', @onClickSpecies
+    @el.on 'mouseenter', 'button[name="species"]', @onEnterSpecies
+    @el.on 'mouseleave', 'button[name="species"]', @onLeaveSpecies
 
     @toggleButton.click()
 
@@ -64,6 +68,17 @@ class PlanktonControls extends ToolControls
 
     @tool.mark.set species: target.val()
 
+  onEnterSpecies: (e) =>
+    specie = e.currentTarget.getAttribute 'value'
+    averageSize = species.averageSize[specie]
+
+    @guideTimeout = setTimeout =>
+      @tool.sizeGuide.attr r: averageSize
+
+  onLeaveSpecies: (e) =>
+    clearTimeout @guideTimeout
+    @tool.sizeGuide.attr r: 0
+
   moveTo: (x, y, openLeft) ->
     if openLeft
       @el.addClass 'to-the-left'
@@ -97,6 +112,8 @@ class PlanktonTool extends AxesTool
       L #{indicatorSize * (2 / 3)} 0,
       M 0 #{indicatorSize}
     """, 'stroke-width': 3
+
+    @sizeGuide = @addShape 'circle', 0, 0, 0, fill: 'transparent', stroke: 'rgba(255, 255, 255, 0.5)', 'stroke-width': 1, 'stroke-dasharray': '3, 3'
 
   render: ->
     super
@@ -134,5 +151,7 @@ class PlanktonTool extends AxesTool
 
     @controls.intersectionX = intersection.x
     @controls.intersectionY = intersection.y
+
+    @sizeGuide.attr cx: intersection.x, cy: intersection.y
 
 module.exports = PlanktonTool
