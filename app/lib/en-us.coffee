@@ -555,7 +555,7 @@ module.exports =
     markTheOtherOnes:
       header: 'Mark the other creatures'
       details: '''
-        There are three more creatures in this image. Try marking them yourself!.
+        There are four more creatures in this image. Try marking them yourself!.
       '''
       instruction: 'Mark the next creatures on your own. Click "Finish" when you\'re finished.'
 
