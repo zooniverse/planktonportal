@@ -24,8 +24,6 @@ class PlanktonControls extends ToolControls
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     @el.on 'click', 'button[name="category"]', @onClickCategory
     @el.on 'click', 'button[name="species"]', @onClickSpecies
-    @el.on 'mouseenter', 'button[name="species"]', @onEnterSpecies
-    @el.on 'mouseleave', 'button[name="species"]', @onLeaveSpecies
 
     @toggleButton.click()
 
@@ -67,17 +65,6 @@ class PlanktonControls extends ToolControls
     target.addClass 'active'
 
     @tool.mark.set species: target.val()
-
-  onEnterSpecies: (e) =>
-    specie = e.currentTarget.getAttribute 'value'
-    averageSize = species.averageSize[specie]
-
-    @guideTimeout = setTimeout =>
-      @tool.sizeGuide.attr r: averageSize
-
-  onLeaveSpecies: (e) =>
-    clearTimeout @guideTimeout
-    @tool.sizeGuide.attr r: 0
 
   moveTo: (x, y, openLeft) ->
     if openLeft
