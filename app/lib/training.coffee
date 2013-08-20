@@ -4,6 +4,7 @@ module.exports =
   icons: [
     [
       {species: 'doliolidWithTail', coords: [140, 160]}
+      {species: 'larvacean', coords: [532, 75]}
       {species: 'radiolarianColonies', coords: [910, 140]}
       {species: 'solmaris', coords: [800, 270]}
       {species: 'copepod', coords: [320, 390]}
@@ -26,8 +27,9 @@ module.exports =
   guidelines: [
     '''
       M 219 28 L 162 108 M 156 42 L 228 92
+      M 502 33 L 558 32 M 527 43 L 524 25
       M 1013 29 L 800 92 M 898 43 L 915 85
-      M 912 392 L 825 397 M 867 315 L 885 467
+      M 961 402 L 894 408 M 922 339 L 942 469
       M 318 429 L 298 473 M 277 419 L 360 451
     '''
 

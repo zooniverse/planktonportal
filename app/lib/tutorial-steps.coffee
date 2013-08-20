@@ -8,7 +8,7 @@ surface = null # Defined in the first step
 
 firstCreature = do ->
   # It's actually the third (at index 2).
-  [x0, y0, x1, y1, x2, y2, x3, y3] = training.guidelines[0].split('\n')[2].match /(\d+)/g
+  [x0, y0, x1, y1, x2, y2, x3, y3] = training.guidelines[0].split('\n')[3].match /(\d+)/g
   p0: [x0, y0], p1: [x1, y1], p2: [x2, y2], p3: [x3, y3]
 
 module.exports =
@@ -95,7 +95,7 @@ addStep 'firstBadCoordinates',
   className: 'point-right'
 
   onEnter: ->
-    @guidelines = surface.paper.path training.guidelines[0].split('\n')[2]
+    @guidelines = surface.paper.path training.guidelines[0].split('\n')[3]
 
     @guidelines.attr
       'stroke': '#ff0'
@@ -139,7 +139,8 @@ addStep 'markTheOtherOnes',
     @guidelines = surface.paper.path """
       #{individualGuides[0]}
       #{individualGuides[1]}
-      #{individualGuides[3]}
+      #{individualGuides[2]}
+      #{individualGuides[4]}
     """
 
     @guidelines.attr
