@@ -198,9 +198,6 @@ addStep 'dontMarkThese',
     delete @guideLabels
 
 addStep 'beSocial',
-  onExit: (tutorial) ->
-    tutorial.guideIcons.remove()
-
   next: ->
     if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
       'haveFun'
@@ -211,6 +208,3 @@ addStep 'haveFun',
   number: 9
   next: null
   nextButton: translate 'tutorial.haveFun.nextButton'
-
-  onExit: (tutorial) ->
-    tutorial.guideIcons.remove()
