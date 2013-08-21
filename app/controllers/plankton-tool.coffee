@@ -129,7 +129,7 @@ class PlanktonTool extends AxesTool
     @controls.outsideX = bestX
     @controls.outsideY = averageY
     @controls.openLeft = openLeft
-    # @controls.moveTo bestX, averageY, openLeft
+    @controls.moveTo bestX, averageY, openLeft
 
     majorPath = "M #{@mark.p0[0]} #{@mark.p0[1]}, L #{@mark.p1[0]} #{@mark.p1[1]}"
     minorPath = "M #{@mark.p2[0]} #{@mark.p2[1]}, L #{@mark.p3[0]} #{@mark.p3[1]}"
