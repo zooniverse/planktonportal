@@ -127,11 +127,7 @@ addStep 'markTheOtherOnes',
   actionable: 'button[name="finish"]'
   next:
     # TODO: A click event never triggers for some reason, so use mousedown for now.
-    'mousedown button[name="finish"]': ->
-      if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
-        'beSocial'
-      else
-        'haveFun'
+    'mousedown button[name="finish"]': 'dontMarkThese'
 
   onEnter: ->
     individualGuides = training.guidelines[0].split '\n'
@@ -148,20 +144,58 @@ addStep 'markTheOtherOnes',
       'stroke-dasharray': '-'
       'stroke-width': 2
 
-  onExit: (tutorial) ->
-    @guidelines.remove()
-    delete @guidelines
-
-    tutorial.guideIcons = $()
+    @guideIcons = $()
     for {species, coords: [left, top]} in training.icons[0]
       speciesClassName = species.replace(/([A-Z])/g, '-$1').toLowerCase()
       el = $("<i class='training-species-icon icon-#{speciesClassName}'></i>")
       el.css {left, top}
-      el.appendTo window.classifier.surface.container
-      tutorial.guideIcons.push.apply tutorial.guideIcons, el
+      el.appendTo window.classifier.surface.container # TODO
+      @guideIcons.push.apply @guideIcons, el
+
+  onExit: (tutorial) ->
+    @guidelines.remove()
+    delete @guidelines
 
     # Check to see if we've actually exited the tutorial.
-    setTimeout (=> tutorial.guideIcons.remove() unless tutorial.started?), 250
+    @guideIcons.remove()
+    delete @guideIcons
+
+addStep 'dontMarkThese',
+  number: 8
+  attachment: 'right top .marking-surface 0.85 0.15'
+  next: ->
+    if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
+      'beSocial'
+    else
+      'haveFun'
+
+  onEnter: ->
+    @guideCircles = surface.paper.set()
+    @guideLabels = $()
+
+    for thing, {cx, cy, r} of training.dontMark
+      circle = surface.paper.circle cx, cy, r
+      circle.attr
+        'stroke': '#f00'
+        'stroke-dasharray': '-'
+        'stroke-width': 2
+
+      @guideCircles.push circle
+
+      label = $(translate 'span.training-dont-mark-label', "tutorial.dontMarkThese.#{thing}")
+      label.css
+        left: cx
+        top: cy + r + 5
+      label.appendTo window.classifier.surface.container # TODO
+
+      @guideLabels.push label...
+
+  onExit: ->
+    circle.remove() for circle in @guideCircles
+    delete @guideCircles
+
+    @guideLabels.remove()
+    delete @guideLabels
 
 addStep 'beSocial',
   onExit: (tutorial) ->

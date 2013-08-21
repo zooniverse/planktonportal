@@ -46,3 +46,8 @@ module.exports =
       M 979 441 L 702 438 M 786 299 L 814 564
     '''
   ]
+
+  dontMark:
+    singleCell: cx: 362, cy: 239, r: 20
+    smallCrustacean: cx: 398, cy: 506, r: 15
+    marineSnow: cx: 97, cy: 337, r: 35

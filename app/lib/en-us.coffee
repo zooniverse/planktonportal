@@ -559,6 +559,17 @@ module.exports =
       '''
       instruction: 'Mark the next creatures on your own. Click "Finish" when you\'re finished.'
 
+    dontMarkThese:
+      header: 'Don\'t mark everything'
+      details: '''
+        Be careful to only mark the things we're looking for. Other material floating in the water, like marine snow, should not be measured.
+        You may occasionally see a creature that's not in our list. Don't mark it, but if it's interesting we'd love to hear about it in Talk!
+      '''
+
+      singleCell: 'Other organism'
+      smallCrustacean: 'Tiny crustacean'
+      marineSnow: 'Marine snow'
+
     finish:
       header: 'Move on to the next image'
       details: '''
@@ -579,5 +590,4 @@ module.exports =
         It looks like you've got a handle on this. To learn more about the different types of plankton, check out the Science page.
         Enjoy exploring the ocean through a microscope, and thanks for helping with our research!
       '''
-
       nextButton: 'Close'
