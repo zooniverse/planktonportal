@@ -61,19 +61,19 @@ addStep 'welcome',
 
 addStep 'beforeMark',
   number: 2
-  attachment: 'center middle .marking-surface 0.33 middle'
+  attachment: 'center middle .marking-surface center 0.67'
   className: 'point-right'
   next: 'majorAxis'
 
 addStep 'majorAxis',
   number: 3
-  attachment: 'center middle .marking-surface 0.33 middle'
+  attachment: 'center middle .marking-surface center 0.67'
   className: 'point-right'
   next: 'mouseup .marking-surface': 'minorAxis'
 
 addStep 'minorAxis',
   number: 4
-  attachment: 'center middle .marking-surface 0.33 middle'
+  attachment: 'center middle .marking-surface center 0.67'
   className: 'point-right'
   next: 'mouseup .marking-surface': 'chooseCategory'
 
@@ -81,6 +81,9 @@ addStep 'chooseCategory',
   number: 5
   attachment: 'center bottom .marking-tool-controls center top'
   next: 'click button[name="category"]': 'chooseSpecies'
+
+  onEnter: ->
+    surface.selection.controls.toggleButton.click()
 
 addStep 'chooseSpecies',
   number: 6

@@ -40,6 +40,7 @@ class Classify extends Page
     'click button[name="next"]': 'onClickNext'
 
   elements:
+    '.subject-container': 'subjectContainer'
     '.swap-container': 'swapContainer'
     '.swap-container .drawer': 'swapDrawer'
     '.swap-container .old': 'oldSwapImage'
@@ -62,7 +63,7 @@ class Classify extends Page
 
     @surface ?= new MarkingSurface
       tool: PlanktonTool
-      container: @el.find '.subject-container'
+      container: @subjectContainer
       width: 1024
       height: 560
 
@@ -80,7 +81,7 @@ class Classify extends Page
     Favorite.on 'from-classify'
 
     @tutorial = new Tutorial
-      parent: @el
+      parent: @subjectContainer
       steps: tutorialSteps
       firstStep: 'welcome'
 
