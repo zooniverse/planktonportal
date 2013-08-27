@@ -251,7 +251,7 @@ class Classify extends Page
       @guideIcons.push.apply @guideIcons, el
 
     console.log {@guideIcons}
-    @guideIcons.appendTo @el
+    @guideIcons.appendTo @surface.container
 
   onClickFavorite: ->
     @favorite = new Favorite subjects: [@classification.subject]
