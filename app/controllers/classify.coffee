@@ -104,7 +104,7 @@ class Classify extends Page
   onUserChange: (e, user) =>
     @el.toggleClass 'signed-in', user?
 
-    sessionClassifications = user?.project.classification_count || 0
+    sessionClassifications = user?.project?.classification_count || 0
 
     # SPLIT | HEADING | PROGRESS | TALK
     # ------+---------+----------+---------
@@ -121,11 +121,11 @@ class Classify extends Page
     # F     | YES     | YES      | 1ST
     # H     | YES     | YES      | 5TH
 
-    split = user?.project.splits.tutorial
+    split = user?.project?.splits.tutorial
     $html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
     $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'i', 'j', 'k']
 
-    if user?.project.tutorial_done
+    if user?.project?.tutorial_done
       if Subject.current?.metadata.tutorial
         @tutorial.end()
         Subject.next()
@@ -219,12 +219,12 @@ class Classify extends Page
 
     @el.addClass 'finished'
 
-    classificationCount = User.current?.project.classificaiton_count || 0
+    classificationCount = User.current?.project?.classificaiton_count || 0
     classificationCount += Classification.sentThisSession
 
-    introduceTalk = if User.current?.project.splits.tutorial in ['b', 'e', 'j', 'f']
+    introduceTalk = if User.current?.project?.splits.tutorial in ['b', 'e', 'j', 'f']
       1
-    else if User.current?.project.splits.tutorial in ['c', 'f', 'k', 'h']
+    else if User.current?.project?.splits.tutorial in ['c', 'f', 'k', 'h']
       5
 
     if classificationCount is introduceTalk

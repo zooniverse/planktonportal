@@ -173,7 +173,7 @@ addStep 'dontMarkThese',
   number: 8
   attachment: 'right top .marking-surface 0.85 0.15'
   next: ->
-    if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
+    if User.current?.project?.splits.tutorial in ['a', 'd', 'i', 'g']
       'beSocial'
     else
       'haveFun'
@@ -208,7 +208,7 @@ addStep 'dontMarkThese',
 
 addStep 'beSocial',
   next: ->
-    if User.current?.project.splits.tutorial in ['a', 'd', 'i', 'g']
+    if User.current?.project?.splits.tutorial in ['a', 'd', 'i', 'g']
       'haveFun'
     else
       null
