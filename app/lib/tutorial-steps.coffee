@@ -55,6 +55,7 @@ afterFirst = ->
 
 addStep 'welcome',
   number: 1
+  block: 'button[name="finish"]'
   next: ->
     surface = @classifier.surface
     'beforeMark'
@@ -63,23 +64,27 @@ addStep 'beforeMark',
   number: 2
   attachment: 'center middle .marking-surface center 0.67'
   className: 'point-right'
+  block: 'button[name="finish"]'
   next: 'majorAxis'
 
 addStep 'majorAxis',
   number: 3
   attachment: 'center middle .marking-surface center 0.67'
   className: 'point-right'
+  block: 'button[name="finish"]'
   next: 'mouseup .marking-surface': 'minorAxis'
 
 addStep 'minorAxis',
   number: 4
   attachment: 'center middle .marking-surface center 0.67'
   className: 'point-right'
+  block: 'button[name="finish"]'
   next: 'mouseup .marking-surface': 'chooseCategory'
 
 addStep 'chooseCategory',
   number: 5
   attachment: 'center bottom .marking-tool-controls center top'
+  block: 'button[name="finish"]'
   next: 'click button[name="category"]': 'chooseSpecies'
 
   onEnter: ->
@@ -88,6 +93,7 @@ addStep 'chooseCategory',
 addStep 'chooseSpecies',
   number: 6
   attachment: 'center bottom .marking-tool-controls center top'
+  block: 'button[name="finish"]'
   next: 'click button[name="species"]': afterFirst
 
 addStep 'firstBadCoordinates',
