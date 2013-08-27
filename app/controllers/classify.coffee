@@ -180,8 +180,9 @@ class Classify extends Page
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
 
+    @tutorial.end() if @tutorial.started?
+
     if subject.metadata.tutorial
-      @tutorial.end() if @tutorial.started?
       setTimeout (=> @tutorial.start()), 250
 
   onNoMoreSubjects: =>
