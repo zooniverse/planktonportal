@@ -24,8 +24,16 @@ class PlanktonControls extends ToolControls
     @el.on 'click', 'button[name="toggle"]', @onClickToggle
     @el.on 'click', 'button[name="category"]', @onClickCategory
     @el.on 'click', 'button[name="species"]', @onClickSpecies
+    @el.on 'mouseover', @onEnter
+    @el.on 'mouseout', @onLeave
 
     @toggleButton.click()
+
+  onEnter: =>
+    @tool.fadeOut()
+
+  onLeave: =>
+    @tool.fadeIn()
 
   onClickToggle: =>
     @el.removeClass 'closed'
@@ -140,5 +148,11 @@ class PlanktonTool extends AxesTool
     @controls.intersectionY = intersection.y
 
     @sizeGuide.attr cx: intersection.x, cy: intersection.y
+
+  fadeOut: ->
+    @shapeSet.attr 'opacity', 0.25
+
+  fadeIn: ->
+    @shapeSet.attr 'opacity', 1
 
 module.exports = PlanktonTool
