@@ -3,7 +3,7 @@
 module.exports =
   icons: [
     [
-      {species: 'doliolidWithTail', coords: [140, 160]}
+      {species: 'cydippid', coords: [140, 160]}
       {species: 'larvacean', coords: [532, 75]}
       {species: 'radiolarianColonies', coords: [910, 140]}
       {species: 'solmaris', coords: [800, 270]}
