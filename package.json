@@ -19,6 +19,6 @@
   "scripts": {
     "start": "haw serve",
     "build-font": "bundle exec fontcustom compile --debug --font_path ./ --output ./public/fonts/fontcustom ./icons",
-    "deploy": "haw build && publisssh && rm -rf ./build"
+    "deploy": "haw build && publisssh build www.planktonportal.org/beta && rm -rf ./build"
   }
 }
