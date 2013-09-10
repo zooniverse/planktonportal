@@ -114,16 +114,16 @@ class Classify extends Page
     # D     | NO      | YES      | TUTORIAL
     # E     | NO      | YES      | 1ST
     # F     | NO      | YES      | 5TH
-    # I     | YES     | NO       | TUTORIAL
-    # J     | YES     | NO       | 1ST
-    # K     | YES     | NO       | 5TH
     # G     | YES     | YES      | TUTORIAL
-    # F     | YES     | YES      | 1ST
-    # H     | YES     | YES      | 5TH
+    # H     | YES     | YES      | 1ST
+    # I     | YES     | YES      | 5TH
+    # J     | YES     | NO       | TUTORIAL
+    # K     | YES     | NO       | 1ST
+    # L     | YES     | NO       | 5TH
 
     split = user?.project?.splits.tutorial
     $html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
-    $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'i', 'j', 'k']
+    $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'j', 'k', 'l']
 
     if user?.project?.tutorial_done
       if Subject.current?.metadata.tutorial
@@ -222,9 +222,9 @@ class Classify extends Page
     classificationCount = User.current?.project?.classificaiton_count || 0
     classificationCount += Classification.sentThisSession
 
-    introduceTalk = if User.current?.project?.splits.tutorial in ['b', 'e', 'j', 'f']
+    introduceTalk = if User.current?.project?.splits.tutorial in ['b', 'e', 'h', 'k']
       1
-    else if User.current?.project?.splits.tutorial in ['c', 'f', 'k', 'h']
+    else if User.current?.project?.splits.tutorial in ['c', 'f', 'i', 'l']
       5
 
     if classificationCount is introduceTalk
