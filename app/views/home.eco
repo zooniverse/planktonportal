@@ -34,19 +34,3 @@
 </div>
 
 <hr />
-
-<div class="about-pages">
-  <div class="item">
-    <a href="#/science/about"><%- translate 'span', 'home.about' %></a>
-  </div>
-
-  <div class="item">
-    <a href="#/science/images"><%- translate 'span', 'home.images' %></a>
-  </div>
-
-  <div class="item">
-    <a href="#/science/field-guide"><%- translate 'span', 'home.species' %></a>
-  </div>
-</div>
-
-<hr />
