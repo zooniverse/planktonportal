@@ -270,20 +270,17 @@ module.exports =
       <h2>Education</h2>
 
       <h3>Can I use #{PROJECT_NAME} in the classroom?</h3>
-      <p>Of course!  #{PROJECT_NAME}, just like all the <a href="https://www.zooniverse.org/">Zooniverse</a> projects, offers students a unique opportunity to explore real scientific data, while making a contribution to cutting-edge research. Each image is marked by multiple volunteers, so it’s okay if students don't identify and mark all of the plankton correctly. That being said, the task itself is simple enough that we believe most people can take part and make a worthwhile contribution regardless of age.</p>
+      <p>Of course! #{PROJECT_NAME}, just like all the <a href="https://www.zooniverse.org/">Zooniverse</a> projects, offers students a unique opportunity to explore real scientific data, while making a contribution to cutting-edge research. Each image is marked by multiple volunteers, so it’s okay if students don't identify and mark all of the plankton correctly. That being said, the task itself is simple enough that we believe most people can take part and make a worthwhile contribution regardless of age.</p>
 
       <h3>What resources are there to support use in the classroom?</h3>
-      <p>Videos are a great tool to introduce students to the fascinating, diverse, and sometimes bizarre undersea world of plankton.  Here are a couple of our favorites.</p>
+      <p>Videos are a great tool to introduce students to the fascinating, diverse, and sometimes bizarre undersea world of plankton. Here are a couple of our favorites.</p>
 
       <ul>
         <li><a href="http://www.google.com/url?q=http%3A%2F%2Fwww.ted.com%2Ftalks%2Fthe_secret_life_of_plankton.html&sa=D&sntz=1&usg=AFQjCNHSdPrxP6h9FufMU_eNWLZGty-SwA">The secret life of plankton</a> by Tierney Thys (TED Education video)</li>
         <li><a href="http://www.youtube.com/watch?v=3HzFiQFFQYw">There’s no such thing as a jellyfish</a> by Steve Haddock, Monterey Bay Aquarium Research Institute</li>
       </ul>
 
-      <p>The Zooniverse recently launched <a href="http://www.zooteach.org/">ZooTeach</a> where educators can find and share resources relating to #{PROJECT_NAME} and the other Zooniverse citizen science projects. #{PROJECT_NAME} is a recent addition, so if you have any idea's for how to use the project in the classroom, it would be please share your lesson ideas or resources on ZooTeach!</p>
-
-      <p>In #{PROJECT_NAME} you’re primarily identifying and measuring zooplankon,  but that’s only half the story.  Plankton are also comprised of organisms that are considered plants because they engage in photosynthesis.  Oxygen is a byproduct of photosynthesis and very important for all animals on Earth.  This activity from National Geographic serves as an excellent extension to #{PROJECT_NAME} as students calculate how much of the oxygen they breathe is created by phytoplankton.</p>
-      <p>http://education.nationalgeographic.com/education/activity/save-the-plankton-breathe-freely/?ar_a=1</p>
+      <p>The Zooniverse recently launched <a href="http://www.zooteach.org/">ZooTeach</a> where educators can find and share educational resources relating to #{PROJECT_NAME} and the other Zooniverse citizen science projects. Check out resources created for <a href="http://www.zooteach.org/zoo/plankton_portal">#{PROJECT_NAME}</a>. Have any ideas for how to use the project in the classroom? Please share your lesson ideas or resources on ZooTeach!</p>
 
       <h3>How can I keep up to date with education and #{PROJECT_NAME}?</h3>
       <p>#{PROJECT_NAME} <a href="http://blog.planktonportal.org/">Blog</a> and <a href="https://twitter.com/PlanktonPortal">@PlanktonPortal</a> twitter feed are great places to keep up to date with the latest science results, but there is also a <a href="http://education.zooniverse.org/">Zooniverse Education Blog</a> as well as the <a href="https://twitter.com/ZooTeach">@zooteach</a> Twitter feed.</p>
