@@ -10,5 +10,5 @@ npm start
 Deploy:
 
 ```
-npm run-script deploy
+npm run-script deploy-to-staging
 ```
