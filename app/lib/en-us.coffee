@@ -52,7 +52,7 @@ module.exports =
     projectDescription: '''
       <p>Plankton are a critically important food source.</p>
       <h1>No plankton = No life in the ocean</h1>
-      <p>Plankton also play an important role in the global carbon cycle. This cycle captures the sun’s energy and the atmosphere’s CO2 at the surface of the ocean and releases it to other organisms and other areas of the ocean.</p>
+      <p>Plankton also play an important role in the global carbon cycle. This cycle captures the Sun’s energy and the atmosphere’s CO2 at the surface of the ocean and releases it to other organisms and other areas of the ocean.</p>
       <p>Understanding where and when plankton occur at different depths in the ocean allows scientists to get a global understanding of the function and health of the ocean from small to global scales.</p>
     '''
     ready: '<h1>Ready to help?</h1>'
