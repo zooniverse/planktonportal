@@ -18,9 +18,9 @@ module.exports =
     ]
 
     [
-      {species: 'medusaFourTentacles', coords: [150, 390]}
-      {species: 'medusaFourTentacles', coords: [450, 300]}
-      {species: 'medusaFourTentacles', coords: [880, 250]}
+      {species: 'siphoCornCob', coords: [150, 390]}
+      {species: 'lobate', coords: [450, 300]}
+      {species: 'lobate', coords: [880, 250]}
     ]
   ]
 
