@@ -3,7 +3,7 @@
 <div class="organizations team">
   <%- translate 'h1', "about.organizations.heading" %>
 
-  <% organizations = ['rsmas', 'uMiami', 'osu', 'adler', 'zooniverse'] %>
+  <% organizations = ['rsmas', 'uMiami', 'osu', 'bellamare', 'adler', 'zooniverse'] %>
 
   <% for organization in organizations: %>
     <div class="member organization">

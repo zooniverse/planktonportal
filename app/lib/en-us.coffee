@@ -305,6 +305,11 @@ module.exports =
         name: 'Oregon State University Hatfield Marine Science Center'
         url: 'http://hmsc.oregonstate.edu/'
 
+      bellamare:
+        image: './images/organizations/bellamare.png'
+        name: 'BellaMare'
+        url: 'http://www.bellamare-us.com/'
+
       adler:
         image: './images/organizations/adler.png'
         name: 'Adler Planetarium'
