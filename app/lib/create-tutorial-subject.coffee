@@ -5,9 +5,9 @@ TODO_ZOONIVERSE_ID = 'APK000005n'
 
 createTutorialSubject = (index = 0) ->
   [id, zooniverseId, location] = switch index
-    when 0 then [TODO_ID, TODO_ZOONIVERSE_ID, './images/training-subject-1.jpg']
-    when 1 then [TODO_ID, TODO_ZOONIVERSE_ID, './images/training-subject-2.jpg']
-    when 2 then [TODO_ID, TODO_ZOONIVERSE_ID, './images/training-subject-3.jpg']
+    when 0 then ['51d481c43ae740cf60000001', 'APK0000001', './images/training-subject-1.jpg']
+    when 1 then ['52408e8b3ae7400578000001', 'APK00078uj', './images/training-subject-2.jpg']
+    when 2 then ['52408e8b3ae7400578000002', 'APK00078uk', './images/training-subject-3.jpg']
 
   new Subject
     id: id
