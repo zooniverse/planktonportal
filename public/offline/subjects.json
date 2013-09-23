@@ -1,13 +1,1801 @@
 [{
-  "location": {"standard": "./offline/subjects/cordagalma-201206251_000001.jpg"},
-  "coords": [0, 0],
-  "metadata": {"depth": 100}
+  "id": "51d1bdf83ae74008a40257a5",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.00055",
+    "-119.65745"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bdf83ae74008a40257a5.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015221157515.tif_1.jpg",
+    "timestamp": "2010-10-15T22:11:57Z",
+    "segment": 1,
+    "depth": "18.4541474974263",
+    "temp": "16.22",
+    "salinity": "33.49",
+    "oxygen": "4.9215642637206",
+    "sw_rho": "1024.61949802029",
+    "cutout": {
+      "top": 0,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011769568392990037,
+  "created_at": "2013-09-14T03:42:10Z",
+  "zooniverse_id": "APK0002rfy",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T03:42:11Z"
 }, {
-  "location": {"standard": "./offline/subjects/doliolid-212657541_000001.jpg"},
-  "coords": [0, 0],
-  "metadata": {"depth": 200}
+  "id": "51d1be343ae74008a4032c9c",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9999133736581",
+    "-119.69317305106"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be343ae74008a4032c9c.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015223156343.tif_207.jpg",
+    "timestamp": "2010-10-15T22:32:08Z",
+    "segment": 1,
+    "depth": "44.9954435180731",
+    "temp": "12.2680241948664",
+    "salinity": "33.6819758051336",
+    "oxygen": "3.95965564819269",
+    "sw_rho": "1025.71856486446",
+    "cutout": {
+      "top": 247,
+      "left": 851,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011775205311356451,
+  "created_at": "2013-09-14T05:27:25Z",
+  "zooniverse_id": "APK0003kvq",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T05:27:26Z"
 }, {
-  "location": {"standard": "./offline/subjects/doliolid-and-h5a-212628626_000001.jpg"},
-  "coords": [0, 0],
-  "metadata": {"depth": 300}
+  "id": "51d1be3c3ae74008a40370fb",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0002166666667",
+    "-119.687066666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be3c3ae74008a40370fb.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015222827859.tif_195.jpg",
+    "timestamp": "2010-10-15T22:28:39Z",
+    "segment": 4,
+    "depth": "21.974796594574",
+    "temp": "15.49",
+    "salinity": "33.48",
+    "oxygen": "4.83830542414469",
+    "sw_rho": "1024.79188016673",
+    "cutout": {
+      "top": 498,
+      "left": 651,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011777491141635066,
+  "created_at": "2013-09-14T06:03:29Z",
+  "zooniverse_id": "APK0003voh",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T06:03:29Z"
+}, {
+  "id": "51d1be4a3ae74008a403e007",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9994",
+    "-119.720183333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be4a3ae74008a403e007.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015224751625.tif_168.jpg",
+    "timestamp": "2010-10-15T22:48:01Z",
+    "segment": 1,
+    "depth": "25.334927888581",
+    "temp": "15.7721896529612",
+    "salinity": "33.4821896529612",
+    "oxygen": "4.98190586246699",
+    "sw_rho": "1024.74551689059",
+    "cutout": {
+      "top": 123,
+      "left": 654,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011777784243295564,
+  "created_at": "2013-09-14T14:19:40Z",
+  "zooniverse_id": "APK000485u",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T14:19:40Z"
+}, {
+  "id": "51d1bddd3ae74008a402416f",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0003666666667",
+    "-119.642433333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bddd3ae74008a402416f.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015220333890.tif_123.jpg",
+    "timestamp": "2010-10-15T22:03:41Z",
+    "segment": 1,
+    "depth": "114.477483247798",
+    "temp": "9.56",
+    "salinity": "33.92",
+    "oxygen": "2.04993475796097",
+    "sw_rho": "1026.70518563822",
+    "cutout": {
+      "top": 240,
+      "left": 982,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011780335968277433,
+  "created_at": "2013-09-14T03:26:27Z",
+  "zooniverse_id": "APK0002n3n",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T03:26:27Z"
+}, {
+  "id": "51d1beec3ae74008a405df4e",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9999833333333",
+    "-119.956316666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1beec3ae74008a405df4e.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016011456718.tif_222.jpg",
+    "timestamp": "2010-10-16T01:15:09Z",
+    "segment": 1,
+    "depth": "41.6611475513636",
+    "temp": "13.7988524486364",
+    "salinity": "33.0064754081061",
+    "oxygen": "4.84523442654091",
+    "sw_rho": "1024.87641099442",
+    "cutout": {
+      "top": 0,
+      "left": 412,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011780693320496471,
+  "created_at": "2013-09-14T19:00:39Z",
+  "zooniverse_id": "APK0006f8g",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T19:00:39Z"
+}, {
+  "id": "51d1bef53ae74008a4062060",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0000166666667",
+    "-120.016333333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bef53ae74008a4062060.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016015402125.tif_243.jpg",
+    "timestamp": "2010-10-16T01:54:16Z",
+    "segment": 1,
+    "depth": "10.6139557492528",
+    "temp": "17.02",
+    "salinity": "33.28",
+    "oxygen": "4.50726081445364",
+    "sw_rho": "1024.23629508456",
+    "cutout": {
+      "top": 1050,
+      "left": 384,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.01178165490326022,
+  "created_at": "2013-09-14T19:43:47Z",
+  "zooniverse_id": "APK0006rhb",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T19:43:47Z"
+}, {
+  "id": "51d1beef3ae74008a405fb06",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0000333333333",
+    "-119.98765"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1beef3ae74008a405fb06.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016013530125.tif_34.jpg",
+    "timestamp": "2010-10-16T01:35:32Z",
+    "segment": 1,
+    "depth": "5.72479998664856",
+    "temp": "16.91",
+    "salinity": "33.25",
+    "oxygen": "4.71706266658507",
+    "sw_rho": "1024.21900532006",
+    "cutout": {
+      "top": 292,
+      "left": 778,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011783690273497127,
+  "created_at": "2013-09-14T19:19:53Z",
+  "zooniverse_id": "APK0006kog",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T19:19:53Z"
+}, {
+  "id": "51d1beed3ae74008a405eb42",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.00005",
+    "-119.967687701623"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1beed3ae74008a405eb42.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016012211140.tif_249.jpg",
+    "timestamp": "2010-10-16T01:22:25Z",
+    "segment": 1,
+    "depth": "53.3102903360894",
+    "temp": "11.95",
+    "salinity": "32.97",
+    "oxygen": "4.71320491842048",
+    "sw_rho": "1025.26425859539",
+    "cutout": {
+      "top": 1040,
+      "left": 781,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011785831000326707,
+  "created_at": "2013-09-14T19:08:44Z",
+  "zooniverse_id": "APK0006hku",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T19:08:44Z"
+}, {
+  "id": "51d1bef33ae74008a406163b",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9999166666667",
+    "-120.005716666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bef33ae74008a406163b.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016014705062.tif_289.jpg",
+    "timestamp": "2010-10-16T01:47:21Z",
+    "segment": 1,
+    "depth": "95.8761694412801",
+    "temp": "10.07672881984",
+    "salinity": "33.37",
+    "oxygen": "3.6315420347776",
+    "sw_rho": "1026.10425025805",
+    "cutout": {
+      "top": 0,
+      "left": 192,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011788394068004582,
+  "created_at": "2013-09-14T19:36:49Z",
+  "zooniverse_id": "APK0006phe",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T19:36:49Z"
+}, {
+  "id": "51d1bed33ae74008a40532a2",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9996666666667",
+    "-119.765816666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bed33ae74008a40532a2.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015231521968.tif_195.jpg",
+    "timestamp": "2010-10-15T23:15:33Z",
+    "segment": 2,
+    "depth": "54.4264913947324",
+    "temp": "12.4478534473687",
+    "salinity": "33.3778534473687",
+    "oxygen": "4.1002937071052",
+    "sw_rho": "1025.49074265329",
+    "cutout": {
+      "top": 1488,
+      "left": 1024,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011788527013371741,
+  "created_at": "2013-09-14T17:11:18Z",
+  "zooniverse_id": "APK0005jmk",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T17:11:18Z"
+}, {
+  "id": "51d1beec3ae74008a405e138",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33",
+    "-119.95895"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1beec3ae74008a405e138.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016011640953.tif_170.jpg",
+    "timestamp": "2010-10-16T01:16:50Z",
+    "segment": 1,
+    "depth": "23.1572000038147",
+    "temp": "16.3717000002384",
+    "salinity": "33.2117000002384",
+    "oxygen": "4.78829500008345",
+    "sw_rho": "1024.39197369142",
+    "cutout": {
+      "top": 167,
+      "left": 538,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011789611134494171,
+  "created_at": "2013-09-14T19:01:59Z",
+  "zooniverse_id": "APK0006fm2",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T19:01:59Z"
+}, {
+  "id": "51d1bda33ae74008a40120a6",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0026333333333",
+    "-119.535466666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bda33ae74008a40120a6.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015210355093.tif_27.jpg",
+    "timestamp": "2010-10-15T21:03:56Z",
+    "segment": 1,
+    "depth": "94.7050431825432",
+    "temp": "9.86",
+    "salinity": "33.83",
+    "oxygen": "2.11102284235268",
+    "sw_rho": "1026.49456251136",
+    "cutout": {
+      "top": 8,
+      "left": 970,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011792918022737964,
+  "created_at": "2013-09-13T23:07:26Z",
+  "zooniverse_id": "APK0001amm",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-13T23:07:26Z"
+}, {
+  "id": "51d1bd9d3ae74008a400eb71",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0006666666667",
+    "-119.487633333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bd9d3ae74008a400eb71.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015203624921.tif_145.jpg",
+    "timestamp": "2010-10-15T20:36:33Z",
+    "segment": 4,
+    "depth": "29.0642499872138",
+    "temp": "11.9862500033648",
+    "salinity": "33.53",
+    "oxygen": "3.47330499990579",
+    "sw_rho": "1025.5822435194",
+    "cutout": {
+      "top": 1449,
+      "left": 1024,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011793012228246469,
+  "created_at": "2013-09-13T22:52:07Z",
+  "zooniverse_id": "APK000136e",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-13T22:52:07Z"
+}, {
+  "id": "51d1bece3ae74008a405121b",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.99955",
+    "-119.759149811823"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bece3ae74008a405121b.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015231118859.tif_89.jpg",
+    "timestamp": "2010-10-15T23:11:24Z",
+    "segment": 1,
+    "depth": "132.435056453278",
+    "temp": "9.32",
+    "salinity": "33.89",
+    "oxygen": "2.23452919342626",
+    "sw_rho": "1026.80365001855",
+    "cutout": {
+      "top": 963,
+      "left": 805,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011794033847469354,
+  "created_at": "2013-09-14T16:49:59Z",
+  "zooniverse_id": "APK0005dms",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T16:49:59Z"
+}, {
+  "id": "51d1bd893ae74008a4004160",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9996166666667",
+    "-119.432116666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bd893ae74008a4004160.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015200416578.tif_58.jpg",
+    "timestamp": "2010-10-15T20:04:19Z",
+    "segment": 3,
+    "depth": "44.3526935410497",
+    "temp": "11.510274196693",
+    "salinity": "33.5332419344357",
+    "oxygen": "3.53570822590079",
+    "sw_rho": "1025.74279827896",
+    "cutout": {
+      "top": 939,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011794983586815966,
+  "created_at": "2013-09-13T21:53:35Z",
+  "zooniverse_id": "APK0000bht",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-13T21:53:35Z"
+}, {
+  "id": "51d1bd963ae74008a400a848",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0005666666667",
+    "-119.484479513867"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bd963ae74008a400a848.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015203440468.tif_77.jpg",
+    "timestamp": "2010-10-15T20:34:44Z",
+    "segment": 1,
+    "depth": "59.4182500470877",
+    "temp": "10.38",
+    "salinity": "33.63",
+    "oxygen": "2.73211749952912",
+    "sw_rho": "1026.08870149258",
+    "cutout": {
+      "top": 1191,
+      "left": 634,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011804035390775236,
+  "created_at": "2013-09-13T22:28:29Z",
+  "zooniverse_id": "APK0000rms",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-13T22:28:29Z"
+}, {
+  "id": "51d1bddb3ae74008a402384a",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0004",
+    "-119.634316666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bddb3ae74008a402384a.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015215913218.tif_6.jpg",
+    "timestamp": "2010-10-15T21:59:13Z",
+    "segment": 4,
+    "depth": "27.0934000150204",
+    "temp": "13.6080499987483",
+    "salinity": "33.47",
+    "oxygen": "4.70453899752164",
+    "sw_rho": "1025.20815930228",
+    "cutout": {
+      "top": 856,
+      "left": 1024,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011805705784941556,
+  "created_at": "2013-09-14T03:20:21Z",
+  "zooniverse_id": "APK0002lhi",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T03:20:21Z"
+}, {
+  "id": "51d1bdb33ae74008a401af87",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.002",
+    "-119.588583333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bdb33ae74008a401af87.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015213344375.tif_181.jpg",
+    "timestamp": "2010-10-15T21:33:54Z",
+    "segment": 1,
+    "depth": "106.821868849486",
+    "temp": "9.75",
+    "salinity": "33.93",
+    "oxygen": "2.02426098362885",
+    "sw_rho": "1026.64645958518",
+    "cutout": {
+      "top": 561,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011815920689031478,
+  "created_at": "2013-09-14T01:53:30Z",
+  "zooniverse_id": "APK0001xzj",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T01:53:30Z"
+}, {
+  "id": "51d1bea43ae74008a404ce7a",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9995",
+    "-119.72715"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bea43ae74008a404ce7a.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015225155000.tif_277.jpg",
+    "timestamp": "2010-10-15T22:52:11Z",
+    "segment": 2,
+    "depth": "109.038661024901",
+    "temp": "9.78229660972772",
+    "salinity": "33.81",
+    "oxygen": "2.33794016925297",
+    "sw_rho": "1026.55739504623",
+    "cutout": {
+      "top": 1488,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011818122161653677,
+  "created_at": "2013-09-14T16:14:21Z",
+  "zooniverse_id": "APK000530l",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T16:14:21Z"
+}, {
+  "id": "51d1be433ae74008a403aa2e",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33",
+    "-119.69145"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be433ae74008a403aa2e.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015223104093.tif_77.jpg",
+    "timestamp": "2010-10-15T22:31:08Z",
+    "segment": 13,
+    "depth": "16.6872422735027",
+    "temp": "15.68",
+    "salinity": "33.52",
+    "oxygen": "4.92656924618677",
+    "sw_rho": "1024.75175896567",
+    "cutout": {
+      "top": 1144,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011819724860771097,
+  "created_at": "2013-09-14T06:22:29Z",
+  "zooniverse_id": "APK000411f",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T06:22:29Z"
+}, {
+  "id": "51d1be243ae74008a402a912",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0006166666667",
+    "-119.663016666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be243ae74008a402a912.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015221451328.tif_123.jpg",
+    "timestamp": "2010-10-15T22:14:58Z",
+    "segment": 10,
+    "depth": "17.5407327590459",
+    "temp": "16.15",
+    "salinity": "33.5252844827303",
+    "oxygen": "5.02567232757402",
+    "sw_rho": "1024.65848930057",
+    "cutout": {
+      "top": 1039,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011823949189575411,
+  "created_at": "2013-09-14T04:18:51Z",
+  "zooniverse_id": "APK00031mk",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T04:18:51Z"
+}, {
+  "id": "51d1bdb33ae74008a401aa13",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0022833333333",
+    "-119.583966666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bdb33ae74008a401aa13.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015213108125.tif_226.jpg",
+    "timestamp": "2010-10-15T21:31:21Z",
+    "segment": 1,
+    "depth": "127.010645156701",
+    "temp": "9.32",
+    "salinity": "33.98",
+    "oxygen": "1.90458064529898",
+    "sw_rho": "1026.8492434534",
+    "cutout": {
+      "top": 0,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011828740469001842,
+  "created_at": "2013-09-14T01:49:32Z",
+  "zooniverse_id": "APK0001wx5",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T01:49:32Z"
+}, {
+  "id": "51d1bdac3ae74008a401775e",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0027",
+    "-119.575566666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bdac3ae74008a401775e.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015212630250.tif_165.jpg",
+    "timestamp": "2010-10-15T21:26:39Z",
+    "segment": 1,
+    "depth": "37.5642303599623",
+    "temp": "11.9124583343599",
+    "salinity": "33.44",
+    "oxygen": "4.23706375274082",
+    "sw_rho": "1025.56451592363",
+    "cutout": {
+      "top": 0,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011829818324814667,
+  "created_at": "2013-09-14T01:20:23Z",
+  "zooniverse_id": "APK0001pev",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T01:20:23Z"
+}, {
+  "id": "51d1be503ae74008a4040f7d",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9992",
+    "-119.712933333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be503ae74008a4040f7d.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015224331218.tif_224.jpg",
+    "timestamp": "2010-10-15T22:43:44Z",
+    "segment": 3,
+    "depth": "27.687548373005",
+    "temp": "15.3543870932513",
+    "salinity": "33.47",
+    "oxygen": "4.77327354880985",
+    "sw_rho": "1024.8396715291",
+    "cutout": {
+      "top": 1308,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011832424562188804,
+  "created_at": "2013-09-14T14:45:56Z",
+  "zooniverse_id": "APK0004f92",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T14:45:56Z"
+}, {
+  "id": "51d1beb83ae74008a404e41a",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9995797222251",
+    "-119.746504999982"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1beb83ae74008a404e41a.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015230347093.tif_102.jpg",
+    "timestamp": "2010-10-15T23:03:53Z",
+    "segment": 2,
+    "depth": "19.5541666236189",
+    "temp": "15.8578333350552",
+    "salinity": "33.4956666701105",
+    "oxygen": "4.89724500139475",
+    "sw_rho": "1024.71090438872",
+    "cutout": {
+      "top": 1291,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011835993120011934,
+  "created_at": "2013-09-14T16:25:28Z",
+  "zooniverse_id": "APK00056ba",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T16:25:28Z"
+}, {
+  "id": "51d1be933ae74008a404ba0f",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9995666666667",
+    "-119.738416666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be933ae74008a404ba0f.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015225851937.tif_115.jpg",
+    "timestamp": "2010-10-15T22:58:58Z",
+    "segment": 1,
+    "depth": "55.1063360739738",
+    "temp": "12.4587950757585",
+    "salinity": "33.47",
+    "oxygen": "3.82135450868977",
+    "sw_rho": "1025.56307855853",
+    "cutout": {
+      "top": 831,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.01183624479986034,
+  "created_at": "2013-09-14T16:00:33Z",
+  "zooniverse_id": "APK0004z1r",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T16:00:33Z"
+}, {
+  "id": "51d1bedb3ae74008a40571b5",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9997166666667",
+    "-119.811816666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bedb3ae74008a40571b5.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015234344437.tif_17.jpg",
+    "timestamp": "2010-10-15T23:43:45Z",
+    "segment": 2,
+    "depth": "132.137531075637",
+    "temp": "9.39387823877113",
+    "salinity": "33.9161217612289",
+    "oxygen": "2.14301668416099",
+    "sw_rho": "1026.81052839142",
+    "cutout": {
+      "top": 1488,
+      "left": 978,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011837344118985071,
+  "created_at": "2013-09-14T17:50:30Z",
+  "zooniverse_id": "APK0005uxf",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T17:50:30Z"
+}, {
+  "id": "51d1bd843ae74008a4001c3f",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9998166666667",
+    "-119.44245"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bd843ae74008a4001c3f.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015201021328.tif_26.jpg",
+    "timestamp": "2010-10-15T20:10:22Z",
+    "segment": 1,
+    "depth": "129.970275858554",
+    "temp": "9.41",
+    "salinity": "34.04",
+    "oxygen": "1.79502568964638",
+    "sw_rho": "1026.89472909371",
+    "cutout": {
+      "top": 0,
+      "left": 218,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.01184106787467587,
+  "created_at": "2013-09-13T21:41:13Z",
+  "zooniverse_id": "APK00005ip",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-13T21:41:13Z"
+}, {
+  "id": "51d1bec33ae74008a404f662",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9995833333333",
+    "-119.742733333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bec33ae74008a404f662.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015230128234.tif_126.jpg",
+    "timestamp": "2010-10-15T23:01:35Z",
+    "segment": 4,
+    "depth": "9.32749999006589",
+    "temp": "16.6362500009934",
+    "salinity": "33.39",
+    "oxygen": "4.81859999928474",
+    "sw_rho": "1024.40623261882",
+    "cutout": {
+      "top": 864,
+      "left": 1024,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.01184164145980271,
+  "created_at": "2013-09-14T16:34:06Z",
+  "zooniverse_id": "APK00058x3",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T16:34:06Z"
+}, {
+  "id": "51d1bdfc3ae74008a4025f7f",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0006166666667",
+    "-119.663016666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bdfc3ae74008a4025f7f.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015221451328.tif_125.jpg",
+    "timestamp": "2010-10-15T22:14:58Z",
+    "segment": 1,
+    "depth": "17.570991410353",
+    "temp": "16.15",
+    "salinity": "33.5232672393098",
+    "oxygen": "5.02480491290321",
+    "sw_rho": "1024.65707316809",
+    "cutout": {
+      "top": 0,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011843810036336277,
+  "created_at": "2013-09-14T03:47:38Z",
+  "zooniverse_id": "APK0002sz0",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T03:47:38Z"
+}, {
+  "id": "51d1befd3ae74008a4065b2f",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0002666666667",
+    "-120.072266666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1befd3ae74008a4065b2f.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016022938781.tif_95.jpg",
+    "timestamp": "2010-10-16T02:29:44Z",
+    "segment": 1,
+    "depth": "26.6215749496738",
+    "temp": "15.6963500414451",
+    "salinity": "33.2140250029604",
+    "oxygen": "4.82433599715805",
+    "sw_rho": "1024.56209660706",
+    "cutout": {
+      "top": 1252,
+      "left": 7,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011845296643511194,
+  "created_at": "2013-09-14T20:21:49Z",
+  "zooniverse_id": "APK00072gh",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T20:21:49Z"
+}, {
+  "id": "51d1be553ae74008a40439b9",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9994333333333",
+    "-119.721266666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be553ae74008a40439b9.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015224826375.tif_266.jpg",
+    "timestamp": "2010-10-15T22:48:41Z",
+    "segment": 4,
+    "depth": "35.2432758922611",
+    "temp": "13.4664482738493",
+    "salinity": "33.46",
+    "oxygen": "4.40824827384926",
+    "sw_rho": "1025.26590820373",
+    "cutout": {
+      "top": 142,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011845656675862681,
+  "created_at": "2013-09-14T15:05:16Z",
+  "zooniverse_id": "APK0004k37",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T15:05:16Z"
+}, {
+  "id": "51d1be3a3ae74008a4035eff",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9990594354775",
+    "-119.706902822613"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be3a3ae74008a4035eff.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015224002578.tif_206.jpg",
+    "timestamp": "2010-10-15T22:40:14Z",
+    "segment": 2,
+    "depth": "98.2419031566998",
+    "temp": "10.2343387135167",
+    "salinity": "33.6956612864833",
+    "oxygen": "2.49262967956934",
+    "sw_rho": "1026.34186249027",
+    "cutout": {
+      "top": 1011,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011848138123394025,
+  "created_at": "2013-09-14T05:55:57Z",
+  "zooniverse_id": "APK0003tfn",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T05:55:57Z"
+}, {
+  "id": "51d1bda33ae74008a40121c3",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0026833333333",
+    "-119.536683686469"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bda33ae74008a40121c3.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015210429890.tif_149.jpg",
+    "timestamp": "2010-10-15T21:04:38Z",
+    "segment": 1,
+    "depth": "75.361025345515",
+    "temp": "10.22",
+    "salinity": "33.67",
+    "oxygen": "2.64002932278203",
+    "sw_rho": "1026.22015630036",
+    "cutout": {
+      "top": 1488,
+      "left": 1024,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011849762565815158,
+  "created_at": "2013-09-13T23:07:53Z",
+  "zooniverse_id": "APK0001auh",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-13T23:07:53Z"
+}, {
+  "id": "51d1bddd3ae74008a4023f19",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0003333333333",
+    "-119.64055"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bddd3ae74008a4023f19.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015220224250.tif_274.jpg",
+    "timestamp": "2010-10-15T22:02:40Z",
+    "segment": 1,
+    "depth": "101.053112911556",
+    "temp": "9.72",
+    "salinity": "33.86",
+    "oxygen": "2.17952403216497",
+    "sw_rho": "1026.57055192526",
+    "cutout": {
+      "top": 675,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011853087019789377,
+  "created_at": "2013-09-14T03:24:49Z",
+  "zooniverse_id": "APK0002mn7",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T03:24:49Z"
+}, {
+  "id": "51d1be4d3ae74008a403f94c",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9993166666667",
+    "-119.715816666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be4d3ae74008a403f94c.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015224515281.tif_202.jpg",
+    "timestamp": "2010-10-15T22:45:27Z",
+    "segment": 2,
+    "depth": "1.76559500496599",
+    "temp": "16.46",
+    "salinity": "33.49",
+    "oxygen": "5.01069034035784",
+    "sw_rho": "1024.490602323",
+    "cutout": {
+      "top": 85,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011857124981853984,
+  "created_at": "2013-09-14T14:35:02Z",
+  "zooniverse_id": "APK0004cbl",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T14:35:02Z"
+}, {
+  "id": "51d1bed33ae74008a40532e7",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9996666666667",
+    "-119.766083333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bed33ae74008a40532e7.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015231539343.tif_75.jpg",
+    "timestamp": "2010-10-15T23:15:43Z",
+    "segment": 2,
+    "depth": "51.5325083347175",
+    "temp": "12.77",
+    "salinity": "33.4",
+    "oxygen": "4.12508933331002",
+    "sw_rho": "1025.43203876528",
+    "cutout": {
+      "top": 365,
+      "left": 340,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.01185831002724047,
+  "created_at": "2013-09-14T17:11:28Z",
+  "zooniverse_id": "APK0005jo7",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T17:11:28Z"
+}, {
+  "id": "51d1bed93ae74008a405621f",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9997",
+    "-119.81047570402"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bed93ae74008a405621f.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015234252375.tif_41.jpg",
+    "timestamp": "2010-10-15T23:42:54Z",
+    "segment": 1,
+    "depth": "119.925784479442",
+    "temp": "9.47506034457244",
+    "salinity": "33.88",
+    "oxygen": "2.23241198291936",
+    "sw_rho": "1026.71310783095",
+    "cutout": {
+      "top": 1307,
+      "left": 560,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.01185934337499428,
+  "created_at": "2013-09-14T17:41:07Z",
+  "zooniverse_id": "APK0005s8q",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T17:41:07Z"
+}, {
+  "id": "51d1be403ae74008a4038d02",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0001333333333",
+    "-119.688532338692"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be403ae74008a4038d02.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015222919906.tif_158.jpg",
+    "timestamp": "2010-10-15T22:29:29Z",
+    "segment": 7,
+    "depth": "9.44245163084044",
+    "temp": "15.93",
+    "salinity": "33.49",
+    "oxygen": "5.07824306477024",
+    "sw_rho": "1024.64515199553",
+    "cutout": {
+      "top": 782,
+      "left": 1024,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011862668975075263,
+  "created_at": "2013-09-14T06:13:20Z",
+  "zooniverse_id": "APK0003yhi",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T06:13:20Z"
+}, {
+  "id": "51d1bee63ae74008a405b560",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0002166666667",
+    "-119.90775"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bee63ae74008a405b560.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016004323093.tif_231.jpg",
+    "timestamp": "2010-10-16T00:43:36Z",
+    "segment": 1,
+    "depth": "9.39900823364703",
+    "temp": "16.89",
+    "salinity": "33.25",
+    "oxygen": "4.71302950863114",
+    "sw_rho": "1024.24003194617",
+    "cutout": {
+      "top": 416,
+      "left": 591,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.0118633071138875,
+  "created_at": "2013-09-14T18:33:50Z",
+  "zooniverse_id": "APK00067fz",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T18:33:50Z"
+}, {
+  "id": "51d1bddd3ae74008a4023e60",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0003333333333",
+    "-119.64005"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bddd3ae74008a4023e60.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015220206828.tif_270.jpg",
+    "timestamp": "2010-10-15T22:02:22Z",
+    "segment": 1,
+    "depth": "96.5861613001347",
+    "temp": "9.77",
+    "salinity": "33.84",
+    "oxygen": "2.21682887063833",
+    "sw_rho": "1026.52613912973",
+    "cutout": {
+      "top": 0,
+      "left": 1024,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.01186347666610954,
+  "created_at": "2013-09-14T03:24:18Z",
+  "zooniverse_id": "APK0002mi2",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T03:24:18Z"
+}, {
+  "id": "51d1be993ae74008a404be68",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9995666666667",
+    "-119.740666666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be993ae74008a404be68.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015230001250.tif_296.jpg",
+    "timestamp": "2010-10-15T23:00:18Z",
+    "segment": 1,
+    "depth": "29.883612917516",
+    "temp": "15.6795483853105",
+    "salinity": "33.48",
+    "oxygen": "4.79849741815803",
+    "sw_rho": "1024.78496811724",
+    "cutout": {
+      "top": 194,
+      "left": 589,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.01186849157893255,
+  "created_at": "2013-09-14T16:03:33Z",
+  "zooniverse_id": "APK0004zwa",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T16:03:33Z"
+}, {
+  "id": "51d1bdb83ae74008a401db72",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0013666666667",
+    "-119.60185"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bdb83ae74008a401db72.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015214116125.tif_33.jpg",
+    "timestamp": "2010-10-15T21:41:18Z",
+    "segment": 2,
+    "depth": "32.8588306840035",
+    "temp": "12.61",
+    "salinity": "33.6368467726399",
+    "oxygen": "4.31442878949913",
+    "sw_rho": "1025.5625828304",
+    "cutout": {
+      "top": 1488,
+      "left": 743,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011873629314318568,
+  "created_at": "2013-09-14T02:23:24Z",
+  "zooniverse_id": "APK00025zf",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T02:23:24Z"
+}, {
+  "id": "51d1bece3ae74008a4050fee",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.99955",
+    "-119.758083333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bece3ae74008a4050fee.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015231044078.tif_13.jpg",
+    "timestamp": "2010-10-15T23:10:44Z",
+    "segment": 1,
+    "depth": "129.326028161598",
+    "temp": "9.33424647980024",
+    "salinity": "33.89",
+    "oxygen": "2.22127943676804",
+    "sw_rho": "1026.78712172107",
+    "cutout": {
+      "top": 744,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011874051355464932,
+  "created_at": "2013-09-14T16:48:23Z",
+  "zooniverse_id": "APK0005d7l",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T16:48:23Z"
+}, {
+  "id": "51d1be2d3ae74008a402f490",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0006666666667",
+    "-119.664866666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1be2d3ae74008a402f490.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015221600812.tif_17.jpg",
+    "timestamp": "2010-10-15T22:16:01Z",
+    "segment": 2,
+    "depth": "31.2938064518362",
+    "temp": "14.7565080645068",
+    "salinity": "33.48",
+    "oxygen": "4.6851318548308",
+    "sw_rho": "1024.99383024",
+    "cutout": {
+      "top": 1194,
+      "left": 912,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011874622461533701,
+  "created_at": "2013-09-14T04:57:17Z",
+  "zooniverse_id": "APK0003c7w",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T04:57:17Z"
+}, {
+  "id": "51d1bd993ae74008a400cd0a",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.00055",
+    "-119.484116666667"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bd993ae74008a400cd0a.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015203423265.tif_191.jpg",
+    "timestamp": "2010-10-15T20:34:34Z",
+    "segment": 2,
+    "depth": "61.7274916414407",
+    "temp": "10.3296166705476",
+    "salinity": "33.6751916647262",
+    "oxygen": "2.56791708265417",
+    "sw_rho": "1026.14318254753",
+    "cutout": {
+      "top": 1091,
+      "left": 0,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011875066989582295,
+  "created_at": "2013-09-13T22:43:17Z",
+  "zooniverse_id": "APK0000ysb",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-13T22:43:17Z"
+}, {
+  "id": "51d1bee63ae74008a405b543",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0002166666667",
+    "-119.90771299436"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bee63ae74008a405b543.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101016004323093.tif_187.jpg",
+    "timestamp": "2010-10-16T00:43:34Z",
+    "segment": 1,
+    "depth": "9.9221609980284",
+    "temp": "16.89",
+    "salinity": "33.25",
+    "oxygen": "4.73289915228039",
+    "sw_rho": "1024.24236770141",
+    "cutout": {
+      "top": 176,
+      "left": 969,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011882579512221825,
+  "created_at": "2013-09-14T18:33:46Z",
+  "zooniverse_id": "APK00067f7",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T18:33:46Z"
+}, {
+  "id": "51d1bdb03ae74008a4019223",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "33.0029333333333",
+    "-119.542983333333"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bdb03ae74008a4019223.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015210815625.tif_37.jpg",
+    "timestamp": "2010-10-15T21:08:17Z",
+    "segment": 3,
+    "depth": "19.183237724861",
+    "temp": "16.7596065467408",
+    "salinity": "33.5",
+    "oxygen": "4.92291573813037",
+    "sw_rho": "1024.50585534251",
+    "cutout": {
+      "top": 1065,
+      "left": 897,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011885453051315276,
+  "created_at": "2013-09-14T01:37:08Z",
+  "zooniverse_id": "APK0001tt1",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T01:37:08Z"
+}, {
+  "id": "51d1bee23ae74008a4059e16",
+  "project_id": "516d6f243ae740bc96000001",
+  "workflow_ids": [
+    "516d6f243ae740bc96000002"
+  ],
+  "coords": [
+    "32.9999813055507",
+    "-119.825571166637"
+  ],
+  "location": {
+    "standard": "http://www.planktonportal.org/subjects/standard/51d1bee23ae74008a4059e16.jpg"
+  },
+  "metadata": {
+    "filename": "Dataset3_20101015235208359.tif_8.jpg",
+    "timestamp": "2010-10-15T23:52:08Z",
+    "segment": 2,
+    "depth": "3.47703337422211",
+    "temp": "16.97",
+    "salinity": "33.24",
+    "oxygen": "4.7242836659073",
+    "sw_rho": "1024.18730120692",
+    "cutout": {
+      "top": 1181,
+      "left": 965,
+      "width": 1024.0,
+      "height": 560.0,
+      "bar_width": 0.0
+    }
+  },
+  "random": 0.011885866939130851,
+  "created_at": "2013-09-14T18:19:42Z",
+  "zooniverse_id": "APK00063cv",
+  "state": "inactive",
+  "classification_count": 0,
+  "updated_at": "2013-09-14T18:19:42Z"
 }]
