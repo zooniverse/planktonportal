@@ -259,7 +259,7 @@ class Classify extends Page
     @favorite.on 'delete', @onFavoriteDelete
 
     @favorite.send()
-    @favorite.trigger 'from-classify'
+    @favorite.trigger 'from-classification'
 
   onFavoriteFromClassify: =>
     @el.addClass 'is-favorite'
