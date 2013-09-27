@@ -276,7 +276,8 @@ module.exports =
       <p>Videos are a great tool to introduce students to the fascinating, diverse, and sometimes bizarre undersea world of plankton. Here are a couple of our favorites.</p>
 
       <ul>
-        <li><a href="http://www.google.com/url?q=http%3A%2F%2Fwww.ted.com%2Ftalks%2Fthe_secret_life_of_plankton.html&sa=D&sntz=1&usg=AFQjCNHSdPrxP6h9FufMU_eNWLZGty-SwA">The secret life of plankton</a> by Tierney Thys (TED Education video)</li>
+        <li><a href="http://www.google.com/url?q=http%3A%2F%2Fwww.ted.com%2Ftalks%2Fthe_secret_life_of_plankton.html&sa=D&sntz=1&usg=AFQjCNHSdPrxP6h9FufMU_eNWLZGty-SwA">The secret life of plankton</a> (TED Education video) by Tierney Thys, Christian Sardet, Noe Sardet and Sharif Mirshak</li>
+        <li><a href="http://www.planktonchronicles.org/en">Plankton Chronicles</a> by Christian Sardet, Noe Sardet and Sharif Mirshak</li>
         <li><a href="http://www.youtube.com/watch?v=3HzFiQFFQYw">There’s no such thing as a jellyfish</a> by Steve Haddock, Monterey Bay Aquarium Research Institute</li>
       </ul>
 
