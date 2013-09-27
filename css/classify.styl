@@ -371,7 +371,14 @@ body > .stack > .classify
 
       a,
       button
-        margin: 0 5px
+        margin: 0 2px
+        padding: 0 5px
+        border-radius: 3px
+
+      button[name="unfavorite"]
+        background: rgba(#000, 0.25)
+        box-shadow: 0 1px 3px black inset
+        display: none
 
       button[name="finish"],
       button[name="next"],
@@ -428,6 +435,13 @@ body > .stack > .classify
 
   &.signed-in button[name="sign-in"]
     display: none
+
+  &.is-favorite .status .continue
+    button[name="favorite"]
+      display: none
+
+    button[name="unfavorite"]
+      display: inline-block
 
 .no-tutorial-headers .tutorial .header,
 .no-tutorial-progress .tutorial .progress

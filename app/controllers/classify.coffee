@@ -37,6 +37,7 @@ class Classify extends Page
     'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
     'click button[name="sign-in"]': 'onClickSignIn'
     'click button[name="favorite"]': 'onClickFavorite'
+    'click button[name="unfavorite"]': 'onClickUnfavorite'
     'click button[name="next"]': 'onClickNext'
 
   elements:
@@ -78,7 +79,7 @@ class Classify extends Page
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
 
-    Favorite.on 'from-classify'
+    Favorite.on 'from-classify', @onFavoriteFromClassify
 
     @tutorial = new Tutorial
       parent: @subjectContainer
@@ -258,6 +259,9 @@ class Classify extends Page
     @favorite.on 'delete', @onFavoriteDelete
 
     @favorite.send()
+    @favorite.trigger 'from-classify'
+
+  onFavoriteFromClassify: =>
     @el.addClass 'is-favorite'
 
   onClickUnfavorite: ->

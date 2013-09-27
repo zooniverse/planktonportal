@@ -47,6 +47,7 @@
           </div>
           <div class="next">
             <button name="favorite"><%- translate 'span', 'classify.favorite' %></button>
+            <button name="unfavorite"><%- translate 'span', 'classify.favorite' %></button>
             <a href="#/TALK" class="talk"><%- translate 'span', 'classify.discuss' %></a>
             <button name="next"><%- translate 'span', 'classify.next' %></button>
             <a href="#/FACEBOOK" class="facebook"><%- translate 'span', 'classify.share' %></a>
