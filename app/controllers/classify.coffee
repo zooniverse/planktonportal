@@ -197,7 +197,7 @@ class Classify extends Page
 
     sessionClassifications += 1
 
-    trainingSubjects = [NaN, 3, 5, 7]
+    trainingSubjects = [NaN, 3, 5]
 
     if sessionClassifications in trainingSubjects
       console?.log sessionClassifications, 'Next subject will be training!'
