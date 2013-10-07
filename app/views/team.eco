@@ -8,7 +8,7 @@
   <% for organization in organizations: %>
     <div class="member organization">
       <a href="<%- translate "about.organizations.#{organization}.url" %>">
-        <img src="<%- translate "about.organizations.#{organization}.image" %>" />
+        <%- translate 'img', '', src: "about.organizations.#{organization}.image" %>
         <%- translate 'div.name', "about.organizations.#{organization}.name" %>
       </a>
     </div>
@@ -22,7 +22,7 @@
 
   <% for scientist in scientists: %>
     <div class="science member">
-      <img src="<%- translate "about.scientists.#{scientist}.image" %>" />
+      <%- translate 'img', '', src: "about.scientists.#{scientist}.image" %>
       <%- translate 'div.name', "about.scientists.#{scientist}.name" %>
 
       <div class="description-popup">
@@ -39,7 +39,7 @@
 
   <% for developer in developers: %>
     <div class="development member">
-      <img src="<%- translate "about.developers.#{developer}.image" %>" />
+      <%- translate 'img', '', src: "about.developers.#{developer}.image" %>
       <%- translate 'div.name', "about.developers.#{developer}.name" %>
 
       <div class="description-popup">

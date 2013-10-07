@@ -11,6 +11,6 @@ translate = require 't7e'
 enUs = require './en-us'
 translate.load enUs
 
-Editor = require 't7e/editor'
-if (!!~location.search.indexOf 'translate')
-  Editor.init()
+# Editor = require 't7e/editor'
+# if (!!~location.search.indexOf 'translate')
+#   Editor.init()

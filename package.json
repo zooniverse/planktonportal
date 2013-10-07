@@ -10,16 +10,18 @@
     "json2ify": "~0.0.3",
     "marking-surface": "~0.0.15",
     "moment": "~2.0.0",
-    "publisssh": "~0.1.0",
+    "publisssh": "~0.2.1",
     "spine": "~1.0.9",
-    "t7e": "git+ssh://git@github.com:brian-c/t7e.git#editor",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#no-deps",
-    "zootorial": "~0.3.4"
+    "t7e": "~0.2.3",
+    "zooniverse": "git://github.com/chrissnyder/Zooniverse#no-deps",
+    "zootorial": "~0.3.4",
+    "zapper": "0.0.3"
   },
   "scripts": {
     "start": "haw serve",
     "build-font": "bundle exec fontcustom compile --debug --font_path ./ --output ./public/fonts/fontcustom ./icons",
     "deploy-to-staging": "haw build && publisssh build www.planktonportal.org/beta && rm -rf ./build",
-    "deploy-to-production": "haw build && publisssh build www.planktonportal.org && rm -rf ./build"
+    "deploy-to-production": "haw build && publisssh build www.planktonportal.org && rm -rf ./build",
+    "deploy-to-demo": "haw build && zapper && publisssh build zooniverse-demo/plankton-z8e && rm -rf ./build"
   }
 }

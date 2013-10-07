@@ -48,6 +48,10 @@ TopBar = require 'zooniverse/controllers/top-bar'
 topBar = new TopBar
 topBar.el.appendTo document.body
 
+topBar.on 'language-fetched', (e, languageStrings) ->
+  translate.load languageStrings
+  translate.refresh()
+
 User = require 'zooniverse/models/user'
 User.fetch()
 

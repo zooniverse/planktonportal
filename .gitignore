@@ -2,3 +2,5 @@
 /node_modules
 /public/application.*
 /test/public/specs.js
+
+.DS_Store
