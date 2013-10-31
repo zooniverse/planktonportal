@@ -44,13 +44,15 @@ activeHashLinks.init()
 Api = require 'zooniverse/lib/api'
 api = new Api project: 'plankton'
 
+LanguageManager = require 'zooniverse/lib/language-manager'
+languageManager = new LanguageManager
+languageManager.on 'language-fetched', (e, languageStrings) ->
+  translate.load languageStrings
+  translate.refresh()
+
 TopBar = require 'zooniverse/controllers/top-bar'
 topBar = new TopBar
 topBar.el.appendTo document.body
-
-topBar.on 'language-fetched', (e, languageStrings) ->
-  translate.load languageStrings
-  translate.refresh()
 
 User = require 'zooniverse/models/user'
 User.fetch()
