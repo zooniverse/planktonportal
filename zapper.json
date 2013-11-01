@@ -1,5 +1,4 @@
 {
   "bucket": "zooniverse-demo",
-  "local": "./build/index.html",
   "prefix": "plankton-z8e"
 }

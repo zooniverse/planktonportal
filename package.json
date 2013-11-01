@@ -15,13 +15,13 @@
     "t7e": "~0.2.3",
     "zooniverse": "git://github.com/chrissnyder/Zooniverse#no-deps",
     "zootorial": "~0.3.4",
-    "zapper": "0.0.3"
+    "zapper": "0.0.4"
   },
   "scripts": {
     "start": "haw serve",
     "build-font": "bundle exec fontcustom compile --debug --font_path ./ --output ./public/fonts/fontcustom ./icons",
     "deploy-to-staging": "haw build && publisssh build www.planktonportal.org/beta && rm -rf ./build",
     "deploy-to-production": "haw build && publisssh build www.planktonportal.org && rm -rf ./build",
-    "deploy-to-demo": "haw build && zapper && publisssh build zooniverse-demo/plankton-z8e && rm -rf ./build"
+    "deploy-to-demo": "haw build && publisssh build zooniverse-demo/plankton-z8e && rm -rf ./build && zapper"
   }
 }
