@@ -20,7 +20,6 @@
   "scripts": {
     "start": "haw serve",
     "build-font": "bundle exec fontcustom compile --debug --font_path ./ --output ./public/fonts/fontcustom ./icons",
-    "deploy-to-demo": "haw build && publisssh build zooniverse-demo/plankton-z8e && rm -rf ./build && zapper",
     "deploy-to-beta": "haw build && publisssh build www.planktonportal.org/beta && rm -rf ./build",
     "deploy-to-production": "haw build && publisssh build www.planktonportal.org && rm -rf ./build"
   }
