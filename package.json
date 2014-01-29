@@ -15,12 +15,14 @@
     "t7e": "~0.2.3",
     "zooniverse": "~0.3.8",
     "zootorial": "~0.3.4",
-    "zapper": "0.0.4"
+    "zapper": "0.0.4",
+    "translator-seed": "0.1.0"
   },
   "scripts": {
     "start": "haw serve",
     "build-font": "bundle exec fontcustom compile --debug --font_path ./ --output ./public/fonts/fontcustom ./icons",
     "deploy-to-beta": "haw build && publisssh build www.planktonportal.org/beta && rm -rf ./build",
-    "deploy-to-production": "haw build && publisssh build www.planktonportal.org && rm -rf ./build"
+    "deploy-to-production": "haw build && publisssh build www.planktonportal.org && rm -rf ./build",
+    "deploy-locale": "seed-translation --project plankton --env production"
   }
 }
