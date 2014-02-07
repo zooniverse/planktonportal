@@ -13,9 +13,8 @@
     "publisssh": "~0.2.1",
     "spine": "~1.0.9",
     "t7e": "~0.2.3",
-    "zooniverse": "~0.3.8",
+    "zooniverse": "~0.3.16",
     "zootorial": "~0.3.4",
-    "zapper": "0.0.4",
     "translator-seed": "0.1.0"
   },
   "scripts": {
