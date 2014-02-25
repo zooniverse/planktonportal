@@ -327,7 +327,6 @@ module.exports =
       cowen:
         image: './images/science-team/cowen.jpg'
         name: 'Bob Cowen'
-        role: ''
         description: '''
           Bob Cowen is Professor and Director of the Hatfield Marine Science Center at Oregon State University.
           His research interests are focused on larval fish and the plankton communities upon which they depend.
@@ -338,7 +337,6 @@ module.exports =
       guigand:
         image: './images/science-team/guigand.jpg'
         name: 'Cedric Guigand'
-        role: ''
         description: '''
           Cedric Guigand Is a Senior Research Associate working on the ISIIS instrument from the design and deployment to data analysis.
           Even though his background is in fish biology, he has interests in new technologies and engineering.
@@ -348,7 +346,6 @@ module.exports =
       luo:
         image: './images/science-team/luo.jpg'
         name: 'Jessica Luo'
-        role: ''
         description: '''
           Jessica Luo is a Ph.D student using ISIIS to study the ecology of jellyfish, larval fish, and other plankton in the ocean.
           She is interested in processes that structure marine communities, and hopes that this research will provide better insight into the role of small jellyfish in the open ocean.
@@ -360,7 +357,6 @@ module.exports =
       greer:
         image: './images/science-team/greer.jpg'
         name: 'Adam Greer'
-        role: ''
         description: '''
           Adam Greer is a Ph.D student originally from Nashville, TN studying thin layers of zooplankton in coastal environments.
           Plankton often aggregate in dense layers only a few meters in depth, and the use of imaging technology provides a unique opportunity to describe the spatial relationships of organisms in fine detail- leading to a better understanding of how zooplankton and fish larvae feed and survive.
@@ -370,7 +366,6 @@ module.exports =
       cousin:
         image: './images/science-team/cousin.jpg'
         name: 'Charles Cousin'
-        role: ''
         description: '''
           Charles Cousin is involved with the design and manufacturing of the ISIIS towed vehicles.
           He participates in the design of all systems of the instrument, using CAD modeling, drafting, and mechanical analysis tools.
@@ -381,7 +376,6 @@ module.exports =
       grassian:
         image: './images/science-team/grassian.jpg'
         name: 'Ben Grassian'
-        role: ''
         description: '''
           Ben Grassian is an undergraduate at the University of Miami who is completing his bachelors in Marine Science and Biology in Summer 2013.
           His research background is mostly in cellular biology, having worked in a cancer research lab in Boston, MA while in high school.
@@ -393,7 +387,6 @@ module.exports =
       tang:
         image: './images/science-team/tang.jpg'
         name: 'Dorothy Tang'
-        role: ''
         description: '''
           Dorothy Tang is a research assistant working on the ISIIS images.
           She has been fascinated by the variety of marine ecosystems and life forms since she was a child.
@@ -408,7 +401,6 @@ module.exports =
       borden:
         image: './images/dev-team/borden.jpg'
         name: 'Kelly Borden'
-        role: 'Education coordinator'
         description: '''
           Kelly is an archaeologist by training but an educator by passion.
           While working at the Museum of Science and Industry and the Adler Planetarium
@@ -420,7 +412,6 @@ module.exports =
       carstensen:
         image: './images/dev-team/carstensen.jpg'
         name: 'Brian Carstensen'
-        role: 'Front-end developer'
         description: '''
           Brian is a web developer working on the Zooniverse family of projects at the Adler Planearium.
           Brian has a degree in graphic design from Columbia College in Chicago,
@@ -430,7 +421,6 @@ module.exports =
       lintott:
         image: './images/dev-team/lintott.jpg'
         name: 'Chris Lintott'
-        role: 'Zooniverse science lead'
         description: '''
           Chris Lintott leads the Zooniverse team, and is his copious spare time
           is a researcher at the University of Oxford specialising in galaxy formation and evolution.
@@ -441,7 +431,6 @@ module.exports =
       miller:
         image: './images/dev-team/miller.jpg'
         name: 'David Miller'
-        role: 'Visual designer'
         description: '''
           As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design.
           Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival,
@@ -453,7 +442,6 @@ module.exports =
       parrish:
         image: './images/dev-team/parrish.jpg'
         name: 'Michael Parrish'
-        role: 'Senior developer'
         description: '''
           Michael has a degree in Computer Science and has been working with The Zooniverse for the past three years as a Software Developer.
           Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.
@@ -462,7 +450,6 @@ module.exports =
       smith:
         image: './images/dev-team/smith.jpg'
         name: 'Arfon Smith'
-        role: 'Technical lead'
         description: '''
           As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry
           at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge
