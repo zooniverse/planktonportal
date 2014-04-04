@@ -472,7 +472,7 @@ module.exports =
     tweet: 'Tweet'
     return: 'Home'
     training: '''
-      This is a training image. We've marked where the axes of the creatures.<br />
+      This is a training image. We've marked where the axes of the creatures should be.<br />
       Don't worry if you got one wrong! Each image is seen by multiple volunteers.
     '''
 
