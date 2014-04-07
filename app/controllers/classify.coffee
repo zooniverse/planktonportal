@@ -85,6 +85,9 @@ class Classify extends Page
       parent: @subjectContainer
       steps: tutorialSteps
       firstStep: 'welcome'
+      demoLabel: translate 'span', 'tutorial.demoLabel'
+      nextLabel: translate 'span', 'tutorial.nextLabel'
+      doneLabel: translate 'span', 'tutorial.doneLabel'
 
     @tutorial.el.on 'start-tutorial enter-tutorial-step', =>
       translate.refresh @tutorial.el.get 0

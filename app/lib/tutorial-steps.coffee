@@ -19,6 +19,7 @@ addStep = (name, params) ->
     header: translate 'div', "tutorial.#{name}.header", {fallback: ''}
     details: translate 'div', "tutorial.#{name}.details", {fallback: ''}
     instruction: translate 'div', "tutorial.#{name}.instruction", {fallback: '__NO_INSTRUCTION__'}
+    nextButton: translate 'span', 'tutorial.nextLabel'
   }
 
   delete defaults.instruction if !!~defaults.instruction.indexOf '>__NO_INSTRUCTION__<' # Kinda messy
@@ -119,8 +120,8 @@ addStep 'firstBadCoordinates',
 
 addStep 'firstWrongSpecies',
   header: translate 'div', 'tutorial.wrongSpecies.header'
-  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: 'Solmaris', $category: 'Tentacled'})
-  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: 'Solmaris', $category: 'Tentacled'})
+  details: (translate 'div', 'tutorial.wrongSpecies.details', {$species: translate 'span', 'species.solmaris'})
+  instruction: (translate 'div', 'tutorial.wrongSpecies.instruction', {$species: translate('span', 'species.solmaris'), $category: translate('span', 'speciesCategories.tentacled')})
   attachment: 'center bottom .marking-tool-controls center top'
 
   actionable: 'button[value="tentacled"], button[value="solmaris"]'
@@ -216,4 +217,4 @@ addStep 'beSocial',
 addStep 'haveFun',
   number: 9
   next: null
-  nextButton: translate 'tutorial.haveFun.nextButton'
+  nextButton: translate 'span', 'tutorial.doneLabel'
