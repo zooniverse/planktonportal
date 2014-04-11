@@ -9,9 +9,10 @@ t7e.load enUs
 languageManager = new LanguageManager
   translations:
     en: label: 'English', strings: enUs
+    de: label: 'Deutsch', strings: './translations/de.json'
     fr: label: 'Français', strings: './translations/fr.json'
     pl: label: 'Polski', strings: './translations/pl.json'
-    de: label: "Deutsch", strings: "./translations/de.json"
+    cs: label: 'čeština', strings: './translations/cs.json'
 
 languageManager.on 'change-language', (e, code, languageStrings) ->
   t7e.load languageStrings
