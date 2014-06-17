@@ -20,8 +20,8 @@
   "scripts": {
     "start": "haw serve",
     "build-font": "bundle exec fontcustom compile --debug --font_path ./ --output ./public/fonts/fontcustom ./icons",
-    "deploy-to-beta": "haw build && publisssh build www.planktonportal.org/beta && rm -rf ./build",
-    "deploy-to-production": "haw build && publisssh build www.planktonportal.org && rm -rf ./build",
+    "deploy-to-beta": "haw build && publisssh build zooniverse-static/www.planktonportal.org/beta && rm -rf ./build",
+    "deploy-to-production": "haw build && publisssh build zooniverse-static/www.planktonportal.org && rm -rf ./build",
     "deploy-locale": "seed-translation --project plankton --env production"
   }
 }
