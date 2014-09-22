@@ -126,6 +126,10 @@ class Classify extends Page
     # L     | YES     | NO       | 5TH
 
     split = user?.project?.splits.tutorial
+
+    # Assign optimum split manually
+    split = k
+
     $html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
     $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'j', 'k', 'l']
 
@@ -219,7 +223,6 @@ class Classify extends Page
 
     # TODO: Send classification
     @classification.send()
-    # console?.log 'Classifying', JSON.stringify @classification
 
     @el.addClass 'finished'
 
