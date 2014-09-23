@@ -128,7 +128,7 @@ class Classify extends Page
     split = user?.project?.splits.tutorial
 
     # Assign optimum split manually
-    split = k
+    split = 'k'
 
     $html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
     $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'j', 'k', 'l']
