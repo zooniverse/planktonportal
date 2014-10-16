@@ -45,7 +45,7 @@ module.exports =
     profile: 'Profile'
     education: 'Education'
     team: 'Team'
-    talk: 'Discuss'
+    talk: 'Talk'
     blog: 'Blog'
 
   home:
