@@ -12,7 +12,7 @@ class Counter
     @el = @el.get 0 if 'get' of @el
 
   set: (value) ->
-    original = parseFloat(@el.innerHTML.replace /[^\d]/g, '') || 0
+    original = parseFloat(@el.innerHTML) || 0
 
     flips = Math.floor @duration / (1000 / @fps)
     delay = @duration / flips
