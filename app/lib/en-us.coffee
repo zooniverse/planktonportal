@@ -38,7 +38,6 @@ module.exports =
     copepod: 'Copepod'
 
   navigation:
-    projectName: PROJECT_NAME
     home: 'Home'
     science: 'Science'
     classify: 'Classify'
