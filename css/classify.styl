@@ -77,7 +77,13 @@ body > .stack > .classify
     svg
       display: block
 
-    .marking-tool-controls
+      &.marking-surface-svg
+        width: 100%
+        height: 100%
+        max-width: 1024px
+        max-height: 560px
+
+    .marking-surface-tool-controls
       background: $dark-gray
       background: rgba($dark-gray, 0.9)
       border-radius: 3px
