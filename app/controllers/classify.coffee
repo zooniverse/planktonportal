@@ -65,7 +65,7 @@ class Classify extends Page
 
     @el.addClass 'loading'
 
-    @surface ?= new MarkingSurface
+    @surface = new MarkingSurface
       tool: PlanktonTool
 
     @subjectContainer.prepend @surface.el

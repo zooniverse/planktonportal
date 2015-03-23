@@ -11,8 +11,8 @@ class PlanktonControls extends ToolControls
   constructor: ->
     super
     # $(@el).append controlsTemplate
-    console.log 'tool', @tool.markingSurface
-    console.log 'template', controlsTemplate, typeof controlsTemplate
+    console.log 'tool marking surface', @
+    # console.log 'template', controlsTemplate, typeof controlsTemplate
     # console.log '@template', @template
     @toggleButton = $(@el).find 'button[name="toggle"]'
     @categoryButtons = $(@el).find 'button[name="category"]'
@@ -27,16 +27,15 @@ class PlanktonControls extends ToolControls
 
     @toggleButton.click()
 
+  # onEnter: =>
+  #   $(@tool).fadeOut()
 
-  onEnter: =>
-    $(@tool).fadeOut()
-
-  onLeave: =>
-    $(@tool).fadeIn()
+  # onLeave: =>
+  #   $(@tool).fadeIn()
 
   onClickToggle: =>
     $(@el).removeClass 'closed'
-    @moveTo {x: @outsideX, y: @outsideY}
+    # @moveTo {}
 
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
@@ -63,7 +62,7 @@ class PlanktonControls extends ToolControls
 
     setTimeout (=>
       $(@el).addClass 'closed'
-      @moveTo {x: @outsideX, y: @outsideY}
+      # @moveTo {x, y}
     ), 250
 
     return if target.hasClass 'active'
@@ -73,39 +72,28 @@ class PlanktonControls extends ToolControls
 
     @tool.mark.set species: target.val()
 
-  # moveTo: (x, y, openLeft) ->
-  #   if openLeft
-  #     $(@el).addClass 'to-the-left'
-  #     $(@el).css
-  #       left: ''
-  #       position: 'absolute'
-  #       right: @tool.surface.width - x
-  #       top: y
+  moveTo: (e) ->
+    # if openLeft
+    console.log 'x y', @el
+    $(@el).addClass 'to-the-left'
+    $(@el).css
+      left: e.x - 400
+      top: e.y
 
-  #   else
-  #     $(@el).removeClass 'to-the-left'
-  #     $(@el).css
-  #       left: x
-  #       position: 'absolute'
-  #       right: ''
-  #       top: y
+
+    # else
+    #   $(@el).removeClass 'to-the-left'
+    #   $(@el).css
+    #     left: x
+    #     position: 'absolute'
+    #     right: ''
+    #     top: y
 
 class PlanktonTool extends PointTool
   @Controls: PlanktonControls
 
   constructor: ->
     super
-
-  initialize: ->
-    super
-    # @dot = @createShape 'circle', cx: 0, cy: 0, r: 10
-
-  render: ->
-    super
-    # borrowed from penguins
-    # @attr 'transform', "translate(#{@mark.x}, #{@mark.y})"
-    # @controls.moveTo
-    #   x: @mark.x + 30
-    #   y: @mark.y
+    @label.el.style.display = 'none'
 
 module.exports = PlanktonTool
