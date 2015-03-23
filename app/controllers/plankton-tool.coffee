@@ -1,16 +1,16 @@
 $ = window.jQuery
 MarkingSurface = require 'marking-surface'
 PointTool = require 'marking-surface/lib/tools/point'
-{Mark, ToolControls, Tool} = MarkingSurface
+{Point, ToolControls} = MarkingSurface
 controlsTemplate = require '../views/plankton-chooser'
 species = require '../lib/species'
 
 class PlanktonControls extends ToolControls
-  template: ''
+  template: require('../views/plankton-chooser')()
 
   constructor: ->
     super
-    $(@el).append controlsTemplate
+    # $(@el).append controlsTemplate
     @toggleButton = $(@el).find 'button[name="toggle"]'
     @categoryButtons = $(@el).find 'button[name="category"]'
     @categories = $(@el).find '.category'
@@ -24,6 +24,8 @@ class PlanktonControls extends ToolControls
 
     @toggleButton.click()
 
+    console.log 'tool', @tool
+
   onEnter: =>
     @tool.fadeOut()
 
@@ -32,7 +34,7 @@ class PlanktonControls extends ToolControls
 
   onClickToggle: =>
     $(@el).removeClass 'closed'
-    @moveTo @outsideX, @outsideY, @openLeft
+    @moveTo {x: @outsideX, y: @outsideY}
 
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
@@ -59,7 +61,7 @@ class PlanktonControls extends ToolControls
 
     setTimeout (=>
       $(@el).addClass 'closed'
-      @moveTo @intersectionX, @intersectionY, @openLeft
+      @moveTo {x: @outsideX, y: @outsideY}
     ), 250
 
     return if target.hasClass 'active'
@@ -69,45 +71,44 @@ class PlanktonControls extends ToolControls
 
     @tool.mark.set species: target.val()
 
-  moveTo: (x, y, openLeft) ->
-    if openLeft
-      $(@el).addClass 'to-the-left'
-      $(@el).css
-        left: ''
-        position: 'absolute'
-        right: @tool.surface.width - x
-        top: y
+  # moveTo: (x, y, openLeft) ->
+  #   if openLeft
+  #     $(@el).addClass 'to-the-left'
+  #     $(@el).css
+  #       left: ''
+  #       position: 'absolute'
+  #       right: @tool.surface.width - x
+  #       top: y
 
-    else
-      $(@el).removeClass 'to-the-left'
-      $(@el).css
-        left: x
-        position: 'absolute'
-        right: ''
-        top: y
-
-class PlanktonMark extends Mark
-  #borrowed from condors
-  limit: (n, direction) ->
-    dimensions = @_surface.el.getBoundingClientRect()
-    Math.min dimensions[direction], Math.max 0, n
-
-  'set x': (value) ->
-    console.log value
-    @limit value, 'width'
-
-  'set y': (value) ->
-    @limit value, 'height'
+  #   else
+  #     $(@el).removeClass 'to-the-left'
+  #     $(@el).css
+  #       left: x
+  #       position: 'absolute'
+  #       right: ''
+  #       top: y
 
 class PlanktonTool extends PointTool
-  @Mark: PlanktonMark
   @Controls: PlanktonControls
+
+  'on click': -> alert 'clicky'
 
   constructor: ->
     super
 
+  # initialize: ->
+  #   @dot = @createShape 'circle', cx: 0, cy: 0, r: 10
+
+  # rescale: (scale) ->
+  #   super
+  #   @disc.attr 'strokeWidth', 0
+
   render: ->
     super
-
+    # borrowed from penguins
+    @attr 'transform', "translate(#{@mark.x}, #{@mark.y})"
+    @controls.moveTo
+      x: @mark.x + 30
+      y: @mark.y
 
 module.exports = PlanktonTool
