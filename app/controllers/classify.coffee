@@ -15,6 +15,7 @@ training = require '../lib/training'
 loginDialog = require 'zooniverse/controllers/login-dialog'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
+{PointTool} = MarkingSurface
 
 $html = $('html')
 
@@ -66,13 +67,6 @@ class Classify extends Page
 
     @surface ?= new MarkingSurface
       tool: PlanktonTool
-      width: 1024
-      height: 560
-
-    @subjectImage = @surface.addShape 'image',
-      width: '100%'
-      height: '100%'
-      preserveAspectRatio: 'none'
 
     @subjectContainer.prepend @surface.el
 
@@ -87,19 +81,7 @@ class Classify extends Page
     Subject.on 'select', @onSubjectSelect
     Subject.on 'no-more', @onNoMoreSubjects
 
-    # Subject.next()
-
     Favorite.on 'from-classify', @onFavoriteFromClassify
-
-    # @tutorial = new Tutorial
-    #   parent: @subjectContainer
-    #   steps: tutorialSteps
-    #   firstStep: 'welcome'
-
-    # @tutorial.el.on 'start-tutorial enter-tutorial-step', =>
-    #   translate.refresh @tutorial.el.get 0
-
-    # @tutorial.classifier = @
 
   activate: ->
     super
@@ -109,11 +91,6 @@ class Classify extends Page
     status.css display: 'none'
     setTimeout ->
       status.css display: ''
-
-    # Reposition the tutorial dialog.
-    # TODO: This is weird, I know.
-    # setTimeout => @tutorial.attach()
-    # setTimeout (=> @tutorial.attach()), 300
 
   onUserChange: (e, user) =>
     @el.toggleClass 'signed-in', user?
@@ -145,18 +122,12 @@ class Classify extends Page
 
     if user?.project?.tutorial_done
       if Subject.current?.metadata.tutorial
-        # @tutorial.end()
         Subject.next()
       else if not Subject.current?
         Subject.next()
 
     else
-      # tutorialSubject = createTutorialSubject()
-      # Subject.instances.unshift Subject.instances.pop()
       Subject.next()
-
-      # if @surface?.marks?.length is 0
-      #   tutorialSubject.select()
 
   onGettingNextSubject: =>
     @el.addClass 'loading'
@@ -179,14 +150,11 @@ class Classify extends Page
     @swapContainer.css display: ''
 
     # Once the swap container is showing, change the image of the marking surface behind it.
-    @loadImage subject.location.standard, (@currentSubjectImage) =>
-      @subjectImage.attr 'xlink:href', @currentSubjectImage.src
-      @rescale()
-      # @surface.enable()
+    @loadImage subject.location.standard, ({src, width, height}) =>
+      @surface.image = @surface.addShape 'image', 'xlink:href': src, width: width, height: height, preserveAspectRatio: 'none'
+      @surface.svg.attr width: width, height: height
+      @surface.rescale 0, 0, width, height
 
-    # @surface.image.attr src: subject.location.standard
-    # @depthCounter.set (+subject.metadata.depth)?.toFixed(2) || '?'
-    # @tempCounter.set (+subject.metadata.temp)?.toFixed(2) || '?'
     @timeEl.html moment(subject.metadata.timestamp).format 'YYYY/M/D'
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
@@ -204,25 +172,10 @@ class Classify extends Page
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
 
-    # @tutorial.end() if @tutorial.started?
-
-    # if subject.metadata.tutorial
-    #   setTimeout (=> @tutorial.start()), 250
-
   loadImage: (src, cb) ->
     img = new Image
     img.onload = -> cb img
     img.src = src
-
-  rescale: =>
-    # NOTE: The SVG and its image are 100%x100%, so resize @markingSurface.el
-    return unless @currentSubjectImage?
-    # heightScale = @currentSubjectImage.height / @currentSubjectImage.width
-    # height = @surface.el.offsetWidth * heightScale
-    @surface.el.style.cssText = "width: 100%; max-width: 1024px; height: 100%; max-height: 560px;"
-    # @surface.el.style.height = "560px"
-
-    tool.render() for tool in @surface.tools
 
   onNoMoreSubjects: =>
     alert 'It appears we\'ve run out of data!'

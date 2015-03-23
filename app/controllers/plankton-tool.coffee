@@ -2,15 +2,18 @@ $ = window.jQuery
 MarkingSurface = require 'marking-surface'
 PointTool = require 'marking-surface/lib/tools/point'
 {Point, ToolControls} = MarkingSurface
-controlsTemplate = require '../views/plankton-chooser'
+controlsTemplate = require('../views/plankton-chooser')()
 species = require '../lib/species'
 
 class PlanktonControls extends ToolControls
-  template: require('../views/plankton-chooser')()
+  template: controlsTemplate
 
   constructor: ->
     super
     # $(@el).append controlsTemplate
+    console.log 'tool', @tool.markingSurface
+    console.log 'template', controlsTemplate, typeof controlsTemplate
+    # console.log '@template', @template
     @toggleButton = $(@el).find 'button[name="toggle"]'
     @categoryButtons = $(@el).find 'button[name="category"]'
     @categories = $(@el).find '.category'
@@ -24,13 +27,12 @@ class PlanktonControls extends ToolControls
 
     @toggleButton.click()
 
-    console.log 'tool', @tool
 
   onEnter: =>
-    @tool.fadeOut()
+    $(@tool).fadeOut()
 
   onLeave: =>
-    @tool.fadeIn()
+    $(@tool).fadeIn()
 
   onClickToggle: =>
     $(@el).removeClass 'closed'
@@ -91,24 +93,19 @@ class PlanktonControls extends ToolControls
 class PlanktonTool extends PointTool
   @Controls: PlanktonControls
 
-  'on click': -> alert 'clicky'
-
   constructor: ->
     super
 
-  # initialize: ->
-  #   @dot = @createShape 'circle', cx: 0, cy: 0, r: 10
-
-  # rescale: (scale) ->
-  #   super
-  #   @disc.attr 'strokeWidth', 0
+  initialize: ->
+    super
+    # @dot = @createShape 'circle', cx: 0, cy: 0, r: 10
 
   render: ->
     super
     # borrowed from penguins
-    @attr 'transform', "translate(#{@mark.x}, #{@mark.y})"
-    @controls.moveTo
-      x: @mark.x + 30
-      y: @mark.y
+    # @attr 'transform', "translate(#{@mark.x}, #{@mark.y})"
+    # @controls.moveTo
+    #   x: @mark.x + 30
+    #   y: @mark.y
 
 module.exports = PlanktonTool
