@@ -67,7 +67,7 @@ class PlanktonControls extends ToolControls
     @tool.mark.destroy()
     Spine.trigger 'change-mark-count'
 
-  moveTo: (e) =>
+  moveTo: =>
     closedControls = @tool.controls?.el.classList.contains 'closed'
     targetX = @tool.mark.x
     targetY = @tool.mark.y

@@ -69,6 +69,9 @@ class Classify extends Page
     @surface = new MarkingSurface
       tool: PlanktonTool
       width: 1024
+      height: 560
+      scaleX: 1
+      scaleY: 1
 
     @subjectContainer.prepend @surface.el
 
@@ -117,19 +120,11 @@ class Classify extends Page
     # split = user?.project?.splits.tutorial
 
     # Assign optimum split manually
-    split = 'k'
 
-    $html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
-    $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'j', 'k', 'l']
+    #$html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
+    #$html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'j', 'k', 'l']
 
-    if user?.project?.tutorial_done
-      if Subject.current?.metadata.tutorial
-        Subject.next()
-      else if not Subject.current?
-        Subject.next()
-
-    else
-      Subject.next()
+    Subject.next()
 
   onGettingNextSubject: =>
     @el.addClass 'loading'
@@ -140,9 +135,8 @@ class Classify extends Page
     # @guidelines = null
     # @guideIcons?.remove()
     # @guideIcons = null
-    console.log @surface
     @el.removeClass 'loading'
-    # @surface.marks[0].destroy() until @surface.marks.length is 0
+    @surface.tools[0].destroy() until @surface.tools.length is 0
 
     # This image will slide in.
     @newSwapImage.attr src: subject.location.standard
@@ -158,7 +152,7 @@ class Classify extends Page
     @loadImage subject.location.standard, ({src, width, height}) =>
       @surface.image = @surface.addShape 'image', 'xlink:href': src, width: width, height: height, preserveAspectRatio: 'none'
       @surface.svg.attr width: width, height: height
-      @surface.rescale 0, 0, width, height
+      @surface.svg.attr 'viewBox', [0, 0, width, height].join ' '
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
       @swapContainer.css display: 'none'
@@ -206,14 +200,15 @@ class Classify extends Page
 
     @surface.selection?.deselect()
 
-    @classification.annotate mark for mark in @surface.marks
+    @classification.annotate tool.mark for tool in @surface.tools
 
     # TODO: Send classification
+    console?.log 'classification send', @classification
     @classification.send()
 
     @el.addClass 'finished'
 
-    classificationCount = User.current?.project?.classificaiton_count || 0
+    classificationCount = User.current?.project?.classification_count || 0
     classificationCount += Classification.sentThisSession
 
 #    introduceTalk = if User.current?.project?.splits.tutorial in ['b', 'e', 'h', 'k']
