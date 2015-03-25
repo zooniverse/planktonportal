@@ -16,6 +16,7 @@ loginDialog = require 'zooniverse/controllers/login-dialog'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
 {PointTool} = MarkingSurface
+Spine = require 'spine'
 
 $html = $('html')
 
@@ -37,7 +38,7 @@ class Classify extends Page
 
   events:
     'click button[name="finish"]': 'onClickFinish'
-    'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
+#    'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
     'click button[name="sign-in"]': 'onClickSignIn'
     'click button[name="favorite"]': 'onClickFavorite'
     'click button[name="unfavorite"]': 'onClickUnfavorite'
@@ -67,10 +68,11 @@ class Classify extends Page
 
     @surface = new MarkingSurface
       tool: PlanktonTool
+      width: 1024
 
     @subjectContainer.prepend @surface.el
 
-    @surface.on 'create-mark destroy-mark', @onChangeMarkCount
+    Spine.on 'change-mark-count', @onChangeMarkCount
 
     @depthCounter = new Counter el: @depthCounterEl
     @tempCounter = new Counter el: @tempCounterEl
@@ -150,12 +152,13 @@ class Classify extends Page
     @swapContainer.css display: ''
 
     # Once the swap container is showing, change the image of the marking surface behind it.
+    @depthCounter.set (+subject.metadata.depth)?.toFixed(2) || '?'
+    @tempCounter.set (+subject.metadata.temp)?.toFixed(2) || '?'
+    @timeEl.html moment(subject.metadata.timestamp).format 'YYYY/M/D'
     @loadImage subject.location.standard, ({src, width, height}) =>
       @surface.image = @surface.addShape 'image', 'xlink:href': src, width: width, height: height, preserveAspectRatio: 'none'
       @surface.svg.attr width: width, height: height
       @surface.rescale 0, 0, width, height
-
-    @timeEl.html moment(subject.metadata.timestamp).format 'YYYY/M/D'
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
       @swapContainer.css display: 'none'
@@ -182,20 +185,20 @@ class Classify extends Page
     @el.removeClass 'loading'
 
   onChangeMarkCount: =>
-    @creatureCounter.html @surface.marks.length
+    @creatureCounter.html @surface.tools.length
 
   onClickFinish: ->
-    @checkTrainingSubject() if @classification.subject.metadata.training?
+#    @checkTrainingSubject() if @classification.subject.metadata.training?
 
     sessionClassifications += 1
 
-    trainingSubjects = [NaN, 3, 5]
+#    trainingSubjects = [NaN, 3, 5]
 
-    if sessionClassifications in trainingSubjects
-      console?.log sessionClassifications, 'Next subject will be training!'
-      index = (i for item, i in trainingSubjects when item is sessionClassifications)[0]
-      createTutorialSubject index
-      Subject.instances.unshift Subject.instances.pop()
+#    if sessionClassifications in trainingSubjects
+#      console?.log sessionClassifications, 'Next subject will be training!'
+#      index = (i for item, i in trainingSubjects when item is sessionClassifications)[0]
+#      createTutorialSubject index
+#      Subject.instances.unshift Subject.instances.pop()
 
     @finishButton.attr disabled: true
     @nextButton.attr disabled: false
@@ -213,36 +216,36 @@ class Classify extends Page
     classificationCount = User.current?.project?.classificaiton_count || 0
     classificationCount += Classification.sentThisSession
 
-    introduceTalk = if User.current?.project?.splits.tutorial in ['b', 'e', 'h', 'k']
-      1
-    else if User.current?.project?.splits.tutorial in ['c', 'f', 'i', 'l']
-      5
+#    introduceTalk = if User.current?.project?.splits.tutorial in ['b', 'e', 'h', 'k']
+#      1
+#    else if User.current?.project?.splits.tutorial in ['c', 'f', 'i', 'l']
+#      5
 
-    if classificationCount is introduceTalk
-      setTimeout =>
-        @tutorial.load 'beSocial'
+#    if classificationCount is introduceTalk
+#      setTimeout =>
+#        @tutorial.load 'beSocial'
 
-  onClickRestartTutorial: ->
-    (createTutorialSubject 0).select()
+#  onClickRestartTutorial: ->
+#    (createTutorialSubject 0).select()
 
   onClickSignIn: ->
     loginDialog.show()
 
-  checkTrainingSubject: ->
-    @el.addClass 'training'
-    pathString = training.guidelines[@classification.subject.metadata.training]
-    @guidelines = @surface.paper.path pathString
-    @guidelines.attr stroke: '#3f3', 'stroke-width': 5
-
-    @guideIcons = $()
-    for {species, coords: [left, top]} in training.icons[@classification.subject.metadata.training]
-      speciesClassName = species.replace(/([A-Z])/g, '-$1').toLowerCase()
-      el = $("<i class='training-species-icon icon-#{speciesClassName}'></i>")
-      el.css {left, top}
-      @guideIcons.push.apply @guideIcons, el
-
-    console.log {@guideIcons}
-    @guideIcons.appendTo @surface.container
+#  checkTrainingSubject: ->
+#    @el.addClass 'training'
+#    pathString = training.guidelines[@classification.subject.metadata.training]
+#    @guidelines = @surface.paper.path pathString
+#    @guidelines.attr stroke: '#3f3', 'stroke-width': 5
+#
+#    @guideIcons = $()
+#    for {species, coords: [left, top]} in training.icons[@classification.subject.metadata.training]
+#      speciesClassName = species.replace(/([A-Z])/g, '-$1').toLowerCase()
+#      el = $("<i class='training-species-icon icon-#{speciesClassName}'></i>")
+#      el.css {left, top}
+#      @guideIcons.push.apply @guideIcons, el
+#
+#    console.log {@guideIcons}
+#    @guideIcons.appendTo @surface.container
 
   onClickFavorite: ->
     @favorite = new Favorite subjects: [@classification.subject]
