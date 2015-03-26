@@ -31,6 +31,7 @@
         </div>
 
         <div class="creatures">
+          <span id="group-name"></span>
           <div class="display">
             <div class="label"><%- translate 'span', 'classify.numberCounted' %></div>
             <div class="number"><span class="counter">0</span></div>
@@ -41,7 +42,7 @@
           <div class="finish">
             <button name="finish"><%- translate 'span', 'classify.finish' %></button>
             <div class="aux">
-              <!-- <button name="restart-tutorial"><%# translate 'span', 'classify.restartTutorial' %></button> -->
+              <button name="tutorial"><%- translate 'span', 'classify.tutorial' %></button>
               <button name="sign-in"><%- translate 'span', 'classify.signIn' %></button>
             </div>
           </div>

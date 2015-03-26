@@ -59,6 +59,7 @@ class Classify extends Page
     'a.talk': 'talkLink'
     'a.facebook': 'facebookLink'
     'a.twitter': 'twitterLink'
+    'span#group-name': 'groupName'
 
   constructor: ->
     window.classifier = @
@@ -87,6 +88,8 @@ class Classify extends Page
     Subject.on 'no-more', @onNoMoreSubjects
 
     Favorite.on 'from-classify', @onFavoriteFromClassify
+
+    console.log 'current subject', Subject.current?.group.name, Subject.current, Subject.instances
 
   activate: ->
     super
@@ -168,6 +171,7 @@ class Classify extends Page
     @talkLink.attr href: subject.talkHref()
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
+    @groupName.html subject.group.name
 
   loadImage: (src, cb) ->
     img = new Image
@@ -182,65 +186,45 @@ class Classify extends Page
     @creatureCounter.html @surface.tools.length
 
   onClickFinish: ->
-#    @checkTrainingSubject() if @classification.subject.metadata.training?
+    checks = @checkMark()
+    console.log 'check', checks
 
-    sessionClassifications += 1
+    unless checks.indexOf(undefined) > -1
+      console.log 'all true!'
+      sessionClassifications += 1
 
-#    trainingSubjects = [NaN, 3, 5]
+      @finishButton.attr disabled: true
+      @nextButton.attr disabled: false
+      @surface.disable()
 
-#    if sessionClassifications in trainingSubjects
-#      console?.log sessionClassifications, 'Next subject will be training!'
-#      index = (i for item, i in trainingSubjects when item is sessionClassifications)[0]
-#      createTutorialSubject index
-#      Subject.instances.unshift Subject.instances.pop()
+      @surface.selection?.deselect()
 
-    @finishButton.attr disabled: true
-    @nextButton.attr disabled: false
-    @surface.disable()
+      @classification.annotate tool.mark for tool in @surface.tools
 
-    @surface.selection?.deselect()
+      # TODO: Send classification
+      console?.log 'classification send', @classification
+      @classification.send()
 
-    @classification.annotate tool.mark for tool in @surface.tools
+      @el.addClass 'finished'
 
-    # TODO: Send classification
-    console?.log 'classification send', @classification
-    @classification.send()
+      classificationCount = User.current?.project?.classification_count || 0
+      classificationCount += Classification.sentThisSession
+    else
+      incompleteMarkCount = 0
+      for check in checks
+        if check is undefined
+          incompleteMarkCount++
 
-    @el.addClass 'finished'
+      console.log 'incomplete marks', @marksIncomplete, incompleteMarkCount
 
-    classificationCount = User.current?.project?.classification_count || 0
-    classificationCount += Classification.sentThisSession
-
-#    introduceTalk = if User.current?.project?.splits.tutorial in ['b', 'e', 'h', 'k']
-#      1
-#    else if User.current?.project?.splits.tutorial in ['c', 'f', 'i', 'l']
-#      5
-
-#    if classificationCount is introduceTalk
-#      setTimeout =>
-#        @tutorial.load 'beSocial'
-
-#  onClickRestartTutorial: ->
-#    (createTutorialSubject 0).select()
+  checkMark: ->
+    for tool in @surface.tools
+      do (tool) ->
+        console.log tool.mark.species
+        return true if tool.mark.species?
 
   onClickSignIn: ->
     loginDialog.show()
-
-#  checkTrainingSubject: ->
-#    @el.addClass 'training'
-#    pathString = training.guidelines[@classification.subject.metadata.training]
-#    @guidelines = @surface.paper.path pathString
-#    @guidelines.attr stroke: '#3f3', 'stroke-width': 5
-#
-#    @guideIcons = $()
-#    for {species, coords: [left, top]} in training.icons[@classification.subject.metadata.training]
-#      speciesClassName = species.replace(/([A-Z])/g, '-$1').toLowerCase()
-#      el = $("<i class='training-species-icon icon-#{speciesClassName}'></i>")
-#      el.css {left, top}
-#      @guideIcons.push.apply @guideIcons, el
-#
-#    console.log {@guideIcons}
-#    @guideIcons.appendTo @surface.container
 
   onClickFavorite: ->
     @favorite = new Favorite subjects: [@classification.subject]

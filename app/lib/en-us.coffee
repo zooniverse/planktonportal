@@ -385,7 +385,7 @@ module.exports =
     degreesUnit: '°C'
     numberCounted: 'Number counted'
     finish: 'Finish'
-    restartTutorial: 'Restart tutorial'
+    tutorial: 'Tutorial'
     signIn: 'Sign in'
     discuss: 'Discuss'
     favorite: 'Favorite'

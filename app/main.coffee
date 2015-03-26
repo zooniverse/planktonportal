@@ -60,7 +60,11 @@ activeHashLinks = require 'zooniverse/util/active-hash-links'
 activeHashLinks.init()
 
 Api = require 'zooniverse/lib/api'
-api = new Api project: 'plankton'
+api = new Api project: 'kelp'
+
+Subject = require 'zooniverse/models/subject'
+california = "536d226d3ae740fd20000003"
+tasmania = "53ac8475edf877f0bc000002"
 
 TopBar = require 'zooniverse/controllers/top-bar'
 topBar = new TopBar
