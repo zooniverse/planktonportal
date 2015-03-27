@@ -91,8 +91,6 @@ class Classify extends Page
 
     @slideTutorial = new SlideTutorial slides: slides
 
-    console.log 'current subject', Subject.current?.group.name, Subject.current, Subject.instances
-
   activate: ->
     super
     @startTutorial() if @onClassify()

@@ -1,0 +1,174 @@
+{
+  "checksum": {
+    "previous": "a70c4f3951e462d34f2f54eab2edf14f2083b4b5c321ae32cdee699d05c3887f",
+    "current": "a70c4f3951e462d34f2f54eab2edf14f2083b4b5c321ae32cdee699d05c3887f"
+  },
+  "fonts": [
+    "fontcustom/fontcustom_a70c4f3951e462d34f2f54eab2edf14f.ttf",
+    "fontcustom/fontcustom_a70c4f3951e462d34f2f54eab2edf14f.svg",
+    "fontcustom/fontcustom_a70c4f3951e462d34f2f54eab2edf14f.woff",
+    "fontcustom/fontcustom_a70c4f3951e462d34f2f54eab2edf14f.eot"
+  ],
+  "glyphs": {
+    "arrow-worm": {
+      "codepoint": 61696,
+      "source": "./icons/arrow-worm.svg"
+    },
+    "beroida": {
+      "codepoint": 61697,
+      "source": "./icons/beroida.svg"
+    },
+    "calendar": {
+      "codepoint": 61698,
+      "source": "./icons/calendar.svg"
+    },
+    "cestida": {
+      "codepoint": 61699,
+      "source": "./icons/cestida.svg"
+    },
+    "chaetognath": {
+      "codepoint": 61700,
+      "source": "./icons/chaetognath.svg"
+    },
+    "copepod": {
+      "codepoint": 61701,
+      "source": "./icons/copepod.svg"
+    },
+    "cydippid": {
+      "codepoint": 61702,
+      "source": "./icons/cydippid.svg"
+    },
+    "depth": {
+      "codepoint": 61703,
+      "source": "./icons/depth.svg"
+    },
+    "doliolid-with-tail": {
+      "codepoint": 61704,
+      "source": "./icons/doliolid-with-tail.svg"
+    },
+    "doliolid-without-tail": {
+      "codepoint": 61705,
+      "source": "./icons/doliolid-without-tail.svg"
+    },
+    "images": {
+      "codepoint": 61706,
+      "source": "./icons/images.svg"
+    },
+    "larvacean": {
+      "codepoint": 61707,
+      "source": "./icons/larvacean.svg"
+    },
+    "larvacean-house": {
+      "codepoint": 61708,
+      "source": "./icons/larvacean-house.svg"
+    },
+    "lobate": {
+      "codepoint": 61709,
+      "source": "./icons/lobate.svg"
+    },
+    "medusa-four-tentacles": {
+      "codepoint": 61710,
+      "source": "./icons/medusa-four-tentacles.svg"
+    },
+    "medusa-goblet": {
+      "codepoint": 61711,
+      "source": "./icons/medusa-goblet.svg"
+    },
+    "medusa-more-than-four-tentacles": {
+      "codepoint": 61712,
+      "source": "./icons/medusa-more-than-four-tentacles.svg"
+    },
+    "platytecnida": {
+      "codepoint": 61713,
+      "source": "./icons/platytecnida.svg"
+    },
+    "polychaete-worm": {
+      "codepoint": 61714,
+      "source": "./icons/polychaete-worm.svg"
+    },
+    "prayidae": {
+      "codepoint": 61715,
+      "source": "./icons/prayidae.svg"
+    },
+    "radiolarian-colonies": {
+      "codepoint": 61716,
+      "source": "./icons/radiolarian-colonies.svg"
+    },
+    "rocket-thimble": {
+      "codepoint": 61717,
+      "source": "./icons/rocket-thimble.svg"
+    },
+    "rocket-triangle": {
+      "codepoint": 61718,
+      "source": "./icons/rocket-triangle.svg"
+    },
+    "salp": {
+      "codepoint": 61719,
+      "source": "./icons/salp.svg"
+    },
+    "shrimp": {
+      "codepoint": 61720,
+      "source": "./icons/shrimp.svg"
+    },
+    "sipho-corn-cob": {
+      "codepoint": 61721,
+      "source": "./icons/sipho-corn-cob.svg"
+    },
+    "sipho-two-cups": {
+      "codepoint": 61722,
+      "source": "./icons/sipho-two-cups.svg"
+    },
+    "solmaris": {
+      "codepoint": 61723,
+      "source": "./icons/solmaris.svg"
+    },
+    "speed": {
+      "codepoint": 61724,
+      "source": "./icons/speed.svg"
+    },
+    "status": {
+      "codepoint": 61725,
+      "source": "./icons/status.svg"
+    },
+    "temperature": {
+      "codepoint": 61726,
+      "source": "./icons/temperature.svg"
+    },
+    "thalasso": {
+      "codepoint": 61727,
+      "source": "./icons/thalasso.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": false,
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "fontcustom",
+    "force": false,
+    "input": {
+      "templates": "./icons",
+      "vectors": "./icons"
+    },
+    "no_hash": false,
+    "output": {
+      "css": "fontcustom",
+      "fonts": "fontcustom",
+      "preview": "fontcustom"
+    },
+    "preprocessor_path": null,
+    "quiet": false,
+    "templates": [
+      "css",
+      "preview"
+    ]
+  },
+  "templates": [
+    "fontcustom/fontcustom.css",
+    "fontcustom/fontcustom-preview.html"
+  ]
+}

@@ -32,12 +32,12 @@
     </a>
     <fieldset class="group-selector">
       <label>
-        <input type="radio" id="group_one" name="group-selector" value="536d226d3ae740fd20000003">
-        California
+        <input type="radio" id="group_one" name="group-selector" value="mediterranean">
+        Mediterranean
       </label>
       <label>
-        <input type="radio" id="group_two" name="group-selector" value="53ac8475edf877f0bc000002">
-        Tasmania
+        <input type="radio" id="group_two" name="group-selector" value="all">
+        Group 2
       </label>
     </fieldset>
   </div>

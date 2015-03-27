@@ -3,6 +3,8 @@ template = require '../views/home'
 Footer = require 'zooniverse/controllers/footer'
 Subject = require 'zooniverse/models/subject'
 
+groups = require '../lib/groups'
+
 class Home extends Page
   className: 'home'
   content: template
@@ -14,10 +16,6 @@ class Home extends Page
     '#group_one': 'groupOneInput'
     '#group_two': 'groupTwoInput'
 
-  california: "536d226d3ae740fd20000003"
-
-  tasmania: "53ac8475edf877f0bc000002"
-
   constructor: ->
     super
 
@@ -27,7 +25,9 @@ class Home extends Page
     @setDefaultGroup()
 
   setDefaultGroup: ->
-    default_subject_group = @california
+    @groups = groups
+
+    default_subject_group = @groups.mediterranean
     groupOneCheckStatus = @groupOneInput.prop 'checked'
     groupTwoCheckStatus = @groupTwoInput.prop 'checked'
 
@@ -38,13 +38,15 @@ class Home extends Page
       @checkGroupSelection()
 
   checkGroupSelection: ->
-    if Subject.group is @california
+    if Subject.group is @groups.mediterranean
       @groupOneInput.prop checked: true
-    else if Subject.group is @tasmania
+    else
       @groupTwoInput.prop checked: true
 
   onClickGroupOption: ({currentTarget}) ->
-    Subject.group = currentTarget.value
+    group = @groups["#{currentTarget.value}"]
+    console.log 'group', group
+    Subject.group = group
     @getSubject()
 
   getSubject: ->
