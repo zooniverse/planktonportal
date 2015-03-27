@@ -8,15 +8,17 @@ moment = require 'moment'
 PlanktonTool = require './plankton-tool'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
-createTutorialSubject = require '../lib/create-tutorial-subject'
-{Tutorial} = require 'zootorial'
-tutorialSteps = require '../lib/tutorial-steps'
+# createTutorialSubject = require '../lib/create-tutorial-subject'
+# {Tutorial} = require 'zootorial'
+# tutorialSteps = require '../lib/tutorial-steps'
 training = require '../lib/training'
 loginDialog = require 'zooniverse/controllers/login-dialog'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
 {PointTool} = MarkingSurface
 Spine = require 'spine'
+SlideTutorial = require 'slide-tutorial'
+slides = require '../lib/slides.coffee'
 
 $html = $('html')
 
@@ -32,13 +34,11 @@ class Classify extends Page
 
   currentSubjectImage: null
 
-  tutorial: null
-
   guidelines: null
 
   events:
     'click button[name="finish"]': 'onClickFinish'
-#    'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
+    'click button[name="tutorial"]': 'onClickTutorial'
     'click button[name="sign-in"]': 'onClickSignIn'
     'click button[name="favorite"]': 'onClickFavorite'
     'click button[name="unfavorite"]': 'onClickUnfavorite'
@@ -89,10 +89,13 @@ class Classify extends Page
 
     Favorite.on 'from-classify', @onFavoriteFromClassify
 
+    @slideTutorial = new SlideTutorial slides: slides
+
     console.log 'current subject', Subject.current?.group.name, Subject.current, Subject.instances
 
   activate: ->
     super
+    @startTutorial() if @onClassify()
 
     # Force rerender of the status bar
     status = @el.find '.status'
@@ -105,39 +108,24 @@ class Classify extends Page
 
     sessionClassifications = user?.project?.classification_count || 0
 
-    # SPLIT | HEADING | PROGRESS | TALK
-    # ------+---------+----------+---------
-    # A     | NO      | NO       | TUTORIAL
-    # B     | NO      | NO       | 1ST
-    # C     | NO      | NO       | 5TH
-    # D     | NO      | YES      | TUTORIAL
-    # E     | NO      | YES      | 1ST
-    # F     | NO      | YES      | 5TH
-    # G     | YES     | YES      | TUTORIAL
-    # H     | YES     | YES      | 1ST
-    # I     | YES     | YES      | 5TH
-    # J     | YES     | NO       | TUTORIAL
-    # K     | YES     | NO       | 1ST
-    # L     | YES     | NO       | 5TH
-
-    # split = user?.project?.splits.tutorial
-
-    # Assign optimum split manually
-
-    #$html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
-    #$html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'j', 'k', 'l']
-
     Subject.next()
+
+    @startTutorial if @onClassify()
+
+  firstVisit: (user) =>
+    return true unless user
+    !user?.project?.classification_count
+
+  startTutorial: =>
+    @slideTutorial.start() if @firstVisit User.current
+
+  onClassify: =>
+    window.location.hash is "#/classify"
 
   onGettingNextSubject: =>
     @el.addClass 'loading'
 
   onSubjectSelect: (e, subject) =>
-    # @el.removeClass 'training'
-    # @guidelines?.remove()
-    # @guidelines = null
-    # @guideIcons?.remove()
-    # @guideIcons = null
     @el.removeClass 'loading'
     @surface.tools[0].destroy() until @surface.tools.length is 0
 
@@ -186,42 +174,45 @@ class Classify extends Page
     @creatureCounter.html @surface.tools.length
 
   onClickFinish: ->
-    checks = @checkMark()
-    console.log 'check', checks
+    # checks = @checkMark()
+    # console.log 'check', checks
 
-    unless checks.indexOf(undefined) > -1
-      console.log 'all true!'
-      sessionClassifications += 1
+    # unless checks.indexOf(undefined) > -1
+    # console.log 'all true!'
+    sessionClassifications += 1
 
-      @finishButton.attr disabled: true
-      @nextButton.attr disabled: false
-      @surface.disable()
+    @finishButton.attr disabled: true
+    @nextButton.attr disabled: false
+    @surface.disable()
 
-      @surface.selection?.deselect()
+    @surface.selection?.deselect()
 
-      @classification.annotate tool.mark for tool in @surface.tools
+    @classification.annotate tool.mark for tool in @surface.tools
 
-      # TODO: Send classification
-      console?.log 'classification send', @classification
-      @classification.send()
+    # TODO: Send classification
+    console?.log 'classification send', @classification
+    # @classification.send()
 
-      @el.addClass 'finished'
+    @el.addClass 'finished'
 
-      classificationCount = User.current?.project?.classification_count || 0
-      classificationCount += Classification.sentThisSession
-    else
-      incompleteMarkCount = 0
-      for check in checks
-        if check is undefined
-          incompleteMarkCount++
+    classificationCount = User.current?.project?.classification_count || 0
+    classificationCount += Classification.sentThisSession
+    # else
+    #   incompleteMarkCount = 0
+    #   for check in checks
+    #     if check is undefined
+    #       incompleteMarkCount++
 
-      console.log 'incomplete marks', @marksIncomplete, incompleteMarkCount
+    #   console.log 'incomplete marks', @marksIncomplete, incompleteMarkCount
 
-  checkMark: ->
-    for tool in @surface.tools
-      do (tool) ->
-        console.log tool.mark.species
-        return true if tool.mark.species?
+  # checkMark: ->
+  #   for tool in @surface.tools
+  #     do (tool) ->
+  #       console.log tool.mark.species
+  #       return true if tool.mark.species?
+
+  onClickTutorial: ->
+    @slideTutorial.start()
 
   onClickSignIn: ->
     loginDialog.show()

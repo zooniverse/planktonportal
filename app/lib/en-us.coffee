@@ -403,106 +403,140 @@ module.exports =
     favorites: 'Favorites'
 
   tutorial:
-    nextLabel: 'Continue'
-    doneLabel: 'Close'
-
-    welcome:
-      header: "Welcome to #{PROJECT_NAME}!"
-      details: '''
-        This short tutorial will show you how to use the tools to mark and identify plankton.
-        Your classifications will be combined with the classifications of other volunteers, so do your best, but don't worry if some seem hard.
+    slideOne:
+      title: 'Welcome to Plankton Portal!'
+      content: '''
+        In this project, you'll be marking images of plankton—tiny oceanic
+        organisms—taken by an underwater imaging system. Because plankton
+        are an important food source and a strong indicator of the health
+        of a marine biome, they can teach us many things about our planet's oceans.
+      '''
+    slideTwo:
+      title: 'Mark all plankton'
+      content: '''
+        Click on the image anywhere that you see a plankter (a single plankton
+        organism). Next, in the pop-up menu, first select the shape that most
+        closely resembles that plankter, and then select the appropriate species.
+        Mark and identify all of the plankton in the image, then click "Finish."
+      '''
+    slideThree:
+      title: 'Others are classifying too'
+      content: '''
+        More information about plankton species can be found in the Field Guide.
+        Don't worry too much if you aren't 100% sure—we just want your best guess,
+        no matter what! Many people will see each image, and everyone's
+        classifications will be combined to produce a result.
+        The wisdom of crowds tends to give the right answer.
+      '''
+    slideFour:
+      title: '''That's everything!'''
+      content: '''
+        If you have any questions, want to discuss a particular image, or just
+        would like to chat about the project, click "Discuss" or "Talk" to join
+        us at the Plankton Portal Talk boards. More information is also available
+        at the Plankton Portal blog. Good luck!
       '''
 
-    beforeMark:
-      header: 'What we\'re marking'
-      details: '''
-        Let's start with the large tentacled creature to the right.
-        To mark a creature, you need to draw lines across its height and width.
-        We're mainly interested in the sizes and directions of the plankton.
-      '''
+    # nextLabel: 'Continue'
+    # doneLabel: 'Close'
 
-    majorAxis:
-      header: 'Major axis'
-      details: '''
-        Always mark the length of the plankton first, from the top toward the bottom.
-        This will tell us how long the creature is and what direction it's moving.
-        Remember to check the science page if you're not sure how to mark something.
-        Do not include any tentacles!
-      '''
-      instruction: 'Drag from the right side of the bell to the left side of the bell (where the tentacles start).'
+    # welcome:
+    #   header: "Welcome to #{PROJECT_NAME}!"
+    #   details: '''
+    #     This short tutorial will show you how to use the tools to mark and identify plankton.
+    #     Your classifications will be combined with the classifications of other volunteers, so do your best, but don't worry if some seem hard.
+    #   '''
 
-    minorAxis:
-      header: 'Minor axis'
-      details: '''
-        Now we'll mark the width of the creature.
-      '''
-      instruction: 'Drag from top to bottom across the width of the bell.'
+    # beforeMark:
+    #   header: 'What we\'re marking'
+    #   details: '''
+    #     Let's start with the large tentacled creature to the right.
+    #     To mark a creature, you need to draw lines across its height and width.
+    #     We're mainly interested in the sizes and directions of the plankton.
+    #   '''
 
-    chooseCategory:
-      header: 'Narrow down possible species'
-      details: '''
-        A row of category icons has appeared. Choose the one that looks closest to the creature you see.
-      '''
-      instruction: 'Click the icon that best matches the creature.'
+    # majorAxis:
+    #   header: 'Major axis'
+    #   details: '''
+    #     Always mark the length of the plankton first, from the top toward the bottom.
+    #     This will tell us how long the creature is and what direction it's moving.
+    #     Remember to check the science page if you're not sure how to mark something.
+    #     Do not include any tentacles!
+    #   '''
+    #   instruction: 'Drag from the right side of the bell to the left side of the bell (where the tentacles start).'
 
-    chooseSpecies:
-      header: 'Choose the species'
-      details: '''
-        From the new row of species icons, again click the closest match.
-      '''
-      instruction: 'Click the icon that best matches the creature.'
+    # minorAxis:
+    #   header: 'Minor axis'
+    #   details: '''
+    #     Now we'll mark the width of the creature.
+    #   '''
+    #   instruction: 'Drag from top to bottom across the width of the bell.'
 
-    badCoordinates:
-      header: 'Close, but no cigar'
-      details: '''
-        It looks like the axes are a bit off.
-        We've drawn some guides to help you out.
-      '''
-      instruction: 'Drag the handles at the end of each line until they match the guides.'
+    # chooseCategory:
+    #   header: 'Narrow down possible species'
+    #   details: '''
+    #     A row of category icons has appeared. Choose the one that looks closest to the creature you see.
+    #   '''
+    #   instruction: 'Click the icon that best matches the creature.'
 
-    wrongSpecies:
-      header: 'A case of mistaken identity'
-      details: '''
-        This creature is actually a $species.
-      '''
-      instruction: 'Click the icon to re-open the menu, then choose the $species under the $category category.'
+    # chooseSpecies:
+    #   header: 'Choose the species'
+    #   details: '''
+    #     From the new row of species icons, again click the closest match.
+    #   '''
+    #   instruction: 'Click the icon that best matches the creature.'
 
-    markTheOtherOnes:
-      header: 'Mark the other creatures'
-      details: '''
-        There are four more creatures in this image. Try marking them yourself!.
-      '''
-      instruction: 'Mark the next creatures on your own. Click "Finish" when you\'re finished.'
+    # badCoordinates:
+    #   header: 'Close, but no cigar'
+    #   details: '''
+    #     It looks like the axes are a bit off.
+    #     We've drawn some guides to help you out.
+    #   '''
+    #   instruction: 'Drag the handles at the end of each line until they match the guides.'
 
-    dontMarkThese:
-      header: 'Don\'t mark everything'
-      details: '''
-        Be careful to only mark the things we're looking for. Other material floating in the water, like marine snow, should not be measured.
-        You may occasionally see a creature that's not in our list. Don't mark it, but if it's interesting we'd love to hear about it in Talk!
-      '''
+    # wrongSpecies:
+    #   header: 'A case of mistaken identity'
+    #   details: '''
+    #     This creature is actually a $species.
+    #   '''
+    #   instruction: 'Click the icon to re-open the menu, then choose the $species under the $category category.'
 
-      singleCell: 'Other organism'
-      smallCrustacean: 'Tiny crustacean'
-      marineSnow: 'Marine snow'
+    # markTheOtherOnes:
+    #   header: 'Mark the other creatures'
+    #   details: '''
+    #     There are four more creatures in this image. Try marking them yourself!.
+    #   '''
+    #   instruction: 'Mark the next creatures on your own. Click "Finish" when you\'re finished.'
 
-    finish:
-      header: 'Move on to the next image'
-      details: '''
-        When you're finished, click "Finish" to submit your classification.
-      '''
+    # dontMarkThese:
+    #   header: 'Don\'t mark everything'
+    #   details: '''
+    #     Be careful to only mark the things we're looking for. Other material floating in the water, like marine snow, should not be measured.
+    #     You may occasionally see a creature that's not in our list. Don't mark it, but if it's interesting we'd love to hear about it in Talk!
+    #   '''
 
-    beSocial:
-      header: 'Be social'
-      details: '''
-        Before you move on to the next image, you can discuss it with other scientists if you have a question or observation.
-        You can also share it with your friends!
-      '''
-      instruction: 'Click "Next" to load the next image.'
+    #   singleCell: 'Other organism'
+    #   smallCrustacean: 'Tiny crustacean'
+    #   marineSnow: 'Marine snow'
 
-    haveFun:
-      header: 'Have fun'
-      details: '''
-        It looks like you've got a handle on this. To learn more about the different types of plankton, check out the Science page.
-        Enjoy exploring the ocean through a microscope, and thanks for helping with our research!
-      '''
-      nextButton: 'Close'
+    # finish:
+    #   header: 'Move on to the next image'
+    #   details: '''
+    #     When you're finished, click "Finish" to submit your classification.
+    #   '''
+
+    # beSocial:
+    #   header: 'Be social'
+    #   details: '''
+    #     Before you move on to the next image, you can discuss it with other scientists if you have a question or observation.
+    #     You can also share it with your friends!
+    #   '''
+    #   instruction: 'Click "Next" to load the next image.'
+
+    # haveFun:
+    #   header: 'Have fun'
+    #   details: '''
+    #     It looks like you've got a handle on this. To learn more about the different types of plankton, check out the Science page.
+    #     Enjoy exploring the ocean through a microscope, and thanks for helping with our research!
+    #   '''
+    #   nextButton: 'Close'

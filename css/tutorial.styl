@@ -1,0 +1,50 @@
+$slide-blue = #6b85a4
+$slide-white = #f6f6f6
+$slide-gray = #C8C8C8
+
+.slide-tutorial
+  z-index: 100
+
+  .slide-tutorial-container
+    max-width: 450px
+    min-height: 550px
+    border-radius: 8px
+    background-color: $slide-white
+
+    .slide-tutorial-close-button
+      top: 5px
+      right: 5px
+
+    .slide-tutorial-slides
+      color: $light-gray
+
+      .slide-tutorial-slide-bottom
+        // height: 275px
+
+        h1, p
+          font-size: 14px
+          margin: 10px 15px
+
+        h1
+          font-weight: 700
+
+    .slide-tutorial-button-container
+      margin-top: 25px
+
+      .slide-tutorial-next-button
+        background-color: $slide-blue
+        width: 150px
+        color: $slide-white
+        font-size: 12px
+        text-transform: uppercase
+        font-weight: 700
+        line-height: 40px
+        border-radius: 4px
+
+    .slide-tutorial-dots
+      .slide-tutorial-dot
+        background: $slide-gray
+        margin: 0 10px
+
+        &.active
+          background: $slide-blue

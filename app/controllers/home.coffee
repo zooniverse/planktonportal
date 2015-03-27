@@ -9,7 +9,6 @@ class Home extends Page
 
   events:
     'click input[name="group-selector"]': 'onClickGroupOption'
-    # 'click #group_two': @onClickGroupOption
 
   elements:
     '#group_one': 'groupOneInput'
@@ -40,19 +39,16 @@ class Home extends Page
 
   checkGroupSelection: ->
     if Subject.group is @california
-      console.log 'subject group cali', Subject.current
       @groupOneInput.prop checked: true
     else if Subject.group is @tasmania
       @groupTwoInput.prop checked: true
 
   onClickGroupOption: ({currentTarget}) ->
-    console.log 'click', currentTarget.value
     Subject.group = currentTarget.value
     @getSubject()
 
   getSubject: ->
     if Subject.current.group_id isnt Subject.group
-      console.log 'current group doesnt match'
       Subject.destroyAll()
       Subject.next()
 
