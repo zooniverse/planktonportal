@@ -2,6 +2,7 @@
 Page = require './page'
 translate = require 't7e'
 FieldGuide = require './field-guide'
+Team = require './team'
 speciesTemplate = require '../views/species'
 
 class Science extends Stack
@@ -10,25 +11,28 @@ class Science extends Stack
   controllers:
     fieldGuide: FieldGuide
     about: class extends Page then content: translate 'div', 'science.about.content'
+    education: class extends Page then content: translate 'div', 'education.content'
     whyStudy: class extends Page then content: translate 'div', 'science.whyStudy.content'
     images: class extends Page then content: translate 'div', 'science.images.content'
-    # species: class extends Page then content: speciesTemplate
+    team: Team
 
   navLinks:
-    fieldGuide: translate 'span', 'science.fieldGuide.title'
     about: translate 'span', 'science.about.title'
+    fieldGuide: translate 'span', 'science.fieldGuide.title'
+    education: translate 'span', 'education.title'
     whyStudy: translate 'span', 'science.whyStudy.title'
     images: translate 'span', 'science.images.title'
-    # species: translate 'span', 'science.species.title'
+    team: translate 'span', 'about.title'
 
   routes:
+    '/science': 'about'
     '/science/field-guide': 'fieldGuide'
-    '/science/about': 'about'
+    '/science/education': 'education'
     '/science/why-study': 'whyStudy'
     '/science/images': 'images'
-    # '/science/species': 'species'
+    '/science/team': 'team'
 
-  default: 'fieldGuide'
+  default: 'about'
 
   constructor: ->
     super

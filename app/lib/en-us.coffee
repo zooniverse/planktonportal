@@ -39,6 +39,7 @@ module.exports =
 
   navigation:
     home: 'Home'
+    guide: 'Field Guide'
     science: 'Science'
     classify: 'Classify'
     profile: 'Profile'
@@ -188,6 +189,7 @@ module.exports =
       '''
 
   education:
+    title: 'Education'
     content: """
       <h2>Education</h2>
 
@@ -210,6 +212,7 @@ module.exports =
     """
 
   about:
+    title: 'Team and Organizations'
     organizations:
       heading: 'Organizations'
 

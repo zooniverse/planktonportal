@@ -3,11 +3,10 @@
 <div class="links">
   <h1><a href="#/">Plankton Portal</a></h1>
   <a href="#/"><%- translate 'span', 'navigation.home' %></a>
-  <a href="#/science/field-guide"><%- translate 'span', 'navigation.science' %></a>
   <a href="#/classify"><%- translate 'span', 'navigation.classify' %></a>
+  <a href="#/science/field-guide"><%- translate 'span', 'navigation.guide' %></a>
+  <a href="#/science"><%- translate 'span', 'navigation.science' %></a>
   <a href="#/profile"><%- translate 'span', 'navigation.profile' %></a>
-  <a href="#/education"><%- translate 'span', 'navigation.education' %></a>
-  <a href="#/team"><%- translate 'span', 'navigation.team' %></a>
   <a href="http://talk.planktonportal.org/"><%- translate 'span', 'navigation.talk' %></a>
   <a href="http://blog.planktonportal.org/"><%- translate 'span', 'navigation.blog' %></a>
 </div>

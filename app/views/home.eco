@@ -36,11 +36,9 @@
         Mediterranean
       </label>
       <label>
-        <input type="radio" id="group_two" name="group-selector" value="all">
-        Group 2
+        <input type="radio" id="group_two" name="group-selector" value="original">
+        Original
       </label>
     </fieldset>
   </div>
 </div>
-
-<hr />

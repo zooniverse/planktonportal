@@ -1,6 +1,5 @@
 Page = require './page'
 template = require '../views/home'
-Footer = require 'zooniverse/controllers/footer'
 Subject = require 'zooniverse/models/subject'
 
 groups = require '../lib/groups'
@@ -18,9 +17,6 @@ class Home extends Page
 
   constructor: ->
     super
-
-    @footer = new Footer
-    @el.append @footer.el
 
     @setDefaultGroup()
 
@@ -45,7 +41,6 @@ class Home extends Page
 
   onClickGroupOption: ({currentTarget}) ->
     group = @groups["#{currentTarget.value}"]
-    console.log 'group', group
     Subject.group = group
     @getSubject()
 
