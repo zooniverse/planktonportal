@@ -5,6 +5,8 @@
   100%
     background-position: 0 -150px
 
+$classify-blue = #6b85a4
+
 .on-classify-page
   background: darken($dark-gray, 50%)
 
@@ -132,11 +134,25 @@ body > .stack > .classify
 
       .categories,
       .category
+        border-radius: 6px
+
         button
-          height: 75px
           line-height: 1
           position: relative
-          width: 75px
+          background-color: $dark-gray
+          padding: 5px
+          margin: 5px 2.5px
+          border-radius: 4px
+          border: solid 2px transparent
+
+          &:focus, &:active
+            outline: none
+
+          &:first-of-type
+            margin-left: 5px
+
+          &:last-of-type
+            margin-right: 5px
 
           i
             font-size: 55px
@@ -184,43 +200,35 @@ body > .stack > .classify
             .example-photo
               display: block
 
-          &.active i
-            color: $lime
-            text-shadow: 0 1px 0 #000
+          &.active
+            background-color: transparent
+            border: solid 2px $classify-blue
+            i
+              color: $lime
+              text-shadow: 0 1px 0 #000
 
       .categories
         background: lighten($dark-gray, 10%)
-        box-shadow:
-          0 1px 0 rgba(#fff, 0.33) inset,
-          0 1px 3px rgba(#000, 0.25)
+        border-radius: 6px
         display: flex
 
         button
-          &:before,
-          &:after
-            border: 5px solid transparent
-            border-top-color: lighten($dark-gray, 10%)
-            bottom: 0px
-            content: ""
-            height: 0
-            left: 50%
-            margin-left: -5px
-            position: absolute
-            width: 0
-
-          &:before
-            border-top-color: rgba(#000, 0.25)
-            bottom: -2px
-
           &.active
             &:before,
             &:after
-              border-width: 8px
-              bottom: -16px
-              margin-left: -8px
+              border: 5px solid transparent
+              border-top-color: lighten($dark-gray, 10%)
+              bottom: -10px
+              margin-left: -5px
+              content: ""
+              height: 0
+              left: 50%
+              position: absolute
+              width: 0
 
             &:before
-              bottom: -17px
+              border-top-color: $classify-blue
+              bottom: -12px
 
       &.complete .categories
         display: block
@@ -228,8 +236,14 @@ body > .stack > .classify
       .category
         display: none
 
+        button
+          background-color: lighten($dark-gray, 10%)
+
+          &.active
+            background-color: $classify-blue
+
         &.active
-          display: block
+          display: flex
 
       &.closed
         &:after,
@@ -274,7 +288,7 @@ body > .stack > .classify
     display: block
 
   .status
-    background: $dark-gray
+    background: lighten($dark-gray, 10%)
     bottom: 0
     display: table
     font-weight: bold
@@ -283,14 +297,15 @@ body > .stack > .classify
     left: 0
     position: absolute
     width: 100%
+    border-radius: 6px
 
     a
       color: inherit
       text-decoration: none
 
     > div
-      border: 1px solid transparent
-      border-color: rgba(#fff, 0.15) rgba(#000, 0.25) rgba(#000, 0.25) rgba(#fff, 0.15)
+      // border: 1px solid transparent
+      // border-color: rgba(#fff, 0.15) rgba(#000, 0.25) rgba(#000, 0.25) rgba(#fff, 0.15)
       display: table-cell
       padding: 0 40px
       text-align: center
@@ -309,67 +324,45 @@ body > .stack > .classify
 
     .aux
       font-size: 10px
-      left: 0
-      margin-top: 20px
-      position: absolute
-      top: 100%
+      display: inline
       width: 100%
 
     .display > i
       font-size: 60px
       line-height: 1
 
-    .creatures .display
-      background: #000
-      border-radius: 3px
-      box-shadow: 0 1px 0 rgba(#fff, 0.25)
-      overflow: hidden
-      padding: 5px 7px
+    .creatures, .group
+      padding: 0 5px
+
+      .display
+        background: $dark-gray
+        border-radius: 3px
+        overflow: hidden
+        padding: 10px
+        width: 100%
+        min-width: 150px
+        max-width: 200px
+        height: 60px
+        box-sizing: border-box
+        text-align: left
 
       .label
-        color: $dark-gray
-        float: left
+        color: lighten($dark-gray, 10%)
         font-size: 10px
         line-height: 12px
         text-transform: uppercase
-        width: 0 // This is just to get the lines to wrap.
+        margin-bottom: 5px
 
-      .number
-        float: right
+      .number, .name
         font-size: 18px
+        text-transform: capitalize
 
     .continue
       .finish
         display: block
         position: relative
-
-        // .marks-incomplete
-        //   background: rgba($lime, 0.9)
-        //   border-radius: 3px
-        //   box-shadow: 0 1px 3px rgba(#000, 0.5)
-        //   color: #000
-        //   display: none
-        //   font-size: 10px
-        //   font-weight bold
-        //   padding: 3px 10px
-        //   position: absolute
-        //   left: 50%
-        //   top: -120%
-        //   transform: translateX(-50%)
-        //   white-space: nowrap
-        //   z-index: 2
-
-        //   &:before
-        //     border: 5px solid transparent
-        //     border-top-color: rgba($lime, 0.9)
-        //     top: 100%
-        //     content: ""
-        //     left: 50%
-        //     margin-left: -5px
-        //     position: absolute
-
-        //   &.show
-        //     display: block
+        float: right
+        margin-right: 20px
 
       .next
         display: none
@@ -380,26 +373,25 @@ body > .stack > .classify
         padding: 0 5px
         border-radius: 3px
 
+      button[name="favorite"], button[name="unfavorite"]
+        img
+          vertical-align: middle
+
       button[name="unfavorite"]
-        background: rgba(#000, 0.25)
-        box-shadow: 0 1px 3px black inset
         display: none
 
       button[name="finish"],
       button[name="next"],
       a.talk
-        background: rgba(#fff, 0.25)
-        border-radius: 3px
-        box-shadow:
-          0 1px 0 rgba(#fff, 0.25) inset,
-          0 0 0 rgba(#fff, 0) inset,
-          0 5px 10px rgba(#000, 0.25)
-        color: #000
+        background: $classify-blue
+        border-radius: 4px
+        color: white
         display: inline-block
         font-weight: bold
-        padding: 3px 1em
+        line-height: 35px
         text-decoration: none
-        text-shadow: 0 1px 0 rgba(#fff,0.15)
+        text-transform: uppercase
+        letter-spacing: 1px
 
         &:hover
           box-shadow:
@@ -412,6 +404,9 @@ body > .stack > .classify
             0 1px 0 rgba(#fff, 0.15) inset,
             0 0 0 rgba(#fff, 0) inset,
             0 1px 3px rgba(#000, 0.33)
+
+      button[name="finish"]
+        width: 130px
 
     .return .home-arrow
       font-size: 20px
