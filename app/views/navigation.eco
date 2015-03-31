@@ -1,7 +1,7 @@
 <% translate = require 't7e' %>
 
 <div class="links">
-  <h1><a href="#/">Plankton Portal</a></h1>
+  <h1><a href="#/"><img src="./images/plankton-logotype.svg"></a></h1>
   <a href="#/classify"><%- translate 'span', 'navigation.classify' %></a>
   <a href="#/science/field-guide"><%- translate 'span', 'navigation.guide' %></a>
   <a href="#/science"><%- translate 'span', 'navigation.science' %></a>

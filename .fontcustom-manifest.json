@@ -1,13 +1,13 @@
 {
   "checksum": {
-    "previous": "a70c4f3951e462d34f2f54eab2edf14f2083b4b5c321ae32cdee699d05c3887f",
-    "current": "a70c4f3951e462d34f2f54eab2edf14f2083b4b5c321ae32cdee699d05c3887f"
+    "previous": "fd571cf04942e1c6a130c577745361ba8d201c2308decd01f37f3c0049903275",
+    "current": "fd571cf04942e1c6a130c577745361ba8d201c2308decd01f37f3c0049903275"
   },
   "fonts": [
-    "fontcustom/fontcustom_a70c4f3951e462d34f2f54eab2edf14f.ttf",
-    "fontcustom/fontcustom_a70c4f3951e462d34f2f54eab2edf14f.svg",
-    "fontcustom/fontcustom_a70c4f3951e462d34f2f54eab2edf14f.woff",
-    "fontcustom/fontcustom_a70c4f3951e462d34f2f54eab2edf14f.eot"
+    "fontcustom/fontcustom_fd571cf04942e1c6a130c577745361ba.ttf",
+    "fontcustom/fontcustom_fd571cf04942e1c6a130c577745361ba.svg",
+    "fontcustom/fontcustom_fd571cf04942e1c6a130c577745361ba.woff",
+    "fontcustom/fontcustom_fd571cf04942e1c6a130c577745361ba.eot"
   ],
   "glyphs": {
     "arrow-worm": {
@@ -65,6 +65,10 @@
     "lobate": {
       "codepoint": 61709,
       "source": "./icons/lobate.svg"
+    },
+    "marker": {
+      "codepoint": 61728,
+      "source": "./icons/marker.svg"
     },
     "medusa-four-tentacles": {
       "codepoint": 61710,

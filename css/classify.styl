@@ -56,6 +56,16 @@ body > .stack > .classify
     svg
       display: block
 
+      .marking-surface-tool-root
+        circle
+          display: none
+
+        .marker
+          transform: translate(-15px, -15px)
+
+        .alert
+          transform: translate(-6px, -9px)
+
     .marking-surface-tool-controls
       background: $dark-gray
       background: rgba($dark-gray, 0.9)
@@ -84,20 +94,36 @@ body > .stack > .classify
           right: auto
 
       button[name="toggle"]
-        background: rgba(#000, 0.67)
-        border: 3px solid $lime
-        border-radius: 50%
-        color: $lime
+        // background: rgba(#000, 0.67)
+        // border: 3px solid $lime
+        // border-radius: 50%
+        color: $classify-blue
         display: none
-        font-size: 20px
+        font-size: 30px
         height: 30px
-        left: -20px
+        left: -21.5px
         line-height: 1
         margin: -15px 0 0 -15px
         position: absolute
-        text-shadow: 0 1px 1px #000
-        top: 40px
+        // text-shadow: 0 1px 1px #000
+        top: 39px
         width: 30px
+
+        &:after
+          content: ''
+          display: block
+          background: #fff
+          height: 10px
+          width: 10px
+          position: absolute
+          top: 5px
+          left: 5px
+          z-index: 0
+          font-size: 0
+
+        i:before
+          z-index: 1
+          position: relative
 
         .label,
         .example-photo
@@ -204,7 +230,7 @@ body > .stack > .classify
             background-color: transparent
             border: solid 2px $classify-blue
             i
-              color: $lime
+              color: white
               text-shadow: 0 1px 0 #000
 
       .categories

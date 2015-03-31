@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="28px" height="36px">
+<filter id="filter0" x="-25.00%" y="-18.52%" width="150.00%" height="151.85%" filterUnits="objectBoundingBox">
+<feGaussianBlur in="SourceAlpha" result="dsBlurOut" stdDeviation="2.50"/>
+<feFlood result="dsFloodOut" flood-color="rgb(0,0,0)"/>
+<feComposite in="dsFloodOut" in2="dsBlurOut" result="dsShadow" operator="atop"/>
+<feComponentTransfer in="dsShadow" result="dsShadowOpacity">
+<feFuncA type="linear" slope="0.75"/>
+</feComponentTransfer>
+<feOffset in="dsShadowOpacity" dx="2.50" dy="4.33" result="dsOffset"/>
+<feComposite in="dsOffset" in2="SourceAlpha" result="dropShadow" operator="out"/>
+</filter>
+<defs>
+<image id="symbol0" x="0.00" y="0.00" width="28.00" height="36.00" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAbCAMAAABLAV/qAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA8FBMVEXB6gDB6gDB6gDB6gDB
+6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB
+6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB6gDB
+6gDB6gDB6gDB6gDB6gCw1gAnLwAkKwCt0QCBnQAAAAB4kgCRsACDnwCnygCZuQC85ACz2QAXHAAQ
+EwA+SwA2QgBvhgBmfAC64gC54QC33gC23AClyAALDQAICgCfwQCLqQDA6QB1jQByiwC/6AD////W
+jSlVAAAALnRSTlMABlSk3/ny103bAYf+AoZP4FenqNjw9q9uGvz9HLA4ObEh9yJwcbkZ6l5feImE
+pgtLfQAAAAFiS0dET25mQUkAAADtSURBVCjPZdHXWsJAEAXgEyBSsgQQKVIMIk3RBXUVlGLBiuL7
+Pw5sdiYQPDf7f+dmkhlAx4pEY/ZBPBqxECSRlJRkgqqUI2QQ4aT90pWhuLrLiHApMpsZMbmXrIUc
+cTC8viHmcEi6VeqOmEecdK/UiHiEAmms1AOxgCLpUakJsYgsD53OgvEoMedPrBLKzOcXVhnHFeLr
+glCtAXXy2zuhvvn3E8OPz69vI09vxIxa8sc3/NWdNrV/fld/+m2emS23dnfU5tV3tl0nxTfq9rjr
+dbeX82zT2R52cu7fRFwglL4u+9iLI+Ul/uXKDbgG4c5DbSGjNLQAAAAldEVYdGRhdGU6Y3JlYXRl
+ADIwMTUtMDMtMzBUMjA6MTc6NTUrMDA6MDAZ2FT1AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTAz
+LTMwVDIwOjE3OjU1KzAwOjAwaIXsSQAAAABJRU5ErkJggg=="/>
+</defs>
+<g>
+<use xlink:href="#symbol0" filter="url(#filter0)"/>
+<use xlink:href="#symbol0"/>
+</g>
+</svg>
