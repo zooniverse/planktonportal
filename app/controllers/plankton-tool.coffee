@@ -9,14 +9,10 @@ Spine = require 'spine'
 groups = require '../lib/groups'
 
 class PlanktonControls extends ToolControls
-  template: if Subject.group is groups.mediterranean then controlsTemplateMediterranean else controlsTemplateOriginal
 
   constructor: ->
     super
     @toggleButton = $(@el).find 'button[name="toggle"]'
-    @categoryButtons = $(@el).find 'button[name="category"]'
-    @categories = $(@el).find '.category'
-    @speciesButtons = $(@el).find 'button[name="species"]'
 
     $(@el).on 'click', 'button[name="toggle"]', @onClickToggle
     $(@el).on 'click', 'button[name="category"]', @onClickCategory
@@ -25,7 +21,8 @@ class PlanktonControls extends ToolControls
 
     @toggleButton.click()
 
-    console.log 'template', @template
+    @template = if Subject.group is groups.mediterranean then controlsTemplateMediterranean else controlsTemplateOriginal
+    @el.insertAdjacentHTML 'beforeEnd', @template
 
   onClickToggle: =>
     $(@el).removeClass 'closed'
@@ -33,6 +30,10 @@ class PlanktonControls extends ToolControls
 
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
+
+    @categoryButtons = $(@el).find 'button[name="category"]'
+    @categories = $(@el).find '.category'
+    @speciesButtons = $(@el).find 'button[name="species"]'
 
     category = if target.hasClass 'active'
       'NO_CATEGORY'
@@ -50,6 +51,7 @@ class PlanktonControls extends ToolControls
 
   onClickSpecies: ({currentTarget}) =>
     target = $(currentTarget)
+    @toggleButton = $(@el).find 'button[name="toggle"]'
 
     @toggleButton.html '<i class="icon-marker">'
     @toggleButton.attr title: target.attr 'title'

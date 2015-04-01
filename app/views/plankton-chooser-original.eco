@@ -1,0 +1,32 @@
+<% translate = require 't7e' %>
+<% species = require '../lib/species' %>
+
+<!-- TODO: Icons should be more general, per group -->
+<% icons = round: 'thalasso', tail: 'doliolid-with-tail', tentacled: 'solmaris', worm: 'arrow-worm', bug: 'shrimp' %>
+
+<button name="toggle"></button>
+<button name="delete-mark">x</button>
+<div class="categories">
+  <% for category in species.order: %>
+    <button name="category" value="<%= category %>">
+      <i class="icon-<%= icons[category] %>"></i>
+      <span class="label"><%- translate 'span', "speciesCategories.#{category}" %></span>
+    </button>
+  <% end %>
+</div>
+
+<% for category in species.order: %>
+  <div class="<%= category %> category">
+    <% for specie in species[category]: %>
+      <button name="species" value="<%= specie %>">
+        <i class="icon-<%= specie.replace(/([A-Z])/g, '-$1').toLowerCase() %>"></i>
+
+        <span class="label">
+          <%- translate 'span', "species.#{specie}" %>
+        </span>
+
+        <img src="./images/field-guide/<%= specie %>-0.jpg" class="example-photo" />
+      </button>
+    <% end %>
+  </div>
+<% end %>

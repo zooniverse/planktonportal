@@ -1,7 +1,6 @@
 <% translate = require 't7e' %>
 <% species = require '../lib/species' %>
 <% Subject = require 'zooniverse/models/Subject' %>
-<% console.log species.fieldGuide %>
 
 <% for category, critters of species.fieldGuide: %>
   <hr />
