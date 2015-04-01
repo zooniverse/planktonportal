@@ -66,6 +66,11 @@ Footer = require 'zooniverse/controllers/footer'
 footer = new Footer
 footer.el.appendTo document.body
 
+Subject = require 'zooniverse/models/subject'
+groups = require './lib/groups/'
+default_subject_group = groups.mediterranean
+Subject.group = default_subject_group
+
 User = require 'zooniverse/models/user'
 User.fetch()
 

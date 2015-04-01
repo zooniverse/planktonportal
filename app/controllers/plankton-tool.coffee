@@ -2,12 +2,14 @@ $ = window.jQuery
 MarkingSurface = require 'marking-surface'
 PointTool = require 'marking-surface/lib/tools/point'
 {Point, ToolControls} = MarkingSurface
-controlsTemplate = require('../views/plankton-chooser')()
-species = require '../lib/species'
+Subject = require 'zooniverse/models/subject'
+controlsTemplateOriginal = require('../views/plankton-chooser-original')()
+controlsTemplateMediterranean = require('../views/plankton-chooser-mediterranean')()
 Spine = require 'spine'
+groups = require '../lib/groups'
 
 class PlanktonControls extends ToolControls
-  template: controlsTemplate
+  template: if Subject.group is groups.mediterranean then controlsTemplateMediterranean else controlsTemplateOriginal
 
   constructor: ->
     super
@@ -22,6 +24,8 @@ class PlanktonControls extends ToolControls
     $(@el).on 'click', 'button[name="delete-mark"]', @onClickDeleteMark
 
     @toggleButton.click()
+
+    console.log 'template', @template
 
   onClickToggle: =>
     $(@el).removeClass 'closed'

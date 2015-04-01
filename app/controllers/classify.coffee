@@ -8,10 +8,12 @@ moment = require 'moment'
 PlanktonTool = require './plankton-tool'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
+groups = require '../lib/groups'
+species = require '../lib/species'
 # createTutorialSubject = require '../lib/create-tutorial-subject'
 # {Tutorial} = require 'zootorial'
 # tutorialSteps = require '../lib/tutorial-steps'
-training = require '../lib/training'
+# training = require '../lib/training'
 loginDialog = require 'zooniverse/controllers/login-dialog'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
@@ -56,6 +58,7 @@ class Classify extends Page
     '.creatures .number .counter': 'creatureCounter'
     'button[name="finish"]': 'finishButton'
     'button[name="next"]': 'nextButton'
+    'button[name="favorite"]': 'favButton'
     'a.talk': 'talkLink'
     'a.facebook': 'facebookLink'
     'a.twitter': 'twitterLink'
@@ -154,6 +157,7 @@ class Classify extends Page
 
       @classification = new Classification {subject}
 
+    @el.removeClass 'is-favorite'
     @talkLink.attr href: subject.talkHref()
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
@@ -215,7 +219,8 @@ class Classify extends Page
   onClickSignIn: ->
     loginDialog.show()
 
-  onClickFavorite: ->
+  onClickFavorite: (e) ->
+    @el.addClass 'is-favorite'
     @favorite = new Favorite subjects: [@classification.subject]
     @favorite.on 'delete', @onFavoriteDelete
 

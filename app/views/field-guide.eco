@@ -1,11 +1,13 @@
 <% translate = require 't7e' %>
 <% species = require '../lib/species' %>
+<% Subject = require 'zooniverse/models/Subject' %>
+<% console.log species.fieldGuide %>
 
-<% for category in species.order: %>
+<% for category, critters of species.fieldGuide: %>
   <hr />
   <%- translate 'h1', "speciesCategories.#{category}" %>
 
-  <% for specie in species[category]: %>
+  <% for specie in species.fieldGuide[category]: %>
     <div class="field-guide-entry">
       <figure>
         <% dashedSpecie = specie.replace(/([A-Z])/g, '-$1').toLowerCase() %>

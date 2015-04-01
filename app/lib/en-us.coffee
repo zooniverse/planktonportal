@@ -14,6 +14,7 @@ module.exports =
     salp: 'Salp'
     thalasso: 'Thalasso'
     doliolidWithoutTail: 'Doliolid (without tail)'
+    radiolarianDark: 'Radiolarian dark'
 
     rocketThimble: 'Rocket-ship thimble'
     rocketTriangle: 'Rocket-ship triangle'
@@ -26,16 +27,19 @@ module.exports =
     medusaFourTentacles: 'Medusa (four tentacles)'
     medusaMoreThanFourTentacles: 'Medusa (more than four tentacles)'
     medusaGoblet: 'Medusa (goblet)'
+    medusaEphyrae: 'Medusa ephyrae'
 
     beroida: 'Beroida'
     cestida: 'Cestida'
     radiolarianColonies: 'Radiolarian colonies'
     larvacean: 'Larvacean'
     arrowWorm: 'Arrow worm'
+    fishLarvae: 'Fish larvae'
 
     shrimp: 'Shrimp'
     polychaeteWorm: 'Polychaete worm'
     copepod: 'Copepod'
+    pteropods: 'Pteropods'
 
   navigation:
     home: 'Home'
@@ -84,6 +88,9 @@ module.exports =
       doliolidWithoutTail: '''
         Barrel shaped body with interior striations along the minor axis, appearing similar to a pineapple in certain orientations.  May or may not have a tail.
       '''
+      radiolarianDark: '''
+        Circular, opaque blobs, possibly with a translucent shell (which creates another circle around the central mass) and radiating, very fine, tentacles that form a halo on the image.
+      '''
 
       rocketThimble: '''
         Thimble-shaped with a single, long, branching “tail”.
@@ -125,6 +132,9 @@ module.exports =
         Distinct category of jellyfish.  Two short, simple, symmetrical tentacles.  Bell typically shaped like a goblet.
       '''
 
+      medusaEphyrae: '''
+        Small disc with short radiating arms.
+      '''
 
       beroida: '''
         Opaque with one rounded end, with numerous hair-like appendages usually visible on the round end.  Shape resembles a zucchini / cucumber.
@@ -146,6 +156,10 @@ module.exports =
         Long and contains paired, symmetrical fins and has a fan-like tail.
       '''
 
+      fishLarvae: '''
+        Elongated and opaque (white) body with a distinct head and (usually) asymmetrical fins. Lack the two symmetrical fins and the transparent body of Chaethognaths.
+      '''
+
       shrimp: '''
         Dark, oblong body, with paired antennae, and short leg-like appendages sometimes visible.  Orientation can be straight or with tail curled under body.
       '''
@@ -156,6 +170,10 @@ module.exports =
 
       copepod: '''
         Dark, ovate body with two symmetrical antennae, typically oriented in opposing directions. Often highly abundant, though very small.
+      '''
+
+      pteropods: '''
+        Very opaque body with wing-like extensions on one end, that can be more or less contracted, and a triangular-shaped shell on the other end.
       '''
 
     about:

@@ -54,10 +54,10 @@
           <div class="next">
             <button name="favorite"><img src="./images/fav-heart-icon.svg"></button>
             <button name="unfavorite"><img src="./images/fav-heart-icon-active.svg"></button>
+            <a href="#/FACEBOOK" class="facebook"><i class="fa fa-facebook fa-lg"></i></a>
+            <a href="#/TWITTER" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
             <a href="#/TALK" class="talk"><%- translate 'span', 'classify.discuss' %></a>
             <button name="next"><%- translate 'span', 'classify.next' %></button>
-            <a href="#/FACEBOOK" class="facebook"><%- translate 'span', 'classify.share' %></a>
-            <a href="#/TWITTER" class="twitter"><%- translate 'span', 'classify.tweet' %></a>
           </div>
         </div>
       </div>
