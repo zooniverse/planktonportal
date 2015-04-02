@@ -18,6 +18,7 @@
         <input type="radio" id="group_two" name="group-selector" value="original">
         Original
       </label>
-    </fieldset>
+    </fieldset>      
+    </div>
   </div>
 </div>

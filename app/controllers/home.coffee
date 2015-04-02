@@ -1,7 +1,7 @@
 Page = require './page'
 template = require '../views/home'
 Subject = require 'zooniverse/models/subject'
-
+Stats = require './stats'
 groups = require '../lib/groups'
 
 class Home extends Page
@@ -19,6 +19,25 @@ class Home extends Page
     super
 
     @setDefaultGroup()
+
+    stats = new Stats
+    @el.append stats.el
+
+    projectFetch = $.getJSON "https://api.zooniverse.org/projects/plankton"
+    statusFetch = $.getJSON "https://api.zooniverse.org/projects/plankton/status?status_type=subjects"
+
+    $.when(projectFetch, statusFetch).done (projectResult, statusResult) =>
+      return unless projectResult[1] == 'success' && statusResult[1] == 'success'
+
+      stats.classificationCount = projectResult[0].classification_count
+      stats.completeCount = projectResult[0].complete_count
+      stats.userCount = projectResult[0].user_count
+      stats.subjectCount = statusResult[0].reduce (p, v) ->
+        p + v.count
+      , 0
+
+      stats.percentComplete()
+      stats.updateTemplate()
 
   setDefaultGroup: ->
     @groups = groups

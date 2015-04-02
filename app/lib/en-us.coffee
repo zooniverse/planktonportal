@@ -65,6 +65,13 @@ module.exports =
     images: 'Images'
     species: 'Species'
 
+    stats:
+      header: 'Statistics'
+      activeUsers: 'Volunteers'
+      classifications: 'Classifications'
+      totalImages: 'Total Images'
+      complete: 'Complete'
+
   science:
     fieldGuide:
       title: 'Field guide'
