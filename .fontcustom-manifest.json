@@ -1,13 +1,13 @@
 {
   "checksum": {
-    "previous": "fd571cf04942e1c6a130c577745361ba8d201c2308decd01f37f3c0049903275",
-    "current": "fd571cf04942e1c6a130c577745361ba8d201c2308decd01f37f3c0049903275"
+    "previous": "955ec30982867482ef93140c848c9e85c7f4c17f73f90e4eb28e9a392937ccdf",
+    "current": "955ec30982867482ef93140c848c9e85c7f4c17f73f90e4eb28e9a392937ccdf"
   },
   "fonts": [
-    "fontcustom/fontcustom_fd571cf04942e1c6a130c577745361ba.ttf",
-    "fontcustom/fontcustom_fd571cf04942e1c6a130c577745361ba.svg",
-    "fontcustom/fontcustom_fd571cf04942e1c6a130c577745361ba.woff",
-    "fontcustom/fontcustom_fd571cf04942e1c6a130c577745361ba.eot"
+    "fontcustom/fontcustom_955ec30982867482ef93140c848c9e85.ttf",
+    "fontcustom/fontcustom_955ec30982867482ef93140c848c9e85.svg",
+    "fontcustom/fontcustom_955ec30982867482ef93140c848c9e85.woff",
+    "fontcustom/fontcustom_955ec30982867482ef93140c848c9e85.eot"
   ],
   "glyphs": {
     "arrow-worm": {
