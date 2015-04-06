@@ -1,13 +1,13 @@
 {
   "checksum": {
-    "previous": "955ec30982867482ef93140c848c9e85c7f4c17f73f90e4eb28e9a392937ccdf",
-    "current": "955ec30982867482ef93140c848c9e85c7f4c17f73f90e4eb28e9a392937ccdf"
+    "previous": "94271f74f1b5aa7b90fcb96c1ea880da67fe803381d7414d1ae00af329ff9c53",
+    "current": "94271f74f1b5aa7b90fcb96c1ea880da67fe803381d7414d1ae00af329ff9c53"
   },
   "fonts": [
-    "fontcustom/fontcustom_955ec30982867482ef93140c848c9e85.ttf",
-    "fontcustom/fontcustom_955ec30982867482ef93140c848c9e85.svg",
-    "fontcustom/fontcustom_955ec30982867482ef93140c848c9e85.woff",
-    "fontcustom/fontcustom_955ec30982867482ef93140c848c9e85.eot"
+    "fontcustom/fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.ttf",
+    "fontcustom/fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.svg",
+    "fontcustom/fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.woff",
+    "fontcustom/fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.eot"
   ],
   "glyphs": {
     "arrow-worm": {
@@ -50,6 +50,10 @@
       "codepoint": 61705,
       "source": "./icons/doliolid-without-tail.svg"
     },
+    "fish-larvae": {
+      "codepoint": 61729,
+      "source": "./icons/fish-larvae.svg"
+    },
     "images": {
       "codepoint": 61706,
       "source": "./icons/images.svg"
@@ -69,6 +73,10 @@
     "marker": {
       "codepoint": 61728,
       "source": "./icons/marker.svg"
+    },
+    "medusa-ephyrae": {
+      "codepoint": 61730,
+      "source": "./icons/medusa-ephyrae.svg"
     },
     "medusa-four-tentacles": {
       "codepoint": 61710,
@@ -94,17 +102,21 @@
       "codepoint": 61715,
       "source": "./icons/prayidae.svg"
     },
+    "pteropods": {
+      "codepoint": 61732,
+      "source": "./icons/pteropods.svg"
+    },
     "radiolarian-colonies": {
       "codepoint": 61716,
       "source": "./icons/radiolarian-colonies.svg"
     },
-    "rocket-thimble": {
-      "codepoint": 61717,
-      "source": "./icons/rocket-thimble.svg"
+    "radiolarian-dark": {
+      "codepoint": 61733,
+      "source": "./icons/radiolarian-dark.svg"
     },
-    "rocket-triangle": {
-      "codepoint": 61718,
-      "source": "./icons/rocket-triangle.svg"
+    "rocket-sipho": {
+      "codepoint": 61734,
+      "source": "./icons/rocket-sipho.svg"
     },
     "salp": {
       "codepoint": 61719,

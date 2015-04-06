@@ -9,7 +9,7 @@ class Home extends Page
   content: template
 
   events:
-    'click input[name="group-selector"]': 'onClickGroupOption'
+    'click button[name="group-selector"]': 'onClickGroupOption'
 
   elements:
     '#group_one': 'groupOneInput'
@@ -43,10 +43,10 @@ class Home extends Page
     @groups = groups
 
     default_subject_group = @groups.mediterranean
-    groupOneCheckStatus = @groupOneInput.prop 'checked'
-    groupTwoCheckStatus = @groupTwoInput.prop 'checked'
+    groupOneStatus = @groupOneInput.hasClass 'active'
+    groupTwoStatus = @groupTwoInput.hasClass 'active'
 
-    if groupOneCheckStatus is false and groupTwoCheckStatus is false
+    if groupOneStatus is false and groupTwoStatus is false
       Subject.group = default_subject_group
       @checkGroupSelection()
     else
@@ -54,9 +54,9 @@ class Home extends Page
 
   checkGroupSelection: ->
     if Subject.group is @groups.mediterranean
-      @groupOneInput.prop checked: true
+      @groupOneInput.addClass 'active'
     else
-      @groupTwoInput.prop checked: true
+      @groupTwoInput.addClass 'active'
 
   onClickGroupOption: ({currentTarget}) ->
     group = @groups["#{currentTarget.value}"]

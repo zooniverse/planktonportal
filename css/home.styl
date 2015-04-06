@@ -35,14 +35,18 @@ body > .stack > .home
 
     .group-selector
       width: 100%
-      max-width: 220px
+      max-width: 240px
       margin: 10px auto
       border: none
       display: flex
 
-      label:first-of-type
-        padding-bottom: 10px
+      button
+        @extends #standard-button
+        font-size: 12px
+        max-width: 120px
 
+      #group_two
+        margin-left: 5px
     a
       @extends #standard-button
       font-size: 24px
@@ -107,17 +111,17 @@ body > .stack > .home
         padding: 50px 0
         margin: 0 $about-page-link-spacing
         text-align: center
-        
-  .stats 
+
+  .stats
     margin-top: -150px
-    
+
     .content
       display: flex
       flex-wrap: wrap
       text-align: center
-      
+
       h1
         width: 100%
-        
+
       .quarter
         width: 25%

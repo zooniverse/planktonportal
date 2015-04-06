@@ -16,8 +16,7 @@ module.exports =
     doliolidWithoutTail: 'Doliolid (without tail)'
     radiolarianDark: 'Radiolarian dark'
 
-    rocketThimble: 'Rocket-ship thimble'
-    rocketTriangle: 'Rocket-ship triangle'
+    rocketSipho: 'Rocket-ship sipho'
     siphoCornCob: 'Sipho (corn cob)'
     siphoTwoCups: 'Sipho (two cups)'
     doliolidWithTail: 'Doliolid (with tail)'
@@ -64,6 +63,8 @@ module.exports =
     about: 'About'
     images: 'Images'
     species: 'Species'
+    groupOneButton: 'Search the Mediterranean'
+    groupTwoButton: 'Search the California current'
 
     stats:
       header: 'Statistics'
@@ -99,12 +100,8 @@ module.exports =
         Circular, opaque blobs, possibly with a translucent shell (which creates another circle around the central mass) and radiating, very fine, tentacles that form a halo on the image.
       '''
 
-      rocketThimble: '''
-        Thimble-shaped with a single, long, branching “tail”.
-      '''
-
-      rocketTriangle: '''
-        Similar overall shape to rocketship thimble but with an arrow-head body. Typically observed with a simple “tail” but sometimes displaying an elaborate array of branching tentacles.
+      rocketSipho: '''
+        Thimble- or triangle-shaped body with single, long, branching “tail”. Typically observed with a simple “tail” but sometimes displaying an elaborate array of branching tentacles.
       '''
 
       siphoCornCob: '''

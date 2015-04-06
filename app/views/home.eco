@@ -8,17 +8,10 @@
   <div class="action">
     <p class="so-sue-me">&nbsp;</p>
     <%- translate 'div', 'home.ready' %>
-    <a href="#/classify" class="classify-link"><%- translate 'span', 'home.start' %></a>
-    <fieldset class="group-selector">
-      <label>
-        <input type="radio" id="group_one" name="group-selector" value="mediterranean">
-        Mediterranean
-      </label>
-      <label>
-        <input type="radio" id="group_two" name="group-selector" value="original">
-        Original
-      </label>
-    </fieldset>      
+    <div class="group-selector">
+      <button id="group_one" name="group-selector" value="mediterranean"><%- translate 'span', 'home.groupOneButton' %></button>
+      <button id="group_two" name="group-selector" value="original"><%- translate 'span', 'home.groupTwoButton' %></button>
     </div>
+    <a href="#/classify" class="classify-link"><%- translate 'span', 'home.start' %></a>
   </div>
 </div>

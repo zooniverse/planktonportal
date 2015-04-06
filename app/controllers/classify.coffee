@@ -161,7 +161,8 @@ class Classify extends Page
     @talkLink.attr href: subject.talkHref()
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
-    @groupName.html subject.group.name
+    groupName = if subject.group.name is 'original' then 'California' else subject.group.name
+    @groupName.html groupName
 
   loadImage: (src, cb) ->
     img = new Image
