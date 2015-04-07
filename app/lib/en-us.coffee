@@ -294,20 +294,23 @@ module.exports =
         image: './images/science-team/luo.jpg'
         name: 'Jessica Luo'
         description: '''
-          Jessica Luo is a Ph.D student using ISIIS to study the ecology of jellyfish, larval fish, and other plankton in the ocean.
-          She is interested in processes that structure marine communities, and hopes that this research will provide better insight into the role of small jellyfish in the open ocean.
-          She moved to Miami in 2010 from Northern California, where she was working as the ocean education coordinator at Point Reyes National Seashore.
-          Jessica got her B.S. and M.S. degrees from Stanford University in 2007, studying the chemical oceanography of Red Sea copepods.
-          In her free time, she enjoys landscape photography and running 10K’s and half marathons.
+          Jessica Luo is a Ph.D candidate at the University of Miami, using imaging systems to study the ecology of gelatinous zooplankton,
+          larval fish, and other plankton in the ocean. She is interested in processes that structure marine communities, both biological
+          (vertical migrations), and physical (fronts and eddies). She is also doing research on the contribution of certain plankton groups
+          to the global marine carbon cycle. Previously, she was in Northern California, working in marine education and outreach for the
+          National Park Service after receiving her B.A. and M.S. in 2007 from Stanford University. In her spare time, Jessica enjoys running
+          and thinking about data science and crowd-sourcing.
         '''
 
       greer:
         image: './images/science-team/greer.jpg'
         name: 'Adam Greer'
         description: '''
-          Adam Greer is a Ph.D student originally from Nashville, TN studying thin layers of zooplankton in coastal environments.
-          Plankton often aggregate in dense layers only a few meters in depth, and the use of imaging technology provides a unique opportunity to describe the spatial relationships of organisms in fine detail- leading to a better understanding of how zooplankton and fish larvae feed and survive.
-          He also enjoys sports, particularly baseball and basketball, and 90’s rock music.
+          Adam Greer received his Ph.D from the University of Miami in 2013 and is currently a postdoctoral researcher at the University
+          of Southern Mississippi Stennis Space Center. He is interested in the application of new sampling technologies, particularly
+          imaging systems, to study fine-scale physical and biological processes that are important for larval fish feeding and survival.
+          The ultimate goal of this kind of research is to determine the primary factors that influence fish population variability,
+          enhancing our understanding of marine ecosystems. Adam also enjoys sports and living on the West Coast (of Mississippi).
         '''
 
       cousin:
@@ -324,22 +327,11 @@ module.exports =
         image: './images/science-team/grassian.jpg'
         name: 'Ben Grassian'
         description: '''
-          Ben Grassian is an undergraduate at the University of Miami who is completing his bachelors in Marine Science and Biology in Summer 2013.
-          His research background is mostly in cellular biology, having worked in a cancer research lab in Boston, MA while in high school.
-          His work focused on understanding the molecular basis for oncogenic evasion of cell-death pathways via the downregulation of certain proteins.
-          He began working with ISIIS image data in the Fall of 2011, focusing on the temporal and spatial distributions of Ctenophore populations in the upper water column.
-          He plans on applying to graduate school while finishing his work with ISIIS.
-        '''
-
-      tang:
-        image: './images/science-team/tang.jpg'
-        name: 'Dorothy Tang'
-        description: '''
-          Dorothy Tang is a research assistant working on the ISIIS images.
-          She has been fascinated by the variety of marine ecosystems and life forms since she was a child.
-          In order to study more about the oceans and the organisms living in it, she moved from Hong Kong to the United States in 2006.
-          She earned her B.S. in Marine Science and Biology in 2012 from the University of Miami.
-          She also loves to collect shells.
+          Ben Grassian is a former undergraduate researcher with the Cowen Lab at the University of Miami, Rosenstiel School of
+          Marine and Atmospheric Science. While a student, he studied spatiotemporal and ecological dynamics of gelatinous zooplankton
+          populations using ISIIS data. After completing his bachelors in 2013, he continued work with plankton (larval fish) while also
+          taking a detour to study corals and coral reefs. He is starting a Ph.D at the University of Rhode Island’s Graduate School of
+          Oceanography in 2015, studying zooplankton assemblages in oxygen minimum zones.
         '''
 
     developers:
@@ -375,34 +367,12 @@ module.exports =
           He's currently drinking a lot of sherry.
         '''
 
-      miller:
-        image: './images/dev-team/miller.jpg'
-        name: 'David Miller'
-        description: '''
-          As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design.
-          Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival,
-          the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual.
-          David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University,
-          where he studied Visual & Interactive Communications.
-        '''
-
       parrish:
         image: './images/dev-team/parrish.jpg'
         name: 'Michael Parrish'
         description: '''
           Michael has a degree in Computer Science and has been working with The Zooniverse for the past three years as a Software Developer.
           Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.
-        '''
-
-      smith:
-        image: './images/dev-team/smith.jpg'
-        name: 'Arfon Smith'
-        description: '''
-          As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry
-          at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge
-          before joining the Galaxy Zoo team in Oxford. Over the past 3 years he has been responsible for leading the development of a platform
-          for citizen science called Zooniverse. In August of 2011 he took up the position of Director of Citizen Science at the Adler Planetarium
-          where he continues to lead the software and infrastructure development for the Zooniverse.
         '''
 
   classify:
