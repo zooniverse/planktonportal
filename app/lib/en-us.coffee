@@ -195,6 +195,7 @@ module.exports =
       title: 'Why study plankton?'
       content: '''
         <h1>Why study plankton?</h1>
+        <p><img src="./images/plankton-diagram.png" class="framed right" style="max-width: 400px;" /></p>
         <p>Planktonic organisms are critically important food source to the all ocean.  Small phytoplankton form the beginning of the food supply which are consumed by larger plankton, then those plankton by larger organisms all the way up to fish and the largest species of whales found in the sea. No plankton: no life in the ocean.</p>
         <p>Plankton also play an important role in the global carbon cycle capturing the sun’s energy and the atmosphere’s CO2 at the surface of the ocean and releasing it, via the above food chain, to other organisms and other areas of the ocean from shallow coastal areas to the deep ocean basins.</p>
         <p>Understanding where and when plankton occur at different depths in the ocean allows scientists to get a global understanding of the function and health of the ocean from small to global scales.</p>
@@ -214,18 +215,19 @@ module.exports =
     title: 'Education'
     content: """
       <h2>Education</h2>
+      <p><img src="./images/lots-of-plankton-2.jpg" class="framed right" style="max-width: 250px;"/></p>
 
       <h3>Can I use #{PROJECT_NAME} in the classroom?</h3>
       <p>Of course! #{PROJECT_NAME}, just like all the <a href="https://www.zooniverse.org/">Zooniverse</a> projects, offers students a unique opportunity to explore real scientific data, while making a contribution to cutting-edge research. Each image is marked by multiple volunteers, so it’s okay if students don't identify and mark all of the plankton correctly. That being said, the task itself is simple enough that we believe most people can take part and make a worthwhile contribution regardless of age.</p>
 
       <h3>What resources are there to support use in the classroom?</h3>
       <p>Videos are a great tool to introduce students to the fascinating, diverse, and sometimes bizarre undersea world of plankton. Here are a couple of our favorites.</p>
-
       <ul>
         <li><a href="http://www.google.com/url?q=http%3A%2F%2Fwww.ted.com%2Ftalks%2Fthe_secret_life_of_plankton.html&sa=D&sntz=1&usg=AFQjCNHSdPrxP6h9FufMU_eNWLZGty-SwA">The secret life of plankton</a> (TED Education video) by Tierney Thys, Christian Sardet, Noe Sardet and Sharif Mirshak</li>
         <li><a href="http://www.planktonchronicles.org/en">Plankton Chronicles</a> by Christian Sardet, Noe Sardet and Sharif Mirshak</li>
         <li><a href="http://www.youtube.com/watch?v=3HzFiQFFQYw">There’s no such thing as a jellyfish</a> by Steve Haddock, Monterey Bay Aquarium Research Institute</li>
       </ul>
+
 
       <p>The Zooniverse recently launched <a href="http://www.zooteach.org/">ZooTeach</a> where educators can find and share educational resources relating to #{PROJECT_NAME} and the other Zooniverse citizen science projects. Check out resources created for <a href="http://www.zooteach.org/zoo/plankton_portal">#{PROJECT_NAME}</a>. Have any ideas for how to use the project in the classroom? Please share your lesson ideas or resources on ZooTeach!</p>
 
