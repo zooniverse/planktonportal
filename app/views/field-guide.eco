@@ -1,9 +1,25 @@
 <% translate = require 't7e' %>
 <% species = require '../lib/species' %>
 <% Subject = require 'zooniverse/models/Subject' %>
+<% scale = ['100', '75', '50', '25'] %>
+
+<div class="scale-guide">
+  <hr />
+  <div class="scale-images">
+    <%- translate 'div.description', 'science.fieldGuide.scale' %>
+    <div class="figures">
+      <% for percentage in scale: %>
+        <figure>
+          <img src="./images/field-guide/sizers/<%= percentage %>.svg" alt="<%= percentage %>%" />
+          <figcaption><%= percentage %>%</figcaption>
+        </figure>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <% for category, critters of species.fieldGuide: %>
-  <hr />
+  <hr id="<%= category %>" />
   <%- translate 'h1', "speciesCategories.#{category}" %>
 
   <% for specie in species.fieldGuide[category]: %>
@@ -13,9 +29,11 @@
         <i class="icon-<%= dashedSpecie %>"></i>
         <%- translate 'figcaption', "species.#{specie}" %>
       </figure>
-      <img src="./images/field-guide/<%= specie %>-0.jpg" />
-      <img src="./images/field-guide/<%= specie %>-1.jpg" />
-      <img src="./images/field-guide/<%= specie %>-2.jpg" />
+      <!-- <img src="./images/field-guide/<%= specie %>-0.jpg" alt="<%= specie %>" /> -->
+      <img src="./images/field-guide/<%= specie %>-1.jpg" alt="<%= specie %>" />
+      <img src="./images/field-guide/<%= specie %>-2.jpg" alt="<%= specie %>" />
+      <img src="./images/field-guide/<%= specie %>-3.jpg" alt="<%= specie %>" />
+      <img src="./images/field-guide/<%= specie %>-4.jpg" alt="<%= specie %>" />
 
       <%- translate 'div.description', "science.fieldGuide.#{specie}" %>
     </div>

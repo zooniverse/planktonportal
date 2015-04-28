@@ -63,8 +63,9 @@ module.exports =
     about: 'About'
     images: 'Images'
     species: 'Species'
-    groupOneButton: 'Search the Mediterranean'
-    groupTwoButton: 'Search the California current'
+    groupSelect: 'Select a group to start searching:'
+    groupOneButton: 'Mediterranean'
+    groupTwoButton: 'California current'
 
     stats:
       header: 'Statistics'
@@ -76,6 +77,7 @@ module.exports =
   science:
     fieldGuide:
       title: 'Field guide'
+      scale: 'Note: Some images have been scaled down. In order to provide a sense of scale, each image has a size marker. The outer ring represents the full, unscaled size. The inner circle represents how much the image is scaled down. Small circle = large specimen!'
 
       lobate: '''
         Round to oval, with bristled (comb) rows along the major axis – though rows not apparent in some species. Certain species look balloon-shaped with two small, opposing lobes. Others may have large lobes visible on the “bottom” of the organism. Range in size from small to extra large.  Typically appears opaque in images.

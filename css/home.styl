@@ -34,16 +34,23 @@ body > .stack > .home
     width: 33.33%
 
     .group-selector
-      width: 100%
-      max-width: 240px
-      margin: 10px auto
       border: none
       display: flex
+      margin: 10px auto
+      max-width: 240px
+      width: 100%
 
-      button
+      button#group_one, button#group_two
         @extends #standard-button
         font-size: 12px
         max-width: 120px
+
+        &:not(.active)
+          background-color: transparent
+          border: 2px solid $lime
+          color: white
+          font-weight: 400
+          text-shadow: none
 
       #group_two
         margin-left: 5px

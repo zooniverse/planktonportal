@@ -59,9 +59,14 @@ class Home extends Page
       @groupTwoInput.addClass 'active'
 
   onClickGroupOption: ({currentTarget}) ->
+    button = $(currentTarget)
     group = @groups["#{currentTarget.value}"]
     Subject.group = group
     @getSubject()
+    if button.hasClass 'active'
+      event.preventDefault()
+    else
+      button.toggleClass('active').siblings().toggleClass 'active'
 
   getSubject: ->
     if Subject.current.group_id isnt Subject.group
