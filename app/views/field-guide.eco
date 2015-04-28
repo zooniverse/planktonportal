@@ -29,7 +29,6 @@
         <i class="icon-<%= dashedSpecie %>"></i>
         <%- translate 'figcaption', "species.#{specie}" %>
       </figure>
-      <!-- <img src="./images/field-guide/<%= specie %>-0.jpg" alt="<%= specie %>" /> -->
       <img src="./images/field-guide/<%= specie %>-1.jpg" alt="<%= specie %>" />
       <img src="./images/field-guide/<%= specie %>-2.jpg" alt="<%= specie %>" />
       <img src="./images/field-guide/<%= specie %>-3.jpg" alt="<%= specie %>" />

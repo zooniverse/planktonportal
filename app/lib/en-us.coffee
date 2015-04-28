@@ -197,7 +197,7 @@ module.exports =
       title: 'Why study plankton?'
       content: '''
         <h1>Why study plankton?</h1>
-        <p><img src="./images/plankton-diagram.png" class="framed right" style="max-width: 400px;" /></p>
+        <p><a href="./images/plankton-diagram.png" target="_blank"><img src="./images/plankton-diagram.png" class="framed right" style="max-width: 400px;" /></a></p>
         <p>Planktonic organisms are critically important food source to the all ocean.  Small phytoplankton form the beginning of the food supply which are consumed by larger plankton, then those plankton by larger organisms all the way up to fish and the largest species of whales found in the sea. No plankton: no life in the ocean.</p>
         <p>Plankton also play an important role in the global carbon cycle capturing the sun’s energy and the atmosphere’s CO2 at the surface of the ocean and releasing it, via the above food chain, to other organisms and other areas of the ocean from shallow coastal areas to the deep ocean basins.</p>
         <p>Understanding where and when plankton occur at different depths in the ocean allows scientists to get a global understanding of the function and health of the ocean from small to global scales.</p>

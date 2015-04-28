@@ -1,7 +1,11 @@
-Page = require './page'
-template = require '../views/home'
+User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
+
+Spine = require 'spine'
+Page = require './page'
 Stats = require './stats'
+
+template = require '../views/home'
 groups = require '../lib/groups'
 
 class Home extends Page
@@ -17,8 +21,6 @@ class Home extends Page
 
   constructor: ->
     super
-
-    @setDefaultGroup()
 
     stats = new Stats
     @el.append stats.el
@@ -39,34 +41,36 @@ class Home extends Page
       stats.percentComplete()
       stats.updateTemplate()
 
-  setDefaultGroup: ->
-    @groups = groups
+      User.on 'change', @onUserChange
+      Spine.on 'setGroupButtonActive', @setGroupButtonActive
 
-    default_subject_group = @groups.mediterranean
-    groupOneStatus = @groupOneInput.hasClass 'active'
-    groupTwoStatus = @groupTwoInput.hasClass 'active'
+  onUserChange: (e, user) =>
+    Spine.trigger 'setDefaultGroup' if @onHome()
 
-    if groupOneStatus is false and groupTwoStatus is false
-      Subject.group = default_subject_group
-      @checkGroupSelection()
+  onHome: =>
+    window.location.hash is "#/"
+
+  setGroupButtonActive: =>
+    if Subject.group is groups.mediterranean
+      @groupOneInput.addClass('active').siblings().removeClass 'active'
     else
-      @checkGroupSelection()
-
-  checkGroupSelection: ->
-    if Subject.group is @groups.mediterranean
-      @groupOneInput.addClass 'active'
-    else
-      @groupTwoInput.addClass 'active'
+      @groupTwoInput.addClass('active').siblings().removeClass 'active'
 
   onClickGroupOption: ({currentTarget}) ->
     button = $(currentTarget)
-    group = @groups["#{currentTarget.value}"]
+    group = groups["#{currentTarget.value}"]
     Subject.group = group
     @getSubject()
+
     if button.hasClass 'active'
       event.preventDefault()
     else
+      @setUserPreference(group)
       button.toggleClass('active').siblings().toggleClass 'active'
+
+  setUserPreference: (preference) ->
+    if User.current
+      User.current.setPreference 'group', preference
 
   getSubject: ->
     if Subject.current.group_id isnt Subject.group
@@ -75,8 +79,5 @@ class Home extends Page
 
   activate: ->
     super
-    # TODO: Update the project stats.
-
-
 
 module.exports = Home

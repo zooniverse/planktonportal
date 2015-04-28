@@ -80,6 +80,7 @@ class Classify extends Page
     @subjectContainer.prepend @surface.el
 
     Spine.on 'change-mark-count', @onChangeMarkCount
+    Spine.on 'setDefaultGroup', @setDefaultGroup
 
     @depthCounter = new Counter el: @depthCounterEl
     @tempCounter = new Counter el: @tempCounterEl
@@ -109,9 +110,29 @@ class Classify extends Page
 
     sessionClassifications = user?.project?.classification_count || 0
 
-    Subject.next()
-
     @startTutorial if @onClassify()
+
+    @setDefaultGroup()
+
+  setDefaultGroup: =>
+    @groups = groups
+
+    if User.current?.preferences?.plankton?.group
+      defaultSubjectGroup = User.current.preferences.plankton.group
+      Subject.group = defaultSubjectGroup
+      Subject.next()
+    else
+      randomInt = Math.round(Math.random())
+      randomProperty = Object.keys(@groups)
+      randomSelection = randomProperty[randomInt]
+      randomGroup = @groups[randomSelection]
+      Subject.group = randomGroup
+      @setUserPreference(randomGroup)
+      Subject.next()
+
+  setUserPreference: (preference) =>
+    if User.current
+      User.current.setPreference 'group', preference
 
   firstVisit: (user) =>
     return true unless user
@@ -161,8 +182,12 @@ class Classify extends Page
     @talkLink.attr href: subject.talkHref()
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
+    @setGroupName(subject)
+
+  setGroupName: (subject) =>
     groupName = if subject.group.name is 'original' then 'California' else subject.group.name
     @groupName.html groupName
+    Spine.trigger 'setGroupButtonActive'
 
   loadImage: (src, cb) ->
     img = new Image
