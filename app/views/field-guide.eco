@@ -34,10 +34,10 @@
         <figcaption>
           <%- translate 'span', "species.#{specie}" %>
           <% if california.indexOf(specie) > -1: %>
-            <p><i class="icon-marker"></i><span>California Current</span></p>
+            <p><i class="icon-location-marker"></i><span>California Current</span></p>
           <% end %>
           <% if mediterranean.indexOf(specie) > -1: %>
-            <p><i class="icon-marker"></i><span>Mediterranean</span></p>
+            <p><i class="icon-location-marker"></i><span>Mediterranean</span></p>
           <% end %>
         </figcaption>
       </figure>

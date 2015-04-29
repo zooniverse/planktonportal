@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "fontcustom";
-  src: url("./fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.eot");
-  src: url("./fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.eot?#iefix") format("embedded-opentype"),
-       url("./fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.woff") format("woff"),
-       url("./fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.ttf") format("truetype"),
-       url("./fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.svg#fontcustom") format("svg");
+  src: url("./fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.eot");
+  src: url("./fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.eot?#iefix") format("embedded-opentype"),
+       url("./fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.woff") format("woff"),
+       url("./fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.ttf") format("truetype"),
+       url("./fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.svg#fontcustom") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "fontcustom";
-    src: url("./fontcustom_94271f74f1b5aa7b90fcb96c1ea880da.svg#fontcustom") format("svg");
+    src: url("./fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.svg#fontcustom") format("svg");
   }
 }
 
@@ -38,6 +38,7 @@
 .icon-larvacean:before,
 .icon-larvacean-house:before,
 .icon-lobate:before,
+.icon-location-marker:before,
 .icon-marker:before,
 .icon-medusa-ephyrae:before,
 .icon-medusa-four-tentacles:before,
@@ -88,6 +89,7 @@
 .icon-larvacean:before { content: "\f10b"; }
 .icon-larvacean-house:before { content: "\f10c"; }
 .icon-lobate:before { content: "\f10d"; }
+.icon-location-marker:before { content: "\f127"; }
 .icon-marker:before { content: "\f120"; }
 .icon-medusa-ephyrae:before { content: "\f122"; }
 .icon-medusa-four-tentacles:before { content: "\f10e"; }
