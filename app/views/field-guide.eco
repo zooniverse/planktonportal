@@ -1,7 +1,11 @@
 <% translate = require 't7e' %>
 <% species = require '../lib/species' %>
+<% speciesMedi = require '../lib/species-mediterranean' %>
 <% Subject = require 'zooniverse/models/Subject' %>
+
 <% scale = ['100', '75', '50', '25'] %>
+<% california = ['lobate', 'larvaceanHouse', 'salp', 'thalasso', 'doliolidWithoutTail', 'rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail', 'solmaris', 'medusaFourTentacles', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'beroida', 'cestida', 'radiolarianColonies', 'larvacean', 'arrowWorm', 'shrimp', 'polychaeteWorm', 'copepod'] %>
+<% mediterranean = ['larvaceanHouse', 'doliolidWithoutTail', 'radiolarianDark', 'rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail', 'solmaris', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'medusaEphyrae', 'radiolarianColonies', 'larvacean', 'arrowWorm', 'fishLarvae', 'shrimp', 'polychaeteWorm', 'copepod', 'pteropods'] %>
 
 <div class="scale-guide">
   <hr />
@@ -27,7 +31,15 @@
       <figure>
         <% dashedSpecie = specie.replace(/([A-Z])/g, '-$1').toLowerCase() %>
         <i class="icon-<%= dashedSpecie %>"></i>
-        <%- translate 'figcaption', "species.#{specie}" %>
+        <figcaption>
+          <%- translate 'span', "species.#{specie}" %>
+          <% if california.indexOf(specie) > -1: %>
+            <p><i class="icon-location-marker"></i><span>California Current</span></p>
+          <% end %>
+          <% if mediterranean.indexOf(specie) > -1: %>
+            <p><i class="icon-location-marker"></i><span>Mediterranean</span></p>
+          <% end %>
+        </figcaption>
       </figure>
       <img src="./images/field-guide/<%= specie %>-1.jpg" alt="<%= specie %>" />
       <img src="./images/field-guide/<%= specie %>-2.jpg" alt="<%= specie %>" />
