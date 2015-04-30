@@ -3,12 +3,12 @@
 <div class="organizations team">
   <%- translate 'h1', "about.organizations.heading" %>
 
-  <% organizations = ['rsmas', 'uMiami', 'osu', 'bellamare', 'adler', 'zooniverse'] %>
+  <% organizations = ['rsmas', 'uMiami', 'osu', 'bellamare', 'oov', 'upmc', 'adler', 'zooniverse'] %>
 
   <% for organization in organizations: %>
     <div class="member organization">
       <a href="<%- translate "about.organizations.#{organization}.url" %>">
-        <%- translate 'img', '', src: "about.organizations.#{organization}.image" %>
+        <%- translate "img.#{organization}", '', src: "about.organizations.#{organization}.image" %>
         <%- translate 'div.name', "about.organizations.#{organization}.name" %>
       </a>
     </div>
@@ -18,7 +18,7 @@
 <div class="science team">
   <%- translate 'h1', "about.scientists.heading" %>
 
-  <% scientists = ['cowen', 'guigand', 'cousin', 'greer', 'luo', 'grassian'] %>
+  <% scientists = ['cowen', 'irisson', 'guigand', 'cousin', 'greer', 'luo', 'grassian', 'faillettaz'] %>
 
   <% for scientist in scientists: %>
     <div class="science member">

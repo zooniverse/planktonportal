@@ -262,6 +262,16 @@ module.exports =
         name: 'BellaMare'
         url: 'http://www.bellamare-us.com/'
 
+      oov:
+        image: './images/organizations/oov.png'
+        name: 'Observatoire Océanologique de Villefranche'
+        url: 'http://www.obs-vlfr.fr'
+
+      upmc:
+        image: './images/organizations/upmc.png'
+        name: 'Université Pierre et Marie Curie'
+        url: 'http://www.upmc.fr'
+
       adler:
         image: './images/organizations/adler.png'
         name: 'Adler Planetarium'
@@ -283,6 +293,17 @@ module.exports =
           His research interests are focused on larval fish and the plankton communities upon which they depend.
           To better understand life on the time and space scales relevant to these organisms, he seeks novel ways to study the plankton realm.
           The development of the ISIIS imaging system is not only providing unprecedented insight into life in the plankton, but allows Bob to spend untethered days away from his desk on the high seas, ‘eaves-viewing’ on the secret lives of plankters.
+        '''
+
+      irisson:
+        image: './images/science-team/irisson.jpg'
+        name: 'Jean-Olivier Irisson'
+        description: '''
+          Jean-Olivier Irisson is an Associate Professor at the Observatoire Océanologique de Villefranche of the Université Pierre et Marie Curie.
+           He is interested in plankton ecology, in particular in the distribution, behaviour and dispersal of fish larvae. In Villefranche he
+           contributes to a research group focused on using imaging devices to study plankton. He uses modelling, experiments, in situ
+           observation and a lot of statistics around all that to gain insight into the lives of the rare and fragile fish larvae.
+           Together with Bob Cowen, he coordinated the cruise which collected the Mediterranean dataset.
         '''
 
       guigand:
@@ -336,6 +357,17 @@ module.exports =
           populations using ISIIS data. After completing his bachelors in 2013, he continued work with plankton (larval fish) while also
           taking a detour to study corals and coral reefs. He is starting a Ph.D at the University of Rhode Island’s Graduate School of
           Oceanography in 2015, studying zooplankton assemblages in oxygen minimum zones.
+        '''
+
+      faillettaz:
+        image: './images/science-team/faillettaz.jpg'
+        name: 'Robin Faillettaz'
+        description: '''
+          Robin Faillettaz is a PhD candidate at Université Pierre et Marie Curie, working at the Observatoire Océanologique de Villefranche.
+          He studies the distribution of fish larvae relative to their planktonic and hydrological environment. His aim is to evaluate the
+          importance of larval behavior for dispersal during their pelagic larval phase. He is the one processing and sorting the thousands
+          of images collected during the Mediterranean cruise. He has always worked on fish, studying the effect of Marine Protected Areas
+          or working on stock assessment for his M.S. Contrastingly, Robin comes from the mountains and he is also big fan of skiing.
         '''
 
     developers:
