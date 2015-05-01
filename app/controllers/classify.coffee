@@ -10,10 +10,6 @@ User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
 groups = require '../lib/groups'
 species = require '../lib/species'
-# createTutorialSubject = require '../lib/create-tutorial-subject'
-# {Tutorial} = require 'zootorial'
-# tutorialSteps = require '../lib/tutorial-steps'
-# training = require '../lib/training'
 loginDialog = require 'zooniverse/controllers/login-dialog'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
@@ -202,11 +198,6 @@ class Classify extends Page
     @creatureCounter.html @surface.tools.length
 
   onClickFinish: ->
-    # checks = @checkMark()
-    # console.log 'check', checks
-
-    # unless checks.indexOf(undefined) > -1
-    # console.log 'all true!'
     sessionClassifications += 1
 
     @finishButton.attr disabled: true
@@ -219,25 +210,12 @@ class Classify extends Page
 
     # TODO: Send classification
     console?.log 'classification send', @classification
-    # @classification.send()
+    @classification.send()
 
     @el.addClass 'finished'
 
     classificationCount = User.current?.project?.classification_count || 0
     classificationCount += Classification.sentThisSession
-    # else
-    #   incompleteMarkCount = 0
-    #   for check in checks
-    #     if check is undefined
-    #       incompleteMarkCount++
-
-    #   console.log 'incomplete marks', @marksIncomplete, incompleteMarkCount
-
-  # checkMark: ->
-  #   for tool in @surface.tools
-  #     do (tool) ->
-  #       console.log tool.mark.species
-  #       return true if tool.mark.species?
 
   onClickTutorial: ->
     @slideTutorial.start()
