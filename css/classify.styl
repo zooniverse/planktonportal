@@ -83,6 +83,9 @@ body > .stack > .classify
         right: 100%
         top: 30px
         width: 0
+        
+      &:not([data-selected])
+        display: block
 
       &.to-the-left
         margin: -40px 20px 0 0
@@ -274,6 +277,9 @@ body > .stack > .classify
 
         button[name="toggle"]
           display: inline-block
+          
+          &:hover
+            background-color: transparent
 
   .swap-container
     height: 560px

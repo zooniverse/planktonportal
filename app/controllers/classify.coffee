@@ -146,6 +146,8 @@ class Classify extends Page
   onSubjectSelect: (e, subject) =>
     @el.removeClass 'loading'
     @surface.tools[0].destroy() until @surface.tools.length is 0
+    @onChangeMarkCount()
+    $('.marking-surface-tool-controls-container').empty()
 
     # This image will slide in.
     @newSwapImage.attr src: subject.location.standard
