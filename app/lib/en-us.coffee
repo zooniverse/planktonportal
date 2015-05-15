@@ -468,3 +468,5 @@ module.exports =
         us at the Plankton Portal Talk boards. More information is also available
         at the Plankton Portal blog. Good luck!
       '''
+    nextButtonText: 'Next'
+    finishButtonText: 'Start'

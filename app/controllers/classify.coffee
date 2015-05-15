@@ -89,7 +89,7 @@ class Classify extends Page
 
     Favorite.on 'from-classify', @onFavoriteFromClassify
 
-    @slideTutorial = new SlideTutorial slides: slides
+    @slideTutorial = new SlideTutorial slides: slides, nextButtonText: translate('span', 'tutorial.nextButtonText'), finishButtonText: translate('span', 'tutorial.finishButtonText')
 
   activate: ->
     super
@@ -184,7 +184,10 @@ class Classify extends Page
     @setGroupName(subject)
 
   setGroupName: (subject) =>
-    groupName = if subject.group.name is 'original' then 'California' else subject.group.name
+    groupName = if subject.group.name is 'original'
+      translate('span', 'home.groupTwoButton') #California
+    else
+      translate('span', 'home.groupOneButton') #Mediterranean
     @groupName.html groupName
     Spine.trigger 'setGroupButtonActive'
 
