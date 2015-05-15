@@ -1,20 +1,50 @@
 <% translate = require 't7e' %>
 <% species = require '../lib/species' %>
+<% speciesMedi = require '../lib/species-mediterranean' %>
+<% Subject = require 'zooniverse/models/Subject' %>
 
-<% for category in species.order: %>
+<% scale = ['100', '75', '50', '25'] %>
+<% california = ['lobate', 'larvaceanHouse', 'salp', 'thalasso', 'doliolidWithoutTail', 'rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail', 'solmaris', 'medusaFourTentacles', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'beroida', 'cestida', 'radiolarianColonies', 'larvacean', 'arrowWorm', 'shrimp', 'polychaeteWorm', 'copepod'] %>
+<% mediterranean = ['larvaceanHouse', 'doliolidWithoutTail', 'radiolarianDark', 'rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail', 'solmaris', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'medusaEphyrae', 'radiolarianColonies', 'larvacean', 'arrowWorm', 'fishLarvae', 'shrimp', 'polychaeteWorm', 'copepod', 'pteropods'] %>
+
+<div class="scale-guide">
   <hr />
+  <div class="scale-images">
+    <%- translate 'div.description', 'science.fieldGuide.scale' %>
+    <div class="figures">
+      <% for percentage in scale: %>
+        <figure>
+          <img src="./images/field-guide/sizers/<%= percentage %>.svg" alt="<%= percentage %>%" />
+          <figcaption><%= percentage %>%</figcaption>
+        </figure>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<% for category, critters of species.fieldGuide: %>
+  <hr id="<%= category %>" />
   <%- translate 'h1', "speciesCategories.#{category}" %>
 
-  <% for specie in species[category]: %>
+  <% for specie in species.fieldGuide[category]: %>
     <div class="field-guide-entry">
       <figure>
         <% dashedSpecie = specie.replace(/([A-Z])/g, '-$1').toLowerCase() %>
         <i class="icon-<%= dashedSpecie %>"></i>
-        <%- translate 'figcaption', "species.#{specie}" %>
+        <figcaption>
+          <%- translate 'span', "species.#{specie}" %>
+          <% if california.indexOf(specie) > -1: %>
+            <p><i class="icon-location-marker"></i><span>California Current</span></p>
+          <% end %>
+          <% if mediterranean.indexOf(specie) > -1: %>
+            <p><i class="icon-location-marker"></i><span>Mediterranean</span></p>
+          <% end %>
+        </figcaption>
       </figure>
-      <img src="./images/field-guide/<%= specie %>-0.jpg" />
-      <img src="./images/field-guide/<%= specie %>-1.jpg" />
-      <img src="./images/field-guide/<%= specie %>-2.jpg" />
+      <img src="./images/field-guide/<%= specie %>-1.jpg" alt="<%= specie %>" />
+      <img src="./images/field-guide/<%= specie %>-2.jpg" alt="<%= specie %>" />
+      <img src="./images/field-guide/<%= specie %>-3.jpg" alt="<%= specie %>" />
+      <img src="./images/field-guide/<%= specie %>-4.jpg" alt="<%= specie %>" />
 
       <%- translate 'div.description', "science.fieldGuide.#{specie}" %>
     </div>

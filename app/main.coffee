@@ -38,16 +38,12 @@ stack = new Stack
     science: Science
     classify: Classify
     profile: class extends Page then content: (new Profile).el
-    education: class extends Page then content: translate 'div', 'education.content'
-    team: Team
 
   routes:
     '/': 'home'
     '/science/*': 'science'
     '/classify': 'classify'
     '/profile': 'profile'
-    '/education': 'education'
-    '/team': 'team'
 
   default: 'home'
 
@@ -65,6 +61,10 @@ api = new Api project: 'plankton'
 TopBar = require 'zooniverse/controllers/top-bar'
 topBar = new TopBar
 topBar.el.appendTo document.body
+
+Footer = require 'zooniverse/controllers/footer'
+footer = new Footer
+footer.el.appendTo document.body
 
 User = require 'zooniverse/models/user'
 User.fetch()

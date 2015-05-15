@@ -8,13 +8,15 @@ moment = require 'moment'
 PlanktonTool = require './plankton-tool'
 User = require 'zooniverse/models/user'
 Subject = require 'zooniverse/models/subject'
-createTutorialSubject = require '../lib/create-tutorial-subject'
-{Tutorial} = require 'zootorial'
-tutorialSteps = require '../lib/tutorial-steps'
-training = require '../lib/training'
+groups = require '../lib/groups'
+species = require '../lib/species'
 loginDialog = require 'zooniverse/controllers/login-dialog'
 Classification = require 'zooniverse/models/classification'
 Favorite = require 'zooniverse/models/favorite'
+{PointTool} = MarkingSurface
+Spine = require 'spine'
+SlideTutorial = require 'slide-tutorial'
+slides = require '../lib/slides.coffee'
 
 $html = $('html')
 
@@ -28,13 +30,13 @@ class Classify extends Page
 
   surface: null
 
-  tutorial: null
+  currentSubjectImage: null
 
   guidelines: null
 
   events:
     'click button[name="finish"]': 'onClickFinish'
-    'click button[name="restart-tutorial"]': 'onClickRestartTutorial'
+    'click button[name="tutorial"]': 'onClickTutorial'
     'click button[name="sign-in"]': 'onClickSignIn'
     'click button[name="favorite"]': 'onClickFavorite'
     'click button[name="unfavorite"]': 'onClickUnfavorite'
@@ -52,9 +54,11 @@ class Classify extends Page
     '.creatures .number .counter': 'creatureCounter'
     'button[name="finish"]': 'finishButton'
     'button[name="next"]': 'nextButton'
+    'button[name="favorite"]': 'favButton'
     'a.talk': 'talkLink'
     'a.facebook': 'facebookLink'
     'a.twitter': 'twitterLink'
+    'span#group-name': 'groupName'
 
   constructor: ->
     window.classifier = @
@@ -62,13 +66,17 @@ class Classify extends Page
 
     @el.addClass 'loading'
 
-    @surface ?= new MarkingSurface
+    @surface = new MarkingSurface
       tool: PlanktonTool
-      container: @subjectContainer
       width: 1024
       height: 560
+      scaleX: 1
+      scaleY: 1
 
-    @surface.on 'create-mark destroy-mark', @onChangeMarkCount
+    @subjectContainer.prepend @surface.el
+
+    Spine.on 'change-mark-count', @onChangeMarkCount
+    Spine.on 'setDefaultGroup', @setDefaultGroup
 
     @depthCounter = new Counter el: @depthCounterEl
     @tempCounter = new Counter el: @tempCounterEl
@@ -81,18 +89,11 @@ class Classify extends Page
 
     Favorite.on 'from-classify', @onFavoriteFromClassify
 
-    @tutorial = new Tutorial
-      parent: @subjectContainer
-      steps: tutorialSteps
-      firstStep: 'welcome'
-
-    @tutorial.el.on 'start-tutorial enter-tutorial-step', =>
-      translate.refresh @tutorial.el.get 0
-
-    @tutorial.classifier = @
+    @slideTutorial = new SlideTutorial slides: slides
 
   activate: ->
     super
+    @startTutorial() if @onClassify()
 
     # Force rerender of the status bar
     status = @el.find '.status'
@@ -100,65 +101,53 @@ class Classify extends Page
     setTimeout ->
       status.css display: ''
 
-    # Reposition the tutorial dialog.
-    # TODO: This is weird, I know.
-    setTimeout => @tutorial.attach()
-    setTimeout (=> @tutorial.attach()), 300
-
   onUserChange: (e, user) =>
     @el.toggleClass 'signed-in', user?
 
     sessionClassifications = user?.project?.classification_count || 0
 
-    # SPLIT | HEADING | PROGRESS | TALK
-    # ------+---------+----------+---------
-    # A     | NO      | NO       | TUTORIAL
-    # B     | NO      | NO       | 1ST
-    # C     | NO      | NO       | 5TH
-    # D     | NO      | YES      | TUTORIAL
-    # E     | NO      | YES      | 1ST
-    # F     | NO      | YES      | 5TH
-    # G     | YES     | YES      | TUTORIAL
-    # H     | YES     | YES      | 1ST
-    # I     | YES     | YES      | 5TH
-    # J     | YES     | NO       | TUTORIAL
-    # K     | YES     | NO       | 1ST
-    # L     | YES     | NO       | 5TH
+    @startTutorial if @onClassify()
 
-    split = user?.project?.splits.tutorial
+    @setDefaultGroup()
 
-    # Assign optimum split manually
-    split = 'k'
+  setDefaultGroup: =>
+    @groups = groups
 
-    $html.toggleClass 'no-tutorial-headers', split in ['a', 'b', 'c', 'd', 'e', 'f']
-    $html.toggleClass 'no-tutorial-progress', split in ['a', 'b', 'c', 'j', 'k', 'l']
-
-    if user?.project?.tutorial_done
-      if Subject.current?.metadata.tutorial
-        @tutorial.end()
-        Subject.next()
-      else if not Subject.current?
-        Subject.next()
-
+    if User.current?.preferences?.plankton?.group
+      defaultSubjectGroup = User.current.preferences.plankton.group
+      Subject.group = defaultSubjectGroup
+      Subject.next()
     else
-      tutorialSubject = createTutorialSubject()
-      Subject.instances.unshift Subject.instances.pop()
+      randomInt = Math.round(Math.random())
+      randomProperty = Object.keys(@groups)
+      randomSelection = randomProperty[randomInt]
+      randomGroup = @groups[randomSelection]
+      Subject.group = randomGroup
+      @setUserPreference(randomGroup)
+      Subject.next()
 
-      if @surface.marks.length is 0
-        tutorialSubject.select()
+  setUserPreference: (preference) =>
+    if User.current
+      User.current.setPreference 'group', preference
+
+  firstVisit: (user) =>
+    return true unless user
+    !user?.project?.classification_count
+
+  startTutorial: =>
+    @slideTutorial.start() if @firstVisit User.current
+
+  onClassify: =>
+    window.location.hash is "#/classify"
 
   onGettingNextSubject: =>
     @el.addClass 'loading'
 
   onSubjectSelect: (e, subject) =>
-    @el.removeClass 'training'
-    @guidelines?.remove()
-    @guidelines = null
-    @guideIcons?.remove()
-    @guideIcons = null
-
     @el.removeClass 'loading'
-    @surface.marks[0].destroy() until @surface.marks.length is 0
+    @surface.tools[0].destroy() until @surface.tools.length is 0
+    @onChangeMarkCount()
+    $('.marking-surface-tool-controls-container').empty()
 
     # This image will slide in.
     @newSwapImage.attr src: subject.location.standard
@@ -168,10 +157,13 @@ class Classify extends Page
     @swapContainer.css display: ''
 
     # Once the swap container is showing, change the image of the marking surface behind it.
-    @surface.image.attr src: subject.location.standard
     @depthCounter.set (+subject.metadata.depth)?.toFixed(2) || '?'
     @tempCounter.set (+subject.metadata.temp)?.toFixed(2) || '?'
     @timeEl.html moment(subject.metadata.timestamp).format 'YYYY/M/D'
+    @loadImage subject.location.standard, ({src, width, height}) =>
+      @surface.image = @surface.addShape 'image', 'xlink:href': src, width: width, height: height, preserveAspectRatio: 'none'
+      @surface.svg.attr width: width, height: height
+      @surface.svg.attr 'viewBox', [0, 0, width, height].join ' '
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
       @swapContainer.css display: 'none'
@@ -184,34 +176,31 @@ class Classify extends Page
 
       @classification = new Classification {subject}
 
+    @el.removeClass 'is-favorite'
     @talkLink.attr href: subject.talkHref()
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
+    @setGroupName(subject)
 
-    @tutorial.end() if @tutorial.started?
+  setGroupName: (subject) =>
+    groupName = if subject.group.name is 'original' then 'California' else subject.group.name
+    @groupName.html groupName
+    Spine.trigger 'setGroupButtonActive'
 
-    if subject.metadata.tutorial
-      setTimeout (=> @tutorial.start()), 250
+  loadImage: (src, cb) ->
+    img = new Image
+    img.onload = -> cb img
+    img.src = src
 
   onNoMoreSubjects: =>
     alert 'It appears we\'ve run out of data!'
     @el.removeClass 'loading'
 
   onChangeMarkCount: =>
-    @creatureCounter.html @surface.marks.length
+    @creatureCounter.html @surface.tools.length
 
   onClickFinish: ->
-    @checkTrainingSubject() if @classification.subject.metadata.training?
-
     sessionClassifications += 1
-
-    trainingSubjects = [NaN, 3, 5]
-
-    if sessionClassifications in trainingSubjects
-      console?.log sessionClassifications, 'Next subject will be training!'
-      index = (i for item, i in trainingSubjects when item is sessionClassifications)[0]
-      createTutorialSubject index
-      Subject.instances.unshift Subject.instances.pop()
 
     @finishButton.attr disabled: true
     @nextButton.attr disabled: false
@@ -219,48 +208,25 @@ class Classify extends Page
 
     @surface.selection?.deselect()
 
-    @classification.annotate mark for mark in @surface.marks
+    @classification.annotate tool.mark for tool in @surface.tools
 
     # TODO: Send classification
+    console?.log 'classification send', @classification
     @classification.send()
 
     @el.addClass 'finished'
 
-    classificationCount = User.current?.project?.classificaiton_count || 0
+    classificationCount = User.current?.project?.classification_count || 0
     classificationCount += Classification.sentThisSession
 
-    introduceTalk = if User.current?.project?.splits.tutorial in ['b', 'e', 'h', 'k']
-      1
-    else if User.current?.project?.splits.tutorial in ['c', 'f', 'i', 'l']
-      5
-
-    if classificationCount is introduceTalk
-      setTimeout =>
-        @tutorial.load 'beSocial'
-
-  onClickRestartTutorial: ->
-    (createTutorialSubject 0).select()
+  onClickTutorial: ->
+    @slideTutorial.start()
 
   onClickSignIn: ->
     loginDialog.show()
 
-  checkTrainingSubject: ->
-    @el.addClass 'training'
-    pathString = training.guidelines[@classification.subject.metadata.training]
-    @guidelines = @surface.paper.path pathString
-    @guidelines.attr stroke: '#3f3', 'stroke-width': 5
-
-    @guideIcons = $()
-    for {species, coords: [left, top]} in training.icons[@classification.subject.metadata.training]
-      speciesClassName = species.replace(/([A-Z])/g, '-$1').toLowerCase()
-      el = $("<i class='training-species-icon icon-#{speciesClassName}'></i>")
-      el.css {left, top}
-      @guideIcons.push.apply @guideIcons, el
-
-    console.log {@guideIcons}
-    @guideIcons.appendTo @surface.container
-
-  onClickFavorite: ->
+  onClickFavorite: (e) ->
+    @el.addClass 'is-favorite'
     @favorite = new Favorite subjects: [@classification.subject]
     @favorite.on 'delete', @onFavoriteDelete
 

@@ -32,33 +32,33 @@
 
         <div class="creatures">
           <div class="display">
-            <div class="label"><%- translate 'span', 'classify.numberCounted' %></div>
+            <div class="label"><%- translate 'span', 'classify.organismsMarked' %></div>
             <div class="number"><span class="counter">0</span></div>
+          </div>
+        </div>
+
+        <div class="group">
+          <div class="display">
+            <div class="label"><%- translate 'span', 'classify.currentlyObserving' %></div>
+            <span id="group-name" class="name"></span>
           </div>
         </div>
 
         <div class="continue">
           <div class="finish">
-            <button name="finish"><%- translate 'span', 'classify.finish' %></button>
             <div class="aux">
-              <button name="restart-tutorial"><%- translate 'span', 'classify.restartTutorial' %></button>
-              <button name="sign-in"><%- translate 'span', 'classify.signIn' %></button>
+              <button name="tutorial"><%- translate 'span', 'classify.tutorial' %></button>
             </div>
+            <button name="finish"><%- translate 'span', 'classify.finish' %></button>
           </div>
           <div class="next">
-            <button name="favorite"><%- translate 'span', 'classify.favorite' %></button>
-            <button name="unfavorite"><%- translate 'span', 'classify.favorite' %></button>
+            <button name="favorite"><img src="./images/fav-heart-icon.svg"></button>
+            <button name="unfavorite"><img src="./images/fav-heart-icon-active.svg"></button>
+            <a href="#/FACEBOOK" class="facebook"><i class="fa fa-facebook fa-lg"></i></a>
+            <a href="#/TWITTER" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
             <a href="#/TALK" class="talk"><%- translate 'span', 'classify.discuss' %></a>
             <button name="next"><%- translate 'span', 'classify.next' %></button>
-            <a href="#/FACEBOOK" class="facebook"><%- translate 'span', 'classify.share' %></a>
-            <a href="#/TWITTER" class="twitter"><%- translate 'span', 'classify.tweet' %></a>
           </div>
-        </div>
-
-        <div class="return">
-          <a href="#/">
-            <span class="home-arrow">&crarr;</span>
-            <%- translate 'div', 'classify.return' %></a>
         </div>
       </div>
 

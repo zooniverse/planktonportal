@@ -1,12 +1,15 @@
-body > .stack > .team
+body > .stack > .science > .team
   overflow: hidden
+  padding: 0 25px
 
   .team
     clearfix()
     clear: left
+    max-width: 925px
+    margin: 0 auto
 
     &:last-child
-      margin: 0 0 150px 0
+      margin: 0 0 175px 0
 
   .member
     box-sizing: border-box
@@ -23,6 +26,18 @@ body > .stack > .team
 
     &.organization img
       width: 190px
+
+      &.upmc
+        background-color: white
+        height: 90px
+        padding: 5px
+        width: 180px
+
+      &.oov
+        background-color: white
+        height: 90px
+        padding: 5px 50px
+        width: 90px
 
     .name
       font-size: 20px

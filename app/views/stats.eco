@@ -1,0 +1,28 @@
+<% translate = require 't7e' %>
+<% { formatNumber } = require '../lib/format-number' %>
+
+<div class="content">
+  <%- translate 'h1', 'home.stats.header' %>
+  <div class="quarter">
+    <h2 id="user-count"></h2>
+    <%- formatNumber(@userCount) %>
+    <%- translate 'p', 'home.stats.activeUsers' %>
+  </div>
+
+  <div class="quarter">
+    <h2 id="classification-count"></h2>
+     <%- formatNumber(@classificationCount) %>
+    <%- translate 'p', 'home.stats.classifications' %>
+  </div>
+
+  <div class="quarter">
+    <h2 id="total-images"></h2>
+    <%- formatNumber(@subjectCount) %>
+    <%- translate 'p', 'home.stats.totalImages' %>
+  </div>
+
+  <div class="quarter">
+    <h2 id="percent-complete"></h2>
+    <%- translate 'p', 'home.stats.complete' %>
+  </div>
+</div>

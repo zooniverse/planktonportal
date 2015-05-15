@@ -5,36 +5,15 @@
   100%
     background-position: 0 -150px
 
-.zooniverse-top-bar
-  transition:
-    opacity 0.5s ease-in-out,
-    top 0.5s ease-in-out
+$classify-blue = #6b85a4
 
 .on-classify-page
   background: darken($dark-gray, 50%)
 
-  body > nav
-    opacity: 0.25
-    position: absolute
-    top: -110px
-
-    &:hover
-      opacity: 1
-      top: 5px // There's a border.
-
-  .zooniverse-top-bar
-    opacity: 0.5
-    top: -30px
-
-    &:hover
-      opacity: 1
-      top: 0
-
 body > .stack > .classify
   height: 100%
   left: 0
-  padding: 0
-  position: fixed
+  padding: 20px 0 30px
   top: 0
   width: 100%
 
@@ -77,7 +56,17 @@ body > .stack > .classify
     svg
       display: block
 
-    .marking-tool-controls
+      .marking-surface-tool-root
+        circle
+          display: none
+
+        .marker
+          transform: translate(-15px, -15px)
+
+        .alert
+          transform: translate(-6px, -9px)
+
+    .marking-surface-tool-controls
       background: $dark-gray
       background: rgba($dark-gray, 0.9)
       border-radius: 3px
@@ -94,6 +83,9 @@ body > .stack > .classify
         right: 100%
         top: 30px
         width: 0
+        
+      &:not([data-selected])
+        display: block
 
       &.to-the-left
         margin: -40px 20px 0 0
@@ -105,27 +97,36 @@ body > .stack > .classify
           right: auto
 
       button[name="toggle"]
-        background: rgba(#000, 0.67)
-        border: 3px solid $lime
-        border-radius: 50%
-        color: $lime
+        color: $classify-blue
         display: none
-        font-size: 20px
+        font-size: 28px
         height: 30px
-        left: -20px
+        left: -21px
         line-height: 1
         margin: -15px 0 0 -15px
         position: absolute
-        text-shadow: 0 1px 1px #000
-        top: 40px
+        top: 38px
         width: 30px
+
+        &:after
+          content: ''
+          display: block
+          background: #fff
+          height: 10px
+          width: 10px
+          position: absolute
+          top: 5px
+          left: 5px
+          z-index: 0
+          font-size: 0
+
+        i:before
+          z-index: 1
+          position: relative
 
         .label,
         .example-photo
           display: none
-
-        &:hover
-          background: #000
 
       &.to-the-left button[name="toggle"]
         left: 20px
@@ -155,11 +156,25 @@ body > .stack > .classify
 
       .categories,
       .category
+        border-radius: 6px
+
         button
-          height: 75px
           line-height: 1
           position: relative
-          width: 75px
+          background-color: $dark-gray
+          padding: 5px
+          margin: 5px 2.5px
+          border-radius: 4px
+          border: solid 2px transparent
+
+          &:focus, &:active
+            outline: none
+
+          &:first-of-type
+            margin-left: 5px
+
+          &:last-of-type
+            margin-right: 5px
 
           i
             font-size: 55px
@@ -195,6 +210,7 @@ body > .stack > .classify
             border-radius: 3px
             box-shadow: 0 1px 1px #000
             display: none
+            width: 100px
             height: 100px
             left: 50%
             position: absolute
@@ -207,43 +223,35 @@ body > .stack > .classify
             .example-photo
               display: block
 
-          &.active i
-            color: $lime
-            text-shadow: 0 1px 0 #000
+          &.active
+            background-color: transparent
+            border: solid 2px $classify-blue
+            i
+              color: white
+              text-shadow: 0 1px 0 #000
 
       .categories
         background: lighten($dark-gray, 10%)
-        box-shadow:
-          0 1px 0 rgba(#fff, 0.33) inset,
-          0 1px 3px rgba(#000, 0.25)
-        display: none
+        border-radius: 6px
+        display: flex
 
         button
-          &:before,
-          &:after
-            border: 5px solid transparent
-            border-top-color: lighten($dark-gray, 10%)
-            bottom: 0px
-            content: ""
-            height: 0
-            left: 50%
-            margin-left: -5px
-            position: absolute
-            width: 0
-
-          &:before
-            border-top-color: rgba(#000, 0.25)
-            bottom: -2px
-
           &.active
             &:before,
             &:after
-              border-width: 8px
-              bottom: -16px
-              margin-left: -8px
+              border: 5px solid transparent
+              border-top-color: lighten($dark-gray, 10%)
+              bottom: -10px
+              margin-left: -5px
+              content: ""
+              height: 0
+              left: 50%
+              position: absolute
+              width: 0
 
             &:before
-              bottom: -17px
+              border-top-color: $classify-blue
+              bottom: -12px
 
       &.complete .categories
         display: block
@@ -251,8 +259,14 @@ body > .stack > .classify
       .category
         display: none
 
+        button
+          background-color: lighten($dark-gray, 10%)
+
+          &.active
+            background-color: $classify-blue
+
         &.active
-          display: block
+          display: flex
 
       &.closed
         &:after,
@@ -263,6 +277,9 @@ body > .stack > .classify
 
         button[name="toggle"]
           display: inline-block
+          
+          &:hover
+            background-color: transparent
 
   .swap-container
     height: 560px
@@ -297,7 +314,7 @@ body > .stack > .classify
     display: block
 
   .status
-    background: $dark-gray
+    background: lighten($dark-gray, 10%)
     bottom: 0
     display: table
     font-weight: bold
@@ -306,14 +323,13 @@ body > .stack > .classify
     left: 0
     position: absolute
     width: 100%
+    border-radius: 6px
 
     a
       color: inherit
       text-decoration: none
 
     > div
-      border: 1px solid transparent
-      border-color: rgba(#fff, 0.15) rgba(#000, 0.25) rgba(#000, 0.25) rgba(#fff, 0.15)
       display: table-cell
       padding: 0 40px
       text-align: center
@@ -332,42 +348,52 @@ body > .stack > .classify
 
     .aux
       font-size: 10px
-      left: 0
-      margin-top: 20px
-      position: absolute
-      top: 100%
+      display: inline
       width: 100%
 
     .display > i
       font-size: 60px
       line-height: 1
+      margin-left: 6px
 
-    .creatures .display
-      background: #000
-      border-radius: 3px
-      box-shadow: 0 1px 0 rgba(#fff, 0.25)
-      overflow: hidden
-      padding: 5px 7px
+    .creatures, .group
+      padding: 0 5px
+
+      .display
+        background: $dark-gray
+        border-radius: 3px
+        overflow: hidden
+        padding: 10px
+        width: 100%
+        min-width: 150px
+        max-width: 200px
+        height: 60px
+        box-sizing: border-box
+        text-align: left
 
       .label
-        color: $dark-gray
-        float: left
+        color: lighten($dark-gray, 10%)
         font-size: 10px
         line-height: 12px
         text-transform: uppercase
-        width: 0 // This is just to get the lines to wrap.
+        margin-bottom: 5px
 
-      .number
-        float: right
+      .number, .name
         font-size: 18px
+        text-transform: capitalize
 
     .continue
       .finish
         display: block
         position: relative
+        float: right
+        margin-right: 20px
 
       .next
         display: none
+
+        .facebook, .twitter
+          color: #1e2226
 
       a,
       button
@@ -375,26 +401,25 @@ body > .stack > .classify
         padding: 0 5px
         border-radius: 3px
 
+      button[name="favorite"], button[name="unfavorite"]
+        img
+          vertical-align: middle
+
       button[name="unfavorite"]
-        background: rgba(#000, 0.25)
-        box-shadow: 0 1px 3px black inset
         display: none
 
       button[name="finish"],
       button[name="next"],
       a.talk
-        background: rgba(#fff, 0.25)
-        border-radius: 3px
-        box-shadow:
-          0 1px 0 rgba(#fff, 0.25) inset,
-          0 0 0 rgba(#fff, 0) inset,
-          0 5px 10px rgba(#000, 0.25)
-        color: #000
+        background: $classify-blue
+        border-radius: 4px
+        color: white
         display: inline-block
         font-weight: bold
-        padding: 3px 1em
+        line-height: 35px
         text-decoration: none
-        text-shadow: 0 1px 0 rgba(#fff,0.15)
+        text-transform: uppercase
+        letter-spacing: 1px
 
         &:hover
           box-shadow:
@@ -407,6 +432,9 @@ body > .stack > .classify
             0 1px 0 rgba(#fff, 0.15) inset,
             0 0 0 rgba(#fff, 0) inset,
             0 1px 3px rgba(#000, 0.33)
+
+      button[name="finish"]
+        width: 130px
 
     .return .home-arrow
       font-size: 20px

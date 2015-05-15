@@ -33,6 +33,27 @@ body > .stack > .home
     text-align: center
     width: 33.33%
 
+    .group-selector
+      border: none
+      display: flex
+      margin: 10px auto
+      max-width: 240px
+      width: 100%
+
+      button#group_one, button#group_two
+        @extends #standard-button
+        font-size: 12px
+        max-width: 120px
+
+        &:not(.active)
+          background-color: transparent
+          border: 2px solid $lime
+          color: white
+          font-weight: 400
+          text-shadow: none
+
+      #group_two
+        margin-left: 5px
     a
       @extends #standard-button
       font-size: 24px
@@ -97,3 +118,17 @@ body > .stack > .home
         padding: 50px 0
         margin: 0 $about-page-link-spacing
         text-align: center
+
+  .stats
+    margin-top: -150px
+
+    .content
+      display: flex
+      flex-wrap: wrap
+      text-align: center
+
+      h1
+        width: 100%
+
+      .quarter
+        width: 25%

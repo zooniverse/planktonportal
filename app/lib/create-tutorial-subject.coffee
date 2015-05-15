@@ -17,13 +17,13 @@ createTutorialSubject = (index = 0) ->
 
     coords: [0, 0]
 
-    metadata:
+    metadata: {
       tutorial: true if index is 0
       training: index if index > 0
       file_name: 'TUTORIAL_SUBJECT'
       depth: 0
       temp: 0
-
+    }
     workflow_ids: ['516d6f243ae740bc96000002']
 
 module.exports = createTutorialSubject

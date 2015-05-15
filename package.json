@@ -4,18 +4,19 @@
   "dependencies": {
     "coffee-script": "~1.4.0",
     "es5-shimify": "~0.0.1",
-    "haw": "~0.1.0",
+    "haw": "~0.5.0",
     "image-stack": "~0.0.1",
     "jqueryify": "~1.9.1",
     "json2ify": "~0.0.3",
-    "marking-surface": "~0.0.15",
+    "marking-surface": "0.6.4",
     "moment": "~2.0.0",
     "publisssh": "~0.2.1",
-    "spine": "~1.0.9",
+    "spine": "1.1.0",
     "t7e": "~0.2.3",
     "zooniverse": "~0.7.1",
     "zootorial": "~0.3.4",
-    "translator-seed": "0.1.0"
+    "translator-seed": "0.1.0",
+    "slide-tutorial": "0.0.4"
   },
   "scripts": {
     "start": "haw serve",

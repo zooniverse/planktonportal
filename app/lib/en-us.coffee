@@ -14,9 +14,9 @@ module.exports =
     salp: 'Salp'
     thalasso: 'Thalasso'
     doliolidWithoutTail: 'Doliolid (without tail)'
+    radiolarianDark: 'Radiolarian dark'
 
-    rocketThimble: 'Rocket-ship thimble'
-    rocketTriangle: 'Rocket-ship triangle'
+    rocketSipho: 'Rocket-ship sipho'
     siphoCornCob: 'Sipho (corn cob)'
     siphoTwoCups: 'Sipho (two cups)'
     doliolidWithTail: 'Doliolid (with tail)'
@@ -26,21 +26,25 @@ module.exports =
     medusaFourTentacles: 'Medusa (four tentacles)'
     medusaMoreThanFourTentacles: 'Medusa (more than four tentacles)'
     medusaGoblet: 'Medusa (goblet)'
+    medusaEphyrae: 'Medusa ephyrae'
 
     beroida: 'Beroida'
     cestida: 'Cestida'
     radiolarianColonies: 'Radiolarian colonies'
     larvacean: 'Larvacean'
     arrowWorm: 'Arrow worm'
+    fishLarvae: 'Fish larvae'
 
     shrimp: 'Shrimp'
     polychaeteWorm: 'Polychaete worm'
     copepod: 'Copepod'
+    pteropods: 'Pteropods'
 
   navigation:
     home: 'Home'
+    guide: 'Field Guide'
     science: 'Science'
-    classify: 'Classify'
+    classify: 'Start Classifying'
     profile: 'Profile'
     education: 'Education'
     team: 'Team'
@@ -59,10 +63,21 @@ module.exports =
     about: 'About'
     images: 'Images'
     species: 'Species'
+    groupSelect: 'Select a group to start searching:'
+    groupOneButton: 'Mediterranean'
+    groupTwoButton: 'California current'
+
+    stats:
+      header: 'Statistics'
+      activeUsers: 'Volunteers'
+      classifications: 'Classifications'
+      totalImages: 'Total Images'
+      complete: 'Complete'
 
   science:
     fieldGuide:
       title: 'Field guide'
+      scale: 'Note: Some images have been scaled down. In order to provide a sense of scale, each image has a size marker. The outer ring represents the full, unscaled size. The inner circle represents how much the image is scaled down. Small circle = large specimen!'
 
       lobate: '''
         Round to oval, with bristled (comb) rows along the major axis – though rows not apparent in some species. Certain species look balloon-shaped with two small, opposing lobes. Others may have large lobes visible on the “bottom” of the organism. Range in size from small to extra large.  Typically appears opaque in images.
@@ -83,13 +98,12 @@ module.exports =
       doliolidWithoutTail: '''
         Barrel shaped body with interior striations along the minor axis, appearing similar to a pineapple in certain orientations.  May or may not have a tail.
       '''
-
-      rocketThimble: '''
-        Thimble-shaped with a single, long, branching “tail”.
+      radiolarianDark: '''
+        Circular, opaque blobs, possibly with a translucent shell (which creates another circle around the central mass) and radiating, very fine, tentacles that form a halo on the image.
       '''
 
-      rocketTriangle: '''
-        Similar overall shape to rocketship thimble but with an arrow-head body. Typically observed with a simple “tail” but sometimes displaying an elaborate array of branching tentacles.
+      rocketSipho: '''
+        Thimble- or triangle-shaped body with single, long, branching “tail”. Typically observed with a simple “tail” but sometimes displaying an elaborate array of branching tentacles.
       '''
 
       siphoCornCob: '''
@@ -124,6 +138,9 @@ module.exports =
         Distinct category of jellyfish.  Two short, simple, symmetrical tentacles.  Bell typically shaped like a goblet.
       '''
 
+      medusaEphyrae: '''
+        Small disc with short radiating arms.
+      '''
 
       beroida: '''
         Opaque with one rounded end, with numerous hair-like appendages usually visible on the round end.  Shape resembles a zucchini / cucumber.
@@ -145,6 +162,10 @@ module.exports =
         Long and contains paired, symmetrical fins and has a fan-like tail.
       '''
 
+      fishLarvae: '''
+        Elongated and opaque (white) body with a distinct head and (usually) asymmetrical fins. Lack the two symmetrical fins and the transparent body of Chaethognaths.
+      '''
+
       shrimp: '''
         Dark, oblong body, with paired antennae, and short leg-like appendages sometimes visible.  Orientation can be straight or with tail curled under body.
       '''
@@ -155,6 +176,10 @@ module.exports =
 
       copepod: '''
         Dark, ovate body with two symmetrical antennae, typically oriented in opposing directions. Often highly abundant, though very small.
+      '''
+
+      pteropods: '''
+        Very opaque body with wing-like extensions on one end, that can be more or less contracted, and a triangular-shaped shell on the other end.
       '''
 
     about:
@@ -172,6 +197,7 @@ module.exports =
       title: 'Why study plankton?'
       content: '''
         <h1>Why study plankton?</h1>
+        <p><a href="./images/plankton-diagram.png" target="_blank"><img src="./images/plankton-diagram.png" class="framed right" style="max-width: 400px;" /></a></p>
         <p>Planktonic organisms are critically important food source to the all ocean.  Small phytoplankton form the beginning of the food supply which are consumed by larger plankton, then those plankton by larger organisms all the way up to fish and the largest species of whales found in the sea. No plankton: no life in the ocean.</p>
         <p>Plankton also play an important role in the global carbon cycle capturing the sun’s energy and the atmosphere’s CO2 at the surface of the ocean and releasing it, via the above food chain, to other organisms and other areas of the ocean from shallow coastal areas to the deep ocean basins.</p>
         <p>Understanding where and when plankton occur at different depths in the ocean allows scientists to get a global understanding of the function and health of the ocean from small to global scales.</p>
@@ -188,20 +214,22 @@ module.exports =
       '''
 
   education:
+    title: 'Education'
     content: """
       <h2>Education</h2>
+      <p><img src="./images/lots-of-plankton-2.jpg" class="framed right" style="max-width: 250px;"/></p>
 
       <h3>Can I use #{PROJECT_NAME} in the classroom?</h3>
       <p>Of course! #{PROJECT_NAME}, just like all the <a href="https://www.zooniverse.org/">Zooniverse</a> projects, offers students a unique opportunity to explore real scientific data, while making a contribution to cutting-edge research. Each image is marked by multiple volunteers, so it’s okay if students don't identify and mark all of the plankton correctly. That being said, the task itself is simple enough that we believe most people can take part and make a worthwhile contribution regardless of age.</p>
 
       <h3>What resources are there to support use in the classroom?</h3>
       <p>Videos are a great tool to introduce students to the fascinating, diverse, and sometimes bizarre undersea world of plankton. Here are a couple of our favorites.</p>
-
       <ul>
         <li><a href="http://www.google.com/url?q=http%3A%2F%2Fwww.ted.com%2Ftalks%2Fthe_secret_life_of_plankton.html&sa=D&sntz=1&usg=AFQjCNHSdPrxP6h9FufMU_eNWLZGty-SwA">The secret life of plankton</a> (TED Education video) by Tierney Thys, Christian Sardet, Noe Sardet and Sharif Mirshak</li>
         <li><a href="http://www.planktonchronicles.org/en">Plankton Chronicles</a> by Christian Sardet, Noe Sardet and Sharif Mirshak</li>
         <li><a href="http://www.youtube.com/watch?v=3HzFiQFFQYw">There’s no such thing as a jellyfish</a> by Steve Haddock, Monterey Bay Aquarium Research Institute</li>
       </ul>
+
 
       <p>The Zooniverse recently launched <a href="http://www.zooteach.org/">ZooTeach</a> where educators can find and share educational resources relating to #{PROJECT_NAME} and the other Zooniverse citizen science projects. Check out resources created for <a href="http://www.zooteach.org/zoo/plankton_portal">#{PROJECT_NAME}</a>. Have any ideas for how to use the project in the classroom? Please share your lesson ideas or resources on ZooTeach!</p>
 
@@ -210,6 +238,7 @@ module.exports =
     """
 
   about:
+    title: 'Team and Organizations'
     organizations:
       heading: 'Organizations'
 
@@ -232,6 +261,16 @@ module.exports =
         image: './images/organizations/bellamare.png'
         name: 'BellaMare'
         url: 'http://www.bellamare-us.com/'
+
+      oov:
+        image: './images/organizations/oov.png'
+        name: 'Observatoire Océanologique de Villefranche'
+        url: 'http://www.obs-vlfr.fr'
+
+      upmc:
+        image: './images/organizations/upmc.png'
+        name: 'Université Pierre et Marie Curie'
+        url: 'http://www.upmc.fr'
 
       adler:
         image: './images/organizations/adler.png'
@@ -256,6 +295,17 @@ module.exports =
           The development of the ISIIS imaging system is not only providing unprecedented insight into life in the plankton, but allows Bob to spend untethered days away from his desk on the high seas, ‘eaves-viewing’ on the secret lives of plankters.
         '''
 
+      irisson:
+        image: './images/science-team/irisson.jpg'
+        name: 'Jean-Olivier Irisson'
+        description: '''
+          Jean-Olivier Irisson is an Associate Professor at the Observatoire Océanologique de Villefranche of the Université Pierre et Marie Curie.
+           He is interested in plankton ecology, in particular in the distribution, behaviour and dispersal of fish larvae. In Villefranche he
+           contributes to a research group focused on using imaging devices to study plankton. He uses modelling, experiments, in situ
+           observation and a lot of statistics around all that to gain insight into the lives of the rare and fragile fish larvae.
+           Together with Bob Cowen, he coordinated the cruise which collected the Mediterranean dataset.
+        '''
+
       guigand:
         image: './images/science-team/guigand.jpg'
         name: 'Cedric Guigand'
@@ -269,20 +319,23 @@ module.exports =
         image: './images/science-team/luo.jpg'
         name: 'Jessica Luo'
         description: '''
-          Jessica Luo is a Ph.D student using ISIIS to study the ecology of jellyfish, larval fish, and other plankton in the ocean.
-          She is interested in processes that structure marine communities, and hopes that this research will provide better insight into the role of small jellyfish in the open ocean.
-          She moved to Miami in 2010 from Northern California, where she was working as the ocean education coordinator at Point Reyes National Seashore.
-          Jessica got her B.S. and M.S. degrees from Stanford University in 2007, studying the chemical oceanography of Red Sea copepods.
-          In her free time, she enjoys landscape photography and running 10K’s and half marathons.
+          Jessica Luo is a Ph.D candidate at the University of Miami, using imaging systems to study the ecology of gelatinous zooplankton,
+          larval fish, and other plankton in the ocean. She is interested in processes that structure marine communities, both biological
+          (vertical migrations), and physical (fronts and eddies). She is also doing research on the contribution of certain plankton groups
+          to the global marine carbon cycle. Previously, she was in Northern California, working in marine education and outreach for the
+          National Park Service after receiving her B.A. and M.S. in 2007 from Stanford University. In her spare time, Jessica enjoys running
+          and thinking about data science and crowd-sourcing.
         '''
 
       greer:
         image: './images/science-team/greer.jpg'
         name: 'Adam Greer'
         description: '''
-          Adam Greer is a Ph.D student originally from Nashville, TN studying thin layers of zooplankton in coastal environments.
-          Plankton often aggregate in dense layers only a few meters in depth, and the use of imaging technology provides a unique opportunity to describe the spatial relationships of organisms in fine detail- leading to a better understanding of how zooplankton and fish larvae feed and survive.
-          He also enjoys sports, particularly baseball and basketball, and 90’s rock music.
+          Adam Greer received his Ph.D from the University of Miami in 2013 and is currently a postdoctoral researcher at the University
+          of Southern Mississippi Stennis Space Center. He is interested in the application of new sampling technologies, particularly
+          imaging systems, to study fine-scale physical and biological processes that are important for larval fish feeding and survival.
+          The ultimate goal of this kind of research is to determine the primary factors that influence fish population variability,
+          enhancing our understanding of marine ecosystems. Adam also enjoys sports and living on the West Coast (of Mississippi).
         '''
 
       cousin:
@@ -299,22 +352,22 @@ module.exports =
         image: './images/science-team/grassian.jpg'
         name: 'Ben Grassian'
         description: '''
-          Ben Grassian is an undergraduate at the University of Miami who is completing his bachelors in Marine Science and Biology in Summer 2013.
-          His research background is mostly in cellular biology, having worked in a cancer research lab in Boston, MA while in high school.
-          His work focused on understanding the molecular basis for oncogenic evasion of cell-death pathways via the downregulation of certain proteins.
-          He began working with ISIIS image data in the Fall of 2011, focusing on the temporal and spatial distributions of Ctenophore populations in the upper water column.
-          He plans on applying to graduate school while finishing his work with ISIIS.
+          Ben Grassian is a former undergraduate researcher with the Cowen Lab at the University of Miami, Rosenstiel School of
+          Marine and Atmospheric Science. While a student, he studied spatiotemporal and ecological dynamics of gelatinous zooplankton
+          populations using ISIIS data. After completing his bachelors in 2013, he continued work with plankton (larval fish) while also
+          taking a detour to study corals and coral reefs. He is starting a Ph.D at the University of Rhode Island’s Graduate School of
+          Oceanography in 2015, studying zooplankton assemblages in oxygen minimum zones.
         '''
 
-      tang:
-        image: './images/science-team/tang.jpg'
-        name: 'Dorothy Tang'
+      faillettaz:
+        image: './images/science-team/faillettaz.jpg'
+        name: 'Robin Faillettaz'
         description: '''
-          Dorothy Tang is a research assistant working on the ISIIS images.
-          She has been fascinated by the variety of marine ecosystems and life forms since she was a child.
-          In order to study more about the oceans and the organisms living in it, she moved from Hong Kong to the United States in 2006.
-          She earned her B.S. in Marine Science and Biology in 2012 from the University of Miami.
-          She also loves to collect shells.
+          Robin Faillettaz is a PhD candidate at Université Pierre et Marie Curie, working at the Observatoire Océanologique de Villefranche.
+          He studies the distribution of fish larvae relative to their planktonic and hydrological environment. His aim is to evaluate the
+          importance of larval behavior for dispersal during their pelagic larval phase. He is the one processing and sorting the thousands
+          of images collected during the Mediterranean cruise. He has always worked on fish, studying the effect of Marine Protected Areas
+          or working on stock assessment for his M.S. Contrastingly, Robin comes from the mountains and he is also big fan of skiing.
         '''
 
     developers:
@@ -350,17 +403,6 @@ module.exports =
           He's currently drinking a lot of sherry.
         '''
 
-      miller:
-        image: './images/dev-team/miller.jpg'
-        name: 'David Miller'
-        description: '''
-          As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design.
-          Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival,
-          the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual.
-          David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University,
-          where he studied Visual & Interactive Communications.
-        '''
-
       parrish:
         image: './images/dev-team/parrish.jpg'
         name: 'Michael Parrish'
@@ -369,23 +411,13 @@ module.exports =
           Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.
         '''
 
-      smith:
-        image: './images/dev-team/smith.jpg'
-        name: 'Arfon Smith'
-        description: '''
-          As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry
-          at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge
-          before joining the Galaxy Zoo team in Oxford. Over the past 3 years he has been responsible for leading the development of a platform
-          for citizen science called Zooniverse. In August of 2011 he took up the position of Director of Citizen Science at the Adler Planetarium
-          where he continues to lead the software and infrastructure development for the Zooniverse.
-        '''
-
   classify:
     metersUnit: 'm'
     degreesUnit: '°C'
-    numberCounted: 'Number counted'
-    finish: 'Finish'
-    restartTutorial: 'Restart tutorial'
+    organismsMarked: 'Organisms Marked'
+    currentlyObserving: 'Currently Observing'
+    finish: 'Finished'
+    tutorial: 'Tutorial'
     signIn: 'Sign in'
     discuss: 'Discuss'
     favorite: 'Favorite'
@@ -403,106 +435,36 @@ module.exports =
     favorites: 'Favorites'
 
   tutorial:
-    nextLabel: 'Continue'
-    doneLabel: 'Close'
-
-    welcome:
-      header: "Welcome to #{PROJECT_NAME}!"
-      details: '''
-        This short tutorial will show you how to use the tools to mark and identify plankton.
-        Your classifications will be combined with the classifications of other volunteers, so do your best, but don't worry if some seem hard.
+    slideOne:
+      title: 'Welcome to Plankton Portal!'
+      content: '''
+        In this project, you'll be marking images of plankton—tiny oceanic
+        organisms—taken by an underwater imaging system. Because plankton
+        are an important food source and a strong indicator of the health
+        of a marine biome, they can teach us many things about our planet's oceans.
       '''
-
-    beforeMark:
-      header: 'What we\'re marking'
-      details: '''
-        Let's start with the large tentacled creature to the right.
-        To mark a creature, you need to draw lines across its height and width.
-        We're mainly interested in the sizes and directions of the plankton.
+    slideTwo:
+      title: 'Mark all plankton'
+      content: '''
+        Click on the image anywhere that you see a plankter (a single plankton
+        organism). Next, in the pop-up menu, first select the shape that most
+        closely resembles that plankter, and then select the appropriate species.
+        Mark and identify all of the plankton in the image, then click "Finish."
       '''
-
-    majorAxis:
-      header: 'Major axis'
-      details: '''
-        Always mark the length of the plankton first, from the top toward the bottom.
-        This will tell us how long the creature is and what direction it's moving.
-        Remember to check the science page if you're not sure how to mark something.
-        Do not include any tentacles!
+    slideThree:
+      title: 'Others are classifying too'
+      content: '''
+        More information about plankton species can be found in the Field Guide.
+        Don't worry too much if you aren't 100% sure—we just want your best guess,
+        no matter what! Many people will see each image, and everyone's
+        classifications will be combined to produce a result.
+        The wisdom of crowds tends to give the right answer.
       '''
-      instruction: 'Drag from the right side of the bell to the left side of the bell (where the tentacles start).'
-
-    minorAxis:
-      header: 'Minor axis'
-      details: '''
-        Now we'll mark the width of the creature.
+    slideFour:
+      title: '''That's everything!'''
+      content: '''
+        If you have any questions, want to discuss a particular image, or just
+        would like to chat about the project, click "Discuss" or "Talk" to join
+        us at the Plankton Portal Talk boards. More information is also available
+        at the Plankton Portal blog. Good luck!
       '''
-      instruction: 'Drag from top to bottom across the width of the bell.'
-
-    chooseCategory:
-      header: 'Narrow down possible species'
-      details: '''
-        A row of category icons has appeared. Choose the one that looks closest to the creature you see.
-      '''
-      instruction: 'Click the icon that best matches the creature.'
-
-    chooseSpecies:
-      header: 'Choose the species'
-      details: '''
-        From the new row of species icons, again click the closest match.
-      '''
-      instruction: 'Click the icon that best matches the creature.'
-
-    badCoordinates:
-      header: 'Close, but no cigar'
-      details: '''
-        It looks like the axes are a bit off.
-        We've drawn some guides to help you out.
-      '''
-      instruction: 'Drag the handles at the end of each line until they match the guides.'
-
-    wrongSpecies:
-      header: 'A case of mistaken identity'
-      details: '''
-        This creature is actually a $species.
-      '''
-      instruction: 'Click the icon to re-open the menu, then choose the $species under the $category category.'
-
-    markTheOtherOnes:
-      header: 'Mark the other creatures'
-      details: '''
-        There are four more creatures in this image. Try marking them yourself!.
-      '''
-      instruction: 'Mark the next creatures on your own. Click "Finish" when you\'re finished.'
-
-    dontMarkThese:
-      header: 'Don\'t mark everything'
-      details: '''
-        Be careful to only mark the things we're looking for. Other material floating in the water, like marine snow, should not be measured.
-        You may occasionally see a creature that's not in our list. Don't mark it, but if it's interesting we'd love to hear about it in Talk!
-      '''
-
-      singleCell: 'Other organism'
-      smallCrustacean: 'Tiny crustacean'
-      marineSnow: 'Marine snow'
-
-    finish:
-      header: 'Move on to the next image'
-      details: '''
-        When you're finished, click "Finish" to submit your classification.
-      '''
-
-    beSocial:
-      header: 'Be social'
-      details: '''
-        Before you move on to the next image, you can discuss it with other scientists if you have a question or observation.
-        You can also share it with your friends!
-      '''
-      instruction: 'Click "Next" to load the next image.'
-
-    haveFun:
-      header: 'Have fun'
-      details: '''
-        It looks like you've got a handle on this. To learn more about the different types of plankton, check out the Science page.
-        Enjoy exploring the ocean through a microscope, and thanks for helping with our research!
-      '''
-      nextButton: 'Close'

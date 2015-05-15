@@ -5,7 +5,7 @@
 <% icons = round: 'thalasso', tail: 'doliolid-with-tail', tentacled: 'solmaris', worm: 'arrow-worm', bug: 'shrimp' %>
 
 <button name="toggle"></button>
-
+<button name="delete-mark">x</button>
 <div class="categories">
   <% for category in species.order: %>
     <button name="category" value="<%= category %>">
