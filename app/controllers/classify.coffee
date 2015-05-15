@@ -131,6 +131,7 @@ class Classify extends Page
       User.current.setPreference 'group', preference
 
   firstVisit: (user) =>
+    return false if user is false
     return true unless user
     !user?.project?.classification_count
 

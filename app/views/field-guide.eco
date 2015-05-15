@@ -5,7 +5,7 @@
 
 <% scale = ['100', '75', '50', '25'] %>
 <% california = ['lobate', 'larvaceanHouse', 'salp', 'thalasso', 'doliolidWithoutTail', 'rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail', 'solmaris', 'medusaFourTentacles', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'beroida', 'cestida', 'radiolarianColonies', 'larvacean', 'arrowWorm', 'shrimp', 'polychaeteWorm', 'copepod'] %>
-<% mediterranean = ['larvaceanHouse', 'doliolidWithoutTail', 'radiolarianDark', 'rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail', 'solmaris', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'medusaEphyrae', 'radiolarianColonies', 'larvacean', 'arrowWorm', 'fishLarvae', 'shrimp', 'polychaeteWorm', 'copepod', 'pteropods'] %>
+<% mediterranean = ['larvaceanHouse', 'doliolidWithoutTail', 'radiolarian', 'rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail', 'solmaris', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'medusaEphyrae', 'radiolarianColonies', 'cestida', 'larvacean', 'arrowWorm', 'fishLarvae', 'shrimp', 'polychaeteWorm', 'copepod', 'pteropods'] %>
 
 <div class="scale-guide">
   <hr />

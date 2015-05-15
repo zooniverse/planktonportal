@@ -1,10 +1,10 @@
 species =
   order: ['round', 'tail', 'tentacled', 'worm', 'bug']
 
-  round: ['larvaceanHouse', 'doliolidWithoutTail', 'radiolarianDark']
+  round: ['larvaceanHouse', 'doliolidWithoutTail', 'radiolarian']
   tail: ['rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail']
   tentacled: ['solmaris', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'medusaEphyrae']
-  worm: ['radiolarianColonies', 'larvacean', 'arrowWorm', 'fishLarvae']
+  worm: ['radiolarianColonies', 'cestida', 'larvacean', 'arrowWorm', 'fishLarvae']
   bug: ['shrimp', 'polychaeteWorm', 'copepod', 'pteropods']
 
 

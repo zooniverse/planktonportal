@@ -14,7 +14,7 @@ module.exports =
     salp: 'Salp'
     thalasso: 'Thalasso'
     doliolidWithoutTail: 'Doliolid (without tail)'
-    radiolarianDark: 'Radiolarian dark'
+    radiolarian: 'Radiolarian'
 
     rocketSipho: 'Rocket-ship sipho'
     siphoCornCob: 'Sipho (corn cob)'
@@ -63,7 +63,7 @@ module.exports =
     about: 'About'
     images: 'Images'
     species: 'Species'
-    groupSelect: 'Select a group to start searching:'
+    groupSelect: 'Select a location to search in:'
     groupOneButton: 'Mediterranean'
     groupTwoButton: 'California current'
 
@@ -98,7 +98,7 @@ module.exports =
       doliolidWithoutTail: '''
         Barrel shaped body with interior striations along the minor axis, appearing similar to a pineapple in certain orientations.  May or may not have a tail.
       '''
-      radiolarianDark: '''
+      radiolarian: '''
         Circular, opaque blobs, possibly with a translucent shell (which creates another circle around the central mass) and radiating, very fine, tentacles that form a halo on the image.
       '''
 
@@ -263,12 +263,12 @@ module.exports =
         url: 'http://www.bellamare-us.com/'
 
       oov:
-        image: './images/organizations/oov.png'
+        image: './images/organizations/oov-org.png'
         name: 'Observatoire Océanologique de Villefranche'
         url: 'http://www.obs-vlfr.fr'
 
       upmc:
-        image: './images/organizations/upmc.png'
+        image: './images/organizations/upmc-org.png'
         name: 'Université Pierre et Marie Curie'
         url: 'http://www.upmc.fr'
 

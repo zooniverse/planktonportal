@@ -10,7 +10,7 @@ species =
 
 
   fieldGuide:
-    round: ['lobate', 'larvaceanHouse', 'salp', 'thalasso', 'doliolidWithoutTail', 'radiolarianDark']
+    round: ['lobate', 'larvaceanHouse', 'salp', 'thalasso', 'doliolidWithoutTail', 'radiolarian']
     tail: ['rocketSipho', 'cydippid', 'siphoCornCob', 'siphoTwoCups', 'doliolidWithTail']
     tentacled: ['solmaris', 'medusaFourTentacles', 'medusaMoreThanFourTentacles', 'medusaGoblet', 'medusaEphyrae']
     worm: ['beroida', 'cestida', 'radiolarianColonies', 'larvacean', 'arrowWorm', 'fishLarvae']
