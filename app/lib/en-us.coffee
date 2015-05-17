@@ -163,7 +163,7 @@ module.exports =
       '''
 
       fishLarvae: '''
-        Elongated and opaque (white) body with a distinct head and (usually) asymmetrical fins. Lack the two symmetrical fins and the transparent body of Chaethognaths.
+        Elongated and opaque (white) body with a distinct head and (usually) asymmetrical fins. Lack the two symmetrical fins and the transparent body of arrow worms.
       '''
 
       shrimp: '''
