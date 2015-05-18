@@ -1,7 +1,7 @@
 $ = window.jQuery
 MarkingSurface = require 'marking-surface'
 PointTool = require 'marking-surface/lib/tools/point'
-{Point, ToolControls} = MarkingSurface
+{ToolControls} = MarkingSurface
 Subject = require 'zooniverse/models/subject'
 controlsTemplateOriginal = require('../views/plankton-chooser-original')()
 controlsTemplateMediterranean = require('../views/plankton-chooser-mediterranean')()
@@ -26,7 +26,10 @@ class PlanktonControls extends ToolControls
 
   onClickToggle: =>
     $(@el).removeClass 'closed'
-    @moveTo()
+    x = @tool.mark.x
+    y = @tool.mark.y
+
+    @moveTo({x,y})
 
   onClickCategory: ({currentTarget}) =>
     target = $(currentTarget)
@@ -51,6 +54,8 @@ class PlanktonControls extends ToolControls
 
   onClickSpecies: ({currentTarget}) =>
     target = $(currentTarget)
+    x = @tool.mark.x
+    y = @tool.mark.y
     @toggleButton = $(@el).find 'button[name="toggle"]'
 
     @toggleButton.html '<i class="icon-marker">'
@@ -58,7 +63,7 @@ class PlanktonControls extends ToolControls
 
     setTimeout (=>
       $(@el).addClass 'closed'
-      @moveTo()
+      @moveTo({x, y})
     ), 250
 
     return if target.hasClass 'active'
@@ -73,21 +78,20 @@ class PlanktonControls extends ToolControls
     @tool.mark.destroy()
     Spine.trigger 'change-mark-count'
 
-  moveTo: =>
+  moveTo: ({x,y})->
+    super
     closedControls = @tool.controls?.el.classList.contains 'closed'
-    targetX = @tool.mark.x
-    targetY = @tool.mark.y
 
     if @tool.openLeft
       $(@el).addClass 'to-the-left'
       $(@el).css
-        left: if closedControls then targetX - 20 else targetX - 400
-        top: targetY
+        left: if closedControls then x - 20 else x - 400
+        top: y
     else
       $(@el).removeClass 'to-the-left'
       $(@el).css
-        left: targetX
-        top: targetY
+        left: x
+        top: y
 
 class PlanktonTool extends PointTool
   @Controls: PlanktonControls
@@ -100,6 +104,8 @@ class PlanktonTool extends PointTool
       d: "M1.393,8.212 C0.627,8.212 0.005,2.106 0.005,1.360 C0.005,0.614 0.627,0.009 1.393,0.009 C2.160,0.009 2.782,0.614 2.782,1.360 C2.782,2.106 2.160,8.212 1.393,8.212 ZM1.393,9.813 C2.160,9.813 2.782,10.417 2.782,11.163 C2.782,11.909 2.160,12.514 1.393,12.514 C0.627,12.514 0.005,11.909 0.005,11.163 C0.005,10.417 0.627,9.813 1.393,9.813 Z"
       fill: "#000000"
       class: "alert"
+
+    @addEvent 'marking-surface:element:move', 'path', @onMove
 
   render: ->
     super
