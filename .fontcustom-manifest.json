@@ -1,13 +1,13 @@
 {
   "checksum": {
-    "previous": "8c42532d5c60929f7d72aec4ad6ecbf3e9f2287e977e5db16d3190b854fd9cb4",
-    "current": "8c42532d5c60929f7d72aec4ad6ecbf3e9f2287e977e5db16d3190b854fd9cb4"
+    "previous": "45486af8152934d2a12aa6873170b128387a37e798affe6e2100e4a97cb03386",
+    "current": "45486af8152934d2a12aa6873170b128387a37e798affe6e2100e4a97cb03386"
   },
   "fonts": [
-    "fontcustom/fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.ttf",
-    "fontcustom/fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.svg",
-    "fontcustom/fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.woff",
-    "fontcustom/fontcustom_8c42532d5c60929f7d72aec4ad6ecbf3.eot"
+    "fontcustom/fontcustom_45486af8152934d2a12aa6873170b128.ttf",
+    "fontcustom/fontcustom_45486af8152934d2a12aa6873170b128.svg",
+    "fontcustom/fontcustom_45486af8152934d2a12aa6873170b128.woff",
+    "fontcustom/fontcustom_45486af8152934d2a12aa6873170b128.eot"
   ],
   "glyphs": {
     "arrow-worm": {
@@ -110,13 +110,13 @@
       "codepoint": 61732,
       "source": "./icons/pteropods.svg"
     },
+    "radiolarian": {
+      "codepoint": 61736,
+      "source": "./icons/radiolarian.svg"
+    },
     "radiolarian-colonies": {
       "codepoint": 61716,
       "source": "./icons/radiolarian-colonies.svg"
-    },
-    "radiolarian-dark": {
-      "codepoint": 61733,
-      "source": "./icons/radiolarian-dark.svg"
     },
     "rocket-sipho": {
       "codepoint": 61734,
