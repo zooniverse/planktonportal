@@ -184,7 +184,7 @@ class Classify extends Page
     @setGroupName(subject)
 
   setGroupName: (subject) =>
-    groupName = if subject.group.name is 'original'
+    groupName = if subject.group_id is groups.original
       translate('span', 'home.groupTwoButton') #California
     else
       translate('span', 'home.groupOneButton') #Mediterranean
