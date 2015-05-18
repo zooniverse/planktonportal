@@ -25,10 +25,12 @@ class PlanktonControls extends ToolControls
     @el.insertAdjacentHTML 'beforeEnd', @template
 
   onClickToggle: =>
-    $(@el).removeClass 'closed'
+    mark = @tool.el
     x = @tool.mark.x
     y = @tool.mark.y
 
+    $(@el).removeClass 'closed'
+    mark.classList.remove 'hidden'
     @moveTo({x,y})
 
   onClickCategory: ({currentTarget}) =>
@@ -56,6 +58,7 @@ class PlanktonControls extends ToolControls
     target = $(currentTarget)
     x = @tool.mark.x
     y = @tool.mark.y
+    mark = @tool.el
     @toggleButton = $(@el).find 'button[name="toggle"]'
 
     @toggleButton.html '<i class="icon-marker">'
@@ -63,6 +66,8 @@ class PlanktonControls extends ToolControls
 
     setTimeout (=>
       $(@el).addClass 'closed'
+      mark.classList.add 'hidden'
+
       @moveTo({x, y})
     ), 250
 
@@ -81,15 +86,16 @@ class PlanktonControls extends ToolControls
   moveTo: ({x,y})->
     super
     closedControls = @tool.controls?.el.classList.contains 'closed'
+    toolControlsEl = $(@el)
 
     if @tool.openLeft
-      $(@el).addClass 'to-the-left'
-      $(@el).css
+      toolControlsEl.addClass 'to-the-left'
+      toolControlsEl.css
         left: if closedControls then x - 20 else x - 400
         top: y
     else
-      $(@el).removeClass 'to-the-left'
-      $(@el).css
+      toolControlsEl.removeClass 'to-the-left'
+      toolControlsEl.css
         left: x
         top: y
 
