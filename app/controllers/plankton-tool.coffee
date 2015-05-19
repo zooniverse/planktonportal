@@ -83,15 +83,19 @@ class PlanktonControls extends ToolControls
     @tool.mark.destroy()
     Spine.trigger 'change-mark-count'
 
+  isFirefox: ->
+    typeof InstallTrigger isnt 'undefined'
+
   moveTo: ({x,y})->
     super
     closedControls = @tool.controls?.el.classList.contains 'closed'
     toolControlsEl = $(@el)
+    subtractionNum = if @isFirefox() then 420 else 400
 
     if @tool.openLeft
       toolControlsEl.addClass 'to-the-left'
       toolControlsEl.css
-        left: if closedControls then x - 20 else x - 400
+        left: if closedControls then x - 20 else x - subtractionNum
         top: y
     else
       toolControlsEl.removeClass 'to-the-left'
