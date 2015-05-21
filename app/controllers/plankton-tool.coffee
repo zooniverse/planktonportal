@@ -117,6 +117,9 @@ class PlanktonTool extends PointTool
 
     @addEvent 'marking-surface:element:move', 'path', @onMove
 
+  focus: ->
+    @focused = false
+
   render: ->
     super
     EXTRA_SPACE = 20

@@ -163,7 +163,7 @@ class Classify extends Page
     @timeEl.html moment(subject.metadata.timestamp).format 'YYYY/M/D'
     @loadImage subject.location.standard, ({src, width, height}) =>
       @surface.image = @surface.addShape 'image', 'xlink:href': src, width: width, height: height, preserveAspectRatio: 'none'
-      @surface.svg.attr width: width, height: height
+      @surface.svg.attr width: width, height: height, focusable: false
       @surface.svg.attr 'viewBox', [0, 0, width, height].join ' '
 
     @swapDrawer.delay(250).animate top: -@surface.height, @subjectTransition, =>
