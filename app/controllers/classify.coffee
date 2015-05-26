@@ -206,7 +206,9 @@ class Classify extends Page
 
   onClickFinish: ->
     sessionClassifications += 1
+    toggleBtn = $('button[name="toggle"]')
 
+    toggleBtn.attr disabled: true if toggleBtn?
     @finishButton.attr disabled: true
     @nextButton.attr disabled: false
     @surface.disable()
