@@ -90,6 +90,7 @@ class Classify extends Page
     Favorite.on 'from-classify', @onFavoriteFromClassify
 
     @slideTutorial = new SlideTutorial slides: slides, nextButtonText: translate('span', 'tutorial.nextButtonText'), finishButtonText: translate('span', 'tutorial.finishButtonText')
+    @pickRandomGroup()
 
   activate: ->
     super
@@ -101,6 +102,12 @@ class Classify extends Page
     setTimeout ->
       status.css display: ''
 
+  pickRandomGroup: =>
+    randomInt = Math.round(Math.random())
+    randomProperty = Object.keys(groups)
+    randomSelection = randomProperty[randomInt]
+    @randomGroup = groups[randomSelection]
+
   onUserChange: (e, user) =>
     @el.toggleClass 'signed-in', user?
 
@@ -111,19 +118,13 @@ class Classify extends Page
     @setDefaultGroup()
 
   setDefaultGroup: =>
-    @groups = groups
-
     if User.current?.preferences?.plankton?.group
       defaultSubjectGroup = User.current.preferences.plankton.group
       Subject.group = defaultSubjectGroup
       Subject.next()
     else
-      randomInt = Math.round(Math.random())
-      randomProperty = Object.keys(@groups)
-      randomSelection = randomProperty[randomInt]
-      randomGroup = @groups[randomSelection]
-      Subject.group = randomGroup
-      @setUserPreference(randomGroup)
+      Subject.group = @randomGroup
+      @setUserPreference(@randomGroup)
       Subject.next()
 
   setUserPreference: (preference) =>
@@ -181,10 +182,10 @@ class Classify extends Page
     @talkLink.attr href: subject.talkHref()
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
-    @setGroupName(subject)
+    @setGroupName()
 
-  setGroupName: (subject) =>
-    groupName = if subject.group_id is groups.original
+  setGroupName: =>
+    groupName = if Subject.group is groups.original
       translate('span', 'home.groupTwoButton') #California
     else
       translate('span', 'home.groupOneButton') #Mediterranean
