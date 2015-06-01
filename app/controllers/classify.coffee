@@ -17,6 +17,7 @@ Favorite = require 'zooniverse/models/favorite'
 Spine = require 'spine'
 SlideTutorial = require 'slide-tutorial'
 slides = require '../lib/slides.coffee'
+LanguageManager = require 'zooniverse/lib/language-manager'
 
 $html = $('html')
 
@@ -90,6 +91,11 @@ class Classify extends Page
     Favorite.on 'from-classify', @onFavoriteFromClassify
 
     @slideTutorial = new SlideTutorial slides: slides, nextButtonText: translate('span', 'tutorial.nextButtonText'), finishButtonText: translate('span', 'tutorial.finishButtonText')
+
+    LanguageManager.on 'change-language', =>
+      @slideTutorial.nextButtonText = translate 'span', 'tutorial.nextButtonText'
+      @slideTutorial.finishButtonText = translate 'span', 'tutorial.finishButtonText'
+
     @pickRandomGroup()
 
   activate: ->
