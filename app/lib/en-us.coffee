@@ -77,6 +77,8 @@ module.exports =
   science:
     fieldGuide:
       title: 'Field guide'
+      californiaCurrent: 'California Current'
+      mediterranean: 'Mediterranean'
       scale: 'Note: Some images have been scaled down. In order to provide a sense of scale, each image has a size marker. The outer ring represents the full, unscaled size. The inner circle represents how much the image is scaled down. Small circle = large specimen!'
 
       lobate: '''
