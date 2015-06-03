@@ -76,6 +76,7 @@ class Home extends Page
     if Subject.current.group_id isnt Subject.group
       Subject.destroyAll()
       Subject.next()
+      Spine.trigger 'resetInterface' if @onHome()
 
   activate: ->
     super

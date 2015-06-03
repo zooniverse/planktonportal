@@ -78,6 +78,7 @@ class Classify extends Page
 
     Spine.on 'change-mark-count', @onChangeMarkCount
     Spine.on 'setDefaultGroup', @setDefaultGroup
+    Spine.on 'resetInterface', @resetInterface
 
     @depthCounter = new Counter el: @depthCounterEl
     @tempCounter = new Counter el: @tempCounterEl
@@ -231,6 +232,9 @@ class Classify extends Page
 
     classificationCount = User.current?.project?.classification_count || 0
     classificationCount += Classification.sentThisSession
+
+  resetInterface: =>
+    @el.removeClass 'finished'
 
   onClickTutorial: ->
     @slideTutorial.start()
