@@ -78,6 +78,7 @@ class Classify extends Page
 
     Spine.on 'change-mark-count', @onChangeMarkCount
     Spine.on 'setDefaultGroup', @setDefaultGroup
+    Spine.on 'setGroupName', @setGroupName
     Spine.on 'resetInterface', @resetInterface
 
     @depthCounter = new Counter el: @depthCounterEl
@@ -128,11 +129,16 @@ class Classify extends Page
     if User.current?.preferences?.plankton?.group
       defaultSubjectGroup = User.current.preferences.plankton.group
       Subject.group = defaultSubjectGroup
-      Subject.next()
+      @getSubject()
     else
       Subject.group = @randomGroup
       @setUserPreference(@randomGroup)
-      Subject.next()
+      @getSubject()
+
+  getSubject: ->
+    if Subject.current?.group_id isnt Subject.group
+      Subject.destroyAll()
+      Subject.next().then => @setGroupName()
 
   setUserPreference: (preference) =>
     if User.current
@@ -189,7 +195,6 @@ class Classify extends Page
     @talkLink.attr href: subject.talkHref()
     @facebookLink.attr href: subject.facebookHref()
     @twitterLink.attr href: subject.twitterHref()
-    @setGroupName()
 
   setGroupName: =>
     groupName = if Subject.group is groups.original
@@ -262,7 +267,7 @@ class Classify extends Page
   onClickNext: ->
     @nextButton.attr disabled: true
 
-    Subject.next()
+    Subject.next().then => @setGroupName()
 
     @el.removeClass 'finished'
 

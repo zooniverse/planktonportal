@@ -75,7 +75,7 @@ class Home extends Page
   getSubject: ->
     if Subject.current.group_id isnt Subject.group
       Subject.destroyAll()
-      Subject.next()
+      Subject.next().then => Spine.trigger 'setGroupName'
       Spine.trigger 'resetInterface' if @onHome()
 
   activate: ->
