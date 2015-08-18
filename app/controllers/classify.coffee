@@ -138,7 +138,12 @@ class Classify extends Page
   getSubject: ->
     if Subject.current?.group_id isnt Subject.group
       Subject.destroyAll()
-      Subject.next().then => @setGroupName()
+      Subject.next()
+        .then => @setGroupName()
+
+    if Subject.current is null
+      Subject.next()
+        .then => @setGroupName()
 
   setUserPreference: (preference) =>
     if User.current
