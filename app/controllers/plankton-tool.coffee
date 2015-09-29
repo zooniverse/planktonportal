@@ -7,6 +7,7 @@ controlsTemplateOriginal = require('../views/plankton-chooser-original')()
 controlsTemplateMediterranean = require('../views/plankton-chooser-mediterranean')()
 Spine = require 'spine'
 groups = require '../lib/groups'
+t7e = require 't7e'
 
 class PlanktonControls extends ToolControls
 
@@ -122,6 +123,7 @@ class PlanktonTool extends PointTool
 
   render: ->
     super
+    t7e.refresh()
     EXTRA_SPACE = 20
     leftBound    = Math.min(@mark.x) - EXTRA_SPACE
     rightBound   = Math.max(@mark.x) + EXTRA_SPACE
