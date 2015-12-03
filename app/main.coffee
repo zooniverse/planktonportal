@@ -56,7 +56,13 @@ activeHashLinks = require 'zooniverse/util/active-hash-links'
 activeHashLinks.init()
 
 Api = require 'zooniverse/lib/api'
-api = new Api project: 'plankton'
+
+api = if window.location.hostname is 'www.planktonportal.org'
+  new Api project: 'plankton', host: 'http://www.planktonportal.org', path: '/_ouroboros_api/proxy'
+else
+  new Api project: 'plankton'
+
+window.api = api
 
 TopBar = require 'zooniverse/controllers/top-bar'
 topBar = new TopBar
