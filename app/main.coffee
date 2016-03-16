@@ -58,7 +58,7 @@ activeHashLinks.init()
 Api = require 'zooniverse/lib/api'
 
 api = if window.location.hostname is 'www.planktonportal.org'
-  new Api project: 'plankton', host: 'http://www.planktonportal.org', path: '/_ouroboros_api/proxy'
+  new Api project: 'plankton', host: 'https://www.planktonportal.org', path: '/_ouroboros_api/proxy'
 else
   new Api project: 'plankton'
 
