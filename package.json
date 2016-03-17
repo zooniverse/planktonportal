@@ -10,7 +10,7 @@
     "json2ify": "~0.0.3",
     "marking-surface": "0.6.4",
     "moment": "~2.0.0",
-    "publisssh": "~0.2.1",
+    "publisssh": "~1.1.0",
     "spine": "1.1.0",
     "t7e": "~0.2.3",
     "zooniverse": "~0.7.5",
