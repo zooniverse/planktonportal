@@ -1,6 +1,9 @@
 {
   "name": "plankton",
   "version": "0.0.1",
+  "engines": {
+    "node": "0.10.x"
+  },
   "dependencies": {
     "coffee-script": "~1.4.0",
     "es5-shimify": "~0.0.1",
@@ -10,13 +13,13 @@
     "json2ify": "~0.0.3",
     "marking-surface": "0.6.4",
     "moment": "~2.0.0",
-    "publisssh": "~1.1.0",
+    "publisssh": "0.2.6",
+    "slide-tutorial": "0.0.4",
     "spine": "1.1.0",
-    "t7e": "~0.2.3",
-    "zooniverse": "~0.7.5",
-    "zootorial": "~0.3.4",
+    "t7e": "~0.4.0",
     "translator-seed": "0.1.0",
-    "slide-tutorial": "0.0.4"
+    "zooniverse": "~0.7.5",
+    "zootorial": "~0.3.4"
   },
   "scripts": {
     "start": "haw serve",
