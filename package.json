@@ -9,7 +9,6 @@
     "es5-shimify": "~0.0.1",
     "haw": "~0.6.0",
     "image-stack": "~0.0.1",
-    "jqueryify": "~1.9.1",
     "json2ify": "~0.0.3",
     "marking-surface": "0.6.4",
     "moment": "~2.11.2",
@@ -24,8 +23,8 @@
   "scripts": {
     "start": "haw serve",
     "build-font": "bundle exec fontcustom compile --debug --font_path ./ --output ./public/fonts/fontcustom ./icons",
-    "deploy-to-beta": "haw build && publisssh build zooniverse-static/www.planktonportal.org/beta && rm -rf ./build",
-    "deploy": "haw build && publisssh build zooniverse-static/www.planktonportal.org && rm -rf ./build && npm run deploy-locale",
+    "deploy-to-beta": "haw build && publisssh build zooniverse-static/www.planktonportal.org/beta --force && rm -rf ./build",
+    "deploy": "haw build && publisssh build zooniverse-static/www.planktonportal.org --force && rm -rf ./build && npm run deploy-locale",
     "deploy-locale": "seed-translation --project plankton --env production"
   }
 }
