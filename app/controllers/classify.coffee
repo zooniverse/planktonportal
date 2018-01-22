@@ -1,4 +1,4 @@
-$ = require 'jqueryify'
+$ = jQuery
 Page = require './page'
 template = require '../views/classify'
 translate = require 't7e'

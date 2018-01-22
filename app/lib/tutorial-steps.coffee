@@ -1,4 +1,4 @@
-$ = require 'jqueryify'
+$ = jQuery
 translate = require 't7e'
 {Step} = require 'zootorial'
 User = require 'zooniverse/models/user'
