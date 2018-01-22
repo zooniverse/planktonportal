@@ -2,18 +2,18 @@
   "name": "plankton",
   "version": "0.0.1",
   "engines": {
-    "node": "0.10.x"
+    "node": "4.6.x"
   },
   "dependencies": {
     "coffee-script": "~1.4.0",
     "es5-shimify": "~0.0.1",
-    "haw": "~0.5.0",
+    "haw": "~0.6.0",
     "image-stack": "~0.0.1",
     "jqueryify": "~1.9.1",
     "json2ify": "~0.0.3",
     "marking-surface": "0.6.4",
     "moment": "~2.11.2",
-    "publisssh": "0.2.6",
+    "publisssh": "1.1.0",
     "slide-tutorial": "0.0.4",
     "spine": "1.1.0",
     "t7e": "~0.4.0",
